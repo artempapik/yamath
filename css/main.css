@@ -23,6 +23,7 @@
 }
 
 body {
+  margin: 0;
   background-color: #FAF9F6;
   line-height: 1.5;
   letter-spacing: .5px;
@@ -109,6 +110,7 @@ header {
   width: calc(100% - var(--questions-question-box-width));
   border-top: 5px solid var(--questions-border-color);
   border-image: linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1;
+  -webkit-border-image: -webkit-linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1;
   opacity: var(--questions-exercises-opacity);
 }
 
@@ -131,7 +133,7 @@ details[open] summary ~ * {
     transform: translateX(-20px);
   }
 
-  100%  {
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
@@ -282,11 +284,11 @@ span.math-font {
 
   header {
     padding-top: 2rem;
-    font-size: 3.4rem;
+    font-size: 3.6rem;
   }
 
   .intro {
-    font-size: 2rem;
+    font-size: 2.1rem;
     width: 55%;
     margin: 30px auto;
   }
@@ -299,11 +301,11 @@ span.math-font {
 
   .warning-rule {
     padding-left: 15px;
-    border-left-width: 1rem;
+    border-left-width: 1.2rem;
   }
 
   .footnote {
-    font-size: 2rem;
+    font-size: 2.1rem;
   }
 
   .questions-question::before {
