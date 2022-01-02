@@ -256,7 +256,10 @@ span.math-font {
   screen and (max-device-width: 800px),
   screen and (max-width: 800px) {
 
-    html { font-size:50%; -webkit-text-size-adjust:none; }
+  html {
+    /* font-size: 50%; */
+    -webkit-text-size-adjust: none;
+  }
 
   body {
     line-height: 1.4;
