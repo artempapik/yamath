@@ -260,6 +260,10 @@ span.math-font {
     -webkit-text-size-adjust: none;
   }
 
+  .letter {
+    font-size: 2.8rem;
+  }
+
   body {
     line-height: 1.4;
   }
@@ -305,7 +309,7 @@ span.math-font {
   }
 
   .questions-content ol {
-    padding-left: 4rem;
+    padding-left: 5rem;
   }
 }
 
