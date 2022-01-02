@@ -227,7 +227,7 @@ span.math-font {
   margin-top: 30px;
 }
 
-@media (min-width: 1601px) and (max-width: 1800px) {
+/* @media (min-width: 1601px) and (max-width: 1800px) {
   main {
     width: 55%;
   }
@@ -315,4 +315,4 @@ span.math-font {
   .footnote {
     font-size: 14px;
   }
-}
+} */
