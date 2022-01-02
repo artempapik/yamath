@@ -342,10 +342,8 @@ span.math-font {
     padding-left: 5rem;
   }
 
-  @keyframes sweep {
-    0% {
-      transform: translateX(-2.5rem);
-    }
+  details[open] summary ~ * {
+    animation: none;
   }
 }
 
