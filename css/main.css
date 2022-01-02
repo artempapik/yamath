@@ -1,0 +1,318 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+@font-face {
+  font-family: 'Crash Number';
+  src: url('Crashnumberinggothic-MAjp.ttf');
+}
+
+:root {
+  --intro-border-color: rgba(0, 0, 0, .4);
+  --questions-border-color: #FFCD28;
+  --questions-question-box-width: 25px;
+  --questions-exercises-opacity: .8;
+  --summary-exercise-color: #191970;
+}
+
+.math-font {
+  font-family: 'Crash Number';
+}
+
+.letter {
+  font-size: 22px;
+}
+
+body {
+  background-color: #FAF9F6;
+  line-height: 1.5;
+  letter-spacing: .5px;
+}
+
+main {
+  width: 35%;
+  margin: 40px auto;
+  margin-bottom: 0;
+  padding: 20px 40px;
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  height: 100%;
+  background-color: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+}
+
+header {
+  text-align: center;
+  font-family: 'Lora', serif;
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+.intro {
+  text-align: center;
+  width: 45%;
+  margin: 50px auto;
+  border-top: 1px dashed var(--intro-border-color);
+  border-bottom: 1px dashed var(--intro-border-color);
+  border-width: 2px;
+  letter-spacing: 1px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 17px;
+}
+
+.rule {
+  border: 2px #DC143C solid;
+  border-radius: 10px;
+  padding: 10px 20px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+sup.delimiter {
+  font-size: 10px;
+  padding: 0 1px;
+}
+
+.warning-rule {
+  padding-left: 20px;
+  border-left: 10px solid #F5F500;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+}
+
+.warning-rule p {
+  padding: 5px 0;
+}
+
+.footnote {
+  font-size: 16px;
+}
+
+.questions {
+  display: flex;
+  margin-top: 40px;
+}
+
+.questions-question {
+  width: var(--questions-question-box-width);
+  height: calc(var(--questions-question-box-width) + 20px);
+  background-color: var(--questions-border-color);
+  opacity: var(--questions-exercises-opacity);
+}
+
+.questions-question::before {
+  font-family: 'Crash Number';
+  content: '?';
+  color: #007600;
+  font-size: 40px;
+}
+
+.questions-left-border {
+  border-left: 5px solid var(--questions-border-color);
+  height: 120px;
+  opacity: var(--questions-exercises-opacity);
+}
+
+.questions-content {
+  width: calc(100% - var(--questions-question-box-width));
+  border-top: 5px solid var(--questions-border-color);
+  border-image: linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1;
+  opacity: var(--questions-exercises-opacity);
+}
+
+.questions-content ol li {
+  font-weight: bold;
+}
+
+.questions-content ol li > * {
+  font-weight: normal;
+  padding-left: 7px;
+}
+
+details[open] summary ~ * {
+  animation: sweep .5s ease;
+}
+
+@keyframes sweep {
+  0% {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+
+  100%  {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+details p {
+  color: #8B0000;
+  margin: 8px 0;
+}
+
+details div {
+  margin: 8px 0;
+  color: #8B0000;
+}
+
+summary {
+  cursor: pointer;
+  color: var(--summary-exercise-color);
+}
+
+.exercises-header {
+  margin-top: 40px;
+  width: 100%;
+  border-bottom: 2px solid var(--questions-border-color);
+  border-image: linear-gradient(to right bottom, var(--summary-exercise-color) 0%, var(--summary-exercise-color) 47%, rgba(255, 255, 255, 1) 94%) 1;
+}
+
+.exercises-header::before {
+  content: 'Упражнения';
+}
+
+.exercises-content ul {
+  list-style-type: none;
+}
+
+.exercises-content ul li {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  margin-top: 20px;
+  opacity: var(--questions-exercises-opacity);
+}
+
+.exercises-content ul li span.title {
+  font-weight: bold;
+}
+
+.exercises-content ul li sup.task {
+  font-family: 'Crash Number';
+  font-size: 14px;
+}
+
+.exercises-content ul li {
+  font-weight: normal;
+}
+
+.exercises-content ul li details {
+  font-weight: normal;
+  margin-top: 10px;
+  margin-left: 25px;
+}
+
+span.math-font {
+  font-family: 'Crash Number';
+}
+
+.frac {
+  display: inline-block;
+  position: relative;
+  vertical-align: middle;
+  letter-spacing: .001em;
+  text-align: center;
+}
+
+.frac > span {
+  display: block;
+  padding: .1em;
+}
+
+.frac span.bottom {
+  border-top: thin solid black;
+}
+
+.frac span.symbol {
+  display: none;
+}
+
+.error {
+  margin-top: 30px;
+}
+
+@media (min-width: 1601px) and (max-width: 1800px) {
+  main {
+    width: 55%;
+  }
+}
+
+@media (min-width: 1401px) and (max-width: 1600px) {
+  main {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1201px) and (max-width: 1400px) {
+  main {
+    width: 65%;
+  }
+}
+
+@media (min-width: 1001px) and (max-width: 1200px) {
+  main {
+    width: 70%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1000px) {
+  main {
+    width: 80%;
+  }
+}
+
+@media
+  screen and (max-device-width: 800px),
+  screen and (max-width: 800px) {
+
+  body {
+    line-height: 1.4;
+  }
+
+  main {
+    width: 95%;
+    margin: 20px auto;
+    padding: 10px;
+    font-size: 2.2rem;
+  }
+
+  header {
+    font-size: 3.4rem;
+  }
+
+  .intro {
+    font-size: 2rem;
+    width: 55%;
+    margin: 30px auto;
+  }
+
+  .rule {
+    border-width: 1px;
+    border-radius: 10px;
+    padding: 0 10px;
+  }
+
+  .warning-rule {
+    padding-left: 15px;
+    border-left-width: 7px;
+  }
+
+  .footnote {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    font-size: 16px;
+  }
+
+  header {
+    font-size: 28px;
+  }
+
+  .intro {
+    font-size: 15px;
+    width: 40%;
+  }
+
+  .footnote {
+    font-size: 14px;
+  }
+}
