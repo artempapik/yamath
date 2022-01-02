@@ -109,9 +109,7 @@ header {
 .questions-content {
   width: calc(100% - var(--questions-question-box-width));
   border-top: 5px solid var(--questions-border-color);
-  /* border-image: linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1; */
-  -webkit-border-image: -webkit-linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%);
-  -webkit-border-image-slice: 2;
+  border-image: linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1;
   opacity: var(--questions-exercises-opacity);
 }
 
@@ -159,7 +157,7 @@ summary {
   margin-top: 40px;
   padding: 3px;
   border-bottom: 2px solid var(--questions-border-color);
-  -webkit-border-image: -webkit-linear-gradient(to right bottom, var(--summary-exercise-color) 0%, var(--summary-exercise-color) 47%, rgba(255, 255, 255, 1) 94%) 1;
+  border-image: linear-gradient(to right bottom, var(--summary-exercise-color) 0%, var(--summary-exercise-color) 47%, rgba(255, 255, 255, 1) 94%) 1;
 }
 
 .exercises-header::before {
@@ -317,6 +315,14 @@ span.math-font {
 
   .questions-left-border {
     height: 12rem;
+  }
+
+  .questions-content ol li details {
+    padding: 0;
+  }
+
+  .exercises-content ul li sup.task {
+    font-size: 2rem;
   }
 
   .exercises-header {
