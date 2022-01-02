@@ -159,7 +159,7 @@ summary {
   margin-top: 40px;
   padding: 3px;
   border-bottom: 2px solid var(--questions-border-color);
-  border-image: linear-gradient(to right bottom, var(--summary-exercise-color) 0%, var(--summary-exercise-color) 47%, rgba(255, 255, 255, 1) 94%) 1;
+  -webkit-border-image: -webkit-linear-gradient(to right bottom, var(--summary-exercise-color) 0%, var(--summary-exercise-color) 47%, rgba(255, 255, 255, 1) 94%) 1;
 }
 
 .exercises-header::before {
@@ -278,7 +278,7 @@ span.math-font {
   }
 
   main {
-    width: 97%;
+    width: 95%;
     margin: 2rem auto;
     padding: 1rem;
     padding-bottom: 2rem;
@@ -299,7 +299,7 @@ span.math-font {
   .rule {
     border-width: .2rem;
     border-radius: 10px;
-    padding: 0 10px;
+    padding: 0 1.5rem;
   }
 
   .warning-rule {
