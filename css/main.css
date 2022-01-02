@@ -254,8 +254,8 @@ span.math-font {
 }
 
 @media
-  screen and (max-device-width: 800px),
-  screen and (max-width: 800px) {
+  screen and (max-device-width: 800px)
+  {
 
   :root {
     --intro-border-color: rgba(0, 0, 0, .8);
@@ -355,6 +355,8 @@ span.math-font {
 
 @media (max-width: 800px) {
   main {
+    width: 95%;
+    padding: 10px;
     font-size: 16px;
   }
 
@@ -373,5 +375,11 @@ span.math-font {
 
   .questions-content ol {
     padding-left: 30px;
+  }
+
+  .exercises-content ul {
+    margin: 0;
+    padding: 10px;
+    padding-top: 0;
   }
 }
