@@ -257,7 +257,6 @@ span.math-font {
   screen and (max-width: 800px) {
 
   html {
-    /* font-size: 50%; */
     -webkit-text-size-adjust: none;
   }
 
@@ -273,7 +272,7 @@ span.math-font {
   }
 
   header {
-    font-size: 10rem;
+    font-size: 3.4rem;
   }
 
   .intro {
