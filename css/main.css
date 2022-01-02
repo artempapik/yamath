@@ -317,18 +317,24 @@ span.math-font {
     height: 12rem;
   }
 
+  .questions-content {
+    border-right: 0;
+    border-bottom: 0;
+  }
+
   .questions-content ol li details {
     padding: 0;
   }
 
   .exercises-content ul li sup.task {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   .exercises-header {
     padding: 10px;
+    border-top: 0;
+    border-left: 0;
     border-right: 0;
-    border-bottom: 0;
   }
 
   .exercises-content ul {
