@@ -265,10 +265,10 @@ span.math-font {
   }
 
   main {
-    width: 95%;
+    width: 97%;
     margin: 20px auto;
     padding: 10px;
-    font-size: 2.4rem;
+    font-size: 2.6rem;
   }
 
   header {
@@ -276,7 +276,7 @@ span.math-font {
   }
 
   .intro {
-    font-size: 1.8rem;
+    font-size: 2rem;
     width: 55%;
     margin: 30px auto;
   }
@@ -293,7 +293,7 @@ span.math-font {
   }
 
   .footnote {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .exercises-header {
@@ -325,5 +325,9 @@ span.math-font {
 
   .footnote {
     font-size: 14px;
+  }
+
+  .questions-content ol {
+    padding-left: 30px;
   }
 }
