@@ -8,7 +8,7 @@
 
 :root {
   --intro-border-color: rgba(0, 0, 0, .4);
-  --intro-border-width: 1px;
+  --intro-border-width: 2px;
   --questions-border-color: #FFCD28;
   --questions-question-box-width: 25px;
   --questions-exercises-opacity: .8;
@@ -55,7 +55,6 @@ header {
   margin: 50px auto;
   border-top: var(--intro-border-width) dashed var(--intro-border-color);
   border-bottom: var(--intro-border-width) dashed var(--intro-border-color);
-  border-width: 2px;
   letter-spacing: 1px;
   font-family: 'Open Sans', sans-serif;
   font-size: 17px;
@@ -112,7 +111,7 @@ header {
   border-top: 5px solid var(--questions-border-color);
   /* border-image: linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1; */
   -webkit-border-image: -webkit-linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%);
-  -webkit-border-image-slice: 1;
+  -webkit-border-image-slice: 2;
   opacity: var(--questions-exercises-opacity);
 }
 
@@ -262,7 +261,7 @@ span.math-font {
 
   :root {
     --intro-border-color: rgba(0, 0, 0, .8);
-    --intro-border-width: 10em;
+    --intro-border-width: .2rem;
     --questions-question-box-width: 2.5rem;
   }
 
