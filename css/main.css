@@ -322,11 +322,13 @@ span.math-font {
   }
 
   .exercises-content ul li sup.task {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
 
   .exercises-header {
     padding: 10px;
+    border-right: 0;
+    border-bottom: 0;
   }
 
   .exercises-content ul {
