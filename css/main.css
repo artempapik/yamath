@@ -292,14 +292,14 @@ span.math-font {
   }
 
   .rule {
-    border-width: 1px;
+    border-width: .2rem;
     border-radius: 10px;
     padding: 0 10px;
   }
 
   .warning-rule {
     padding-left: 15px;
-    border-left-width: 7px;
+    border-left-width: 1rem;
   }
 
   .footnote {
