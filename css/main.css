@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
-@font-face {
-  font-family: 'Crash Number';
-  src: url('Crashnumberinggothic-MAjp.ttf');
-}
+@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
 
 :root {
   --intro-border-color: rgba(0, 0, 0, .4);
@@ -15,7 +11,7 @@
 }
 
 .math-font {
-  font-family: 'Crash Number';
+  font-family: 'STIX Two Text', serif;
 }
 
 .letter {
@@ -43,7 +39,6 @@ main {
 
 header {
   text-align: center;
-  font-family: 'Open Sans', sans-serif;
   letter-spacing: 1px;
   font-size: 30px;
 }
@@ -55,7 +50,6 @@ header {
   border-top: var(--intro-border-width) dashed var(--intro-border-color);
   border-bottom: var(--intro-border-width) dashed var(--intro-border-color);
   letter-spacing: 1px;
-  font-family: 'Open Sans', sans-serif;
   font-size: 17px;
 }
 
@@ -93,7 +87,7 @@ header {
 }
 
 .questions-question::before {
-  font-family: 'Crash Number';
+  font-family: 'STIX Two Text', serif;
   content: '?';
   color: #007600;
   font-size: 40px;
@@ -179,7 +173,7 @@ summary {
 }
 
 .exercises-content ul li sup.task {
-  font-family: 'Crash Number';
+  font-family: 'STIX Two Text', serif;
   font-size: 14px;
 }
 
@@ -191,10 +185,6 @@ summary {
   font-weight: normal;
   margin-top: 10px;
   margin-left: 25px;
-}
-
-span.math-font {
-  font-family: 'Crash Number';
 }
 
 .frac {
