@@ -295,6 +295,10 @@ summary {
     padding: 0;
   }
 
+  .exercises-content ul li details {
+    margin-top: 2rem;
+  }
+
   .exercises-content ul li sup.task {
     font-size: 2rem;
   }
