@@ -5,6 +5,7 @@
   --intro-border-color: rgba(0, 0, 0, .4);
   --intro-border-width: 2px;
   --questions-border-color: #FFCD28;
+  --questions-border-width: 5px;
   --questions-question-box-width: 25px;
   --questions-exercises-opacity: .8;
   --summary-exercise-color: #191970;
@@ -94,14 +95,14 @@ header {
 }
 
 .questions-left-border {
-  border-left: 5px solid var(--questions-border-color);
+  border-left: var(--questions-border-width) solid var(--questions-border-color);
   height: 120px;
   opacity: var(--questions-exercises-opacity);
 }
 
 .questions-content {
   width: calc(100% - var(--questions-question-box-width));
-  border-top: 5px solid var(--questions-border-color);
+  border-top: var(--questions-border-width) solid var(--questions-border-color);
   border-image: linear-gradient(to right top, rgba(255, 205, 40, 1) 0%, rgba(255, 205, 40, 1) 47%, rgba(255, 255, 255, 1) 94%) 1;
   opacity: var(--questions-exercises-opacity);
 }
@@ -230,6 +231,7 @@ summary {
   :root {
     --intro-border-color: rgba(0, 0, 0, .8);
     --intro-border-width: .2rem;
+    --questions-border-width: .45rem;
     --questions-question-box-width: 2.5rem;
   }
 
@@ -305,7 +307,7 @@ summary {
 
   .exercises-header {
     padding: 10px;
-    border-width: .3rem;
+    border-width: .35rem;
     border-top: 0;
     border-left: 0;
     border-right: 0;
