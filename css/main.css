@@ -115,22 +115,6 @@ header {
   padding-left: 7px;
 }
 
-details[open] summary ~ * {
-  animation: sweep .5s ease;
-}
-
-@keyframes sweep {
-  0% {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
 details p {
   color: #8B0000;
   margin: 8px 0;
@@ -330,10 +314,6 @@ summary {
 
   .questions-content ol {
     padding-left: 5rem;
-  }
-
-  details[open] summary ~ * {
-    animation: none;
   }
 }
 
