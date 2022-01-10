@@ -290,6 +290,7 @@ summary {
   .questions-content {
     border-right: 0;
     border-bottom: 0;
+    border-image: none;
   }
 
   .questions-content ol li details {
