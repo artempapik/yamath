@@ -1,12 +1,7 @@
-doctype html
-html
-	head
-		title Ошибка
-		link(rel='stylesheet' href='/main.css')
-	body
-		main
-			header Ошибка
-			.rule.error
-				p
-					b Вы пытаетесь открыть несуществующий файл.
-				p Пожалуйста, выберите другой.
+extends layout
+
+block content
+	.rule.error
+		p
+			b Вы пытаетесь открыть несуществующий файл.
+		p Пожалуйста, выберите другой.

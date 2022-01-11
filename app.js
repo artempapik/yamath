@@ -1,7 +1,6 @@
 import express from 'express'
 import favicon from 'serve-favicon'
 import path from 'path'
-import pug from 'pug'
 import fs from 'fs'
 
 const port = process.env.PORT || 3000
@@ -14,6 +13,7 @@ app.use(express.static('img'))
 app.use(favicon(`${dirname}/ico/math-logo.ico`))
 
 const articleToTitle = {
+  'error': 'Ошибка',
   'integers': 'Натуральные числа'
 }
 
@@ -34,9 +34,6 @@ app.get('/', (_, res) => {
   res.redirect('/articles/integers')
 })
 
-app.get('/error', (_, res) => {
-  const html = pug.renderFile(`${dirname}/error.pug`)
-  res.send(html)
-})
+app.get('/error', (_, res) => res.render(`${dirname}/error.pug`, { title: articleToTitle['error'] }))
 
 app.listen(port)
