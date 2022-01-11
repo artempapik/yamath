@@ -36,8 +36,7 @@ main {
 }
 
 .container {
-  margin: 0 auto;
-  margin-top: 40px;
+  margin: 40px auto;
   padding: 20px 40px;
 }
 
