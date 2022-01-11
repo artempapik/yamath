@@ -11,12 +11,8 @@
   --summary-exercise-color: #191970;
 }
 
-.math-font {
-  font-family: 'STIX Two Text', serif;
-}
-
-.letter {
-  font-size: 22px;
+html {
+  touch-action: none;
 }
 
 body {
@@ -24,6 +20,14 @@ body {
   background-color: #FAF9F6;
   line-height: 1.5;
   letter-spacing: .5px;
+}
+
+.math-font {
+  font-family: 'STIX Two Text', serif;
+}
+
+.letter {
+  font-size: 22px;
 }
 
 main {
