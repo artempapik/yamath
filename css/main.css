@@ -11,10 +11,6 @@
   --summary-exercise-color: #191970;
 }
 
-html {
-  touch-action: pan-y;
-}
-
 body {
   margin: 0;
   background-color: #FAF9F6;
