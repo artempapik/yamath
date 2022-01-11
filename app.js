@@ -13,6 +13,10 @@ app.use(express.static('font'))
 app.use(express.static('img'))
 app.use(favicon(`${dirname}/ico/math-logo.ico`))
 
+const articleToTitle = {
+  'integers': 'Натуральные числа'
+}
+
 app.get('/articles/:article', (req, res) => {
   const article = req.params.article
   const path = `${dirname}/${article}.pug`
@@ -22,8 +26,7 @@ app.get('/articles/:article', (req, res) => {
     return
   }
 
-  const html = pug.renderFile(path)
-  res.send(html)
+  res.render(path, { title: articleToTitle[article] })
 })
 
 app.get('/', (_, res) => {
