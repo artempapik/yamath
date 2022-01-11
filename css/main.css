@@ -259,9 +259,12 @@ img {
   main {
     width: 95%;
     margin: 2rem auto;
-    padding: 1rem;
     padding-bottom: 2rem;
     font-size: 2.6rem;
+  }
+
+  .container {
+    padding: 1rem;
   }
 
   header {
@@ -328,6 +331,12 @@ img {
 
   .questions-content ol {
     padding-left: 5rem;
+  }
+
+  img {
+    margin-top: 4rem;
+    max-width: 100%;
+    transform: scale(1.5);
   }
 }
 
