@@ -27,15 +27,18 @@ body {
 }
 
 main {
-  width: 35%;
-  margin: 40px auto;
-  margin-bottom: 0;
-  padding: 20px 40px;
+  width: 40%;
+  margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  height: 100%;
   background-color: #fff;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
+}
+
+.container {
+  margin: 0 auto;
+  margin-top: 40px;
+  padding: 20px 40px;
 }
 
 header {
@@ -191,6 +194,12 @@ summary {
 
 .frac span.symbol {
   display: none;
+}
+
+img {
+  display: block;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .error {

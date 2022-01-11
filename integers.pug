@@ -5,221 +5,223 @@ html
 		link(rel='stylesheet' href='/main.css')
 	body
 		main
-			header Натуральные числа
-			.intro
-				p Сколько детей в классе?
-				p Сколько машин на дороге?
-				p А сколько конфет в коробке?
-			p Для того, чтобы ответить на эти вопросы, используют натуральные числа.
-			.rule
+			.container
+				header Натуральные числа
+				.intro
+					p Сколько детей в классе?
+					p Сколько машин на дороге?
+					p А сколько конфет в коробке?
+				p Для того, чтобы ответить на эти вопросы, используют натуральные числа.
+				.rule
+					p
+						b Натуральные числа
+						|  — это числа, которые используют для счёта предметов.
+					p
+						| Числа 
+						span.math-font
+							| 1, 7, 19, 85, 100 000
+						|  – 
+						i натуральные
+						| .
+					p
+						| Все вместе они образуют 
+						u ряд натуральных чисел
+						| , обозначаемый латинской буквой 
+						b
+							span.math-font N
+						| .
+				.warning-rule
+					p
+						span.math-font N = 1, 2, 3, ...
+						br
+						span.footnote
+							| (
+							span.math-font 3
+							|  точки означают, что ряд можно продолжать бесконечно)
 				p
-					b Натуральные числа
-					|  — это числа, которые используют для счёта предметов.
-				p
-					| Числа 
-					span.math-font
-						| 1, 7, 19, 85, 100 000
-					|  – 
-					i натуральные
+					| Наименьшее натуральное число – это 
+					span.math-font 1
 					| .
-				p
-					| Все вместе они образуют 
-					u ряд натуральных чисел
-					| , обозначаемый латинской буквой 
-					b
-						span.math-font N
-					| .
-			.warning-rule
-				p
-					span.math-font N = 1, 2, 3, ...
-					br
-					span.footnote
-						| (
-						span.math-font 3
-						|  точки означают, что ряд можно продолжать бесконечно)
-			p
-				| Наименьшее натуральное число – это 
-				span.math-font 1
-				| .
-			p Наибольшего натурального числа нет, потому что всегда можно прибавить к последнему числу в ряде единицу.
-			.questions
-				.questions-question
-				.questions-left-border
-				.questions-content
-					ol
+				p Наибольшего натурального числа нет, потому что всегда можно прибавить к последнему числу в ряде единицу.
+				.questions
+					.questions-question
+					.questions-left-border
+					.questions-content
+						ol
+							li
+								p Опишите ряд натуральных чисел.
+								details
+									summary Ответ
+									div
+										i
+											b Ряд натуральных чисел 
+										| — это совокупность чисел, расположенных в порядке возрастания.
+									p
+										| Он начинается с 
+										span.math-font 1
+										| .
+									p Ряд не имеет последнего числа.
+							li
+								p У каждого ли числа в ряде есть предыдущее число? А следующее?
+								details
+									summary Ответ
+									div
+										| Предыдущее число есть у каждого в ряде, кроме 
+										b единицы
+										| .
+									p Следующее есть у каждого.
+				.exercises-header
+				.exercises-content
+					ul
 						li
-							p Опишите ряд натуральных чисел.
+							div
+								span.title 1.
+									sup.task &#9675;
+								span  Из чисел 
+								span.math-font
+									span 5; 
+									.frac
+										span 1
+										span.symbol
+										span.bottom 6 
+									span ; 8; 129; 0; 
+									.frac
+										span 3
+										span.symbol
+										span.bottom 7
+									| ; 4 128; 
+									.frac
+										span 1
+										span.symbol
+										span.bottom 5
+								span  выберите натуральные.
 							details
 								summary Ответ
 								div
-									i
-										b Ряд натуральных чисел 
-									| — это совокупность чисел, расположенных в порядке возрастания.
-								p
-									| Он начинается с 
-									span.math-font 1
+									span.math-font
+										| 5; 8; 129; 4 128
 									| .
-								p Ряд не имеет последнего числа.
 						li
-							p У каждого ли числа в ряде есть предыдущее число? А следующее?
+							p
+								span.title 2.
+									sup.task &#9675;
+								span
+									|  Какое число в натуральном ряде стоит перед числом 
+									span.math-font
+										| 4 500
+									| ? А после него?
 							details
-								summary Ответ
-								div
-									| Предыдущее число есть у каждого в ряде, кроме 
-									b единицы
-									| .
-								p Следующее есть у каждого.
-			.exercises-header
-			.exercises-content
-				ul
-					li
-						div
-							span.title 1.
-								sup.task &#9675;
-							span  Из чисел 
-							span.math-font
-								span 5; 
-								.frac
-									span 1
-									span.symbol
-									span.bottom 6 
-								span ; 8; 129; 0; 
-								.frac
-									span 3
-									span.symbol
-									span.bottom 7
-								| ; 4 128; 
-								.frac
-									span 1
-									span.symbol
-									span.bottom 5
-							span  выберите натуральные.
-						details
-							summary Ответ
-							div
-								span.math-font
-									| 5; 8; 129; 4 128
-								| .
-					li
-						p
-							span.title 2.
-								sup.task &#9675;
-							span
-								|  Какое число в натуральном ряде стоит перед числом 
-								span.math-font
-									| 4 500
-								| ? А после него?
-						details
-								summary Ответ
-								div
-									| Перед 
-									span.math-font
-										b
-											| 4 500
-									|  стоит 
-									span.math-font
-										| 4 499
-									| , после – 
-									span.math-font
-										| 4 501
-									| .			
-					li
-						p
-							span.title 3.
-								sup.task &#9679;
-							span
-								|  Сколько чисел в натуральном ряде стоит между числами 
-								span.math-font 29
-								|
-								| и 
-								span.math-font 111
-								| ?
-						details
-							summary Ответ
-							div
-								p Удобно будет сначала посчитать кол-во чисел по краям:
-								p
-									| Между 
+									summary Ответ
+									div
+										| Перед 
+										span.math-font
+											b
+												| 4 500
+										|  стоит 
+										span.math-font
+											| 4 499
+										| , после – 
+										span.math-font
+											| 4 501
+										| .			
+						li
+							p
+								span.title 3.
+									sup.task &#9679;
+								span
+									|  Сколько чисел в натуральном ряде стоит между числами 
 									span.math-font 29
 									|
 									| и 
-									span.math-font 30
-									|
-									| – одно натуральное число.
-								p
-									| Между 
-									span.math-font 100
-									|
-									| и 
 									span.math-font 111
-									|
-									| – ещё десять.
-								p
-									| Оставшихся (от 
-									span.math-font 30
-									|
-									| до 
-									span.math-font 100
-									| ) – 
-									span.math-font 70
-									| .
-								p
-									| В сумме получается 
-									span.math-font 1 + 10 + 70 = 
-										b 81 
-									| натуральное число.
-					li
-						p
-							span.title 4.
-								sup.task &#9679;&#9679;
-							span
-								|  Некоторое натуральное число, больше чем 
-								span.math-font 3
-								| , обозначили буквой 
-								span.math-font.letter
-									i a
-								| . Запишите для числа 
-								span.math-font.letter
-									i a
-								|  два предыдущих и три следующих натуральных числа.
-						details
-							summary Ответ
-							div
-								p
-									| Каждое следующее число в натуральном ряде на 
-									span.math-font 1
-									|
-									| больше, чем предыдущее; а каждое перед предыдущим – на 
-									span.math-font 1
-									|
-									| меньше.
-								p
-									| Делаем вывод, что три следующих числа для нашего 
+									| ?
+							details
+								summary Ответ
+								div
+									p Удобно будет сначала посчитать кол-во чисел по краям:
+									p
+										| Между 
+										span.math-font 29
+										|
+										| и 
+										span.math-font 30
+										|
+										| – одно натуральное число.
+									p
+										| Между 
+										span.math-font 100
+										|
+										| и 
+										span.math-font 111
+										|
+										| – ещё десять.
+									p
+										| Оставшихся (от 
+										span.math-font 30
+										|
+										| до 
+										span.math-font 100
+										| ) – 
+										span.math-font 70
+										| .
+									p
+										| В сумме получается 
+										span.math-font 1 + 10 + 70 = 
+											b 81 
+										| натуральное число.
+						li
+							p
+								span.title 4.
+									sup.task &#9679;&#9679;
+								span
+									|  Некоторое натуральное число, больше чем 
+									span.math-font 3
+									| , обозначили буквой 
 									span.math-font.letter
 										i a
-									|
-									| можно обозначить как 
+									| . Запишите для числа 
 									span.math-font.letter
-										i
-											b a+1
-									| , 
-									span.math-font.letter
-										i
-											b a+2
-									|
-									| и 
-									span.math-font.letter
-										i
-											b a+3
-									| .
-								p
-									| А два предыдущих – как 
-									span.math-font.letter
-										i
-											b a-1
-									|
-									| и 
-									span.math-font.letter
-										i
-											b a-2
-									| .
+										i a
+									|  два предыдущих и три следующих натуральных числа.
+							details
+								summary Ответ
+								div
+									p
+										| Каждое следующее число в натуральном ряде на 
+										span.math-font 1
+										|
+										| больше, чем предыдущее; а каждое перед предыдущим – на 
+										span.math-font 1
+										|
+										| меньше.
+									p
+										| Делаем вывод, что три следующих числа для нашего 
+										span.math-font.letter
+											i a
+										|
+										| можно обозначить как 
+										span.math-font.letter
+											i
+												b a+1
+										| , 
+										span.math-font.letter
+											i
+												b a+2
+										|
+										| и 
+										span.math-font.letter
+											i
+												b a+3
+										| .
+									p
+										| А два предыдущих – как 
+										span.math-font.letter
+											i
+												b a-1
+										|
+										| и 
+										span.math-font.letter
+											i
+												b a-2
+										| .
+			img(src="/res7.png")

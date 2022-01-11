@@ -10,6 +10,7 @@ const dirname = path.resolve()
 
 app.use(express.static('css'))
 app.use(express.static('font'))
+app.use(express.static('img'))
 app.use(favicon(`${dirname}/ico/math-logo.ico`))
 
 app.get('/articles/:article', (req, res) => {
