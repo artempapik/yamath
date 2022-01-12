@@ -222,6 +222,9 @@ p::before {
 
   .algebra p:hover, .geometry p:hover {
     padding-left: 0;
+    font-weight: normal;
+    background-color: #fff;
+    text-decoration: none;
   }
 
   .integers::before, .fractionals::before, .intro::before {
