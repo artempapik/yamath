@@ -167,15 +167,23 @@ p::before {
     padding: 2rem;
   }
 
+  .integers p:first-child, .fractionals p:first-child, .intro p:first-child {
+    padding-top: 2rem;
+  }
+
   .algebra, .geometry {
-    font-size: 3.6rem;
+    font-size: 4rem;
   }
 
   .themes {
-    font-size: 2.6rem;
+    font-size: 3rem;
   }
 
   .algebra p, .geometry p {
-    font-size: 2.4rem;
+    font-size: 2.6rem;
+  }
+
+  .algebra::before, .geometry::before {
+    padding-left: 2rem;
   }
 }
