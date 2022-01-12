@@ -96,3 +96,12 @@ a {
   text-decoration: none;
   color: currentColor;
 }
+
+p::before {
+  content: '\2022';
+  color: chocolate;
+  font-weight: bold;
+  display: inline-block;
+  width: 1.2rem;
+  margin-left: -1rem;
+}

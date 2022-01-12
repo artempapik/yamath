@@ -11,17 +11,20 @@ html
             each theme in themes.algebra.integers
               if !theme.name
                 br
-              p
-                a(href=theme.href)=theme.name
+              else
+                p
+                  a(href=theme.href)=theme.name
           .fractionals
             each theme in themes.algebra.fractionals
               if !theme.name
                 br
-              p
-                a(href=theme.href)=theme.name
+              else
+                p
+                  a(href=theme.href)=theme.name
       .geometry
         each theme in themes.geometry
           if !theme.name
             br
-          p
-            a(href=theme.href)=theme.name
+          else
+            p
+              a(href=theme.href)=theme.name
