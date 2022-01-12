@@ -39,21 +39,21 @@ const themes = {
       { name: 'комбинаторные задачи' }
     ],
     fractionals: [
-      { name: ' обычные дроби' },
-      { name: ' правильные и неправильные дроби. сравнение дробей' },
-      { name: ' сложение и вычитание дробей с одинаковыми знаменателями' },
-      { name: ' дроби и деление натуральных чисел' },
-      { name: ' мешаные числа' },
+      { name: 'обычные дроби' },
+      { name: 'правильные и неправильные дроби. сравнение дробей' },
+      { name: 'сложение и вычитание дробей с одинаковыми знаменателями' },
+      { name: 'дроби и деление натуральных чисел' },
+      { name: 'мешаные числа' },
       {},
-      { name: ' десятичные дроби' },
-      { name: ' сравнение десятичных дробей' },
-      { name: ' округление чисел' },
-      { name: ' сложение и вычитание десятичных дробей' },
-      { name: ' умножение десятичных дробей' },
-      { name: ' деление десятичных дробей' },
+      { name: 'десятичные дроби' },
+      { name: 'сравнение десятичных дробей' },
+      { name: 'округление чисел' },
+      { name: 'сложение и вычитание десятичных дробей' },
+      { name: 'умножение десятичных дробей' },
+      { name: 'деление десятичных дробей' },
       {},
-      { name: ' среднее арифметическое' },
-      { name: ' проценты' }
+      { name: 'среднее арифметическое' },
+      { name: 'проценты' }
     ]
   },
   geometry: [
@@ -72,17 +72,15 @@ const themes = {
   ]
 }
 
-for (let i = 0; i < themes.algebra.integers.length; i++) {
-  themes.algebra.integers[i].href = `articles/${themes.algebra.integers[i].href}`
+const appendArticle = objects => {
+  for (let i = 0; i < objects.length; i++) {
+    objects[i].href = `articles/${objects[i].href}`
+  }
 }
 
-for (let i = 0; i < themes.algebra.fractionals.length; i++) {
-  themes.algebra.fractionals[i].href = `articles/${themes.algebra.fractionals[i].href}`
-}
-
-for (let i = 0; i < themes.geometry.length; i++) {
-  themes.geometry[i].href = `articles/${themes.geometry[i].href}`
-}
+appendArticle(themes.algebra.integers)
+appendArticle(themes.algebra.fractionals)
+appendArticle(themes.geometry)
 
 app.get('/articles/:article', (req, res) => {
   const article = `${req.params.article}.pug`
