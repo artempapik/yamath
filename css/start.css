@@ -90,3 +90,11 @@ main {
 .fractionals::before {
   content: 'дробные числа';
 }
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: currentColor;
+}
