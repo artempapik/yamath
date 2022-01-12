@@ -157,6 +157,10 @@ p::before {
 }
 
 @media (max-device-width: 800px) {
+  html {
+    -webkit-text-size-adjust: none;
+  }
+  
   .algebra p, .geometry p {
     margin-top: 1rem;
     padding: 0;
