@@ -40,7 +40,6 @@ main {
 }
 
 .algebra p, .geometry p {
-  /* padding-left: 15px; */
   transform: translateX(15px);
   font-size: 16px;
   font-family: 'Roboto Mono', monospace;
@@ -114,4 +113,54 @@ p::before {
   display: inline-block;
   width: 1.2rem;
   margin-left: -1rem;
+}
+
+@media
+  screen and (max-width: 800px),
+  screen and (max-device-width: 800px) {
+  main, .algebra .themes {
+    display: block;
+  }
+
+  .algebra, .integers, .fractionals, .geometry {
+    margin: 0;
+    width: 100%;
+  }
+
+  .algebra::before {
+    padding-left: 3rem;
+  }
+
+  .algebra p, .geometry p {
+    padding-left: 3rem;
+    transition: none;
+  }
+
+  .algebra p:hover, .geometry p:hover {
+    padding-left: 3rem;
+    transition: none;
+  }
+
+  .integers::before, .fractionals::before {
+    margin-left: 2rem;
+  }
+
+  .geometry p {
+    margin-left: 0;
+  }
+}
+
+@media (max-device-width: 800px) {
+  .algebra p, .geometry p {
+    margin-top: 1rem;
+    width: 95%;
+  }
+
+  .integers, .fractionals, .intro {
+    padding: 2rem;
+  }
+
+  .algebra p, .geometry p {
+    font-size: 14px;
+  }
 }
