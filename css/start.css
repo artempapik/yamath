@@ -196,4 +196,10 @@ p::before {
   .algebra p:hover, .geometry p:hover {
     padding-left: 0;
   }
+
+  .integers::before, .fractionals::before, .intro::before {
+    border-top: 0;
+    border-bottom: .4rem solid darkblue;
+    padding: 5px;
+  }
 }
