@@ -111,6 +111,34 @@ p::before {
   margin-left: -1rem;
 }
 
+@media (min-width: 801px) and (max-width: 1600px) {
+  .algebra {
+    margin-left: 0;
+  }
+}
+
+@media (min-width: 1231px) and (max-width: 1400px) {
+  .geometry {
+    padding-left: 2%;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1230px) {
+  .geometry {
+    padding-left: 0;
+  }
+}
+
+@media (min-width: 801px) and (max-width: 1150px) {
+  main {
+    display: block;
+  }
+
+  .algebra, .geometry {
+    width: 95%;
+  }
+}
+
 @media
   screen and (max-width: 800px),
   screen and (max-device-width: 800px) {
