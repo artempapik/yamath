@@ -22,9 +22,11 @@ html
                 p
                   a(href=theme.href)=theme.name
       .geometry
-        each theme in themes.geometry
-          if !theme.name
-            br
-          else
-            p
-              a(href=theme.href)=theme.name
+        .themes
+          .intro
+            each theme in themes.geometry
+              if !theme.name
+                br
+              else
+                p
+                  a(href=theme.href)=theme.name
