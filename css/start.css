@@ -160,12 +160,6 @@ p::before {
   html {
     -webkit-text-size-adjust: none;
   }
-  
-  .algebra p, .geometry p {
-    margin-top: 1rem;
-    padding: 0;
-    width: 95%;
-  }
 
   .integers, .fractionals, .intro {
     padding: 2rem;
@@ -184,6 +178,8 @@ p::before {
   }
 
   .algebra p, .geometry p {
+    margin-top: 1rem;
+    padding: 0;
     font-size: 2.6rem;
     width: 100%;
   }
