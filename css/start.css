@@ -192,4 +192,8 @@ p::before {
     width: 2rem;
     margin-left: -1rem;
   }
+
+  .algebra p:hover, .geometry p:hover {
+    padding-left: 0;
+  }
 }
