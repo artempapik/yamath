@@ -1,3 +1,11 @@
+mixin make_themes(themes)
+  each theme in themes
+    if !theme.name
+      br
+    else
+      p
+        a(href=theme.href)=theme.name
+
 doctype html
 html
   head
@@ -12,26 +20,11 @@ html
       .algebra
         .themes
           .integers
-            each theme in themes.algebra.integers
-              if !theme.name
-                br
-              else
-                p
-                  a(href=theme.href)=theme.name
+            +make_themes(themes.algebra.integers)
           .fractionals
-            each theme in themes.algebra.fractionals
-              if !theme.name
-                br
-              else
-                p
-                  a(href=theme.href)=theme.name
+            +make_themes(themes.algebra.fractionals)
       .geometry
         .themes
           .intro
-            each theme in themes.geometry
-              if !theme.name
-                br
-              else
-                p
-                  a(href=theme.href)=theme.name
+            +make_themes(themes.geometry)
     script(type='module' src='startpage.js')
