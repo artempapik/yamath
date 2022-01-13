@@ -304,5 +304,6 @@ button {
   p {
     margin: 0;
     margin-top: 1.2rem !important;
+    line-height: 1.4;
   }
 }
