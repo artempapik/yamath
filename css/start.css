@@ -235,6 +235,9 @@ button {
 @media (max-device-width: 800px) {
   html {
     -webkit-text-size-adjust: none;
+  }
+
+  body {
     margin-bottom: 15rem;
   }
 
