@@ -2,11 +2,12 @@ import express from 'express'
 import favicon from 'serve-favicon'
 import path from 'path'
 import fs from 'fs'
-import { fifthForm, sixthForm, MIN_FORM, MAX_FORM } from '../yamath/data/constants.js'
 
 const port = process.env.PORT || 3000
 const app = express()
 const dirname = path.resolve()
+
+const { fifthForm, sixthForm, MIN_FORM, MAX_FORM } = await import(`file:${dirname}/data/constants.js`)
 
 app.use(express.static('css'))
 app.use(express.static('scripts'))
