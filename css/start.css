@@ -57,7 +57,6 @@ main {
   background-color: chocolate;
   font-weight: bold;
   padding-left: 25px;
-  text-decoration: underline;
 }
 
 .integers p:first-child, .fractionals p:first-child {
