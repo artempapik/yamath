@@ -44,7 +44,7 @@ main {
   display: flex;
 }
 
-.algebra p, .geometry p {
+.algebra a, .geometry a {
   transform: translateX(15px);
   font-size: 16px;
   font-family: 'Roboto Mono', monospace;
@@ -53,13 +53,13 @@ main {
   transition: padding .2s;
 }
 
-.algebra p:hover, .geometry p:hover {
+.algebra a:hover, .geometry a:hover {
   background-color: chocolate;
   font-weight: bold;
   padding-left: 25px;
 }
 
-.integers p:first-child, .fractionals p:first-child {
+.integers a:first-child, .fractionals a:first-child {
   margin-top: 30px;
 }
 
@@ -72,7 +72,7 @@ main {
   content: 'геометрия';
 }
 
-.geometry p:first-child {
+.geometry a:first-child {
   margin-top: 30px;
 }
 
@@ -107,7 +107,7 @@ a {
   cursor: pointer;
 }
 
-p::before {
+a::before {
   content: '\2022';
   color: chocolate;
   font-weight: bold;
@@ -204,18 +204,18 @@ button {
     padding-left: 3rem;
   }
 
-  .algebra p, .geometry p {
+  .algebra a, .geometry a {
     padding-left: 3rem;
     transition: none;
     transform: none;
   }
 
-  .algebra p:hover, .geometry p:hover {
+  .algebra a:hover, .geometry a:hover {
     padding-left: 3rem;
     transition: none;
   }
 
-  .geometry p {
+  .geometry a {
     margin-left: 0;
   }
 
@@ -258,7 +258,7 @@ button {
     padding: 2rem;
   }
 
-  .integers p:first-child, .fractionals p:first-child, .intro p:first-child {
+  .integers a:first-child, .fractionals a:first-child, .intro a:first-child {
     padding-top: 2rem;
   }
 
@@ -272,7 +272,7 @@ button {
     font-size: 3.2rem;
   }
 
-  .algebra p, .geometry p {
+  .algebra a, .geometry a {
     margin-top: 1rem;
     padding: 0;
     font-size: 2.7rem;
@@ -282,12 +282,12 @@ button {
     padding-left: 2rem;
   }
 
-  p::before {
+  a::before {
     width: 2.5rem;
     margin-left: -1rem;
   }
 
-  .algebra p:hover, .geometry p:hover {
+  .algebra a:hover, .geometry a:hover {
     padding-left: 0;
     font-weight: normal;
     background-color: #fff;
@@ -301,11 +301,11 @@ button {
     line-height: 2.5;
   }
 
-  p:first-child {
+  a:first-child {
     padding-top: 0 !important;
   }
 
-  p {
+  a {
     margin: 0;
     margin-top: 1.2rem !important;
     line-height: 1.4;
