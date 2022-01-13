@@ -284,7 +284,6 @@ button {
   }
 
   .algebra p:hover, .geometry p:hover {
-    pointer-events: none;
     padding-left: 0;
     font-weight: normal;
     background-color: #fff;
@@ -295,5 +294,9 @@ button {
     border-top: 0;
     border-bottom: .4rem solid darkblue;
     padding: 5px;
+  }
+
+  p {
+    margin: 0;
   }
 }
