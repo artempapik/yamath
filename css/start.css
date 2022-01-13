@@ -294,11 +294,11 @@ button {
     border-top: 0;
     border-bottom: .4rem solid darkblue;
     padding: 5px;
+    line-height: 3;
   }
 
   p:first-child {
-    padding: 0 !important;
-    margin-top: 5rem !important;
+    padding-top: 0 !important;
   }
 
   p {
