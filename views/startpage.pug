@@ -1,9 +1,13 @@
 doctype html
 html
   head
-    title 5 класс
-    link(rel='stylesheet' href='/start.css')
+    title #{form} класс
+    link(rel='stylesheet' href='start.css')
   body
+    header
+      each name in ['back', 'forward']
+        button(id=name)
+          a
     main
       .algebra
         .themes
@@ -30,3 +34,4 @@ html
               else
                 p
                   a(href=theme.href)=theme.name
+    script(type='module' src='startpage.js')

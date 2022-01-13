@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
+:root {
+  --button-back: '\2190';
+  --button-forward: '\2192';
+}
+
 body {
   margin: 0;
 }
@@ -100,6 +105,7 @@ main {
 a {
   text-decoration: none;
   color: currentColor;
+  cursor: pointer;
 }
 
 p::before {
@@ -111,7 +117,46 @@ p::before {
   margin-left: -1rem;
 }
 
+header {
+  width: fit-content;
+  margin: 0 auto;
+}
+
+#back {
+  margin-right: 15px;
+}
+
+#forward {
+  margin-left: 15px;
+}
+
+#back a::before, #forward a::before {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 17px;
+}
+
+#back a::before {
+  content: var(--button-back);
+}
+
+#forward a::before {
+  content: var(--button-forward);
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
 @media (min-width: 801px) and (max-width: 1600px) {
+  header {
+    margin-left: 1rem;
+  }
+
   .algebra {
     margin-left: 0;
   }
@@ -142,6 +187,10 @@ p::before {
 @media
   screen and (max-width: 800px),
   screen and (max-device-width: 800px) {
+  header {
+    margin-left: 1rem;
+  }
+
   main, .algebra .themes {
     display: block;
   }
@@ -187,6 +236,19 @@ p::before {
 @media (max-device-width: 800px) {
   html {
     -webkit-text-size-adjust: none;
+  }
+
+  header {
+    margin-top: 1.5rem;
+    margin-left: 2.5rem;
+  }
+
+  button {
+    padding: 1.2rem 2.3rem;
+  }
+
+  #back a::before, #forward a::before {
+    font-size: 3rem;
   }
 
   .integers, .fractionals, .intro {
