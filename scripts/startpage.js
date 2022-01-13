@@ -12,9 +12,13 @@ const nextForm = form + 1
 if (previousForm > MIN_FORM) {
   backButton.firstChild.href = `/${previousForm}`
   document.documentElement.style.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
+} else {
+  backButton.style.display = 'none'
 }
 
 if (nextForm < MAX_FORM) {
   forwardButton.firstChild.href = `/${form + 1}`
   document.documentElement.style.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
+} else {
+  forwardButton.style.display = 'none'
 }
