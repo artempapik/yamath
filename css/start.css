@@ -294,7 +294,7 @@ button {
     border-top: 0;
     border-bottom: .4rem solid darkblue;
     padding: 5px;
-    line-height: 3;
+    line-height: 2.5;
   }
 
   p:first-child {
