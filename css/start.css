@@ -44,7 +44,7 @@ main {
   display: flex;
 }
 
-.algebra a, .geometry a {
+.algebra p, .geometry p {
   transform: translateX(15px);
   font-size: 16px;
   font-family: 'Roboto Mono', monospace;
@@ -53,13 +53,13 @@ main {
   transition: padding .2s;
 }
 
-.algebra a:hover, .geometry a:hover {
+.algebra p:hover, .geometry p:hover {
   background-color: chocolate;
   font-weight: bold;
   padding-left: 25px;
 }
 
-.integers a:first-child, .fractionals a:first-child {
+.integers p:first-child, .fractionals p:first-child {
   margin-top: 30px;
 }
 
@@ -72,7 +72,7 @@ main {
   content: 'геометрия';
 }
 
-.geometry a:first-child {
+.geometry p:first-child {
   margin-top: 30px;
 }
 
@@ -102,14 +102,12 @@ main {
 }
 
 a {
-  display: block;
-  margin-bottom: 8px;
   text-decoration: none;
   color: currentColor;
   cursor: pointer;
 }
 
-a::before {
+p::before {
   content: '\2022';
   color: chocolate;
   font-weight: bold;
@@ -206,18 +204,18 @@ button {
     padding-left: 3rem;
   }
 
-  .algebra a, .geometry a {
+  .algebra p, .geometry p {
     padding-left: 3rem;
     transition: none;
     transform: none;
   }
 
-  .algebra a:hover, .geometry a:hover {
+  .algebra p:hover, .geometry p:hover {
     padding-left: 3rem;
     transition: none;
   }
 
-  .geometry a {
+  .geometry p {
     margin-left: 0;
   }
 
@@ -260,7 +258,7 @@ button {
     padding: 2rem;
   }
 
-  .integers a:first-child, .fractionals a:first-child, .intro a:first-child {
+  .integers p:first-child, .fractionals p:first-child, .intro p:first-child {
     padding-top: 2rem;
   }
 
@@ -274,7 +272,7 @@ button {
     font-size: 3.2rem;
   }
 
-  .algebra a, .geometry a {
+  .algebra p, .geometry p {
     margin-top: 1rem;
     padding: 0;
     font-size: 2.7rem;
@@ -284,12 +282,12 @@ button {
     padding-left: 2rem;
   }
 
-  a::before {
+  p::before {
     width: 2.5rem;
     margin-left: -1rem;
   }
 
-  .algebra a:hover, .geometry a:hover {
+  .algebra p:hover, .geometry p:hover {
     padding-left: 0;
     font-weight: normal;
     background-color: #fff;
@@ -303,11 +301,11 @@ button {
     line-height: 2.5;
   }
 
-  a:first-child {
+  p:first-child {
     padding-top: 0 !important;
   }
 
-  a {
+  p {
     margin: 0;
     margin-top: 1.2rem !important;
     line-height: 1.4;

@@ -6,7 +6,8 @@ html
   body
     header
       each name in ['back', 'forward']
-        a(id=name)
+        button(id=name)
+          a
     main
       .algebra
         .themes
@@ -15,13 +16,15 @@ html
               if !theme.name
                 br
               else
-                a(href=theme.href)=theme.name
+                p
+                  a(href=theme.href)=theme.name
           .fractionals
             each theme in themes.algebra.fractionals
               if !theme.name
                 br
               else
-                a(href=theme.href)=theme.name
+                p
+                  a(href=theme.href)=theme.name
       .geometry
         .themes
           .intro
@@ -29,5 +32,6 @@ html
               if !theme.name
                 br
               else
-                a(href=theme.href)=theme.name
+                p
+                  a(href=theme.href)=theme.name
     script(type='module' src='startpage.js')
