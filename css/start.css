@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
   --button-back: '';
@@ -9,6 +10,74 @@
 
 body {
   margin: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#back {
+  margin-right: 15px;
+}
+
+#forward {
+  margin-left: 15px;
+}
+
+#back a::before, #forward a::before {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 17px;
+}
+
+#back a::before {
+  content: var(--button-back);
+}
+
+#forward a::before {
+  content: var(--button-forward);
+}
+
+button {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  padding: 10px 25px;
+  border-radius: 10px;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  transition: box-shadow .2s;
+}
+
+button:hover {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+}
+
+input {
+  font-family: 'Poppins', 'FontAwesome';
+  width: 14rem;
+  letter-spacing: .6px;
+  font-size: 16px;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  border: 0;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: .2s;
+}
+
+input:hover {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+input:focus {
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px, rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+  outline: none;
+}
+
+input.mobile {
+  display: none;
 }
 
 main {
@@ -117,41 +186,6 @@ p::before {
   margin-left: -1rem;
 }
 
-header {
-  width: fit-content;
-  margin: 0 auto;
-}
-
-#back {
-  margin-right: 15px;
-}
-
-#forward {
-  margin-left: 15px;
-}
-
-#back a::before, #forward a::before {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 17px;
-}
-
-#back a::before {
-  content: var(--button-back);
-}
-
-#forward a::before {
-  content: var(--button-forward);
-}
-
-button {
-  margin-top: 10px;
-  margin-bottom: 20px;
-  padding: 10px 25px;
-  border-radius: 10px;
-  border: 0;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-}
-
 @media (min-width: 801px) and (max-width: 1600px) {
   header {
     margin-left: 1rem;
@@ -159,6 +193,10 @@ button {
 
   .algebra {
     margin-left: 0;
+  }
+
+  header {
+    align-items: flex-start;
   }
 }
 
@@ -189,6 +227,7 @@ button {
   screen and (max-device-width: 800px) {
   header {
     margin-left: 1rem;
+    align-items: flex-start;
   }
 
   main, .algebra .themes {
@@ -246,6 +285,20 @@ button {
   header {
     margin-top: 1.5rem;
     margin-left: 2.5rem;
+  }
+
+  input {
+    width: 21rem;
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem;
+  }
+
+  input.desktop {
+    display: none;
+  }
+
+  input.mobile {
+    display: block;
   }
 
   button {

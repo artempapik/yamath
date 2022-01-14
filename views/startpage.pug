@@ -11,11 +11,15 @@ html
   head
     title #{form} класс
     link(rel='stylesheet' href='start.css')
+    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   body
     header
-      each name in ['back', 'forward']
-        button(id=name)
-          a
+      <input class='desktop' placeholder='Поиск по теме...                  &#xF002;'>
+      <input class='mobile' placeholder='Поиск по теме...  &#xF002;'>
+      div
+        each name in ['back', 'forward']
+          button(id=name)
+            a
     main
       .algebra
         .themes
