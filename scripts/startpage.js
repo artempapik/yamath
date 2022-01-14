@@ -25,13 +25,32 @@ if (nextForm < MAX_FORM) {
   backButton.style = 'margin-right: 0'
 }
 
+// search
+
+const fifth = themes[0] // todo sometime...
+const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
+
 const input = document.querySelector('.desktop')
 input.addEventListener('keyup', e => {
   const searchString = e.target.value
 
-  const fifth = themes[0]
-  const algebra = fifth.algebra
-  const integers = algebra.integers
+  const div = document.createElement('div')
+  div.classList.add('algebra')
 
-  console.log(integers.filter(i => i.name && i.name.includes(searchString)))
+  allThemes
+    .filter(i => i.name && i.name.includes(searchString))
+    .map(r => {
+      const a = document.createElement('a')
+      a.textContent = r.name
+
+      const p = document.createElement('p')
+      p.appendChild(a)
+
+      return p
+    })
+    .forEach(r => div.appendChild(r))
+
+  const main = document.querySelector('main')
+  main.innerHTML = ''
+  main.appendChild(div)
 })
