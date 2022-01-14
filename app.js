@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000
 const app = express()
 const dirname = path.resolve()
 
-const { fifthForm, sixthForm, MIN_FORM, MAX_FORM } = await import(`file:${dirname}/data/constants.js`)
+const { MIN_FORM, MAX_FORM, themes } = await import(`file:${dirname}/data/constants.js`)
 
 app.use(express.static('css'))
 app.use(express.static('scripts'))
@@ -21,20 +21,6 @@ const articleToTitle = {
   'error': 'Ошибка',
   // rewrite
   'integers': 'Натуральные числа'
-}
-
-const themes = [fifthForm, sixthForm]
-
-const appendArticle = objects => {
-  for (let i = 0; i < objects.length; i++) {
-    objects[i].href = `articles/${objects[i].href}`
-  }
-}
-
-for (const theme of themes) {
-  appendArticle(theme.algebra.integers)
-  appendArticle(theme.algebra.fractionals)
-  appendArticle(theme.geometry)
 }
 
 app.get('/articles/:article', (req, res) => {

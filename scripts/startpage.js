@@ -14,6 +14,7 @@ if (previousForm > MIN_FORM) {
   document.documentElement.style.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
 } else {
   backButton.style.display = 'none'
+  forwardButton.style = 'margin-left: 0'
 }
 
 if (nextForm < MAX_FORM) {
@@ -21,4 +22,5 @@ if (nextForm < MAX_FORM) {
   document.documentElement.style.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
 } else {
   forwardButton.style.display = 'none'
+  backButton.style = 'margin-right: 0'
 }

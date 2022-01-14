@@ -60,7 +60,73 @@ const sixthForm = {
   geometry: []
 }
 
-const MIN_FORM = 4
-const MAX_FORM = 7
+const seventhForm = {
+  algebra: {
+    integers: [],
+    fractionals: []
+  },
+  geometry: []
+}
 
-export { fifthForm, sixthForm, MIN_FORM, MAX_FORM }
+const eigthForm = {
+  algebra: {
+    integers: [],
+    fractionals: []
+  },
+  geometry: []
+}
+
+const ninethForm = {
+  algebra: {
+    integers: [],
+    fractionals: []
+  },
+  geometry: []
+}
+
+const tenthForm = {
+  algebra: {
+    integers: [],
+    fractionals: []
+  },
+  geometry: []
+}
+
+const eleventhForm = {
+  algebra: {
+    integers: [],
+    fractionals: []
+  },
+  geometry: []
+}
+
+const themes = [
+  fifthForm,
+  sixthForm,
+  seventhForm,
+  eigthForm,
+  ninethForm,
+  tenthForm,
+  eleventhForm
+]
+
+const appendArticle = objects => {
+  for (let i = 0; i < objects.length; i++) {
+    objects[i].href = `articles/${objects[i].href}`
+  }
+}
+
+for (const theme of themes) {
+  appendArticle(theme.algebra.integers)
+  appendArticle(theme.algebra.fractionals)
+  appendArticle(theme.geometry)
+}
+
+const MIN_FORM = 4
+const MAX_FORM = 12
+
+export {
+  MIN_FORM,
+  MAX_FORM,
+  themes
+}

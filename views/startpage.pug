@@ -1,10 +1,10 @@
 mixin make_themes(themes)
   each theme in themes
-    if !theme.name
-      br
-    else
+    if theme.name
       p
         a(href=theme.href)=theme.name
+    else
+      br   
 
 doctype html
 html
