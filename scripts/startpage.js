@@ -1,4 +1,4 @@
-import { MIN_FORM, MAX_FORM } from '../constants.js'
+import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
 
 const backButton = document.querySelector('#back')
 const forwardButton = document.querySelector('#forward')
@@ -24,3 +24,14 @@ if (nextForm < MAX_FORM) {
   forwardButton.style.display = 'none'
   backButton.style = 'margin-right: 0'
 }
+
+const input = document.querySelector('.desktop')
+input.addEventListener('keyup', e => {
+  const searchString = e.target.value
+
+  const fifth = themes[0]
+  const algebra = fifth.algebra
+  const integers = algebra.integers
+
+  console.log(integers.filter(i => i.name && i.name.includes(searchString)))
+})
