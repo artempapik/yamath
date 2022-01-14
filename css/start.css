@@ -220,12 +220,13 @@ button {
     margin-left: 0;
   }
 
-  .geometry {
-    padding-left: 0;
-  }
-
   .algebra {
     margin-top: 20px;
+  }
+
+  .algebra, .geometry {
+    padding-left: 5px;
+    width: 95%;
   }
   
   .algebra::before {
