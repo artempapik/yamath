@@ -30,31 +30,38 @@ if (nextForm < MAX_FORM) {
 const fifth = themes[0] // todo sometime...
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
+const assignInput = input => {
+  if (!input) {
+    return
+  }
+
+  input.addEventListener('keyup', e => {
+    const searchString = e.target.value
+  
+    const div = document.createElement('div')
+    div.classList.add('algebra')
+  
+    allThemes
+      .filter(i => i.name && i.name.includes(searchString))
+      .map(r => {
+        const a = document.createElement('a')
+        a.textContent = r.name
+  
+        const p = document.createElement('p')
+        p.appendChild(a)
+  
+        return p
+      })
+      .forEach(r => div.appendChild(r))
+  
+    const main = document.querySelector('main')
+    main.innerHTML = ''
+    main.appendChild(div)
+  })
+}
+
 const inputDesktop = document.querySelector('.desktop')
 const inputMobile = document.querySelector('.mobile')
 
-const destInput = inputDesktop || inputMobile
-
-destInput.addEventListener('keyup', e => {
-  const searchString = e.target.value
-
-  const div = document.createElement('div')
-  div.classList.add('algebra')
-
-  allThemes
-    .filter(i => i.name && i.name.includes(searchString))
-    .map(r => {
-      const a = document.createElement('a')
-      a.textContent = r.name
-
-      const p = document.createElement('p')
-      p.appendChild(a)
-
-      return p
-    })
-    .forEach(r => div.appendChild(r))
-
-  const main = document.querySelector('main')
-  main.innerHTML = ''
-  main.appendChild(div)
-})
+assignInput(inputDesktop)
+assignInput(inputMobile)
