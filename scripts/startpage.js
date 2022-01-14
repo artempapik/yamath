@@ -32,28 +32,29 @@ const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...f
 
 const inputDesktop = document.querySelector('.desktop')
 const inputMobile = document.querySelector('.mobile')
-[inputDesktop, inputMobile].forEach(input => {
-  input.addEventListener('keyup', e => {
-    const searchString = e.target.value
-  
-    const div = document.createElement('div')
-    div.classList.add('algebra')
-  
-    allThemes
-      .filter(i => i.name && i.name.includes(searchString))
-      .map(r => {
-        const a = document.createElement('a')
-        a.textContent = r.name
-  
-        const p = document.createElement('p')
-        p.appendChild(a)
-  
-        return p
-      })
-      .forEach(r => div.appendChild(r))
-  
-    const main = document.querySelector('main')
-    main.innerHTML = ''
-    main.appendChild(div)
-  })
+
+const destInput = inputDesktop || inputMobile
+
+destInput.addEventListener('keyup', e => {
+  const searchString = e.target.value
+
+  const div = document.createElement('div')
+  div.classList.add('algebra')
+
+  allThemes
+    .filter(i => i.name && i.name.includes(searchString))
+    .map(r => {
+      const a = document.createElement('a')
+      a.textContent = r.name
+
+      const p = document.createElement('p')
+      p.appendChild(a)
+
+      return p
+    })
+    .forEach(r => div.appendChild(r))
+
+  const main = document.querySelector('main')
+  main.innerHTML = ''
+  main.appendChild(div)
 })
