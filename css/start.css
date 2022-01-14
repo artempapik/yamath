@@ -300,13 +300,7 @@ p::before {
 
   input.mobile {
     display: block;
-    border: 1px solid #000;
-    outline: orange;
-  }
-
-  input:focus {
-    outline: orange;
-
+    border: .1rem solid #000;
   }
 
   button {
