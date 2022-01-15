@@ -27,8 +27,6 @@ if (nextForm < MAX_FORM) {
 
 // search
 
-const isLetter = s => (/[а-я]/).test(s)
-
 const fifth = themes[0] // todo sometime...
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
@@ -95,32 +93,29 @@ const assignInput = input => {
       return
     }
 
-    const searchString = transliterate(e.target.value.trim().toLowerCase())
+    const inputValue = e.target.value.trim()
 
-    if (!searchString) {
+    if (!inputValue) {
       restorePage()
       return
     }
 
-    if (!isLetter(searchString)) {
-      return
-    }
-  
+    const searchString = transliterate(inputValue.toLowerCase())
     const div = document.createElement('div')
     div.classList.add('algebra')
   
     allThemes
-      .filter(i => i.name && i.name.includes(searchString))
-      .map(r => {
-        const a = document.createElement('a')
-        a.textContent = r.name
+      .filter(theme => theme.name && theme.name.includes(searchString))
+      .map(theme => {
+        const link = document.createElement('a')
+        link.textContent = theme.name
   
-        const p = document.createElement('p')
-        p.appendChild(a)
+        const paragraph = document.createElement('p')
+        paragraph.appendChild(link)
   
-        return p
+        return paragraph
       })
-      .forEach(r => div.appendChild(r))
+      .forEach(paragraph => div.appendChild(paragraph))
   
     main.innerHTML = ''
     main.appendChild(div)

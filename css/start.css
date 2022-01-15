@@ -63,6 +63,7 @@ button:hover {
 
 input {
   font-family: 'Poppins', 'FontAwesome';
+  color: #585858;
   width: 15rem;
   letter-spacing: .6px;
   font-size: 16px;
