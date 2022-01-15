@@ -27,8 +27,50 @@ if (nextForm < MAX_FORM) {
 
 // search
 
+const isLetter = s => (/[а-я]/).test(s)
+
 const fifth = themes[0] // todo sometime...
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
+
+const main = document.querySelector('main')
+
+const allMarkup = main.innerHTML
+
+//
+
+const engToRus = {
+  'a': 'ф',
+  'b': 'и',
+  'c': 'с',
+  'd': 'в',
+  'e': 'у',
+  'f': 'а',
+  'g': 'п',
+  'h': 'р',
+  'i': 'ш',
+  'j': 'о',
+  'k': 'л',
+  'l': 'д',
+  'm': 'ь',
+  'n': 'т',
+  'o': 'щ',
+  'p': 'з',
+  'q': 'й',
+  'r': 'к',
+  's': 'ы',
+  't': 'е',
+  'u': 'г',
+  'v': 'м',
+  'w': 'ц',
+  'x': 'ч',
+  'y': 'н',
+  'z': 'я'
+}
+
+const transliterate = word => word
+  .split('')
+  .map(symbol => engToRus[symbol] || symbol)
+  .join('')
 
 const assignInput = input => {
   if (!input) {
@@ -36,7 +78,20 @@ const assignInput = input => {
   }
 
   input.addEventListener('keyup', e => {
-    const searchString = e.target.value
+    const searchString = transliterate(e.target.value.toLowerCase())
+
+    if (!searchString) {
+      if (main.innerHTML === allMarkup) {
+        return
+      }
+
+      main.innerHTML = allMarkup
+      return
+    }
+
+    if (!isLetter(searchString)) {
+      return
+    }
   
     const div = document.createElement('div')
     div.classList.add('algebra')
@@ -54,7 +109,6 @@ const assignInput = input => {
       })
       .forEach(r => div.appendChild(r))
   
-    const main = document.querySelector('main')
     main.innerHTML = ''
     main.appendChild(div)
   })
