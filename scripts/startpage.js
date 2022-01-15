@@ -36,7 +36,11 @@ const main = document.querySelector('main')
 
 const allMarkup = main.innerHTML
 
-//
+const restorePage = () => {
+  if (main.innerHTML !== allMarkup) {
+    main.innerHTML = allMarkup
+  }
+}
 
 const engToRus = {
   'a': 'ф',
@@ -80,25 +84,14 @@ const assignInput = input => {
   input.addEventListener('keyup', e => {
     if (e.key === 'Escape') {
       input.value = ''
-
-      // define function
-      if (main.innerHTML === allMarkup) {
-        return
-      }
-
-      main.innerHTML = allMarkup
+      restorePage()
       return
     }
 
-    const searchString = transliterate(e.target.value.toLowerCase())
+    const searchString = transliterate(e.target.value.trim().toLowerCase())
 
     if (!searchString) {
-      // define function
-      if (main.innerHTML === allMarkup) {
-        return
-      }
-
-      main.innerHTML = allMarkup
+      restorePage()
       return
     }
 
