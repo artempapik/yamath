@@ -78,9 +78,22 @@ const assignInput = input => {
   }
 
   input.addEventListener('keyup', e => {
+    if (e.key === 'Escape') {
+      input.value = ''
+
+      // define function
+      if (main.innerHTML === allMarkup) {
+        return
+      }
+
+      main.innerHTML = allMarkup
+      return
+    }
+
     const searchString = transliterate(e.target.value.toLowerCase())
 
     if (!searchString) {
+      // define function
       if (main.innerHTML === allMarkup) {
         return
       }
