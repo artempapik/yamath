@@ -390,20 +390,28 @@ p::before {
     padding-top: 2rem;
   }
 
-  .algebra, .geometry {
+  .algebra, .geometry, .search-result {
     padding-top: 2rem;
     font-size: 4.4rem;
     width: 90%;
+  }
+
+  .search-result {
+    font-size: 3.8rem;
   }
 
   .themes {
     font-size: 3.2rem;
   }
 
-  .algebra p, .geometry p {
+  .algebra p, .geometry p, .search-result p {
     margin-top: 1rem;
     padding: 0;
     font-size: 2.7rem;
+  }
+
+  .search-result p {
+    padding: .4rem;
   }
 
   .algebra::before, .geometry::before {
@@ -432,6 +440,15 @@ p::before {
 
   p:first-child {
     padding-top: 0 !important;
+  }
+
+  .search-result p:first-child {
+    margin-top: 3.5rem !important;
+  }
+
+  .search-result p::before {
+    font-size: 2.3rem;
+    width: 4rem;
   }
 
   p {
