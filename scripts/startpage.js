@@ -125,3 +125,11 @@ const inputMobile = document.querySelector('.mobile')
 
 assignInput(inputDesktop)
 assignInput(inputMobile)
+
+if (inputMobile) {
+  document.body.addEventListener('click', () => {
+    // alert('')
+    console.log(1)
+    document.querySelector('main').innerHTML = ''
+  })
+}
