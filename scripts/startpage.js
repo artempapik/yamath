@@ -14,15 +14,13 @@ document.documentElement.style.setProperty('--button-current', `'${currentForm} 
 if (previousForm > MIN_FORM) {
   backButton.firstChild.href = `/${previousForm}`
   document.documentElement.style.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
-} else {
-  backButton.style.visibility = 'hidden'
+  backButton.style.visibility = 'visible'
 }
 
 if (nextForm < MAX_FORM) {
   forwardButton.firstChild.href = `/${nextForm}`
   document.documentElement.style.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
-} else {
-  forwardButton.style.visibility = 'hidden'
+  forwardButton.style.visibility = 'visible'
 }
 
 // search

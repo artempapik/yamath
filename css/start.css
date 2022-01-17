@@ -7,6 +7,7 @@
   --button-back: '\2190  0 класс';
   --button-current: '';
   --button-forward: '0 класс \2192';
+  --scrollbar-length: 10px;
   --shadow-color: rgba(0, 0, 0, 0.07);
   --input-box-shadow:
     var(--shadow-color) 0px 1px 2px,
@@ -25,6 +26,10 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+#back, #forward {
+  visibility: hidden;
 }
 
 #back {
@@ -191,7 +196,7 @@ main {
 }
 
 .integers::before, .fractionals::before, .intro::before {
-  border-top: 4px solid darkblue;
+  border-top: 4px solid #00008B;
   padding: 5px;
 }
 
@@ -223,7 +228,7 @@ p::before {
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: var(--scrollbar-length);
 }
 
 ::-webkit-scrollbar-track {
@@ -239,24 +244,22 @@ p::before {
 }
 
 @media (min-width: 801px) and (max-width: 1600px) {
-  header {
-    margin-left: 1rem;
-  }
-
   .algebra {
     margin-left: 0;
   }
 }
 
-@media (min-width: 1231px) and (max-width: 1400px) {
-  .geometry {
-    padding-left: 2%;
+@media (min-width: 801px) and (max-width: 1400px) {
+  header {
+    margin-right: 15%;
   }
-}
 
-@media (min-width: 801px) and (max-width: 1230px) {
+  .algebra {
+    width: 59.5%;
+  }
+
   .geometry {
-    padding-left: 0;
+    padding-left: 2px;
   }
 }
 
@@ -266,11 +269,19 @@ p::before {
   }
 
   .algebra, .geometry {
-    width: 95%;
+    width: 97%;
+  }
+
+  .geometry {
+    padding-left: 2%;
   }
 }
 
 @media screen and (max-width: 800px), screen and (max-device-width: 800px) {
+  :root {
+    --scrollbar-length: 7px;
+  }
+
   main, .algebra .themes {
     display: block;
   }
