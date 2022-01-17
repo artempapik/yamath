@@ -384,6 +384,7 @@ p::before {
 
   .integers, .fractionals, .intro {
     padding: 2rem;
+    margin-top: 0;
   }
 
   .integers p:first-child, .fractionals p:first-child, .intro p:first-child {
