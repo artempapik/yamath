@@ -84,7 +84,7 @@ button:not(#current):hover {
   margin: 0 5px;
   padding: 10px 27px;
   background-color: #707070;
-  color: whitesmoke;
+  color: #F5F5F5;
   border-radius: 5px;
 }
 
@@ -222,22 +222,18 @@ p::before {
   margin-left: -1rem;
 }
 
-/* width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track */
 ::-webkit-scrollbar-track {
   background: #f1f1f1;
 }
 
-/* Handle */
 ::-webkit-scrollbar-thumb {
   background: #888;
 }
 
-/* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
@@ -359,12 +355,12 @@ p::before {
     border: .1rem solid #000;
   }
 
-  button {
+  button, #current {
     padding: 1.2rem 2.3rem;
   }
 
-  #back a::before, #forward a::before {
-    font-size: 3rem;
+  #back a::before, #current a::before, #forward a::before {
+    font-size: 2.7rem;
   }
 
   .integers, .fractionals, .intro {
