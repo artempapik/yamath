@@ -344,6 +344,7 @@ p::before {
     margin-bottom: 1.5rem;
     padding: 1rem 2.5rem;
     font-size: 2.7rem;
+    transition: none;
   }
 
   input.desktop {
@@ -357,6 +358,12 @@ p::before {
 
   button {
     padding: 1rem 1.8rem;
+    transition: none;
+  }
+
+  button:not(#current):hover {
+    box-shadow: none;
+    transform: none;
   }
 
   #current {
