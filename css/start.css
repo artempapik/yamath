@@ -290,7 +290,7 @@ p::before {
 
 @media screen and (max-width: 800px), screen and (max-device-width: 800px) {
   main, .algebra .themes {
-    display: block;
+    flex-direction: column;
   }
 
   .algebra, .integers, .fractionals, .geometry {
