@@ -12,7 +12,6 @@
 }
 
 body {
-  margin: 0;
   background-color: #FAF9F6;
   line-height: 1.5;
   letter-spacing: .5px;
@@ -242,10 +241,6 @@ img {
     --intro-border-width: .2rem;
     --questions-border-width: .45rem;
     --questions-question-box-width: 2.5rem;
-  }
-
-  html {
-    -webkit-text-size-adjust: none;
   }
 
   .letter {

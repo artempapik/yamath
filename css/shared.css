@@ -1,0 +1,35 @@
+:root {
+  --scrollbar-length: 10px;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-length);
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  margin: 0;
+}
+
+@media (max-device-width: 800px) {
+  html {
+    -webkit-text-size-adjust: none;
+  }
+}
+
+@media (max-width: 800px) {
+  :root {
+    --scrollbar-length: 7px;
+  }
+}
