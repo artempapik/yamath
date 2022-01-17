@@ -368,7 +368,7 @@ p::before {
 
   #current {
     padding: 1.2rem 2.3rem;
-    touch-action: none;
+    /* touch-action: none; */
   }
 
   #back a::before, #forward a::before {
