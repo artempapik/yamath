@@ -246,10 +246,6 @@ p::before {
   .algebra {
     margin-left: 0;
   }
-
-  header {
-    align-items: flex-start;
-  }
 }
 
 @media (min-width: 1231px) and (max-width: 1400px) {
@@ -274,14 +270,7 @@ p::before {
   }
 }
 
-@media
-  screen and (max-width: 800px),
-  screen and (max-device-width: 800px) {
-  header {
-    margin-left: 1rem;
-    align-items: flex-start;
-  }
-
+@media screen and (max-width: 800px), screen and (max-device-width: 800px) {
   main, .algebra .themes {
     display: block;
   }
@@ -336,7 +325,6 @@ p::before {
 
   header {
     margin-top: 1.5rem;
-    align-items: center;
   }
 
   input {
