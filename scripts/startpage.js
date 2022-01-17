@@ -127,5 +127,5 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.body.addEventListener('click', () => inputMobile.style.inputMode = 'none')
+  document.body.addEventListener('touchstart', () => inputMobile.style.inputMode = 'none')
 }
