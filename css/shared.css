@@ -20,6 +20,7 @@
 
 body {
   margin: 0;
+  counter-reset: section;
 }
 
 @media (max-device-width: 800px) {

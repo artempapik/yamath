@@ -100,7 +100,7 @@ const assignInput = input => {
 
     const searchString = transliterate(inputValue.toLowerCase())
     const div = document.createElement('div')
-    div.classList.add('algebra')
+    div.classList.add('search-result')
   
     allThemes
       .filter(theme => theme.name && theme.name.includes(searchString))
@@ -117,6 +117,8 @@ const assignInput = input => {
   
     main.innerHTML = ''
     main.appendChild(div)
+
+    document.documentElement.style.setProperty('--search-header', `'Результатов поиска: ${div.children.length}'`)
   })
 }
 
