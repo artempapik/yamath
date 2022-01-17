@@ -336,7 +336,7 @@ p::before {
 
   header {
     margin-top: 1.5rem;
-    margin-left: 2.5rem;
+    align-items: center;
   }
 
   input {
@@ -355,8 +355,12 @@ p::before {
     border: .1rem solid #000;
   }
 
-  button, #current {
-    padding: 1.2rem 2.1rem;
+  button {
+    padding: 1rem 1.8rem;
+  }
+
+  #current {
+    padding: 1.2rem 2.3rem;
   }
 
   #back a::before, #forward a::before {
