@@ -4,8 +4,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
-  --button-back: '';
-  --button-forward: '';
+  --button-back: '\2190  0 класс';
+  --button-current: '';
+  --button-forward: '0 класс \2192';
   --shadow-color: rgba(0, 0, 0, 0.07);
   --input-box-shadow:
     var(--shadow-color) 0px 1px 2px,
@@ -30,17 +31,30 @@ header {
   margin-right: 15px;
 }
 
+#current, #current a {
+  cursor: auto;
+}
+
 #forward {
   margin-left: 15px;
 }
 
-#back a::before, #forward a::before {
+#back a::before, #current a::before, #forward a::before {
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
 }
 
+#current a::before {
+  font-size: 18px;
+  font-weight: bold;
+}
+
 #back a::before {
   content: var(--button-back);
+}
+
+#current a::before {
+  content: var(--button-current);
 }
 
 #forward a::before {
@@ -48,17 +62,30 @@ header {
 }
 
 button {
+  cursor: pointer;
   margin-top: 10px;
   margin-bottom: 20px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   border-radius: 10px;
   border: 0;
   box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
-  transition: box-shadow .2s;
 }
 
-button:hover {
+button:not(#current) {
+  transition: box-shadow .2s, transform .2s;
+}
+
+button:not(#current):hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  transform: translateY(3px);
+}
+
+#current {
+  margin: 0 5px;
+  padding: 10px 27px;
+  background-color: #707070;
+  color: whitesmoke;
+  border-radius: 5px;
 }
 
 input {
@@ -193,6 +220,26 @@ p::before {
   display: inline-block;
   width: 1.2rem;
   margin-left: -1rem;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media (min-width: 801px) and (max-width: 1600px) {

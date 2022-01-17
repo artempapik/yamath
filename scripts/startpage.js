@@ -4,25 +4,25 @@ const backButton = document.querySelector('#back')
 const forwardButton = document.querySelector('#forward')
 
 const path = window.location.pathname
-const form = +path.substring(path.indexOf('/') + 1)
+const currentForm = +path.substring(path.indexOf('/') + 1)
 
-const previousForm = form - 1
-const nextForm = form + 1
+const previousForm = currentForm - 1
+const nextForm = currentForm + 1
+
+document.documentElement.style.setProperty('--button-current', `'${currentForm} класс'`)
 
 if (previousForm > MIN_FORM) {
   backButton.firstChild.href = `/${previousForm}`
   document.documentElement.style.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
 } else {
-  backButton.style.display = 'none'
-  forwardButton.style = 'margin-left: 0'
+  backButton.style.visibility = 'hidden'
 }
 
 if (nextForm < MAX_FORM) {
-  forwardButton.firstChild.href = `/${form + 1}`
+  forwardButton.firstChild.href = `/${nextForm}`
   document.documentElement.style.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
 } else {
-  forwardButton.style.display = 'none'
-  backButton.style = 'margin-right: 0'
+  forwardButton.style.visibility = 'hidden'
 }
 
 // search
