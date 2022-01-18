@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 :root {
   --button-back: '\2190  0 класс';
@@ -91,7 +90,7 @@ button:not(#current):hover {
 }
 
 input {
-  font-family: 'Poppins', 'FontAwesome';
+  font-family: 'Segoe UI', 'FontAwesome';
   color: #585858;
   width: 15rem;
   letter-spacing: .6px;
@@ -258,6 +257,10 @@ p::before {
   .algebra {
     margin-left: 0;
   }
+
+  .search-result {
+    width: 30%;
+  }
 }
 
 @media (min-width: 801px) and (max-width: 1400px) {
@@ -272,6 +275,10 @@ p::before {
   .geometry {
     padding-left: 2px;
   }
+
+  .search-result {
+    width: 45%;
+  }
 }
 
 @media (min-width: 801px) and (max-width: 1150px) {
@@ -279,8 +286,16 @@ p::before {
     flex-direction: column;
   }
 
-  .algebra, .geometry {
+  .algebra, .geometry, .search-result {
     width: 97%;
+  }
+
+  .search-result p {
+    padding-left: 3rem;
+  }
+
+  .search-result p:hover {
+    padding-left: 3rem;
   }
 
   .geometry {
@@ -297,10 +312,6 @@ p::before {
     margin: 0;
     margin-top: 4rem;
     width: 100%;
-  }
-
-  .algebra::before {
-    padding-left: 3rem;
   }
 
   .algebra p, .geometry p {
@@ -329,6 +340,48 @@ p::before {
   
   .algebra::before {
     padding-left: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .algebra, .integers, .fractionals, .geometry, .search-result {
+    width: 95%;
+  }
+
+  .algebra .themes {
+    margin-top: 0;
+  }
+
+  .search-result::before {
+    padding-left: 3rem;
+  }
+
+  .search-result p {
+    padding-left: 3rem;
+    transition: none;
+    transform: none;
+  }
+
+  .algebra p:hover, .geometry p:hover {
+    padding-left: 3rem;
+    transition: none;
+  }
+
+  .search-result p:hover {
+    padding: 5px;
+    padding-left: 3rem;
+  }
+
+  .geometry p {
+    margin-left: 0;
+  }
+
+  .algebra {
+    margin-top: 20px;
+  }
+
+  .algebra, .geometry, .search-result {
+    padding-left: 5px;
   }
 }
 
@@ -411,7 +464,7 @@ p::before {
     font-size: 2.7rem;
   }
 
-  .search-result p {
+  .search-result p, .search-result p:hover {
     padding: .4rem;
   }
 
@@ -448,8 +501,9 @@ p::before {
   }
 
   .search-result p::before {
-    font-size: 2.3rem;
-    width: 4rem;
+    font-size: 2.5rem;
+    width: 4.5rem;
+    margin-left: -2.5rem;
   }
 
   p {
