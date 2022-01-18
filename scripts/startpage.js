@@ -136,11 +136,7 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => {
-    alert('')
-    window.scrollTo(100, 100)
-    // inputMobile.style.inputMode = 'none'
-    // window.scrollTo(0, 0)
-    // window.scrollTo({ top: 0, behavior: 'smooth' });
-    // inputMobile.scrollTo()
+    inputMobile.style.inputMode = 'none'
+    window.scrollTo(0, 0)
   }
 }
