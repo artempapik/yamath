@@ -29,7 +29,7 @@ if (nextForm < MAX_FORM) {
   forwardButton.style.display = 'none'
 }
 
-forwardButton.onclick = () => {
+window.forward = () => {
   const sixth = themes[1]
 
   // algebra

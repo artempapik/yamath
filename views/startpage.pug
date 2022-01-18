@@ -14,12 +14,14 @@ html
     link(rel='stylesheet' href='start.css')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   body
+    script(type='module' src='startpage.js')
+
     header
       <input class='desktop' placeholder='Поиск по теме...                   &#xF002;'>
       <input class='mobile' placeholder='Поиск по теме... &#xF002;'>
       div
         each name in ['back', 'current', 'forward']
-          button(id=name)
+          button(id=name onclick=name+'()')
             //- a
     main
       .algebra
@@ -32,4 +34,3 @@ html
         .themes
           .intro
             +make_themes(themes.geometry)
-    script(type='module' src='startpage.js')
