@@ -272,6 +272,15 @@ p::before {
     width: 59.5%;
   }
 
+  .algebra::before {
+    padding-left: 36%;
+  }
+
+  .fractionals {
+    padding-left: 30px;
+    width: 45%;
+  }
+
   .geometry {
     width: 35%;
     padding-right: 20px;
@@ -294,6 +303,11 @@ p::before {
 
   .algebra, .geometry, .search-result {
     width: 95%;
+  }
+
+  .fractionals {
+    margin-left: 40px;
+    width: 45%;
   }
 
   .search-result p {
