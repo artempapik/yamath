@@ -276,7 +276,7 @@ p::before {
 
 @media (min-width: 801px) and (max-width: 1150px) {
   main {
-    display: block;
+    flex-direction: column;
   }
 
   .algebra, .geometry {
@@ -355,7 +355,7 @@ p::before {
   }
 
   input.mobile {
-    display: block;
+    display: flex;
     border: .1rem solid #000;
   }
 
