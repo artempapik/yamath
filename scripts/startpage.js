@@ -28,6 +28,11 @@ if (nextForm < MAX_FORM) {
   forwardButton.style.display = 'none'
 }
 
+forwardButton.onclick = () => {
+  // WORK ON THIS
+  // document.querySelector('main').innerHTML = 'hello worlf'
+}
+
 // search
 
 const fifth = themes[0] // todo sometime...

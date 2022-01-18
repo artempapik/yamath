@@ -265,7 +265,7 @@ p::before {
 
 @media (min-width: 801px) and (max-width: 1400px) {
   header {
-    margin-right: 15%;
+    margin-right: 5%;
   }
 
   .algebra {
@@ -273,7 +273,9 @@ p::before {
   }
 
   .geometry {
-    padding-left: 2px;
+    width: 35%;
+    padding-right: 20px;
+    justify-self: flex-end;
   }
 
   .search-result {
@@ -286,8 +288,12 @@ p::before {
     flex-direction: column;
   }
 
+  header {
+    margin-right: 20%;
+  }
+
   .algebra, .geometry, .search-result {
-    width: 97%;
+    width: 95%;
   }
 
   .search-result p {
@@ -363,12 +369,20 @@ p::before {
   }
 
   .search-result p:hover {
-    padding: 5px;
-    padding-left: 3rem;
+    margin-left: 2.69rem;
   }
 
   .search-result {
     padding-left: 5px;
+  }
+
+  p::before {
+    width: 1rem;
+    margin-left: -2.5rem;
+  }
+
+  .search-result p::before {
+    width: 2rem;
   }
 }
 
