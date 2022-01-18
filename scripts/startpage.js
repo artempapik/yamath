@@ -15,12 +15,16 @@ if (previousForm > MIN_FORM) {
   backButton.firstChild.href = `/${previousForm}`
   document.documentElement.style.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
   backButton.style.visibility = 'visible'
+} else {
+  backButton.style.display = 'none'
 }
 
 if (nextForm < MAX_FORM) {
   forwardButton.firstChild.href = `/${nextForm}`
   document.documentElement.style.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
   forwardButton.style.visibility = 'visible'
+} else {
+  forwardButton.style.display = 'none'
 }
 
 // search
