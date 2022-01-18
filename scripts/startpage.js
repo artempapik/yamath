@@ -21,7 +21,8 @@ if (previousForm > MIN_FORM) {
 }
 
 if (nextForm < MAX_FORM) {
-  forwardButton.firstChild.href = `/${nextForm}`
+  // temporary
+  // forwardButton.firstChild.href = `/${nextForm}`
   documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
   forwardButton.style.visibility = 'visible'
 } else {
@@ -29,6 +30,78 @@ if (nextForm < MAX_FORM) {
 }
 
 forwardButton.onclick = () => {
+  const sixth = themes[1]
+
+  // algebra
+
+  const algebra = document.createElement('div')
+  algebra.classList.add('algebra')
+
+  const themes2 = document.createElement('div')
+  themes2.classList.add('themes')
+
+  const integers = document.createElement('div')
+  integers.classList.add('integers')
+
+  const fractionals = document.createElement('div')
+  fractionals.classList.add('fractionals')
+
+  //
+
+  for (const n of sixth.algebra.integers) {
+    const par = document.createElement('p')
+    const lin = document.createElement('a')
+    lin.textContent = n.name
+    par.appendChild(lin)
+    integers.appendChild(par)
+  }
+
+  for (const n of sixth.algebra.fractionals) {
+    const par = document.createElement('p')
+    const lin = document.createElement('a')
+    lin.textContent = n.name
+    par.appendChild(lin)
+    fractionals.appendChild(par)
+  }
+
+  //
+
+  // geometry
+
+  const geometry = document.createElement('div')
+  geometry.classList.add('geometry')
+
+  const themes3 = document.createElement('div')
+  themes3.classList.add('themes')
+
+  const intro = document.createElement('div')
+  intro.classList.add('intro')
+
+  //
+
+  for (const n of sixth.geometry) {
+    const par = document.createElement('p')
+    const lin = document.createElement('a')
+    lin.textContent = n.name
+    par.appendChild(lin)
+    intro.appendChild(par)
+  }
+
+  //
+
+  // appending
+
+  themes2.appendChild(integers)
+  themes2.appendChild(fractionals)
+  algebra.appendChild(themes2)
+
+  themes3.appendChild(intro)
+  geometry.appendChild(themes3)
+
+  document.querySelector('main').innerHTML = ''
+  document.querySelector('main').appendChild(algebra)
+  document.querySelector('main').appendChild(geometry)
+
   // WORK ON THIS
   // document.querySelector('main').innerHTML = 'hello worlf'
 }
@@ -141,5 +214,4 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
-  document.onfocus = () => window.scrollTo(0, 0)
 }

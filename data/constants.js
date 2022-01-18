@@ -54,10 +54,23 @@ const fifthForm = {
 
 const sixthForm = {
   algebra: {
-    integers: [],
-    fractionals: []
+    integers: [
+      { name: 'тема 1' },
+      { name: 'тест 2' },
+      { name: 'ахаха 3 ' }
+    ],
+    fractionals: [
+      { name: 'ну тут шото 1' },
+      { name: 'тест короч для второго' },
+      { name: 'ну и третье' }
+    ]
   },
-  geometry: []
+  geometry: [
+    { name: 'а с геометрией' },
+    { name: 'дела' },
+    { name: 'у нас' },
+    { name: 'плачевные' }
+  ]
 }
 
 const seventhForm = {
