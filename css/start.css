@@ -367,15 +367,7 @@ p::before {
     padding-left: 3rem;
   }
 
-  .geometry p {
-    margin-left: 0;
-  }
-
-  .algebra {
-    margin-top: 20px;
-  }
-
-  .algebra, .geometry, .search-result {
+  .search-result {
     padding-left: 5px;
   }
 }
