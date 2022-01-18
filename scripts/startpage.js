@@ -135,5 +135,5 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.body.onclick = () => inputMobile.style.inputMode = 'none'
+  document.onclick = () => inputMobile.style.inputMode = 'none'
 }
