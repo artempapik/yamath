@@ -9,11 +9,12 @@ const currentForm = +path.substring(path.indexOf('/') + 1)
 const previousForm = currentForm - 1
 const nextForm = currentForm + 1
 
-document.documentElement.style.setProperty('--button-current', `'${currentForm} класс'`)
+const documentStyle = document.documentElement.style
+documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
 
 if (previousForm > MIN_FORM) {
   backButton.firstChild.href = `/${previousForm}`
-  document.documentElement.style.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
+  documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
   backButton.style.visibility = 'visible'
 } else {
   backButton.style.display = 'none'
@@ -21,7 +22,7 @@ if (previousForm > MIN_FORM) {
 
 if (nextForm < MAX_FORM) {
   forwardButton.firstChild.href = `/${nextForm}`
-  document.documentElement.style.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
+  documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
   forwardButton.style.visibility = 'visible'
 } else {
   forwardButton.style.display = 'none'
@@ -123,7 +124,7 @@ const assignInput = input => {
     main.innerHTML = ''
     main.appendChild(div)
 
-    document.documentElement.style.setProperty('--search-header', `'Результатов поиска: ${div.children.length}'`)
+    documentStyle.setProperty('--search-header', `'Результатов поиска: ${div.children.length}'`)
   })
 }
 
