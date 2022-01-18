@@ -362,11 +362,6 @@ p::before {
     transform: none;
   }
 
-  .algebra p:hover, .geometry p:hover {
-    padding-left: 3rem;
-    transition: none;
-  }
-
   .search-result p:hover {
     padding: 5px;
     padding-left: 3rem;
@@ -396,7 +391,7 @@ p::before {
   }
 
   input {
-    width: 24rem;
+    width: 25rem;
     margin-bottom: 1.5rem;
     padding: 1rem 2.5rem;
     font-size: 2.7rem;
