@@ -2,7 +2,6 @@
   "type": "module",
   "dependencies": {
     "express": "^4.17.2",
-    "express-useragent": "^1.0.15",
     "pug": "^3.0.2",
     "serve-favicon": "^2.5.0"
   },

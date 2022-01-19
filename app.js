@@ -2,7 +2,6 @@ import express from 'express'
 import favicon from 'serve-favicon'
 import fs from 'fs'
 import path from 'path'
-import useragent from 'express-useragent'
 
 const port = process.env.PORT || 3000
 const app = express()
@@ -15,8 +14,6 @@ app.use(express.static('scripts'))
 app.use(express.static('data'))
 app.use(express.static('font'))
 app.use(express.static('img'))
-
-app.use(useragent.express())
 app.use(favicon(`${dirname}/ico/math-logo.ico`))
 
 const articleToTitle = {
@@ -51,7 +48,7 @@ app.get('/:form', (req, res) => {
     return
   }
 
-  res.render('startpage.pug', { isMobile: req.useragent.isMobile, form, themes: themes[form - 5] })
+  res.render('startpage.pug', { form, themes: themes[form - 5] })
 })
 
 app.listen(port)
