@@ -103,6 +103,7 @@ input {
   border-radius: 10px;
   padding: 8px 15px;
   transition: .2s;
+  -webkit-tap-highlight-color: transparent;
 }
 
 input:hover {
