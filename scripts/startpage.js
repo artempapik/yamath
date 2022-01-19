@@ -28,6 +28,12 @@ if (nextForm < MAX_FORM) {
 
 const main = document.querySelector('main')
 
+const divWithClass = className => {
+  const div = document.createElement('div')
+  div.classList.add(className)
+  return div
+}
+
 const formButtonClick = increment => {
   const form = themes[currentForm + increment - 5]
 
@@ -50,12 +56,6 @@ const formButtonClick = increment => {
     }
 
     return div.innerHTML
-  }
-
-  const divWithClass = className => {
-    const div = document.createElement('div')
-    div.classList.add(className)
-    return div
   }
 
   const appendChildren = (element, ...children) => children.forEach(child => element.appendChild(child))
@@ -117,9 +117,8 @@ if ('ontouchstart' in window) {
 
 // search
 
-const fifth = themes[0] // todo sometime...
+const fifth = themes[0] // todo sometime
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
-
 
 const allMarkup = main.innerHTML
 
@@ -190,8 +189,7 @@ const assignInput = input => {
     }
 
     const searchString = transliterate(inputValue.toLowerCase())
-    const div = document.createElement('div')
-    div.classList.add('search-result')
+    const searchResult = divWithClass('search-result')
   
     allThemes
       .filter(theme => theme.name && theme.name.includes(searchString))
@@ -205,12 +203,12 @@ const assignInput = input => {
   
         return paragraph
       })
-      .forEach(paragraph => div.appendChild(paragraph))
+      .forEach(paragraph => searchResult.appendChild(paragraph))
   
     main.innerHTML = ''
-    main.appendChild(div)
+    main.appendChild(searchResult)
 
-    documentStyle.setProperty('--search-header', `'Результатов поиска: ${div.children.length}'`)
+    documentStyle.setProperty('--search-header', `'Результатов поиска: ${searchResult.children.length}'`)
   })
 }
 
