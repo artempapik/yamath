@@ -40,7 +40,7 @@ header {
   margin-left: 15px;
 }
 
-#back a::before, #current a::before, #forward a::before {
+/* #back a::before, #current a::before, #forward a::before {
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
 }
@@ -48,9 +48,19 @@ header {
 #current a::before {
   font-size: 18px;
   font-weight: bold;
+} */
+
+#back, #current, #forward {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 17px;
 }
 
-#back a::before {
+#current {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* #back a::before {
   content: var(--button-back);
 }
 
@@ -59,6 +69,18 @@ header {
 }
 
 #forward a::before {
+  content: var(--button-forward);
+} */
+
+#back::before {
+  content: var(--button-back);
+}
+
+#current::before {
+  content: var(--button-current);
+}
+
+#forward::before {
   content: var(--button-forward);
 }
 

@@ -75,42 +75,72 @@ const sixthForm = {
 
 const seventhForm = {
   algebra: {
-    integers: [],
-    fractionals: []
+    integers: [
+      { name: 'тест' }
+    ],
+    fractionals: [
+      { name: '77' }
+    ]
   },
-  geometry: []
+  geometry: [
+    { name: 'класса' }
+  ]
 }
 
 const eigthForm = {
   algebra: {
-    integers: [],
-    fractionals: []
+    integers: [
+      { name: 'тест' }
+    ],
+    fractionals: [
+      { name: '8888' }
+    ]
   },
-  geometry: []
+  geometry: [
+    { name: 'класса' }
+  ]
 }
 
 const ninethForm = {
   algebra: {
-    integers: [],
-    fractionals: []
+    integers: [
+      { name: 'тест' }
+    ],
+    fractionals: [
+      { name: '9' }
+    ]
   },
-  geometry: []
+  geometry: [
+    { name: 'класса' }
+  ]
 }
 
 const tenthForm = {
   algebra: {
-    integers: [],
-    fractionals: []
+    integers: [
+      { name: 'тест' }
+    ],
+    fractionals: [
+      { name: '1010' }
+    ]
   },
-  geometry: []
+  geometry: [
+    { name: 'класса' }
+  ]
 }
 
 const eleventhForm = {
   algebra: {
-    integers: [],
-    fractionals: []
+    integers: [
+      { name: 'тест' }
+    ],
+    fractionals: [
+      { name: '111111' }
+    ]
   },
-  geometry: []
+  geometry: [
+    { name: 'класса' }
+  ]
 }
 
 const themes = [
