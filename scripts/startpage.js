@@ -35,12 +35,6 @@ const divWithClass = className => {
 }
 
 const formButtonClick = increment => {
-  const inputMobile = document.querySelector('.mobile')
-
-  if (inputMobile) {
-    inputMobile.style.inputMode = 'none'
-  }
-  
   const form = themes[currentForm + increment - 5]
 
   const getMarkupFromThemes = themes => {
@@ -54,6 +48,7 @@ const formButtonClick = increment => {
   
       const link = document.createElement('a')
       link.textContent = theme.name
+      link.href = theme.href
 
       const paragraph = document.createElement('p')
       paragraph.appendChild(link)
