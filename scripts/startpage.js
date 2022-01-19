@@ -219,7 +219,7 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.onclick = () => window.scrollTo(0, 0)
+  document.onclick = () => inputMobile.style.inputMode = 'none'
 
-  document.ontouchstart = () => inputMobile.style.inputMode = 'none'
+  document.ontouchstart = () => window.scrollTo(0, 0)
 }
