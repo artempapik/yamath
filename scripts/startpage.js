@@ -156,6 +156,11 @@ window.back = () => {
   //
 
   for (const n of sixth.algebra.integers) {
+    if (!n.name) {
+      integers.appendChild(document.createElement('br'))
+      continue
+    }
+
     const par = document.createElement('p')
     const lin = document.createElement('a')
     lin.textContent = n.name
@@ -164,6 +169,11 @@ window.back = () => {
   }
 
   for (const n of sixth.algebra.fractionals) {
+    if (!n.name) {
+      fractionals.appendChild(document.createElement('br'))
+      continue
+    }
+
     const par = document.createElement('p')
     const lin = document.createElement('a')
     lin.textContent = n.name
@@ -187,6 +197,11 @@ window.back = () => {
   //
 
   for (const n of sixth.geometry) {
+    if (!n.name) {
+      intro.appendChild(document.createElement('br'))
+      continue
+    }
+
     const par = document.createElement('p')
     const lin = document.createElement('a')
     lin.textContent = n.name
