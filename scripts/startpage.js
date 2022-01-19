@@ -189,7 +189,7 @@ const assignInput = input => {
       .map(theme => {
         const link = document.createElement('a')
         link.textContent = theme.name
-        link.onpointerup = () => window.location.pathname='/${theme.href}'
+        link.onpointerup = () => window.location.pathname=`/${theme.href}`
   
         const paragraph = document.createElement('p')
         paragraph.appendChild(link)
