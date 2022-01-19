@@ -110,13 +110,16 @@ const formButtonClick = increment => {
 const back = () => formButtonClick(-1)
 const forward = () => formButtonClick(1)
 
-if ('ontouchstart' in window) {
-  backButton.ontouchstart = back
-  forwardButton.ontouchstart = forward
-} else {
-  backButton.onclick = back
-  forwardButton.onclick = forward
-}
+backButton.onpointerdown = back
+forwardButton.onpointerdown = forward
+
+// if ('ontouchstart' in window) {
+//   backButton.ontouchstart = back
+//   forwardButton.ontouchstart = forward
+// } else {
+//   backButton.onclick = back
+//   forwardButton.onclick = forward
+// }
 
 // search
 
