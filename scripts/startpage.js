@@ -74,14 +74,8 @@ const formButtonClick = increment => {
   algebra.firstChild.firstChild.innerHTML = getMarkupFromThemes(form.algebra.integers)
   algebra.firstChild.children[1].innerHTML = getMarkupFromThemes(form.algebra.fractionals)
 
-  const geometry = divWithClass('geometry')
-  const themes3 = divWithClass('themes')
-  const intro = divWithClass('intro')
-
-  intro.innerHTML = getMarkupFromThemes(form.geometry)
-
-  themes3.appendChild(intro)
-  geometry.appendChild(themes3)
+  const geometry = createSubjectWithThemes('geometry', 'intro')
+  geometry.firstChild.firstChild.innerHTML = getMarkupFromThemes(form.geometry)
 
   main.innerHTML = ''
   appendChildren(main, algebra, geometry)
