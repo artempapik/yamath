@@ -2,7 +2,7 @@ mixin make_themes(themes)
   each theme in themes
     if theme.name
       p
-        - var changeHref = "window.location.pathname='/" + theme.href + "'"
+        - var changeHref = `window.location.pathname='/${theme.href}'`
 
         if isMobile
           a(ontouchstart=changeHref)=theme.name
