@@ -213,4 +213,5 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
+  inputMobile.ontouchstart = () => inputMobile.focus()
 }
