@@ -112,7 +112,7 @@ const forward = () => formButtonClick(1)
 
 if ('ontouchstart' in window) {
   backButton.ontouchstart = back
-  forwardButton.onmousedown = forward
+  forwardButton.ontouchstart = forward
 } else {
   backButton.onclick = back
   forwardButton.onclick = forward
