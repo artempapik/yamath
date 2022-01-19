@@ -4,16 +4,15 @@ const backButton = document.querySelector('#back')
 const forwardButton = document.querySelector('#forward')
 
 const path = window.location.pathname
-const currentForm = +path.substring(path.indexOf('/') + 1)
 
-const previousForm = currentForm - 1
-const nextForm = currentForm + 1
+let currentForm = +path.substring(path.indexOf('/') + 1)
+let previousForm = currentForm - 1
+let nextForm = currentForm + 1
 
 const documentStyle = document.documentElement.style
 documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
 
 if (previousForm > MIN_FORM) {
-  backButton.firstChild.href = `/${previousForm}`
   documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
   backButton.style.visibility = 'visible'
 } else {
@@ -21,137 +20,97 @@ if (previousForm > MIN_FORM) {
 }
 
 if (nextForm < MAX_FORM) {
-  // temporary
-  // forwardButton.firstChild.href = `/${nextForm}`
   documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
   forwardButton.style.visibility = 'visible'
 } else {
   forwardButton.style.display = 'none'
 }
 
-let tempCurrentForm = 5
-let tempPreviousForm = tempCurrentForm - 1
-let tempNextForm = tempCurrentForm + 1
+const main = document.querySelector('main')
 
 const formButtonClick = increment => {
-  const sixth = themes[tempPreviousForm + increment - 4]
+  const form = themes[currentForm + increment - 5]
 
-  // algebra
+  const getMarkupFromThemes = themes => {
+    const div = document.createElement('div')
 
-  const algebra = document.createElement('div')
-  algebra.classList.add('algebra')
+    for (const theme of themes) {
+      if (!theme.name) {
+        div.appendChild(document.createElement('br'))
+        continue
+      }
+  
+      const link = document.createElement('a')
+      link.textContent = theme.name
 
-  const themes2 = document.createElement('div')
-  themes2.classList.add('themes')
+      const paragraph = document.createElement('p')
+      paragraph.appendChild(link)
 
-  const integers = document.createElement('div')
-  integers.classList.add('integers')
-
-  const fractionals = document.createElement('div')
-  fractionals.classList.add('fractionals')
-
-  //
-
-  for (const n of sixth.algebra.integers) {
-    if (!n.name) {
-      integers.appendChild(document.createElement('br'))
-      continue
+      div.appendChild(paragraph)
     }
 
-    const par = document.createElement('p')
-    const lin = document.createElement('a')
-    lin.textContent = n.name
-    par.appendChild(lin)
-    integers.appendChild(par)
+    return div.innerHTML
   }
 
-  for (const n of sixth.algebra.fractionals) {
-    if (!n.name) {
-      fractionals.appendChild(document.createElement('br'))
-      continue
-    }
-
-    const par = document.createElement('p')
-    const lin = document.createElement('a')
-    lin.textContent = n.name
-    par.appendChild(lin)
-    fractionals.appendChild(par)
+  const divWithClass = className => {
+    const div = document.createElement('div')
+    div.classList.add(className)
+    return div
   }
 
-  //
+  const appendChildren = (element, ...children) => children.forEach(child => element.appendChild(child))
 
-  // geometry
-
-  const geometry = document.createElement('div')
-  geometry.classList.add('geometry')
-
-  const themes3 = document.createElement('div')
-  themes3.classList.add('themes')
-
-  const intro = document.createElement('div')
-  intro.classList.add('intro')
-
-  //
-
-  for (const n of sixth.geometry) {
-    if (!n.name) {
-      intro.appendChild(document.createElement('br'))
-      continue
-    }
-
-    const par = document.createElement('p')
-    const lin = document.createElement('a')
-    lin.textContent = n.name
-    par.appendChild(lin)
-    intro.appendChild(par)
+  const createSubjectWithThemes = (subjectClassName, ...themeClassNames) => {
+    const subject = divWithClass(subjectClassName)
+    const theme = divWithClass('themes')
+    const themes = themeClassNames.map(t => divWithClass(t))
+    appendChildren(theme, ...themes)
+    subject.appendChild(theme)
+    
+    return subject
   }
 
-  //
+  const algebra = createSubjectWithThemes('algebra', 'integers', 'fractionals')
+  algebra.firstChild.firstChild.innerHTML = getMarkupFromThemes(form.algebra.integers)
+  algebra.firstChild.children[1].innerHTML = getMarkupFromThemes(form.algebra.fractionals)
 
-  // appending
+  const geometry = divWithClass('geometry')
+  const themes3 = divWithClass('themes')
+  const intro = divWithClass('intro')
 
-  themes2.appendChild(integers)
-  themes2.appendChild(fractionals)
-  algebra.appendChild(themes2)
+  intro.innerHTML = getMarkupFromThemes(form.geometry)
 
   themes3.appendChild(intro)
   geometry.appendChild(themes3)
 
-  document.querySelector('main').innerHTML = ''
-  document.querySelector('main').appendChild(algebra)
-  document.querySelector('main').appendChild(geometry)
-
-  // WORK ON THIS
+  main.innerHTML = ''
+  appendChildren(main, algebra, geometry)
   
-  tempPreviousForm += increment
-  tempCurrentForm += increment
-  tempNextForm += increment
+  previousForm += increment
+  currentForm += increment
+  nextForm += increment
 
-  if (tempPreviousForm > MIN_FORM) {
-    // backButton.firstChild.href = `/${previousForm}`
-    documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
+  if (previousForm > MIN_FORM) {
     backButton.style.visibility = 'visible'
     backButton.style.display = 'inline'
   } else {
     backButton.style.display = 'none'
   }
   
-  if (tempNextForm < MAX_FORM) {
-    // forwardButton.firstChild.href = `/${nextForm}`
-    documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
+  if (nextForm < MAX_FORM) {
     forwardButton.style.visibility = 'visible'
     forwardButton.style.display = 'inline'
   } else {
     forwardButton.style.display = 'none'
   }
 
-  documentStyle.setProperty('--button-back', `'\\2190  ${tempPreviousForm} класс'`)
-  documentStyle.setProperty('--button-forward', `'${tempNextForm} класс \\2192'`)
-  documentStyle.setProperty('--button-current', `'${tempCurrentForm} класс'`)
+  documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
+  documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
+  documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
 }
 
-const back = () => formButtonClick(-1, tempPreviousForm)
-const forward = () => formButtonClick(1, tempNextForm)
+const back = () => formButtonClick(-1)
+const forward = () => formButtonClick(1)
 
 if ('ontouchstart' in window) {
   backButton.ontouchstart = back
@@ -166,7 +125,6 @@ if ('ontouchstart' in window) {
 const fifth = themes[0] // todo sometime...
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
-const main = document.querySelector('main')
 
 const allMarkup = main.innerHTML
 

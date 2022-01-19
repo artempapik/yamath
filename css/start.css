@@ -40,16 +40,6 @@ header {
   margin-left: 15px;
 }
 
-/* #back a::before, #current a::before, #forward a::before {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 17px;
-}
-
-#current a::before {
-  font-size: 18px;
-  font-weight: bold;
-} */
-
 #back, #current, #forward {
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
@@ -59,18 +49,6 @@ header {
   font-size: 18px;
   font-weight: bold;
 }
-
-/* #back a::before {
-  content: var(--button-back);
-}
-
-#current a::before {
-  content: var(--button-current);
-}
-
-#forward a::before {
-  content: var(--button-forward);
-} */
 
 #back::before {
   content: var(--button-back);
@@ -465,17 +443,9 @@ p::before {
     touch-action: none;
   }
 
-  /* #back a::before, #forward a::before {
-    font-size: 2.7rem;
-  } */
-
   #back::before, #forward::before {
     font-size: 2.7rem;
   }
-
-  /* #current a::before {
-    font-size: 2.9rem;
-  } */
 
   #current::before {
     font-size: 2.9rem;
