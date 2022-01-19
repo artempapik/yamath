@@ -37,26 +37,22 @@ const divWithClass = className => {
 const formButtonClick = increment => {
   const form = themes[currentForm + increment - 5]
 
-  const getMarkupFromThemes = themes => {
-    const div = document.createElement('div')
-
+  const getMarkupFromThemes = (element, themes) => {
     for (const theme of themes) {
       if (!theme.name) {
-        div.appendChild(document.createElement('br'))
+        element.appendChild(document.createElement('br'))
         continue
       }
   
       const link = document.createElement('a')
       link.textContent = theme.name
-      link.onpointerup = () => window.location.pathname=`/${theme.href}`
+      link.onpointerup = () => window.location.pathname = `/${theme.href}`
 
       const paragraph = document.createElement('p')
       paragraph.appendChild(link)
 
-      div.appendChild(paragraph)
+      element.appendChild(paragraph)
     }
-
-    return div.innerHTML
   }
 
   const appendChildren = (element, ...children) => children.forEach(child => element.appendChild(child))
@@ -72,11 +68,11 @@ const formButtonClick = increment => {
   }
 
   const algebra = createSubjectWithThemes('algebra', 'integers', 'fractionals')
-  algebra.firstChild.firstChild.innerHTML = getMarkupFromThemes(form.algebra.integers)
-  algebra.firstChild.children[1].innerHTML = getMarkupFromThemes(form.algebra.fractionals)
+  getMarkupFromThemes(algebra.firstChild.children[0], form.algebra.integers)
+  getMarkupFromThemes(algebra.firstChild.children[1], form.algebra.fractionals)
 
   const geometry = createSubjectWithThemes('geometry', 'intro')
-  geometry.firstChild.firstChild.innerHTML = getMarkupFromThemes(form.geometry)
+  getMarkupFromThemes(geometry.firstChild.children[0], form.geometry)
 
   main.innerHTML = ''
   appendChildren(main, algebra, geometry)
@@ -189,7 +185,7 @@ const assignInput = input => {
       .map(theme => {
         const link = document.createElement('a')
         link.textContent = theme.name
-        link.onpointerup = () => window.location.pathname=`/${theme.href}`
+        link.onpointerup = () => window.location.pathname = `/${theme.href}`
   
         const paragraph = document.createElement('p')
         paragraph.appendChild(link)
