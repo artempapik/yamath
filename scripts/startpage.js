@@ -100,6 +100,8 @@ const formButtonClick = increment => {
   }
 
   document.title = `${currentForm} класс`
+  localStorage.setItem('currentForm', currentForm)
+
   documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
   documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
   documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
