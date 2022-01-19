@@ -2,7 +2,7 @@ mixin make_themes(themes)
   each theme in themes
     if theme.name
       p
-        a(ontouchend="window.location.pathname='/"+theme.href+"'")=theme.name
+        a(onmousedown="window.location.pathname='/"+theme.href+"'")=theme.name
     else
       br
 

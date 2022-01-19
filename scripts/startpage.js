@@ -111,11 +111,11 @@ const back = () => formButtonClick(-1)
 const forward = () => formButtonClick(1)
 
 if ('ontouchstart' in window) {
-  backButton.ontouchstart = back
-  forwardButton.ontouchstart = forward
+  backButton.onmousedown = back
+  forwardButton.onmousedown = forward
 } else {
-  backButton.onclick = back
-  forwardButton.onclick = forward
+  backButton.onmousedown = back
+  forwardButton.onmousedown = forward
 }
 
 // search
