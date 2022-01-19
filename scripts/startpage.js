@@ -189,7 +189,7 @@ const assignInput = input => {
       .map(theme => {
         const link = document.createElement('a')
         link.textContent = theme.name
-        link.href = theme.href
+        link.onpointerup = () => `window.location.pathname='/${theme.href}'`
   
         const paragraph = document.createElement('p')
         paragraph.appendChild(link)
@@ -212,6 +212,6 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.onclick = () => inputMobile.style.inputMode = 'none'
+  document.onpointerup = () => inputMobile.style.inputMode = 'none'
   inputMobile.onpointerup = () => inputMobile.focus()
 }
