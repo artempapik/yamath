@@ -1,7 +1,6 @@
 import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
 
 const backButton = document.querySelector('#back')
-const currentButton = document.querySelector('#current')
 const forwardButton = document.querySelector('#forward')
 
 const path = window.location.pathname
@@ -34,110 +33,8 @@ let tempCurrentForm = 5
 let tempPreviousForm = tempCurrentForm - 1
 let tempNextForm = tempCurrentForm + 1
 
-window.current = () => {}
-
-window.forward = () => {
-  const sixth = themes[tempNextForm - 5]
-
-  // algebra
-
-  const algebra = document.createElement('div')
-  algebra.classList.add('algebra')
-
-  const themes2 = document.createElement('div')
-  themes2.classList.add('themes')
-
-  const integers = document.createElement('div')
-  integers.classList.add('integers')
-
-  const fractionals = document.createElement('div')
-  fractionals.classList.add('fractionals')
-
-  //
-
-  for (const n of sixth.algebra.integers) {
-    const par = document.createElement('p')
-    const lin = document.createElement('a')
-    lin.textContent = n.name
-    par.appendChild(lin)
-    integers.appendChild(par)
-  }
-
-  for (const n of sixth.algebra.fractionals) {
-    const par = document.createElement('p')
-    const lin = document.createElement('a')
-    lin.textContent = n.name
-    par.appendChild(lin)
-    fractionals.appendChild(par)
-  }
-
-  //
-
-  // geometry
-
-  const geometry = document.createElement('div')
-  geometry.classList.add('geometry')
-
-  const themes3 = document.createElement('div')
-  themes3.classList.add('themes')
-
-  const intro = document.createElement('div')
-  intro.classList.add('intro')
-
-  //
-
-  for (const n of sixth.geometry) {
-    const par = document.createElement('p')
-    const lin = document.createElement('a')
-    lin.textContent = n.name
-    par.appendChild(lin)
-    intro.appendChild(par)
-  }
-
-  //
-
-  // appending
-
-  themes2.appendChild(integers)
-  themes2.appendChild(fractionals)
-  algebra.appendChild(themes2)
-
-  themes3.appendChild(intro)
-  geometry.appendChild(themes3)
-
-  document.querySelector('main').innerHTML = ''
-  document.querySelector('main').appendChild(algebra)
-  document.querySelector('main').appendChild(geometry)
-
-  // WORK ON THIS
-  
-  tempPreviousForm++
-  tempCurrentForm++
-  tempNextForm++
-
-  if (tempPreviousForm > MIN_FORM) {
-    // backButton.firstChild.href = `/${previousForm}`
-    documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
-    backButton.style.visibility = 'visible'
-    backButton.style.display = 'inline'
-  } else {
-    backButton.style.display = 'none'
-  }
-  
-  if (tempNextForm < MAX_FORM) {
-    // forwardButton.firstChild.href = `/${nextForm}`
-    documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
-    forwardButton.style.visibility = 'visible'
-    forwardButton.style.display = 'inline'
-  } else {
-    forwardButton.style.display = 'none'
-  }
-}
-
-///////////////////////////
-
-window.back = () => {
-  const sixth = themes[tempPreviousForm - 5]
+const formButtonClick = increment => {
+  const sixth = themes[tempPreviousForm + increment - 4]
 
   // algebra
 
@@ -226,9 +123,9 @@ window.back = () => {
 
   // WORK ON THIS
   
-  tempPreviousForm--
-  tempCurrentForm--
-  tempNextForm--
+  tempPreviousForm += increment
+  tempCurrentForm += increment
+  tempNextForm += increment
 
   if (tempPreviousForm > MIN_FORM) {
     // backButton.firstChild.href = `/${previousForm}`
@@ -247,9 +144,22 @@ window.back = () => {
   } else {
     forwardButton.style.display = 'none'
   }
+
+  documentStyle.setProperty('--button-back', `'\\2190  ${tempPreviousForm} класс'`)
+  documentStyle.setProperty('--button-forward', `'${tempNextForm} класс \\2192'`)
+  documentStyle.setProperty('--button-current', `'${tempCurrentForm} класс'`)
 }
 
-/////////////////////////
+const back = () => formButtonClick(-1, tempPreviousForm)
+const forward = () => formButtonClick(1, tempNextForm)
+
+if ('ontouchstart' in window) {
+  backButton.ontouchstart = back
+  forwardButton.ontouchstart = forward
+} else {
+  backButton.onclick = back
+  forwardButton.onclick = forward
+}
 
 // search
 
