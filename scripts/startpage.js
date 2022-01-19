@@ -219,5 +219,5 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.body.ontouchstart = () => inputMobile.style.inputMode = 'none'
+  document.onclick = () => inputMobile.style.inputMode = 'none'
 }
