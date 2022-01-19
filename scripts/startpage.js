@@ -107,21 +107,8 @@ const formButtonClick = increment => {
   documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
 }
 
-const back = () => formButtonClick(-1)
-const forward = () => formButtonClick(1)
-
-backButton.onpointerdown = back
-forwardButton.onpointerdown = forward
-
-// if ('ontouchstart' in window) {
-//   backButton.ontouchstart = back
-//   forwardButton.ontouchstart = forward
-// } else {
-//   backButton.onclick = back
-//   forwardButton.onclick = forward
-// }
-
-// search
+backButton.onpointerup = formButtonClick(-1)
+forwardButton.onpointerup = formButtonClick(1)
 
 const fifth = themes[0] // todo sometime
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
