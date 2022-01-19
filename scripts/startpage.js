@@ -63,7 +63,7 @@ const formButtonClick = increment => {
   const createSubjectWithThemes = (subjectClassName, ...themeClassNames) => {
     const subject = divWithClass(subjectClassName)
     const theme = divWithClass('themes')
-    const themes = themeClassNames.map(t => divWithClass(t))
+    const themes = themeClassNames.map(themeClassName => divWithClass(themeClassName))
     appendChildren(theme, ...themes)
     subject.appendChild(theme)
     
@@ -104,6 +104,7 @@ const formButtonClick = increment => {
     forwardButton.style.display = 'none'
   }
 
+  document.title = `${currentForm} класс`
   documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
   documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
   documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
