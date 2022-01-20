@@ -1,7 +1,9 @@
 import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
 
 const scrollPosition = localStorage.getItem('scroll-position')
-window.scrollTo(0, scrollPosition)
+console.log(scrollPosition)
+window.scrollTo(0, scrollPosition + 200)
+document.scrollTop = scrollPosition + 200
 
 const backButton = document.querySelector('#back')
 const currentButton = document.querySelector('#current')
