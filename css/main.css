@@ -117,6 +117,10 @@ header {
   padding-left: 7px;
 }
 
+details {
+  -webkit-tap-highlight-color: transparent;
+}
+
 details p {
   color: #8B0000;
   margin: 8px 0;
