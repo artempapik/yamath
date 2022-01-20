@@ -171,8 +171,6 @@ const assignInput = input => {
     }
   })
 
-  input.onblur = () => restorePage()
-
   input.addEventListener('keyup', event => {
     if (event.key === 'Escape') {
       input.value = ''
@@ -217,6 +215,10 @@ const inputMobile = document.querySelector('.mobile')
 
 assignInput(inputDesktop)
 assignInput(inputMobile)
+
+if (inputDesktop) {
+  inputDesktop.onblur = () => restorePage()
+}
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
