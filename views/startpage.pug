@@ -2,7 +2,7 @@ mixin make_themes(themes)
   each theme in themes
     if theme.name
       p
-        a(onpointerup=`window.location.pathname='/${theme.href}'`)=theme.name
+        a(href=theme.href)=theme.name
     else
       br
 
