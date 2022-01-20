@@ -1,6 +1,7 @@
 import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
 
 const backButton = document.querySelector('#back')
+const currentButton = document.querySelector('#current')
 const forwardButton = document.querySelector('#forward')
 
 const path = window.location.pathname
@@ -104,12 +105,6 @@ const formButtonClick = increment => {
   documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
 }
 
-backButton.onpointerup = () => formButtonClick(-1)
-forwardButton.onpointerup = () => formButtonClick(1)
-
-const fifth = themes[0] // todo sometime
-const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
-
 let allMarkup = main.innerHTML
 let searchMarkup = ''
 
@@ -118,6 +113,13 @@ const restorePage = () => {
     main.innerHTML = allMarkup
   }
 }
+
+backButton.onpointerup = () => formButtonClick(-1)
+forwardButton.onpointerup = () => formButtonClick(1)
+currentButton.onpointerup = () => restorePage()
+
+const fifth = themes[0] // todo sometime
+const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
 const engToRus = {
   'f': 'а',

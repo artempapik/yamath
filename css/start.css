@@ -32,10 +32,6 @@ header {
   margin-right: 15px;
 }
 
-#current, #current a {
-  cursor: auto;
-}
-
 #forward {
   margin-left: 15px;
 }
@@ -73,11 +69,11 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-button:not(#current) {
+button {
   transition: box-shadow .2s, transform .2s;
 }
 
-button:not(#current):hover {
+button:hover {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   transform: translateY(3px);
 }
