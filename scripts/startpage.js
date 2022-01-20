@@ -220,8 +220,9 @@ assignInput(inputMobile)
 if (inputMobile) {
   document.onclick = () => {
     // setTimeout(() => window.scrollTo(0, 0), 50)
-    document.querySelector('header').focus()
-    inputMobile.style.inputMode = 'none'
+    // inputMobile.style.inputMode = 'none'
+    document.activeElement.blur()
+    inputMobile.blur()
   }
   inputMobile.onpointerup = () => inputMobile.focus()
 }
