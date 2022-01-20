@@ -219,6 +219,10 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
-  inputMobile.onblur = () => window.scrollTo(0, 0)
+  inputMobile.onblur = () => {
+    setTimeout(() => {
+      window.scrollTo(0, 0)
+    }, 1000)
+  }
   inputMobile.onpointerup = () => inputMobile.focus()
 }
