@@ -110,6 +110,7 @@ const fifth = themes[0] // todo sometime
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
 const allMarkup = main.innerHTML
+let searchMarkup = ''
 
 const restorePage = () => {
   if (main.innerHTML !== allMarkup) {
@@ -163,14 +164,23 @@ const assignInput = input => {
     return
   }
 
-  input.addEventListener('keyup', e => {
-    if (e.key === 'Escape') {
+  input.addEventListener('focus', event => {
+    if (event.target.value &&
+        main.innerHTML !== searchMarkup) {
+      main.innerHTML = searchMarkup
+    }
+  })
+
+  input.onblur = () => restorePage()
+
+  input.addEventListener('keyup', event => {
+    if (event.key === 'Escape') {
       input.value = ''
       restorePage()
       return
     }
 
-    const inputValue = e.target.value.trim()
+    const inputValue = event.target.value.trim()
 
     if (!inputValue) {
       restorePage()
@@ -196,6 +206,7 @@ const assignInput = input => {
   
     main.innerHTML = ''
     main.appendChild(searchResult)
+    searchMarkup = main.innerHTML
 
     documentStyle.setProperty('--search-header', `'Результатов поиска: ${searchResult.children.length}'`)
   })
