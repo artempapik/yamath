@@ -219,11 +219,8 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => {
-    setTimeout(() => window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: 'smooth'
-    }), 500)
+    // setTimeout(() => window.scrollTo(0, 0), 50)
+    document.querySelector('header').focus()
     inputMobile.style.inputMode = 'none'
   }
   inputMobile.onpointerup = () => inputMobile.focus()
