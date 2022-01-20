@@ -218,7 +218,7 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.onclick = () => {
+  inputMobile.onblur = () => {
     // setTimeout(() => window.scrollTo(0, 0), 50)
     // inputMobile.style.inputMode = 'none'
     document.activeElement.blur()
