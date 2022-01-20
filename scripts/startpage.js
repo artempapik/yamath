@@ -220,6 +220,6 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  // document.onclick = () => inputMobile.style.inputMode = 'none'
-  // inputMobile.onpointerup = () => inputMobile.focus()
+  document.onclick = () => inputMobile.style.inputMode = 'none'
+  inputMobile.onpointerup = () => inputMobile.focus()
 }
