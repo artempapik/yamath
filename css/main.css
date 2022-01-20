@@ -117,8 +117,12 @@ header {
   padding-left: 7px;
 }
 
-details, summary, details div, details p {
+/* details, summary, details div, details p {
   -webkit-tap-highlight-color: transparent;
+} */
+
+summary:focus {
+  outline: none;
 }
 
 details p {
