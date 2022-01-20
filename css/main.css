@@ -117,7 +117,7 @@ header {
   padding-left: 7px;
 }
 
-summary {
+details, summary {
   -webkit-tap-highlight-color: transparent;
 }
 
