@@ -215,31 +215,31 @@ img {
 
 @media (min-width: 1601px) and (max-width: 1800px) {
   main {
-    width: 55%;
+    width: 45%;
   }
 }
 
 @media (min-width: 1401px) and (max-width: 1600px) {
   main {
-    width: 60%;
+    width: 50%;
   }
 }
 
 @media (min-width: 1201px) and (max-width: 1400px) {
   main {
-    width: 65%;
+    width: 55%;
   }
 }
 
 @media (min-width: 1001px) and (max-width: 1200px) {
   main {
-    width: 70%;
+    width: 60%;
   }
 }
 
 @media (min-width: 801px) and (max-width: 1000px) {
   main {
-    width: 80%;
+    width: 70%;
   }
 }
 
