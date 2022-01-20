@@ -1,10 +1,5 @@
 import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
 
-const scrollPosition = localStorage.getItem('scroll-position')
-console.log(scrollPosition)
-window.scrollTo(0, scrollPosition + 200)
-document.scrollTop = scrollPosition + 200
-
 const backButton = document.querySelector('#back')
 const currentButton = document.querySelector('#current')
 const forwardButton = document.querySelector('#forward')
@@ -228,5 +223,3 @@ if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
   inputMobile.onpointerup = () => inputMobile.focus()
 }
-
-window.onbeforeunload = () => localStorage.setItem('scroll-position', document.documentElement.scrollTop)
