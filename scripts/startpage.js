@@ -223,7 +223,7 @@ if (inputMobile) {
       top: 0,
       left: 0,
       behavior: 'smooth'
-    }), 47)
+    }), 500)
     inputMobile.style.inputMode = 'none'
   }
   inputMobile.onpointerup = () => inputMobile.focus()
