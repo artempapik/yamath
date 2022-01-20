@@ -111,7 +111,7 @@ input:focus {
   outline: none;
 }
 
-input.mobile {
+input#mobile {
   display: none;
 }
 
@@ -129,11 +129,6 @@ main {
   padding-left: 5%;
 }
 
-.search-result {
-  width: 21%;
-  margin: auto;
-}
-
 .algebra, .geometry, .search-result {
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -143,6 +138,8 @@ main {
 }
 
 .search-result {
+  width: 21%;
+  margin: auto;
   font-size: 26px;
 }
 
@@ -416,11 +413,11 @@ p::before {
     transition: none;
   }
 
-  input.desktop {
+  input#desktop {
     display: none;
   }
 
-  input.mobile {
+  input#mobile {
     display: flex;
     border: .1rem solid #000;
   }

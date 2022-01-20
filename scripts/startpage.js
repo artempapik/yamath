@@ -213,8 +213,8 @@ const assignInput = input => {
   })
 }
 
-const inputDesktop = document.querySelector('.desktop')
-const inputMobile = document.querySelector('.mobile')
+const inputDesktop = document.querySelector('#desktop')
+const inputMobile = document.querySelector('#mobile')
 
 assignInput(inputDesktop)
 assignInput(inputMobile)
