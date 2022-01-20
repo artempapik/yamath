@@ -1,5 +1,8 @@
 import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
 
+const scrollPosition = localStorage.getItem('scroll-position')
+window.scrollTo(0, scrollPosition)
+
 const backButton = document.querySelector('#back')
 const currentButton = document.querySelector('#current')
 const forwardButton = document.querySelector('#forward')
@@ -97,7 +100,7 @@ const formButtonClick = increment => {
   }
 
   document.title = `${currentForm} класс`
-  localStorage.setItem('currentForm', currentForm)
+  localStorage.setItem('current-form', currentForm) // for the next feature
   allMarkup = main.innerHTML
 
   documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
@@ -223,3 +226,5 @@ if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
   inputMobile.onpointerup = () => inputMobile.focus()
 }
+
+window.onbeforeunload = () => localStorage.setItem('scroll-position', document.documentElement.scrollTop)
