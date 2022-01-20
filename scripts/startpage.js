@@ -97,6 +97,7 @@ const formButtonClick = increment => {
 
   document.title = `${currentForm} класс`
   localStorage.setItem('currentForm', currentForm)
+  allMarkup = main.innerHTML
 
   documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
   documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
@@ -109,7 +110,7 @@ forwardButton.onpointerup = () => formButtonClick(1)
 const fifth = themes[0] // todo sometime
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
-const allMarkup = main.innerHTML
+let allMarkup = main.innerHTML
 let searchMarkup = ''
 
 const restorePage = () => {
@@ -215,10 +216,6 @@ const inputMobile = document.querySelector('.mobile')
 
 assignInput(inputDesktop)
 assignInput(inputMobile)
-
-if (inputDesktop) {
-  inputDesktop.onblur = () => restorePage()
-}
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
