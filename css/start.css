@@ -427,14 +427,13 @@ p::before {
     transition: none;
   }
 
-  button:not(#current):hover {
+  button:hover {
     box-shadow: none;
     transform: none;
   }
 
   #current {
     padding: 1.2rem 2.3rem;
-    touch-action: none;
   }
 
   #back::before, #forward::before {
