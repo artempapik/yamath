@@ -242,9 +242,3 @@ if (inputMobile) {
   main.scroll()
   inputMobile.onpointerup = () => inputMobile.focus()
 }
-
-window.onunload = () => localStorage.setItem('scroll-position', document.documentElement.scrollTop)
-
-window.onload = () => {
-  // document.querySelector('html').scrollTop = +localStorage.getItem('scroll-position')
-}
