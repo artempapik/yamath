@@ -36,8 +36,11 @@ const divWithClass = className => {
 }
 
 const formButtonClick = increment => {
-  if (inputMobile) {
-    inputMobile.blur()
+  blurInput()
+
+  if (increment === 0) {
+    restorePage()
+    return
   }
 
   const form = themes[currentForm + increment - 5]
@@ -119,8 +122,8 @@ const restorePage = () => {
 }
 
 backButton.onpointerup = () => formButtonClick(-1)
+currentButton.onpointerup = () => formButtonClick(0)
 forwardButton.onpointerup = () => formButtonClick(1)
-currentButton.onpointerup = () => restorePage()
 
 const fifth = themes[0] // todo sometime
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
@@ -172,8 +175,11 @@ const assignInput = input => {
   }
 
   input.addEventListener('focus', event => {
-    if (event.target.value &&
-        main.innerHTML !== searchMarkup) {
+    if (event.target.value && main.innerHTML !== searchMarkup) {
+      // if (!searchMarkup) {
+      //   searchMarkup = localStorage.getItem('search-markup')
+      // }
+
       main.innerHTML = searchMarkup
     }
   })
@@ -212,6 +218,7 @@ const assignInput = input => {
     main.innerHTML = ''
     main.appendChild(searchResult)
     searchMarkup = main.innerHTML
+    localStorage.setItem('search-markup', searchMarkup)
 
     documentStyle.setProperty('--search-header', `'Результатов поиска: ${searchResult.children.length}'`)
   })
@@ -223,7 +230,13 @@ const inputMobile = document.querySelector('#mobile')
 assignInput(inputDesktop)
 assignInput(inputMobile)
 
+const blurInput = () => {
+  if (inputMobile) {
+    inputMobile.blur()
+  }
+}
+
 if (inputMobile) {
-  document.onclick = () => inputMobile.blur()
+  document.onclick = () => inputMobile.style.inputMode = 'none'
   inputMobile.onpointerup = () => inputMobile.focus()
 }
