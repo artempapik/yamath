@@ -508,6 +508,10 @@ p::before {
     margin-left: 4.5rem;
     padding: .3rem;
   }
+
+  p {
+    -webkit-tap-highlight-color: transparent;
+  }
   
   .search-result p:hover {
     padding: .3rem;
