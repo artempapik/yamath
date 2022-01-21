@@ -38,8 +38,9 @@ const divWithClass = className => {
 const formButtonClick = increment => {
   if (inputMobile) {
     inputMobile.style.inputMode = 'none'
+    inputMobile.blur()
   }
-  
+
   const form = themes[currentForm + increment - 5]
 
   const getMarkupFromThemes = (element, themes) => {
