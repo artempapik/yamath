@@ -36,7 +36,9 @@ const divWithClass = className => {
 }
 
 const formButtonClick = increment => {
-  blurInput()
+  if (inputMobile) {
+    inputMobile.blur()
+  }
 
   if (increment === 0) {
     restorePage()
@@ -234,12 +236,6 @@ const inputMobile = document.querySelector('#mobile')
 
 assignInput(inputDesktop)
 assignInput(inputMobile)
-
-const blurInput = () => {
-  if (inputMobile) {
-    inputMobile.blur()
-  }
-}
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
