@@ -7,8 +7,6 @@ const port = process.env.PORT || 3000
 const app = express()
 const dirname = path.resolve()
 
-const { MIN_FORM, MAX_FORM, themes } = await import(`file:${dirname}/data/constants.js`)
-
 app.use(express.static('css'))
 app.use(express.static('scripts'))
 app.use(express.static('data'))
@@ -36,19 +34,8 @@ app.get('/articles/:article', (req, res) => {
 
 app.get('/', (_, res) => res.redirect('/5'))
 
-app.get('/error', (_, res) => res.render('error.pug', { title: articleToTitle['error'] }))
+app.get('/forms', (_, res) => res.render('startpage.pug'))
 
-app.get('/:form', (req, res) => {
-  const form = +req.params.form
-
-  if (!form ||
-      form <= MIN_FORM ||
-      form >= MAX_FORM) {
-    res.redirect('/error')
-    return
-  }
-
-  res.render('startpage.pug', { form, themes: themes[form - 5] })
-})
+app.get('*', (_, res) => res.render('error.pug', { title: articleToTitle['error'] }))
 
 app.listen(port)

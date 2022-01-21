@@ -165,11 +165,48 @@ for (const theme of themes) {
   appendArticle(theme.geometry)
 }
 
+const engToRus = {
+  'f': 'а',
+  ',': 'б',
+  'd': 'в',
+  'u': 'г',
+  'l': 'д',
+  't': 'е',
+  '`': 'е',
+  ';': 'ж',
+  'p': 'з',
+  'b': 'и',
+  'q': 'й',
+  'r': 'к',
+  'k': 'л',
+  'v': 'м',
+  'y': 'н',
+  'j': 'о',
+  'g': 'п',
+  'h': 'р',
+  'c': 'с',
+  'n': 'т',
+  'e': 'у',
+  'a': 'ф',
+  '[': 'х',
+  'w': 'ц',
+  'x': 'ч',
+  'i': 'ш',
+  'o': 'щ',
+  ']': 'ъ',
+  's': 'ы',
+  'm': 'ь',
+  "'": 'э',
+  '.': 'ю',
+  'z': 'я'
+}
+
 const MIN_FORM = 4
 const MAX_FORM = 12
 
 export {
   MIN_FORM,
   MAX_FORM,
-  themes
+  themes,
+  engToRus
 }

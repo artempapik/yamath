@@ -1,14 +1,18 @@
-import { MIN_FORM, MAX_FORM, themes } from '../constants.js'
+import { MIN_FORM, MAX_FORM, themes, engToRus } from '../constants.js'
 
 const backButton = document.querySelector('#back')
 const currentButton = document.querySelector('#current')
 const forwardButton = document.querySelector('#forward')
 
-const path = window.location.pathname
-
-let currentForm = +localStorage.getItem('current-form') || +path.substring(path.indexOf('/') + 1)
+let currentForm = +localStorage.getItem('current-form') || 5
 let previousForm = currentForm - 1
 let nextForm = currentForm + 1
+
+const main = document.querySelector('main')
+let allMarkup = main.innerHTML
+
+const inputDesktop = document.querySelector('#desktop')
+const inputMobile = document.querySelector('#mobile')
 
 const documentStyle = document.documentElement.style
 documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
@@ -27,20 +31,24 @@ if (nextForm < MAX_FORM) {
   forwardButton.style.display = 'none'
 }
 
-const main = document.querySelector('main')
-
 const divWithClass = className => {
   const div = document.createElement('div')
   div.classList.add(className)
   return div
 }
 
-const formButtonClick = increment => {
+const restorePage = () => {
+  if (main.innerHTML !== allMarkup) {
+    main.innerHTML = allMarkup
+  }
+}
+
+const formButtonClick = (increment, createPage) => {
   if (inputMobile) {
     inputMobile.blur()
   }
 
-  if (increment === 0) {
+  if (increment === 0 && !createPage) {
     restorePage()
     return
   }
@@ -106,7 +114,7 @@ const formButtonClick = increment => {
   }
 
   document.title = `${currentForm} класс`
-  localStorage.setItem('current-form', currentForm) // for the next feature
+  localStorage.setItem('current-form', currentForm)
   allMarkup = main.innerHTML
 
   documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
@@ -114,14 +122,7 @@ const formButtonClick = increment => {
   documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
 }
 
-let allMarkup = main.innerHTML
-let searchMarkup = ''
-
-const restorePage = () => {
-  if (main.innerHTML !== allMarkup) {
-    main.innerHTML = allMarkup
-  }
-}
+formButtonClick(0, true)
 
 backButton.onpointerup = () => formButtonClick(-1)
 currentButton.onpointerup = () => formButtonClick(0)
@@ -130,41 +131,7 @@ forwardButton.onpointerup = () => formButtonClick(1)
 const fifth = themes[0] // todo sometime
 const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
 
-const engToRus = {
-  'f': 'а',
-  ',': 'б',
-  'd': 'в',
-  'u': 'г',
-  'l': 'д',
-  't': 'е',
-  '`': 'е',
-  ';': 'ж',
-  'p': 'з',
-  'b': 'и',
-  'q': 'й',
-  'r': 'к',
-  'k': 'л',
-  'v': 'м',
-  'y': 'н',
-  'j': 'о',
-  'g': 'п',
-  'h': 'р',
-  'c': 'с',
-  'n': 'т',
-  'e': 'у',
-  'a': 'ф',
-  '[': 'х',
-  'w': 'ц',
-  'x': 'ч',
-  'i': 'ш',
-  'o': 'щ',
-  ']': 'ъ',
-  's': 'ы',
-  'm': 'ь',
-  "'": 'э',
-  '.': 'ю',
-  'z': 'я'
-}
+let searchMarkup = ''
 
 const transliterate = word => word
   .split('')
@@ -230,9 +197,6 @@ const assignInput = input => {
     documentStyle.setProperty('--search-header', searchHeader)
   })
 }
-
-const inputDesktop = document.querySelector('#desktop')
-const inputMobile = document.querySelector('#mobile')
 
 assignInput(inputDesktop)
 assignInput(inputMobile)
