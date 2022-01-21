@@ -37,7 +37,6 @@ const divWithClass = className => {
 
 const formButtonClick = increment => {
   if (inputMobile) {
-    // inputMobile.style.inputMode = 'none'
     inputMobile.blur()
   }
 
@@ -225,6 +224,6 @@ assignInput(inputDesktop)
 assignInput(inputMobile)
 
 if (inputMobile) {
-  document.onclick = () => inputMobile.style.inputMode = 'none'
+  document.onclick = () => inputMobile.blur()
   inputMobile.onpointerup = () => inputMobile.focus()
 }
