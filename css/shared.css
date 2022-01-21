@@ -23,6 +23,13 @@ body {
   counter-reset: section;
 }
 
+.error {
+  margin: 0 auto;
+  margin-top: 30px;
+  text-align: center;
+  width: 70%;
+}
+
 @media (max-device-width: 800px) {
   html {
     -webkit-text-size-adjust: none;

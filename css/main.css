@@ -209,10 +209,6 @@ img {
   margin-bottom: 40px;
 }
 
-.error {
-  margin-top: 30px;
-}
-
 @media (min-width: 1601px) and (max-width: 1800px) {
   main {
     width: 45%;
