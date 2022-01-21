@@ -208,7 +208,7 @@ if (inputMobile) {
     // this.value = this.value
   })
 
-  inputMobile.addEventListener('focus', () => this.value = this.value)
+  // inputMobile.addEventListener('focus', () => this.value = this.value)
 
   // inputMobile.onpointerup = e => inputMobile.focus()
 }
