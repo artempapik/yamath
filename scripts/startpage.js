@@ -201,14 +201,34 @@ const assignInput = input => {
 assignInput(inputDesktop)
 assignInput(inputMobile)
 
-if (inputMobile) {
+if (inputMobile) { // WAIT WHAT
   document.onclick = () => inputMobile.style.inputMode = 'none'
   inputMobile.addEventListener('pointerup', () => inputMobile.focus())
 }
 
-let isNightMode = false
+let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 
-window.enableNightMode = () => {
+const moon = document.querySelector('#moon')
+const sun = document.querySelector('#sun')
+const icons = [sun, moon]
+
+for (let i = 0; i < icons.length; i++) {
+  icons[i].classList.remove('fa-2x')
+  icons[i].classList.add('fa-4x')
+}
+
+//
+const a = isNightMode ? '#fff' : '#000'
+const b = isNightMode ? '#000' : '#fff'
+
+documentStyle.setProperty('--background-color', a)
+documentStyle.setProperty('--text-color', b)
+
+icons[+isNightMode].style.display = 'none'
+icons[+!isNightMode].style.display = 'block'
+//
+
+window.toggleNightMode = () => {
   const backgroundColor = isNightMode ? '#fff' : '#000'
   const textColor = isNightMode ? '#000' : '#fff'
 
@@ -216,4 +236,10 @@ window.enableNightMode = () => {
   documentStyle.setProperty('--text-color', textColor)
 
   isNightMode = !isNightMode
+
+  icons[+isNightMode].style.display = 'none'
+  icons[+!isNightMode].style.display = 'block'
+
+  localStorage.setItem('is-night-mode', isNightMode)
+  console.log(localStorage.getItem('is-night-mode'))
 }
