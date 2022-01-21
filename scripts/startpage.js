@@ -6,7 +6,7 @@ const forwardButton = document.querySelector('#forward')
 
 const path = window.location.pathname
 
-let currentForm = +path.substring(path.indexOf('/') + 1)
+let currentForm = +localStorage.getItem('current-form') || +path.substring(path.indexOf('/') + 1)
 let previousForm = currentForm - 1
 let nextForm = currentForm + 1
 
