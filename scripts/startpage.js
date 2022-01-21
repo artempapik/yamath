@@ -246,6 +246,5 @@ if (inputMobile) {
 window.onunload = () => localStorage.setItem('scroll-position', document.documentElement.scrollTop)
 
 window.onload = () => {
-  // document.querySelector('.geometry').scrollIntoView()
-  document.querySelector('html').scrollTop = +localStorage.getItem('scroll-position')
+  // document.querySelector('html').scrollTop = +localStorage.getItem('scroll-position')
 }
