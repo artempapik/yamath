@@ -209,9 +209,9 @@ if (inputMobile) {
 let isNightMode = false
 
 window.enableNightMode = () => {
-  const backgroundColor = isNightMode ? '#000' : '#fff'
-  const textColor = isNightMode ? '#fff' : '#000'
-  
+  const backgroundColor = isNightMode ? '#fff' : '#000'
+  const textColor = isNightMode ? '#000' : '#fff'
+
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--text-color', textColor)
 
