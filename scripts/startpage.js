@@ -244,11 +244,6 @@ if (inputMobile) {
 }
 
 window.onload = () => {
-  // console.log(1)
-  // window.scroll(0, 400)
-  // main.scrollTo()
-  // document.scr
-
-  document.querySelector('.geometry').scrollIntoView()
-  // document.querySelector('body').scrollTop = 400
+  // document.querySelector('.geometry').scrollIntoView()
+  document.querySelector('html').scrollTop = 400
 }
