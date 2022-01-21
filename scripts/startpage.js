@@ -243,7 +243,9 @@ if (inputMobile) {
   inputMobile.onpointerup = () => inputMobile.focus()
 }
 
+window.onunload = () => localStorage.setItem('scroll-position', document.documentElement.scrollTop)
+
 window.onload = () => {
   // document.querySelector('.geometry').scrollIntoView()
-  document.querySelector('html').scrollTop = 400
+  document.querySelector('html').scrollTop = +localStorage.getItem('scroll-position')
 }
