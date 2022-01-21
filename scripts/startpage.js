@@ -203,12 +203,5 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
-  inputMobile.addEventListener('pointerup', () => {
-    inputMobile.focus()
-    // this.value = this.value
-  })
-
-  // inputMobile.addEventListener('focus', () => this.value = this.value)
-
-  // inputMobile.onpointerup = e => inputMobile.focus()
+  inputMobile.addEventListener('pointerup', () => inputMobile.focus())
 }
