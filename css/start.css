@@ -481,7 +481,7 @@ p::before {
     padding-left: 2rem;
   }
 
-  .algebra p:hover, .geometry p:hover {
+  .algebra p:hover, .geometry p:hover, .search-result p:hover {
     box-shadow: none;
     padding-left: 0;
     font-weight: normal;
@@ -507,6 +507,9 @@ p::before {
   .search-result p {
     margin-left: 4.5rem;
     padding: .3rem;
+  }
+
+  p {
     -webkit-tap-highlight-color: transparent;
   }
   
