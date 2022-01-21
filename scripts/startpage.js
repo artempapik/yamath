@@ -176,9 +176,10 @@ const assignInput = input => {
 
   input.addEventListener('focus', event => {
     if (event.target.value && main.innerHTML !== searchMarkup) {
-      // if (!searchMarkup) {
-      //   searchMarkup = localStorage.getItem('search-markup')
-      // }
+      if (!searchMarkup) {
+        searchMarkup = localStorage.getItem('search-markup')
+        console.log(searchMarkup)
+      }
 
       main.innerHTML = searchMarkup
     }
