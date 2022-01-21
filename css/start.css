@@ -481,11 +481,6 @@ p::before {
     padding-left: 2rem;
   }
 
-  p::before {
-    width: 2.5rem;
-    margin-left: -1rem;
-  }
-
   .algebra p:hover, .geometry p:hover {
     box-shadow: none;
     padding-left: 0;
@@ -509,16 +504,32 @@ p::before {
     margin-top: 3.5rem !important;
   }
 
-  .search-result p::before {
-    font-size: 2.5rem;
-    width: 4.5rem;
-    margin-left: -2.5rem;
+  .search-result p {
+    margin-left: 4.5rem;
+    padding: .3rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  .search-result p:hover {
+    padding: .3rem;
   }
 
-  p {
+  p, .intro p {
     margin: 0;
     margin-top: 1.2rem !important;
+    margin-left: 2rem;
     line-height: 1.4;
+  }
+
+  p::before, .intro p::before {
+    width: 3rem;
+    margin-left: -3rem;
+  }
+
+  .search-result p::before {
+    font-size: 2.5rem;
+    width: 5rem;
+    margin-left: -5rem;
   }
 
   a {
