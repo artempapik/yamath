@@ -178,7 +178,8 @@ const assignInput = input => {
     if (event.target.value && main.innerHTML !== searchMarkup) {
       if (!searchMarkup) {
         searchMarkup = localStorage.getItem('search-markup')
-        console.log(searchMarkup)
+        const searchHeader = localStorage.getItem('search-header')
+        documentStyle.setProperty('--search-header', searchHeader)
       }
 
       main.innerHTML = searchMarkup
@@ -218,10 +219,13 @@ const assignInput = input => {
   
     main.innerHTML = ''
     main.appendChild(searchResult)
+
     searchMarkup = main.innerHTML
     localStorage.setItem('search-markup', searchMarkup)
 
-    documentStyle.setProperty('--search-header', `'Результатов поиска: ${searchResult.children.length}'`)
+    const searchHeader = `'Результатов поиска: ${searchResult.children.length}'`
+    localStorage.setItem('search-header', searchHeader)
+    documentStyle.setProperty('--search-header', searchHeader)
   })
 }
 
