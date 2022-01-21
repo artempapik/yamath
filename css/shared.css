@@ -34,6 +34,10 @@ body {
   html {
     -webkit-text-size-adjust: none;
   }
+
+  .error {
+    width: 75%;
+  }
 }
 
 @media (max-width: 800px) {
