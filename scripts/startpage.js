@@ -37,7 +37,7 @@ const divWithClass = className => {
 
 const formButtonClick = increment => {
   if (inputMobile) {
-    inputMobile.style.inputMode = 'none'
+    // inputMobile.style.inputMode = 'none'
     inputMobile.blur()
   }
 
