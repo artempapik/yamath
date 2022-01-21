@@ -32,7 +32,7 @@ app.get('/articles/:article', (req, res) => {
   res.render(article, { title: 'Ряд натуральных чисел' /* articleToTitle[article] think about */ })
 })
 
-app.get('/', (_, res) => res.redirect('/5'))
+app.get('/', (_, res) => res.redirect('/forms'))
 
 app.get('/forms', (_, res) => res.render('startpage.pug'))
 
