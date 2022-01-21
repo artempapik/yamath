@@ -239,5 +239,16 @@ assignInput(inputMobile)
 
 if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
+  main.scroll()
   inputMobile.onpointerup = () => inputMobile.focus()
+}
+
+window.onload = () => {
+  // console.log(1)
+  // window.scroll(0, 400)
+  // main.scrollTo()
+  // document.scr
+
+  document.querySelector('.geometry').scrollIntoView()
+  // document.querySelector('body').scrollTop = 400
 }
