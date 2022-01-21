@@ -205,3 +205,15 @@ if (inputMobile) {
   document.onclick = () => inputMobile.style.inputMode = 'none'
   inputMobile.addEventListener('pointerup', () => inputMobile.focus())
 }
+
+let isNightMode = false
+
+window.enableNightMode = () => {
+  const backgroundColor = isNightMode ? '#000' : '#fff'
+  const textColor = isNightMode ? '#fff' : '#000'
+  
+  documentStyle.setProperty('--background-color', backgroundColor)
+  documentStyle.setProperty('--text-color', textColor)
+
+  isNightMode = !isNightMode
+}
