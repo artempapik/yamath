@@ -247,7 +247,7 @@ img {
   :root {
     --intro-border-color: rgba(0, 0, 0, .8);
     --intro-border-width: .2rem;
-    --questions-border-width: .45rem;
+    --questions-border-width: .55rem;
     --questions-question-box-width: 4.2rem;
   }
 
@@ -305,7 +305,7 @@ img {
   }
 
   .questions-left-border {
-    height: 16rem;
+    height: 14rem;
   }
 
   .questions-content {
