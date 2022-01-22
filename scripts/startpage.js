@@ -222,9 +222,19 @@ let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 const toggleNightMode = () => {
   const backgroundColor = isNightMode ? '#f8f8f8' : '#202020'
   const textColor = isNightMode ? '#202020' : '#e8e8e8'
+  const themeBorderColor = isNightMode ? '#00008b' : '#4169e1'
+  const themeHoverColor = isNightMode ? '#d2691e' : '#708090'
+  const inputBackgroundColor = isNightMode ? '#fff' : '#606060'
+  const inputColor = isNightMode ? '#585858' : '#e8e8e8'
+  const shadowColor = isNightMode ? 'rgba(0, 0, 0, 0.07)' : 'red'
 
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--text-color', textColor)
+  documentStyle.setProperty('--theme-border-color', themeBorderColor)
+  documentStyle.setProperty('--theme-hover-color', themeHoverColor)
+  documentStyle.setProperty('--input-background-color', inputBackgroundColor)
+  documentStyle.setProperty('--input-color', inputColor)
+  documentStyle.setProperty('--shadow-color', shadowColor)
 
   isNightMode = !isNightMode
 
