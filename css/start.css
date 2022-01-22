@@ -556,7 +556,7 @@ p::before {
   }
 
   p {
-    /* background: none !important; */
+    background: none !important;
   }
 
   p {
