@@ -12,7 +12,8 @@
 }
 
 body {
-  background-color: #FAF9F6;
+  background-color: var(--background-color);
+  color: var(--text-color);
   line-height: 1.5;
   letter-spacing: .5px;
 }
@@ -29,7 +30,7 @@ main {
   width: 40%;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
-  background-color: #fff;
+  background-color: var(--main-color);
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
 }
