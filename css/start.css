@@ -83,8 +83,8 @@ button {
 }
 
 a:active {
-  background-color: indigo;
-  /* -webkit-tap-highlight-color: red !important; */
+  /* background-color: indigo; */
+  -webkit-tap-highlight-color: red !important;
   /* color: green; */
 }
 
