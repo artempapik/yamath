@@ -90,6 +90,7 @@ a, p {
 
 a:focus, a:active, p:focus, p:active {
   background-color: yellow;
+  -webkit-tap-highlight-color: yellow;
 }
 
 button {
