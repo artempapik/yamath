@@ -227,6 +227,7 @@ const toggleNightMode = () => {
   const inputBackgroundColor = isNightMode ? '#fff' : '#606060'
   const inputColor = isNightMode ? '#585858' : '#e8e8e8'
   const shadowColor = isNightMode ? 'rgba(0, 0, 0, 0.07)' : 'red'
+  const scrollbarTrack = isNightMode ? '#f1f1f1' : ''
 
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--text-color', textColor)
@@ -235,6 +236,7 @@ const toggleNightMode = () => {
   documentStyle.setProperty('--input-background-color', inputBackgroundColor)
   documentStyle.setProperty('--input-color', inputColor)
   documentStyle.setProperty('--shadow-color', shadowColor)
+  documentStyle.setProperty('--scrollbar-track', scrollbarTrack)
 
   isNightMode = !isNightMode
 
