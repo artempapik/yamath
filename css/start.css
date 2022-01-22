@@ -82,6 +82,12 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
+a:active {
+  background-color: indigo;
+  /* -webkit-tap-highlight-color: red !important; */
+  /* color: green; */
+}
+
 button {
   transition: box-shadow .2s, transform .2s;
 }
