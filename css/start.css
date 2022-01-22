@@ -558,8 +558,4 @@ p::before {
   p {
     -webkit-tap-highlight-color: transparent;
   }
-
-  button, p, a, html {
-    -webkit-tap-highlight-color: skyblue;
-  }
 }
