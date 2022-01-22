@@ -4,6 +4,8 @@ const backButton = document.querySelector('#back')
 const currentButton = document.querySelector('#current')
 const forwardButton = document.querySelector('#forward')
 
+const isMobile = 'ontouchstart' in document
+
 let currentForm = +localStorage.getItem('current-form') || 5
 let previousForm = currentForm - 1
 let nextForm = currentForm + 1
@@ -201,34 +203,23 @@ const assignInput = input => {
 assignInput(inputDesktop)
 assignInput(inputMobile)
 
-if (inputMobile) { // WAIT WHAT
-  document.onclick = () => inputMobile.style.inputMode = 'none'
-  inputMobile.addEventListener('pointerup', () => inputMobile.focus())
-}
-
-let isNightMode = !(!!localStorage.getItem('is-night-mode'))
-
 const moon = document.querySelector('#moon')
 const sun = document.querySelector('#sun')
 const icons = [sun, moon]
 
-for (let i = 0; i < icons.length; i++) {
-  icons[i].classList.remove('fa-2x')
-  icons[i].classList.add('fa-4x')
+if (isMobile) {
+  document.onclick = () => inputMobile.style.inputMode = 'none'
+  inputMobile.addEventListener('pointerup', () => inputMobile.focus())
+
+  for (let i = 0; i < icons.length; i++) {
+    icons[i].classList.remove('fa-2x')
+    icons[i].classList.add('fa-4x')
+  }
 }
 
-//
-const a = isNightMode ? '#fff' : '#000'
-const b = isNightMode ? '#000' : '#fff'
+let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 
-documentStyle.setProperty('--background-color', a)
-documentStyle.setProperty('--text-color', b)
-
-icons[+isNightMode].style.display = 'none'
-icons[+!isNightMode].style.display = 'block'
-//
-
-window.toggleNightMode = () => {
+const toggleNightMode = () => {
   const backgroundColor = isNightMode ? '#fff' : '#000'
   const textColor = isNightMode ? '#000' : '#fff'
 
@@ -239,7 +230,11 @@ window.toggleNightMode = () => {
 
   icons[+isNightMode].style.display = 'none'
   icons[+!isNightMode].style.display = 'block'
+}
 
-  localStorage.setItem('is-night-mode', isNightMode)
-  console.log(localStorage.getItem('is-night-mode'))
+toggleNightMode()
+
+window.toggleNightMode = () => {
+  toggleNightMode()
+  localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
 }
