@@ -82,10 +82,6 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-p {
-  -webkit-tap-highlight-color: red;
-}
-
 button {
   transition: box-shadow .2s, transform .2s;
 }
@@ -557,5 +553,9 @@ p::before {
 
   a {
     touch-action: manipulation;
+  }
+
+  p {
+    -webkit-tap-highlight-color: transparent;
   }
 }
