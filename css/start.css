@@ -560,6 +560,6 @@ p::before {
   }
 
   a, a:focus, a:active, a:hover, a:focus-visible, a:focus-within, p, p:focus, p:active, p:hover, p:focus-visible, p:focus-within {
-    -webkit-tap-highlight-color: transparent !important;
+    -webkit-tap-highlight-color: var(--background-color) !important;
   }
 }
