@@ -17,12 +17,12 @@
     var(--shadow-color) 0px 16px 32px,
     var(--shadow-color) 0px 32px 64px;
 
-  --background-color: #fff;
-  --text-color: #000;
-  --theme-border-color: #00008b;
-  --theme-hover-color: #d2691e;
-  --input-background-color: #fff;
-  --input-color: #585858;
+  --background-color: '';
+  --text-color: '';
+  --theme-border-color: '';
+  --theme-hover-color: '';
+  --input-background-color: '';
+  --input-color: '';
 }
 
 body {
