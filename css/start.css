@@ -555,6 +555,12 @@ p::before {
     touch-action: manipulation;
   }
 
+  a, a:focus, a:active {
+    outline: none;
+    border: 0;
+    background: none;
+  }
+
   p {
     -webkit-tap-highlight-color: transparent;
   }

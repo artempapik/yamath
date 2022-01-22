@@ -137,7 +137,7 @@ summary {
 }
 
 summary:focus {
-  /* outline: none; */
+  outline: none;
 }
 
 .exercises-header {
