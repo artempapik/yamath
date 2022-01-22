@@ -84,13 +84,13 @@ button {
 
 a, p {
   /* background-color: indigo; */
-  /* -webkit-tap-highlight-color: red !important; */
+  -webkit-tap-highlight-color: red !important;
   /* color: green; */
 }
 
 a:focus, a:active, p:focus, p:active {
-  background-color: yellow;
-  -webkit-tap-highlight-color: yellow;
+  background-color: yellow !important;
+  -webkit-tap-highlight-color: yellow !important;
 }
 
 button {
