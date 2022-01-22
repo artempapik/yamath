@@ -555,7 +555,11 @@ p::before {
     touch-action: manipulation;
   }
 
-  div, p {
+  p {
     -webkit-tap-highlight-color: transparent;
+  }
+
+  button, p, a, html {
+    -webkit-tap-highlight-color: skyblue;
   }
 }
