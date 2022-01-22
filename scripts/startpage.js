@@ -220,8 +220,8 @@ if (isMobile) {
 let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 
 const toggleNightMode = () => {
-  const backgroundColor = isNightMode ? '#fff' : '#000'
-  const textColor = isNightMode ? '#000' : '#fff'
+  const backgroundColor = isNightMode ? '#f8f8f8' : '#202020'
+  const textColor = isNightMode ? '#202020' : '#f8f8f8'
 
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--text-color', textColor)
