@@ -88,7 +88,7 @@ a, p {
   /* color: green; */
 }
 
-a:focus {
+a:focus, a:active, p:focus, p:active {
   background-color: yellow;
 }
 
