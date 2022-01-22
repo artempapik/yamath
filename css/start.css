@@ -82,15 +82,8 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 
-a, p {
-  /* background-color: indigo; */
-  -webkit-tap-highlight-color: red !important;
-  /* color: green; */
-}
-
-a:focus, a:active, p:focus, p:active {
-  background-color: yellow !important;
-  -webkit-tap-highlight-color: yellow !important;
+p {
+  -webkit-tap-highlight-color: transparent;
 }
 
 button {
@@ -564,5 +557,9 @@ p::before {
 
   a {
     touch-action: manipulation;
+  }
+
+  a, a:focus, a:active, a:hover, a:focus-visible, a:focus-within, p, p:focus, p:active, p:hover, p:focus-visible, p:focus-within {
+    -webkit-tap-highlight-color: transparent !important;
   }
 }
