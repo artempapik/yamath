@@ -511,7 +511,7 @@ p::before {
 
   .integers::before, .fractionals::before, .intro::before {
     border-top: 0;
-    border-bottom: .4rem solid darkblue;
+    border-bottom: .4rem solid var(--theme-border-color);
     padding: 5px;
     line-height: 2.5;
   }
