@@ -83,7 +83,7 @@ button {
 }
 
 p {
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: red;
 }
 
 button {
@@ -557,9 +557,5 @@ p::before {
 
   a {
     touch-action: manipulation;
-  }
-
-  a:active {
-    background-color: black;
   }
 }
