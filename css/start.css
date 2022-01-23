@@ -109,6 +109,12 @@ input {
   -webkit-tap-highlight-color: transparent;
 }
 
+i {
+  position: absolute;
+  top: 1%;
+  left: .5%;
+}
+
 ::placeholder {
   color: var(--input-color);
 }
@@ -440,6 +446,11 @@ p::before {
   input#mobile {
     display: flex;
     border: .1rem solid #000;
+  }
+
+  i {
+    top: 1%;
+    left: 1.5%;
   }
 
   button {
