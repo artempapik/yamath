@@ -5,6 +5,7 @@ let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 const toggleNightMode = () => {
   // MAKE TRANSITION ON ALL OF IT LATER
 
+  const mainShadowColor = isNightMode ? 'rgba(0, 0, 0, 0.15)' : 'rgba(255, 255, 255, 0.12)'
   const introBorderColor = isNightMode ? 'rgba(0, 0, 0, .6)' : 'rgba(255, 255, 255, .6)'
   const backgroundColor = isNightMode ? '#faf9f6' : '#303030'
   const mainColor = isNightMode ? '#fff' : '#202020'
@@ -17,6 +18,7 @@ const toggleNightMode = () => {
   const warningRuleFirstBorderColor = isNightMode ? 'rgba(60, 64, 67, 0.3)' : 'rgba(240, 244, 247, 0.3)'
   const warningRuleSecondBorderColor = isNightMode ? 'rgba(60, 64, 67, 0.15)' : 'rgba(240, 244, 247, 0.15)'
 
+  documentStyle.setProperty('--main-shadow-color', mainShadowColor)
   documentStyle.setProperty('--intro-border-color', introBorderColor)
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--main-color', mainColor)

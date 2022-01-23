@@ -26,7 +26,7 @@ body {
 main {
   width: 40%;
   margin: 0 auto;
-  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  box-shadow: var(--main-shadow-color) 1.95px 1.95px 2.6px;
   background-color: var(--main-color);
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
