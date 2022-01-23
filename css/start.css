@@ -23,6 +23,7 @@
   --theme-hover-color: '';
   --input-background-color: '';
   --input-color: '';
+  --tap-color: '';
 }
 
 body {
@@ -553,7 +554,7 @@ p::before {
 
   a {
     touch-action: manipulation;
-    -webkit-tap-highlight-color: rgba(var(--text-color), .95);
+    -webkit-tap-highlight-color: rgba(var(--tap-color), .5);
   }
 
   p {
