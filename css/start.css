@@ -557,12 +557,12 @@ p::before {
     margin-left: -5rem;
   }
 
+  p, a {
+    background: none !important;
+  }
+
   a {
     touch-action: manipulation;
     -webkit-tap-highlight-color: rgba(var(--tap-color), .5);
-  }
-
-  p {
-    background: none !important;
   }
 }
