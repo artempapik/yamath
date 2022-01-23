@@ -243,7 +243,7 @@ p::before {
   font-weight: bold;
   display: inline-block;
   width: 1.2rem;
-  margin-left: -1rem;
+  margin-left: -1.2rem;
   transition: color 1s;
 }
 
@@ -262,6 +262,11 @@ p::before {
 
   .search-result {
     width: 30%;
+  }
+
+  p::before {
+    width: 1rem;
+    margin-left: -1rem;
   }
 }
 
@@ -374,6 +379,14 @@ p::before {
     margin-top: 0;
   }
 
+  .algebra p, .geometry p {
+    padding-left: 1.5rem;
+  }
+
+  .algebra p:hover, .geometry p:hover {
+    padding-left: 1.5rem;
+  }
+
   .search-result::before {
     padding-left: 3rem;
   }
@@ -394,7 +407,7 @@ p::before {
 
   p::before {
     width: 1rem;
-    margin-left: -2.5rem;
+    margin-left: -1rem;
   }
 
   .search-result p::before {
