@@ -226,7 +226,7 @@ const toggleNightMode = () => {
   const themeHoverColor = isNightMode ? '#d2691e' : '#708090'
   const inputBackgroundColor = isNightMode ? '#fff' : '#606060'
   const inputColor = isNightMode ? '#585858' : '#e8e8e8'
-  const shadowColor = isNightMode ? 'rgba(0, 0, 0, 0.07)' : 'red'
+  const shadowColor = isNightMode ? 'rgba(0, 0, 0, 0.07)' : 'rgba(255, 255, 255, 0.08)'
   const scrollbarTrack = isNightMode ? '#f1f1f1' : ''
   const tapColor = isNightMode ? '32, 32, 32' : '232, 232, 232'
 
