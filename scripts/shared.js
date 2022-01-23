@@ -13,6 +13,7 @@ const toggleNightMode = () => {
   const detailsColor = isNightMode ? '#8b0000' : '#ff3333'
   const ruleBorderColor = isNightMode ? '#dc143c' : '#ff8080'
   const questionsBorderColor = isNightMode ? '#ffcd28' : '#ffd280'
+  const warningRuleBorderColor = isNightMode ? '#f5f500' : '#e1e100'
   const warningRuleFirstBorderColor = isNightMode ? 'rgba(60, 64, 67, 0.3)' : 'rgba(240, 244, 247, 0.3)'
   const warningRuleSecondBorderColor = isNightMode ? 'rgba(60, 64, 67, 0.15)' : 'rgba(240, 244, 247, 0.15)'
 
@@ -24,6 +25,7 @@ const toggleNightMode = () => {
   documentStyle.setProperty('--details-color', detailsColor)
   documentStyle.setProperty('--rule-border-color', ruleBorderColor)
   documentStyle.setProperty('--questions-border-color', questionsBorderColor)
+  documentStyle.setProperty('--warning-rule-border-color', warningRuleBorderColor)
   documentStyle.setProperty('--warning-rule-first-border-color', warningRuleFirstBorderColor)
   documentStyle.setProperty('--warning-rule-second-border-color', warningRuleSecondBorderColor)
 
