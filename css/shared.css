@@ -19,8 +19,16 @@
 }
 
 body {
+  background-color: var(--background-color);
+  color: var(--text-color);
   margin: 0;
   counter-reset: section;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
+  cursor: pointer;
 }
 
 .error {
@@ -33,23 +41,37 @@ body {
 .error button {
   cursor: pointer;
   margin-top: 10px;
+  font-size: 16px;
   margin-bottom: 20px;
-  padding: 8px 16px;
-  border-radius: 7px;
+  padding: 11px 25px;
+  border-radius: 5px;
   border: 0;
-  box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px;
   transition: box-shadow .2s, transform .2s;
+  color: var(--text-color);
+  background-color: var(--background-color);
   -webkit-tap-highlight-color: transparent;
-}
-
-.error button:hover {
-  box-shadow: var(--button-hover-first-box-shadow) 0px 3px 6px, var(--button-hover-second-box-shadow) 0px 3px 6px;
-  transform: translateY(3px);
 }
 
 @media (max-device-width: 800px) {
   html {
     -webkit-text-size-adjust: none;
+  }
+
+  p {
+    background: none !important;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  a {
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: rgba(var(--tap-color), .5);
+  }
+
+  .error button {
+    margin-top: 2.4rem;
+    margin-bottom: 0;
+    padding: 1.2rem 2.5rem;
+    font-size: 2rem;
   }
 }
 

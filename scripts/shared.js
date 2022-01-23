@@ -11,7 +11,7 @@ const toggleNightMode = () => {
   const mainColor = isNightMode ? '#fff' : '#202020'
   const textColor = isNightMode ? '#202020' : '#e8e8e8'
   const summaryExerciseColor = isNightMode ? '#191970' : '#6495ed'
-  const detailsColor = isNightMode ? '#8b0000' : '#ff3333'
+  const detailsColor = isNightMode ? '#8b0000' : '#ff8080'
   const ruleBorderColor = isNightMode ? '#dc143c' : '#ff8080'
   const questionsBorderColor = isNightMode ? '#ffcd28' : '#ffd280'
   const warningRuleBorderColor = isNightMode ? '#f5f500' : '#e1e100'
