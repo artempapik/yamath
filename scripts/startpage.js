@@ -233,6 +233,7 @@ const toggleNightMode = () => {
   const buttonSecondBoxShadow = isNightMode ? 'rgba(27, 31, 35, 0.15)' : 'rgba(255, 255, 255, 0.15)'
   const buttonHoverFirstBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.16)' : 'rgba(255, 255, 255, 0.16)'
   const buttonHoverSecondBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)'
+  const backForwardButtonBackground = isNightMode ? '#f0f0f0' : '#505050'
 
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--text-color', textColor)
@@ -247,6 +248,7 @@ const toggleNightMode = () => {
   documentStyle.setProperty('--button-second-box-shadow', buttonSecondBoxShadow)
   documentStyle.setProperty('--button-hover-first-box-shadow', buttonHoverFirstBoxShadow)
   documentStyle.setProperty('--button-hover-second-box-shadow', buttonHoverSecondBoxShadow)
+  documentStyle.setProperty('--back-forward-button-background', backForwardButtonBackground)
 
   isNightMode = !isNightMode
 
