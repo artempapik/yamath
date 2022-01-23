@@ -229,6 +229,10 @@ const toggleNightMode = () => {
   const shadowColor = isNightMode ? 'rgba(0, 0, 0, 0.07)' : 'rgba(255, 255, 255, 0.08)'
   const scrollbarTrack = isNightMode ? '#f1f1f1' : ''
   const tapColor = isNightMode ? '32, 32, 32' : '232, 232, 232'
+  const buttonFirstBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.02)' : 'rgba(228, 224, 220, 0.02)'
+  const buttonSecondBoxShadow = isNightMode ? 'rgba(27, 31, 35, 0.15)' : 'rgba(255, 255, 255, 0.15)'
+  const buttonHoverFirstBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.16)' : 'rgba(255, 255, 255, 0.16)'
+  const buttonHoverSecondBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)'
 
   documentStyle.setProperty('--background-color', backgroundColor)
   documentStyle.setProperty('--text-color', textColor)
@@ -239,6 +243,10 @@ const toggleNightMode = () => {
   documentStyle.setProperty('--shadow-color', shadowColor)
   documentStyle.setProperty('--scrollbar-track', scrollbarTrack)
   documentStyle.setProperty('--tap-color', tapColor)
+  documentStyle.setProperty('--button-first-box-shadow', buttonFirstBoxShadow)
+  documentStyle.setProperty('--button-second-box-shadow', buttonSecondBoxShadow)
+  documentStyle.setProperty('--button-hover-first-box-shadow', buttonHoverFirstBoxShadow)
+  documentStyle.setProperty('--button-hover-second-box-shadow', buttonHoverSecondBoxShadow)
 
   isNightMode = !isNightMode
 
