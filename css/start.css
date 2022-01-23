@@ -553,7 +553,7 @@ p::before {
 
   a {
     touch-action: manipulation;
-    -webkit-tap-highlight-color: red !important;
+    -webkit-tap-highlight-color: var(--text-color) !important;
   }
 
   p {
