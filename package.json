@@ -6,6 +6,6 @@
     "serve-favicon": "^2.5.0"
   },
   "scripts": {
-    "start": "node app"
+    "start": "start http://localhost:3000 & node app"
   }
 }

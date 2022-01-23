@@ -5,7 +5,7 @@ let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 const toggleNightMode = () => {
   // MAKE TRANSITION ON ALL OF IT LATER
 
-  const introBorderColor = isNightMode ? 'rgba(0, 0, 0, .4)' : 'rgba(255, 255, 255, .4)' // set .8 for mobile
+  const introBorderColor = isNightMode ? 'rgba(0, 0, 0, .6)' : 'rgba(255, 255, 255, .6)'
   const backgroundColor = isNightMode ? '#faf9f6' : '#303030'
   const mainColor = isNightMode ? '#fff' : '#202020'
   const textColor = isNightMode ? '#202020' : '#e8e8e8'

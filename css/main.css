@@ -2,17 +2,10 @@
 @import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text&display=swap');
 
 :root {
-  --intro-border-color: rgba(0, 0, 0, .4);
   --intro-border-width: 2px;
-  --questions-border-color: #FFCD28;
   --questions-border-width: 5px;
   --questions-question-box-width: 25px;
   --questions-exercises-opacity: .8;
-  --summary-exercise-color: #191970;
-  --details-color: #8b0000;
-  --rule-border-color: #dc143c;
-  --warning-rule-first-border-color: rgba(60, 64, 67, 0.3);
-  --warning-rule-second-border-color: rgba(60, 64, 67, 0.15);
 }
 
 body {
@@ -241,7 +234,6 @@ img {
 
 @media (max-device-width: 800px) {
   :root {
-    --intro-border-color: rgba(0, 0, 0, .8);
     --intro-border-width: .2rem;
     --questions-border-width: .55rem;
     --questions-question-box-width: 4.2rem;
