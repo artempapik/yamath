@@ -553,10 +553,10 @@ p::before {
 
   a {
     touch-action: manipulation;
+    -webkit-tap-highlight-color: red !important;
   }
 
   p {
     background: none !important;
-    -webkit-tap-highlight-color: transparent;
   }
 }
