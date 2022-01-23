@@ -557,8 +557,9 @@ p::before {
     margin-left: -5rem;
   }
 
-  p, a {
+  p {
     background: none !important;
+    -webkit-tap-highlight-color: transparent;
   }
 
   a {
