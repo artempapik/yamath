@@ -67,6 +67,10 @@ a {
     -webkit-tap-highlight-color: rgba(var(--tap-color), .5);
   }
 
+  .error {
+    width: 75%;
+  }
+
   .error button {
     margin-top: 2.4rem;
     margin-bottom: 0;
