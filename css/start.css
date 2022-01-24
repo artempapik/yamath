@@ -111,9 +111,15 @@ input {
 }
 
 i {
+  cursor: pointer;
   position: absolute;
   top: var(--top-margin);
   left: var(--top-margin);
+  transition: .15s;
+}
+
+i:hover {
+  color: var(--theme-hover-color);
 }
 
 ::placeholder {
@@ -312,7 +318,7 @@ p::before {
   }
 
   header {
-    margin-right: 15%;
+    margin-right: 12%;
   }
 
   .algebra, .geometry, .search-result {
