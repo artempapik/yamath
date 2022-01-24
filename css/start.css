@@ -164,6 +164,7 @@ main {
 .search-result {
   width: 21%;
   margin: auto;
+  margin-top: 20px;
   font-size: 26px;
 }
 
@@ -460,6 +461,12 @@ p::before {
 
   i {
     top: calc(var(--top-margin) + .5rem);
+    transition: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  i:hover {
+    color: currentColor;
   }
 
   button {
