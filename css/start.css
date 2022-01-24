@@ -453,7 +453,7 @@ p::before {
   }
 
   i {
-    top: calc(var(--top-margin) + .8rem);
+    top: calc(var(--top-margin) + .5rem);
   }
 
   button {

@@ -6,12 +6,9 @@ html
     link(rel='stylesheet' href='/main.css')
     link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
   body
-    each name in ['moon', 'sun']
-      i(id=name class='fa fa-' + name + '-o fa-2x' onpointerup='toggleNightMode()')
+    script(src='/shared.js')
 
     main
       .container
         header #{title}
         block content
-
-    script(src='/shared.js')
