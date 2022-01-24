@@ -6,6 +6,7 @@
   --questions-border-width: 5px;
   --questions-question-box-width: 25px;
   --questions-exercises-opacity: .9;
+  --top-margin: 1rem;
 }
 
 body {
@@ -21,6 +22,12 @@ body {
 
 .letter {
   font-size: 22px;
+}
+
+i.fa {
+  position: absolute;
+  top: var(--top-margin);
+  left: var(--top-margin);
 }
 
 main {
@@ -237,6 +244,7 @@ img {
     --intro-border-width: .2rem;
     --questions-border-width: .55rem;
     --questions-question-box-width: 4.2rem;
+    --top-margin: 3.2rem;
   }
 
   .letter {
@@ -245,6 +253,10 @@ img {
 
   body {
     line-height: 1.4;
+  }
+
+  i.fa {
+    left: calc(var(--top-margin) - 1.7rem);
   }
 
   main {

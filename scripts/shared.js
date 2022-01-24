@@ -1,5 +1,18 @@
 const documentStyle = document.documentElement.style
 
+const isMobile = 'ontouchstart' in document
+
+const moon = document.querySelector('#moon')
+const sun = document.querySelector('#sun')
+const icons = [sun, moon]
+
+if (isMobile) {
+  for (let i = 0; i < icons.length; i++) {
+    icons[i].classList.remove('fa-2x')
+    icons[i].classList.add('fa-4x')
+  }
+}
+
 let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 
 const toggleNightMode = () => {
@@ -32,6 +45,9 @@ const toggleNightMode = () => {
   documentStyle.setProperty('--warning-rule-second-border-color', warningRuleSecondBorderColor)
 
   isNightMode = !isNightMode
+
+  icons[+isNightMode].style.display = 'none'
+  icons[+!isNightMode].style.display = 'block'
 }
 
 toggleNightMode()
