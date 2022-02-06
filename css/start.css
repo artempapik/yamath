@@ -168,11 +168,16 @@ li:hover, i:hover { color: var(--theme-hover-color); }
 
   button:hover       { box-shadow: none; }
   #current           { font-size: 1em; }
+  aside .theme-title { font-size: 1.2em; }
   .search, .forms    { justify-self: center; }
   .user              { justify-self: end; }
-  aside              { grid-area: 3 / 2 / 3 / 10; }
   ol                 { padding-left: 2em; }
   li:hover           { font-weight: normal; }
+
+  aside {
+    grid-area: 3 / 2 / 3 / 10;
+    width: 90%;
+  }
 }
 
 /* temp */
