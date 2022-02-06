@@ -168,7 +168,7 @@ li:hover, i:hover { color: var(--theme-hover-color); }
 
   button:hover       { box-shadow: none; }
   #current           { font-size: 1em; }
-  aside .theme-title { font-size: 1.2em; }
+  aside .theme-title { font-size: 1.1em; }
   .search, .forms    { justify-self: center; }
   .user              { justify-self: end; }
   ol                 { padding-left: 2em; }
