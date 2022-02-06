@@ -483,8 +483,6 @@ const engToRus = {
 const MIN_FORM = 4
 const MAX_FORM = 12
 
-///
-
 const baseMainLayout =
 `
   ". t . . . . . . . . s s s s s s . . . . . . . . u ."
@@ -501,7 +499,6 @@ const baseLargeLayout =
 
 const baseMediumLayout =
 `
-  ". t s s s s s s u ."
   ". . f f f f f f f ."
   ". . a a a a a a . ."
   ". . a1 a1 a1 a1 a1 a1 . ."
@@ -512,8 +509,7 @@ const baseMediumLayout =
 
 const baseSmallLayout =
 `
-  ". t s s s s s s u ."
-  ". f f f f f f f f ."
+  "f f f f f f f f f f"
   ". a a a a a a a . ."
   ". a1 a1 a1 a1 a1 a1 a1 a1 ."
   ". a2 a2 a2 a2 a2 a2 a2 a2 ."
@@ -530,10 +526,16 @@ const oneColumnLayouts = [
   `
     ${baseLargeLayout}
     ". g g g g g . . . ."
-    ". g1 g1 g1 . . . . . ."
+    ". g1 g1 g1 g2 . . . . ."
   `,
-  baseMediumLayout,
-  baseSmallLayout
+  `
+    ". t s s s s s s u g2"
+    ${baseMediumLayout}
+  `,
+  `
+    ". t s s s s s s u g2"
+    ${baseSmallLayout}
+  `
 ]
 
 const twoColumnLayouts = [
@@ -548,10 +550,12 @@ const twoColumnLayouts = [
     ". g1 g1 g1 . . g2 g2 g2 ."
   `,
   `
+    ". t s s s s s s u ."
     ${baseMediumLayout}
     ". . g2 g2 g2 g2 g2 g2 . ."
   `,
   `
+    ". t s s s s s s u ."
     ${baseSmallLayout}
     ". g2 g2 g2 g2 g2 g2 g2 g2 ."
   `
@@ -565,8 +569,6 @@ const layoutVariables = [
 ]
 
 const layouts = layoutVariables.map((layoutVariable, i) => [oneColumnLayouts[i], twoColumnLayouts[i], layoutVariable])
-
-///
 
 const colors = [
   ['#f0f0f0', '#505050', 'back-forward-button-background'],
@@ -584,8 +586,6 @@ const colors = [
   ['rgba(0, 0, 0, 0.16)', 'rgba(255, 255, 255, 0.16)', 'button-hover-first-box-shadow'],
   ['rgba(0, 0, 0, 0.23)', 'rgba(255, 255, 255, 0.23)', 'button-hover-second-box-shadow']
 ]
-
-///
 
 export {
   MIN_FORM,
