@@ -1,128 +1,137 @@
-import { MIN_FORM, MAX_FORM, themes, engToRus } from '../constants.js'
-
-const backButton = document.querySelector('#back')
-const currentButton = document.querySelector('#current')
-const forwardButton = document.querySelector('#forward')
-
-const isMobile = 'ontouchstart' in document
+import {
+  MIN_FORM,
+  MAX_FORM,
+  forms,
+  engToRus,
+  layouts,
+  colors
+} from '../data.js'
 
 let currentForm = +localStorage.getItem('current-form') || 5
 let previousForm = currentForm - 1
 let nextForm = currentForm + 1
 
-const main = document.querySelector('main')
-let allMarkup = main.innerHTML
+const mainSelectors = [
+  '.algebra',
+  '.geometry',
+  '.algebra1 .theme-title',
+  '.algebra2 .theme-title',
+  '.geometry1 .theme-title',
+  '.geometry2 .theme-title',
+  '.algebra1 ul',
+  '.algebra2 ul',
+  '.geometry1 ul',
+  '.geometry2 ul'
+]
 
-const inputDesktop = document.querySelector('#desktop')
-const inputMobile = document.querySelector('#mobile')
+const searchHeader = document.querySelector('aside .theme-title')
+const searchList = document.querySelector('aside ol')
 
-const documentStyle = document.documentElement.style
-documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
+const clearElementsBySelectors = selectors => selectors.forEach(selector => {
+  const element = document.querySelector(selector)
+  if (element.innerHTML) element.innerHTML = ''
+})
 
-if (previousForm > MIN_FORM) {
-  documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
-  backButton.style.visibility = 'visible'
-} else {
-  backButton.style.display = 'none'
-}
-
-if (nextForm < MAX_FORM) {
-  documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
-  forwardButton.style.visibility = 'visible'
-} else {
-  forwardButton.style.display = 'none'
-}
-
-const divWithClass = className => {
-  const div = document.createElement('div')
-  div.classList.add(className)
-  return div
-}
+const clearSearch = () => clearElementsBySelectors(['aside .theme-title', 'aside ol'])
+const clearMain = () => clearElementsBySelectors(mainSelectors)
 
 const restorePage = () => {
-  if (main.innerHTML !== allMarkup) {
-    main.innerHTML = allMarkup
-  }
+  clearSearch()
+  mainSelectors.forEach(selector => document.querySelector(selector).innerHTML = localStorage.getItem(selector))
+}
+
+const searchInput = document.querySelector('input')
+
+const setCssVariables = (valuesAndVariables, condition) => {
+  const documentStyle = document.documentElement.style
+
+  valuesAndVariables.forEach(valueAndVariable => {
+    const variable = `--${valueAndVariable[2]}`
+    const value = valueAndVariable[+condition]
+    documentStyle.setProperty(variable, value)
+  })
 }
 
 const formButtonClick = (increment, createPage) => {
-  if (inputMobile) {
-    inputMobile.blur()
-  }
+  searchInput.blur()
 
   if (increment === 0 && !createPage) {
     restorePage()
     return
   }
 
-  const form = themes[currentForm + increment - 5]
+  const fillThemes = (selector, themes) => {
+    const ul = document.querySelector(selector)
+    ul.innerHTML = ''
 
-  const getMarkupFromThemes = (element, themes) => {
     for (const theme of themes) {
       if (!theme.name) {
-        element.appendChild(document.createElement('br'))
+        ul.appendChild(document.createElement('br'))
         continue
       }
   
-      const link = document.createElement('a')
-      link.textContent = theme.name
-      link.href = theme.href
+      const a = document.createElement('a')
+      a.textContent = theme.name
+      a.href = theme.href
 
-      const paragraph = document.createElement('p')
-      paragraph.appendChild(link)
+      const li = document.createElement('li')
+      li.appendChild(a)
 
-      element.appendChild(paragraph)
+      ul.appendChild(li)
     }
+
+    clearSearch()
   }
 
-  const appendChildren = (element, ...children) => children.forEach(child => element.appendChild(child))
+  const setHtml = (selector, string) => document.querySelector(selector).innerHTML = string
 
-  const createSubjectWithThemes = (subjectClassName, ...themeClassNames) => {
-    const subject = divWithClass(subjectClassName)
-    const theme = divWithClass('themes')
-    const themes = themeClassNames.map(themeClassName => divWithClass(themeClassName))
-    appendChildren(theme, ...themes)
-    subject.appendChild(theme)
-    
-    return subject
+  const fillMain = () => {
+    setHtml(mainSelectors[0], form.algebra.name)
+    setHtml(mainSelectors[1], form.geometry.name)
+    setHtml(mainSelectors[2], form.algebra.algebra1.name)
+    setHtml(mainSelectors[3], form.algebra.algebra2.name)
+    setHtml(mainSelectors[4], form.geometry.geometry1.name)
+    setHtml(mainSelectors[5], form.geometry.geometry2.name)
+    fillThemes(mainSelectors[6], form.algebra.algebra1.themes)
+    fillThemes(mainSelectors[7], form.algebra.algebra2.themes)
+    fillThemes(mainSelectors[8], form.geometry.geometry1.themes)
+    fillThemes(mainSelectors[9], form.geometry.geometry2.themes)
   }
 
-  const algebra = createSubjectWithThemes('algebra', 'integers', 'fractionals')
-  getMarkupFromThemes(algebra.firstChild.children[0], form.algebra.integers)
-  getMarkupFromThemes(algebra.firstChild.children[1], form.algebra.fractionals)
-
-  const geometry = createSubjectWithThemes('geometry', 'intro')
-  getMarkupFromThemes(geometry.firstChild.children[0], form.geometry)
-
-  main.innerHTML = ''
-  appendChildren(main, algebra, geometry)
+  const form = forms[currentForm + increment - 5]
+  fillMain()
   
   previousForm += increment
   currentForm += increment
   nextForm += increment
 
-  if (previousForm > MIN_FORM) {
-    backButton.style.visibility = 'visible'
-    backButton.style.display = 'inline'
-  } else {
-    backButton.style.display = 'none'
-  }
-  
-  if (nextForm < MAX_FORM) {
-    forwardButton.style.visibility = 'visible'
-    forwardButton.style.display = 'inline'
-  } else {
-    forwardButton.style.display = 'none'
-  }
+  const toggleFormButtonVisibility = (button, condition) => button.style.display = condition ? 'block' : 'none'
 
-  document.title = `${currentForm} класс`
+  toggleFormButtonVisibility(currentButton, true)
+  toggleFormButtonVisibility(backButton, previousForm > MIN_FORM)
+  toggleFormButtonVisibility(forwardButton, nextForm < MAX_FORM)
+
+  const currentFormTitle =  `${currentForm} класс`
+  document.title = currentFormTitle
   localStorage.setItem('current-form', currentForm)
-  allMarkup = main.innerHTML
 
-  documentStyle.setProperty('--button-back', `'\\2190  ${previousForm} класс'`)
-  documentStyle.setProperty('--button-forward', `'${nextForm} класс \\2192'`)
-  documentStyle.setProperty('--button-current', `'${currentForm} класс'`)
+  backButton.textContent = `← ${previousForm} класс`
+  currentButton.textContent = currentFormTitle
+  forwardButton.textContent = `${nextForm} класс →`
+
+  mainSelectors.forEach(selector => localStorage.setItem(selector, document.querySelector(selector).innerHTML))
+
+  const geometry2Title = document.querySelector('.geometry2 .theme-title')
+  const shouldUseTwoColumnLayout = geometry2Title.textContent.length > 0
+  setCssVariables(layouts, shouldUseTwoColumnLayout)
+
+  const geometryTitle = document.querySelector('.geometry')
+  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && document.body.clientWidth <= 1200 ? 'center' : 'start'
 }
+
+const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
+
+const [backButton, currentButton, forwardButton] = htmlElementsFromIds('#back', '#current', '#forward')
 
 formButtonClick(0, true)
 
@@ -130,8 +139,12 @@ backButton.onpointerup = () => formButtonClick(-1)
 currentButton.onpointerup = () => formButtonClick(0)
 forwardButton.onpointerup = () => formButtonClick(1)
 
-const fifth = themes[0] // todo sometime
-const allThemes = [...fifth.algebra.integers, ...fifth.algebra.fractionals, ...fifth.geometry] // todo also
+const allThemes = [].concat.apply([], forms.map(form => [
+  ...form.algebra.algebra1.themes,
+  ...form.algebra.algebra2.themes,
+  ...form.geometry.geometry1.themes,
+  ...form.geometry.geometry2.themes
+]))
 
 let searchMarkup = ''
 
@@ -140,21 +153,20 @@ const transliterate = word => word
   .map(symbol => engToRus[symbol] || symbol)
   .join('')
 
+const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
+
 const assignInput = input => {
-  if (!input) {
-    return
-  }
-
   input.addEventListener('focus', event => {
-    if (event.target.value && main.innerHTML !== searchMarkup) {
-      if (!searchMarkup) {
-        searchMarkup = localStorage.getItem('search-markup')
-        const searchHeader = localStorage.getItem('search-header')
-        documentStyle.setProperty('--search-header', searchHeader)
-      }
-
-      main.innerHTML = searchMarkup
+    if (event.target.value) {
+      clearMain()
+      searchHeader.textContent = localStorage.getItem('search-title')
+      searchList.innerHTML = searchMarkup
     }
+  })
+
+  input.addEventListener('keydown', event => {
+    const char = event.key
+    if (!isLetter(char) && char !== ' ') event.preventDefault()
   })
 
   input.addEventListener('keyup', event => {
@@ -172,84 +184,43 @@ const assignInput = input => {
     }
 
     const searchString = transliterate(inputValue.toLowerCase())
-    const searchResult = divWithClass('search-result')
+
+    clearMain()
+    searchList.innerHTML = ''
   
     allThemes
       .filter(theme => theme.name && theme.name.includes(searchString))
       .map(theme => {
-        const link = document.createElement('a')
-        link.textContent = theme.name
-        link.href = theme.href
+        const a = document.createElement('a')
+        a.textContent = theme.name
+        a.href = theme.href
   
-        const paragraph = document.createElement('p')
-        paragraph.appendChild(link)
+        const li = document.createElement('li')
+        li.appendChild(a)
   
-        return paragraph
+        return li
       })
-      .forEach(paragraph => searchResult.appendChild(paragraph))
+      .forEach(li => searchList.appendChild(li))
   
-    main.innerHTML = ''
-    main.appendChild(searchResult)
-
-    searchMarkup = main.innerHTML
+    searchMarkup = searchList.innerHTML
     localStorage.setItem('search-markup', searchMarkup)
 
-    const searchHeader = `'Результатов поиска: ${searchResult.children.length}'`
-    localStorage.setItem('search-header', searchHeader)
-    documentStyle.setProperty('--search-header', searchHeader)
+    const searchTitle = `Результатов поиска: ${searchList.children.length}`
+    searchHeader.textContent = searchTitle
+    localStorage.setItem('search-title', searchTitle)
   })
 }
 
-assignInput(inputDesktop)
-assignInput(inputMobile)
+assignInput(searchInput)
 
-const moon = document.querySelector('#moon')
-const sun = document.querySelector('#sun')
-const icons = [sun, moon]
+document.onclick = () => searchInput.style.inputMode = 'none'
+searchInput.addEventListener('pointerup', () => searchInput.focus())
 
-if (isMobile) {
-  document.onclick = () => inputMobile.style.inputMode = 'none'
-  inputMobile.addEventListener('pointerup', () => inputMobile.focus())
-
-  for (let i = 0; i < icons.length; i++) {
-    icons[i].classList.remove('fa-2x')
-    icons[i].classList.add('fa-4x')
-  }
-}
-
+const icons = htmlElementsFromIds('#moon', '#sun')
 let isNightMode = !(!!localStorage.getItem('is-night-mode'))
 
 const toggleNightMode = () => {
-  const backgroundColor = isNightMode ? '#f8f8f8' : '#202020'
-  const textColor = isNightMode ? '#202020' : '#e8e8e8'
-  const themeBorderColor = isNightMode ? '#00008b' : '#4169e1'
-  const themeHoverColor = isNightMode ? '#d2691e' : '#708090'
-  const inputBackgroundColor = isNightMode ? '#fff' : '#606060'
-  const inputColor = isNightMode ? '#585858' : '#e8e8e8'
-  const shadowColor = isNightMode ? 'rgba(0, 0, 0, 0.07)' : 'rgba(255, 255, 255, 0.08)'
-  const scrollbarTrack = isNightMode ? '#f1f1f1' : ''
-  const tapColor = isNightMode ? '32, 32, 32' : '232, 232, 232'
-  const buttonFirstBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.02)' : 'rgba(228, 224, 220, 0.02)'
-  const buttonSecondBoxShadow = isNightMode ? 'rgba(27, 31, 35, 0.15)' : 'rgba(255, 255, 255, 0.15)'
-  const buttonHoverFirstBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.16)' : 'rgba(255, 255, 255, 0.16)'
-  const buttonHoverSecondBoxShadow = isNightMode ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)'
-  const backForwardButtonBackground = isNightMode ? '#f0f0f0' : '#505050'
-
-  documentStyle.setProperty('--background-color', backgroundColor)
-  documentStyle.setProperty('--text-color', textColor)
-  documentStyle.setProperty('--theme-border-color', themeBorderColor)
-  documentStyle.setProperty('--theme-hover-color', themeHoverColor)
-  documentStyle.setProperty('--input-background-color', inputBackgroundColor)
-  documentStyle.setProperty('--input-color', inputColor)
-  documentStyle.setProperty('--shadow-color', shadowColor)
-  documentStyle.setProperty('--scrollbar-track', scrollbarTrack)
-  documentStyle.setProperty('--tap-color', tapColor)
-  documentStyle.setProperty('--button-first-box-shadow', buttonFirstBoxShadow)
-  documentStyle.setProperty('--button-second-box-shadow', buttonSecondBoxShadow)
-  documentStyle.setProperty('--button-hover-first-box-shadow', buttonHoverFirstBoxShadow)
-  documentStyle.setProperty('--button-hover-second-box-shadow', buttonHoverSecondBoxShadow)
-  documentStyle.setProperty('--back-forward-button-background', backForwardButtonBackground)
-
+  setCssVariables(colors, isNightMode)
   isNightMode = !isNightMode
 
   icons[+isNightMode].style.display = 'none'
@@ -262,3 +233,5 @@ window.toggleNightMode = () => {
   toggleNightMode()
   localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
 }
+
+window.logIn = () => document.querySelector('.user').innerHTML = 'ты милая Совушка'

@@ -12,7 +12,7 @@ app.use(express.static('scripts'))
 app.use(express.static('data'))
 app.use(express.static('font'))
 app.use(express.static('img'))
-app.use(favicon(`${dirname}/ico/math-logo.ico`))
+app.use(favicon(`${dirname}/ico/calculator.png`))
 
 const articleToTitle = {
   'error': 'Ошибка',

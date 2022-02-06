@@ -1,21 +1,40 @@
 doctype html
-html
+html(lang="en")
   head
-    title #{form} класс
-    link(rel='stylesheet' href='shared.css')
-    link(rel='stylesheet' href='start.css')
-    link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title Document
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="start.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   body
     script(type='module' src='startpage.js')
-
-    header
-      each name in ['moon', 'sun']
-        i(id=name class='fa fa-' + name + '-o fa-2x' onpointerup='toggleNightMode()')
-
-      <input id='desktop' placeholder='Поиск по теме...                   &#xF002;'>
-      <input id='mobile' placeholder='Поиск по теме... &#xF002;' onfocus='this.value=this.value'>
-
-      div
+    main
+      .theme
+        i(id='moon' class='fa fa-moon-o' onpointerup='toggleNightMode()')
+        i(id='sun' class='fa fa-sun-o' onpointerup='toggleNightMode()')
+      .search
+        <input placeholder="Поиск по теме...         &#xF002;">
+      .user
+        i(id='login' class='fa fa-sign-in' onpointerup='logIn()')
+      .forms
         each name in ['back', 'current', 'forward']
           button(id=name)
-    main
+      .algebra
+      .geometry
+      .algebra1
+        .theme-title
+        ul
+      .algebra2
+        .theme-title
+        ul
+      .geometry1
+        .theme-title
+        ul
+      .geometry2
+        .theme-title
+        ul
+      aside
+        .theme-title
+        ol

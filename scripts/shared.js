@@ -1,10 +1,8 @@
 const documentStyle = document.documentElement.style
 
-let isNightMode = !(!!localStorage.getItem('is-night-mode'))
+let isNightMode = !!localStorage.getItem('is-night-mode')
 
 const toggleNightMode = () => {
-  // MAKE TRANSITION ON ALL OF IT LATER
-
   const mainShadowColor = isNightMode ? 'rgba(0, 0, 0, 0.15)' : 'rgba(255, 255, 255, 0.12)'
   const introBorderColor = isNightMode ? 'rgba(0, 0, 0, .6)' : 'rgba(255, 255, 255, .6)'
   const backgroundColor = isNightMode ? '#faf9f6' : '#303030'
