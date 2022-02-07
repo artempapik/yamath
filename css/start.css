@@ -182,6 +182,12 @@ li:hover, i:hover { color: var(--theme-hover-color); }
     font-size: 1.2em;
     letter-spacing: .05em;
   }
+
+  input{
+    border: .15em solid var(--theme-hover-color);
+  }
+
+  .search, .theme, .user           { align-self: center; }
 }
 
 /* temp */
