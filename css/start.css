@@ -176,7 +176,6 @@ li:hover, i:hover  { color: var(--theme-hover-color); }
   #current                               { font-size: 1em; }
   .search, .forms                        { justify-self: center; }
   .user                                  { justify-self: end; }
-  ol                                     { padding-left: 2em; }
   ul, ol                                 { gap: .3em; }
   li:hover                               { font-weight: normal; }
   input                                  { border: .15em solid var(--theme-hover-color); }
@@ -190,6 +189,11 @@ li:hover, i:hover  { color: var(--theme-hover-color); }
   aside .theme-title {
     font-size: 1.2em;
     letter-spacing: .05em;
+  }
+
+  ol {
+    margin-left: .5em;
+    padding-left: 2em;
   }
 }
 
