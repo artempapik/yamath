@@ -36,7 +36,7 @@ aside {
 .user                            { justify-self: end; }
 i.fa                             { font-size: 2em; }
 .forms                           { gap: .7em; }
-i.fa, button                     { display: none; }
+i.fa, button, input              { display: none; }
 ul, ol, .forms                   { display: flex; }
 
 ul, ol {

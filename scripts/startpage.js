@@ -40,6 +40,8 @@ const showSearchResults = () => makeOneVisibleAndAnotherInvisible(searchSelector
 const restorePage = () => makeOneVisibleAndAnotherInvisible(mainSelectors, searchSelectors)
 
 const searchInput = document.querySelector('input')
+searchInput.style.display = 'block'
+document.querySelector('#login').style.display = 'block'
 
 const setCssVariables = (valuesAndVariables, condition) => {
   const documentStyle = document.documentElement.style
@@ -212,7 +214,6 @@ const toggleNightMode = () => {
 }
 
 toggleNightMode()
-document.querySelector('#login').style.display = 'block'
 
 window.toggleNightMode = () => {
   toggleNightMode()
