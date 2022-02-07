@@ -159,6 +159,7 @@ li:hover, i:hover { color: var(--theme-hover-color); }
   main {
     grid-template-columns: .5fr 1.5fr repeat(2, 2fr) repeat(2, .25fr) repeat(2, 2fr) 1.5fr .5fr;
     grid-template-areas: var(--small-layout);
+    row-gap: 1em;
   }
 
   button {
@@ -171,6 +172,7 @@ li:hover, i:hover { color: var(--theme-hover-color); }
   .search, .forms    { justify-self: center; }
   .user              { justify-self: end; }
   ol                 { padding-left: 2em; }
+  ul, ol             { gap: .35em; }
   li:hover           { font-weight: normal; }
 
   aside {
