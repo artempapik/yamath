@@ -212,6 +212,7 @@ const toggleNightMode = () => {
 }
 
 toggleNightMode()
+document.querySelector('#login').style.display = 'block'
 
 window.toggleNightMode = () => {
   toggleNightMode()
