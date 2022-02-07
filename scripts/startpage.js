@@ -24,21 +24,20 @@ const mainSelectors = [
   '.geometry2 ul'
 ]
 
-const searchHeader = document.querySelector('aside .theme-title')
-const searchList = document.querySelector('aside ol')
+const searchSelectors = ['aside .theme-title', 'aside ol']
 
-const clearElementsBySelectors = selectors => selectors.forEach(selector => {
+const toggleElementsVisibilityBySelectors = (selectors, condition) => selectors.forEach(selector => {
   const element = document.querySelector(selector)
-  if (element.innerHTML) element.innerHTML = ''
+  element.style.display = condition ? 'block' : 'none'
 })
 
-const clearSearch = () => clearElementsBySelectors(['aside .theme-title', 'aside ol'])
-const clearMain = () => clearElementsBySelectors(mainSelectors)
-
-const restorePage = () => {
-  clearSearch()
-  mainSelectors.forEach(selector => document.querySelector(selector).innerHTML = localStorage.getItem(selector))
+const makeOneVisibleAndAnotherInvisible = (a, b) => {
+  toggleElementsVisibilityBySelectors(a, true)
+  toggleElementsVisibilityBySelectors(b, false)
 }
+
+const showSearchResults = () => makeOneVisibleAndAnotherInvisible(searchSelectors, mainSelectors)
+const restorePage = () => makeOneVisibleAndAnotherInvisible(mainSelectors, searchSelectors)
 
 const searchInput = document.querySelector('input')
 
@@ -52,13 +51,9 @@ const setCssVariables = (valuesAndVariables, condition) => {
   })
 }
 
-const formButtonClick = (increment, createPage) => {
+const formButtonClick = increment => {
   searchInput.blur()
-
-  if (increment === 0 && !createPage) {
-    restorePage()
-    return
-  }
+  restorePage()
 
   const fillThemes = (selector, themes) => {
     const ul = document.querySelector(selector)
@@ -79,8 +74,6 @@ const formButtonClick = (increment, createPage) => {
 
       ul.appendChild(li)
     }
-
-    clearSearch()
   }
 
   const setHtml = (selector, string) => document.querySelector(selector).innerHTML = string
@@ -119,14 +112,12 @@ const formButtonClick = (increment, createPage) => {
   currentButton.textContent = currentFormTitle
   forwardButton.textContent = `${nextForm} класс →`
 
-  mainSelectors.forEach(selector => localStorage.setItem(selector, document.querySelector(selector).innerHTML))
-
   const geometry2Title = document.querySelector('.geometry2 .theme-title')
   const shouldUseTwoColumnLayout = geometry2Title.textContent.length > 0
   setCssVariables(layouts, shouldUseTwoColumnLayout)
 
   const geometryTitle = document.querySelector('.geometry')
-  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && document.body.clientWidth <= 1200 ? 'center' : 'start'
+  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && document.body.clientWidth <= 1200 ? 'center' : 'start' // HERE SHOULD BE FIX
 }
 
 const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
@@ -146,8 +137,6 @@ const allThemes = [].concat.apply([], forms.map(form => [
   ...form.geometry.geometry2.themes
 ]))
 
-let searchMarkup = ''
-
 const transliterate = word => word
   .split('')
   .map(symbol => engToRus[symbol] || symbol)
@@ -157,11 +146,7 @@ const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
 
 const assignInput = input => {
   input.addEventListener('focus', event => {
-    if (event.target.value) {
-      clearMain()
-      searchHeader.textContent = localStorage.getItem('search-title')
-      searchList.innerHTML = searchMarkup
-    }
+    if (event.target.value) showSearchResults()
   })
 
   input.addEventListener('keydown', event => {
@@ -185,7 +170,7 @@ const assignInput = input => {
 
     const searchString = transliterate(inputValue.toLowerCase())
 
-    clearMain()
+    const searchList = document.querySelector('aside ol')
     searchList.innerHTML = ''
   
     allThemes
@@ -202,12 +187,10 @@ const assignInput = input => {
       })
       .forEach(li => searchList.appendChild(li))
   
-    searchMarkup = searchList.innerHTML
-    localStorage.setItem('search-markup', searchMarkup)
+    const searchHeader = document.querySelector('aside .theme-title')
+    searchHeader.textContent = `Результатов поиска: ${searchList.children.length}`
 
-    const searchTitle = `Результатов поиска: ${searchList.children.length}`
-    searchHeader.textContent = searchTitle
-    localStorage.setItem('search-title', searchTitle)
+    showSearchResults()
   })
 }
 

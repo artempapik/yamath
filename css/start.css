@@ -149,10 +149,10 @@ li:hover, i:hover { color: var(--theme-hover-color); }
   }
 
   .algebra, .forms, .search { justify-self: start; }
-  button       { font-size: .9em; }
-  button:hover { transform: none; }
-  #current     { font-size: 1em; }
-  .forms       { gap: .4em; }
+  button                    { font-size: .9em; }
+  button:hover              { transform: none; }
+  #current                  { font-size: 1em; }
+  .forms                    { gap: .4em; }
 }
 
 @media (max-width: 600px) {
@@ -167,13 +167,15 @@ li:hover, i:hover { color: var(--theme-hover-color); }
     padding: .75em 1em;
   }
 
-  button:hover       { box-shadow: none; }
-  #current           { font-size: 1em; }
-  .search, .forms    { justify-self: center; }
-  .user              { justify-self: end; }
-  ol                 { padding-left: 2em; }
-  ul, ol             { gap: .35em; }
-  li:hover           { font-weight: normal; }
+  button:hover, input:hover, input:focus { box-shadow: none; }
+  #current                               { font-size: 1em; }
+  .search, .forms                        { justify-self: center; }
+  .user                                  { justify-self: end; }
+  ol                                     { padding-left: 2em; }
+  ul, ol                                 { gap: .35em; }
+  li:hover                               { font-weight: normal; }
+  input                                  { border: .15em solid var(--theme-hover-color); }
+  .search, .theme, .user                 { align-self: center; }
 
   aside {
     grid-area: 3 / 2 / 3 / 10;
@@ -184,12 +186,6 @@ li:hover, i:hover { color: var(--theme-hover-color); }
     font-size: 1.2em;
     letter-spacing: .05em;
   }
-
-  input{
-    border: .15em solid var(--theme-hover-color);
-  }
-
-  .search, .theme, .user           { align-self: center; }
 }
 
 /* temp */
