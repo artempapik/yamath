@@ -149,7 +149,7 @@ li:hover, i:hover { color: var(--theme-hover-color); }
   }
 
   .algebra, .forms, .search { justify-self: start; }
-  aside { grid-area: 3 / 3 / 3 / 8; }
+  aside                     { grid-area: 3 / 3 / 3 / 8; }
   button                    { font-size: .9em; }
   button:hover              { transform: none; }
   #current                  { font-size: 1em; }
