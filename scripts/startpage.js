@@ -120,7 +120,21 @@ const formButtonClick = increment => {
 
   const geometryTitle = document.querySelector('.geometry')
   const pageWidth = document.body.clientWidth
-  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start'
+  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start' // add window onscroll event
+
+  //////
+  
+  document.body.animate([
+    // keyframes
+    // { transform: 'translateY(0px)' },
+    // { transform: 'translateY(-300px)' }
+    { opacity: '.1' },
+    { opacity: '1' }
+  ], {
+    // timing options
+    duration: 300,
+    // iterations: Infinity
+  })
 }
 
 const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
