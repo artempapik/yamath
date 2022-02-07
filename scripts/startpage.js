@@ -117,7 +117,8 @@ const formButtonClick = increment => {
   setCssVariables(layouts, shouldUseTwoColumnLayout)
 
   const geometryTitle = document.querySelector('.geometry')
-  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && document.body.clientWidth <= 1200 ? 'center' : 'start' // HERE SHOULD BE FIX
+  const pageWidth = document.body.clientWidth
+  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start'
 }
 
 const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
@@ -200,7 +201,7 @@ document.onclick = () => searchInput.style.inputMode = 'none'
 searchInput.addEventListener('pointerup', () => searchInput.focus())
 
 const icons = htmlElementsFromIds('#moon', '#sun')
-let isNightMode = !(!!localStorage.getItem('is-night-mode'))
+let isNightMode = !!localStorage.getItem('is-night-mode')
 
 const toggleNightMode = () => {
   setCssVariables(colors, isNightMode)
@@ -214,7 +215,7 @@ toggleNightMode()
 
 window.toggleNightMode = () => {
   toggleNightMode()
-  localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
+  localStorage.setItem('is-night-mode', isNightMode ? '' : ' ')
 }
 
 window.logIn = () => document.querySelector('.user').innerHTML = 'ты милая Совушка'
