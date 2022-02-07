@@ -28,7 +28,7 @@ const searchSelectors = ['aside .theme-title', 'aside ol']
 
 const toggleElementsVisibilityBySelectors = (selectors, condition) => selectors.forEach(selector => {
   const element = document.querySelector(selector)
-  element.style.display = condition ? 'block' : 'none'
+  element.style.display = condition ? 'flex' : 'none'
 })
 
 const makeOneVisibleAndAnotherInvisible = (a, b) => {
