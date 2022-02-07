@@ -27,7 +27,7 @@ main {
 .geometry2 { grid-area: g2; }
 
 aside {
-  grid-area: 3 / 11 / 3 / 18;
+  grid-area: 3 / 11 / 3 / 19;
   width: 80%;
 }
 
@@ -135,7 +135,7 @@ li:hover, i:hover { color: var(--theme-hover-color); }
   }
 
   aside {
-    grid-area: 3 / 3 / 3 / 8;
+    grid-area: 3 / 4 / 3 / 9;
     width: 100%;
   }
 
@@ -149,6 +149,7 @@ li:hover, i:hover { color: var(--theme-hover-color); }
   }
 
   .algebra, .forms, .search { justify-self: start; }
+  aside { grid-area: 3 / 3 / 3 / 8; }
   button                    { font-size: .9em; }
   button:hover              { transform: none; }
   #current                  { font-size: 1em; }
