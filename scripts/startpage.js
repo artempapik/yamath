@@ -31,9 +31,9 @@ const toggleElementsVisibilityBySelectors = (selectors, condition) => selectors.
   element.style.display = condition ? 'flex' : 'none'
 })
 
-const makeOneVisibleAndAnotherInvisible = (a, b) => {
-  toggleElementsVisibilityBySelectors(a, true)
-  toggleElementsVisibilityBySelectors(b, false)
+const makeOneVisibleAndAnotherInvisible = (first, second) => {
+  toggleElementsVisibilityBySelectors(first, true)
+  toggleElementsVisibilityBySelectors(second, false)
 }
 
 const showSearchResults = () => makeOneVisibleAndAnotherInvisible(searchSelectors, mainSelectors)
