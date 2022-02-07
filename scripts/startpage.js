@@ -24,7 +24,7 @@ const mainSelectors = [
   '.geometry2 ul'
 ]
 
-const searchSelectors = ['aside .theme-title', 'aside ol']
+const searchSelectors = ['aside .theme-title', 'aside section']
 
 const toggleElementsVisibilityBySelectors = (selectors, condition) => selectors.forEach(selector => {
   const element = document.querySelector(selector)
@@ -133,12 +133,17 @@ backButton.onpointerup = () => formButtonClick(-1)
 currentButton.onpointerup = () => formButtonClick(0)
 forwardButton.onpointerup = () => formButtonClick(1)
 
-const allThemes = [].concat.apply([], forms.map(form => [
-  ...form.algebra.algebra1.themes,
-  ...form.algebra.algebra2.themes,
-  ...form.geometry.geometry1.themes,
-  ...form.geometry.geometry2.themes
-]))
+const formsWithThemes = forms.map(form => {
+  return {
+    form: form.form,
+    themes: [
+      ...form.algebra.algebra1.themes,
+      ...form.algebra.algebra2.themes,
+      ...form.geometry.geometry1.themes,
+      ...form.geometry.geometry2.themes
+    ]
+  }
+})
 
 const transliterate = word => word
   .split('')
@@ -173,25 +178,39 @@ const assignInput = input => {
 
     const searchString = transliterate(inputValue.toLowerCase())
 
-    const searchList = document.querySelector('aside ol')
+    const searchList = document.querySelector('aside section')
     searchList.innerHTML = ''
-  
-    allThemes
-      .filter(theme => theme.name && theme.name.includes(searchString))
-      .map(theme => {
-        const a = document.createElement('a')
-        a.textContent = theme.name
-        a.href = theme.href
-  
-        const li = document.createElement('li')
-        li.appendChild(a)
-  
-        return li
-      })
-      .forEach(li => searchList.appendChild(li))
+    let foundSearchesAmount = 0
+
+    formsWithThemes.forEach(form => {
+      const p = document.createElement('p')
+      p.textContent = `${form.form} класс`
+
+      const ol = document.createElement('ol')
+
+      form.themes
+        .filter(theme => theme.name && theme.name.includes(searchString))
+        .map(theme => {
+          const a = document.createElement('a')
+          a.textContent = theme.name
+          a.href = theme.href
+
+          const li = document.createElement('li')
+          li.appendChild(a)
+
+          return li
+        })
+        .forEach(li => ol.appendChild(li))
+
+      if (ol.children.length > 0) {
+        searchList.appendChild(p)
+        searchList.appendChild(ol)
+        foundSearchesAmount += ol.children.length
+      }
+    })
   
     const searchHeader = document.querySelector('aside .theme-title')
-    searchHeader.textContent = `Результатов поиска: ${searchList.children.length}`
+    searchHeader.textContent = `Результатов поиска: ${foundSearchesAmount}`
 
     showSearchResults()
   })
@@ -221,3 +240,4 @@ window.toggleNightMode = () => {
 }
 
 window.logIn = () => document.querySelector('.user').innerHTML = 'ты милая Совушка'
+window.onunload = () => searchInput.value = ''

@@ -1,4 +1,5 @@
 const fifthForm = {
+  form: 5,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -139,6 +140,7 @@ const fifthForm = {
 }
 
 const sixthForm = {
+  form: 6,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -292,6 +294,7 @@ const sixthForm = {
 }
 
 const seventhForm = {
+  form: 7,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -317,6 +320,7 @@ const seventhForm = {
 }
 
 const eigthForm = {
+  form: 8,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -342,6 +346,7 @@ const eigthForm = {
 }
 
 const ninethForm = {
+  form: 9,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -367,6 +372,7 @@ const ninethForm = {
 }
 
 const tenthForm = {
+  form: 10,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -392,6 +398,7 @@ const tenthForm = {
 }
 
 const eleventhForm = {
+  form: 11,
   algebra: {
     name: 'алгебра',
     algebra1: {
@@ -437,12 +444,12 @@ const appendArticle = objects => {
   }
 }
 
-for (const form of forms) {
+forms.forEach(form => {
   appendArticle(form.algebra.algebra1.themes)
   appendArticle(form.algebra.algebra2.themes)
   appendArticle(form.geometry.geometry1.themes)
   appendArticle(form.geometry.geometry2.themes)
-}
+})
 
 const engToRus = {
   'f': 'а',
