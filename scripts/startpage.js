@@ -241,14 +241,12 @@ const toggleNightMode = () => {
 
   icons[+isNightMode].style.display = 'none'
   icons[+!isNightMode].style.display = 'block'
+
+  localStorage.setItem('is-night-mode', isNightMode ? '' : ' ')
 }
 
 toggleNightMode()
 
-window.toggleNightMode = () => {
-  toggleNightMode()
-  localStorage.setItem('is-night-mode', isNightMode ? '' : ' ')
-}
-
+window.toggleNightMode = () => toggleNightMode()
 window.logIn = () => document.querySelector('.user').innerHTML = 'ты милая Совушка'
 window.onunload = () => searchInput.value = ''
