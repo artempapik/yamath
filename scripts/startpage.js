@@ -138,9 +138,9 @@ const formButtonClick = increment => {
   setTimeout(() => document.body.style.overflowY = 'auto', 250)
 }
 
-const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
+const htmlElementsFromSelectors = (...selectors) => selectors.map(selector => document.querySelector(selector))
 
-const [backButton, currentButton, forwardButton] = htmlElementsFromIds('#back', '#current', '#forward')
+const [backButton, currentButton, forwardButton] = htmlElementsFromSelectors('#back', '#current', '#forward')
 
 formButtonClick(0, true)
 
@@ -193,7 +193,7 @@ const assignInput = input => {
 
     const searchString = transliterate(inputValue.toLowerCase())
 
-    const searchList = document.querySelector('aside section')
+    const [searchHeader, searchList] = htmlElementsFromSelectors(...searchSelectors)
     searchList.innerHTML = ''
     let foundSearchesAmount = 0
 
@@ -215,9 +215,7 @@ const assignInput = input => {
       }
     })
   
-    const searchHeader = document.querySelector('aside .theme-title')
     searchHeader.textContent = `Результатов поиска: ${foundSearchesAmount}`
-
     showSearchResults()
 
     if (previousSearchesAmount === foundSearchesAmount) return
@@ -232,7 +230,7 @@ assignInput(searchInput)
 document.onclick = () => searchInput.style.inputMode = 'none'
 searchInput.addEventListener('pointerup', () => searchInput.focus())
 
-const icons = htmlElementsFromIds('#moon', '#sun')
+const icons = htmlElementsFromSelectors('#moon', '#sun')
 let isNightMode = !!localStorage.getItem('is-night-mode')
 
 const toggleNightMode = () => {
