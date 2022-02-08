@@ -122,12 +122,14 @@ const formButtonClick = increment => {
   const pageWidth = document.body.clientWidth
   geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start' // add window onscroll event
 
+  if (increment === 0) return
+
   document.body.style.overflowY = 'hidden'
   const duration = 250
 
   mainSelectors.slice(2).forEach(selector => {
     document.querySelector(selector).animate([
-      { transform: 'translateY(1.6em)', opacity: '.3' },
+      { transform: 'translateY(1.5em)', opacity: '.3' },
       { transform: 'translateY(0)', opacity: '1' }
     ], { duration })
   })
