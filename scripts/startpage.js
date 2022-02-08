@@ -166,6 +166,8 @@ const transliterate = word => word
 
 const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
 
+let previousSearchesAmount = 0
+
 const assignInput = input => {
   input.addEventListener('focus', event => {
     if (event.target.value) showSearchResults()
@@ -227,6 +229,14 @@ const assignInput = input => {
     searchHeader.textContent = `Результатов поиска: ${foundSearchesAmount}`
 
     showSearchResults()
+
+    if (previousSearchesAmount === foundSearchesAmount) return
+    previousSearchesAmount = foundSearchesAmount
+
+    searchList.animate([
+      { opacity: '.2' },
+      { opacity: '1' }
+    ], { duration: 400 })
   })
 }
 
