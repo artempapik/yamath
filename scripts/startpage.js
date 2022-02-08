@@ -37,7 +37,13 @@ const makeOneVisibleAndAnotherInvisible = (first, second) => {
 }
 
 const showSearchResults = () => makeOneVisibleAndAnotherInvisible(searchSelectors, mainSelectors)
-const restorePage = () => makeOneVisibleAndAnotherInvisible(mainSelectors, searchSelectors)
+
+let previousSearchesAmount = 0
+
+const restorePage = () => {
+  makeOneVisibleAndAnotherInvisible(mainSelectors, searchSelectors)
+  previousSearchesAmount = 0
+}
 
 const searchInput = document.querySelector('input')
 searchInput.style.display = 'block'
@@ -52,6 +58,14 @@ const setCssVariables = (valuesAndVariables, condition) => {
     documentStyle.setProperty(variable, value)
   })
 }
+
+const animateElements = (selectors, translateY) => selectors.forEach(selector => document
+  .querySelector(selector)
+  .animate([
+    { transform: `translateY(${translateY}em)`, opacity: '.3' },
+    { transform: 'translateY(0)', opacity: '1' }
+  ], { duration: 250 })
+)
 
 const formButtonClick = increment => {
   searchInput.blur()
@@ -125,16 +139,8 @@ const formButtonClick = increment => {
   if (increment === 0) return
 
   document.body.style.overflowY = 'hidden'
-  const duration = 250
-
-  mainSelectors.slice(2).forEach(selector => {
-    document.querySelector(selector).animate([
-      { transform: 'translateY(1.5em)', opacity: '.3' },
-      { transform: 'translateY(0)', opacity: '1' }
-    ], { duration })
-  })
-
-  setTimeout(() => document.body.style.overflowY = 'auto', duration)
+  animateElements(mainSelectors.slice(2), 1.5)
+  setTimeout(() => document.body.style.overflowY = 'auto', 250)
 }
 
 const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
@@ -165,8 +171,6 @@ const transliterate = word => word
   .join('')
 
 const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
-
-let previousSearchesAmount = 0
 
 const assignInput = input => {
   input.addEventListener('focus', event => {
@@ -232,11 +236,7 @@ const assignInput = input => {
 
     if (previousSearchesAmount === foundSearchesAmount) return
     previousSearchesAmount = foundSearchesAmount
-
-    searchList.animate([
-      { opacity: '.2' },
-      { opacity: '1' }
-    ], { duration: 400 })
+    animateElements(['aside section'], .6)
   })
 }
 
