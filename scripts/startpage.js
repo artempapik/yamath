@@ -67,6 +67,16 @@ const animateElements = (selectors, translateY) => selectors.forEach(selector =>
   ], { duration: 250 })
 )
 
+const listItemWithLink = theme => {
+  const a = document.createElement('a')
+  a.textContent = theme.name
+  a.href = theme.href
+
+  const li = document.createElement('li')
+  li.appendChild(a)
+  return li
+}
+
 const formButtonClick = increment => {
   searchInput.blur()
   restorePage()
@@ -74,22 +84,7 @@ const formButtonClick = increment => {
   const fillThemes = (selector, themes) => {
     const ul = document.querySelector(selector)
     ul.innerHTML = ''
-
-    for (const theme of themes) {
-      if (!theme.name) {
-        ul.appendChild(document.createElement('br'))
-        continue
-      }
-  
-      const a = document.createElement('a')
-      a.textContent = theme.name
-      a.href = theme.href
-
-      const li = document.createElement('li')
-      li.appendChild(a)
-
-      ul.appendChild(li)
-    }
+    themes.forEach(theme => ul.appendChild(theme.name ? listItemWithLink(theme) : document.createElement('br')))
   }
 
   const setHtml = (selector, string) => document.querySelector(selector).innerHTML = string
@@ -210,16 +205,7 @@ const assignInput = input => {
 
       form.themes
         .filter(theme => theme.name && theme.name.includes(searchString))
-        .map(theme => {
-          const a = document.createElement('a')
-          a.textContent = theme.name
-          a.href = theme.href
-
-          const li = document.createElement('li')
-          li.appendChild(a)
-
-          return li
-        })
+        .map(theme => listItemWithLink(theme))
         .forEach(li => ol.appendChild(li))
 
       if (ol.children.length > 0) {
@@ -235,6 +221,7 @@ const assignInput = input => {
     showSearchResults()
 
     if (previousSearchesAmount === foundSearchesAmount) return
+
     previousSearchesAmount = foundSearchesAmount
     animateElements(['aside section'], .6)
   })
