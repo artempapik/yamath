@@ -122,19 +122,17 @@ const formButtonClick = increment => {
   const pageWidth = document.body.clientWidth
   geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start' // add window onscroll event
 
-  //////
-  
-  document.body.animate([
-    // keyframes
-    // { transform: 'translateY(0px)' },
-    // { transform: 'translateY(-300px)' }
-    { opacity: '.1' },
-    { opacity: '1' }
-  ], {
-    // timing options
-    duration: 300,
-    // iterations: Infinity
+  document.body.style.overflowY = 'hidden'
+  const duration = 250
+
+  mainSelectors.slice(2).forEach(selector => {
+    document.querySelector(selector).animate([
+      { transform: 'translateY(1.6em)', opacity: '.3' },
+      { transform: 'translateY(0)', opacity: '1' }
+    ], { duration })
   })
+
+  setTimeout(() => document.body.style.overflowY = 'auto', duration)
 }
 
 const htmlElementsFromIds = (...ids) => ids.map(id => document.querySelector(id))
