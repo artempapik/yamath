@@ -25,23 +25,27 @@ aside {
 }
 
 p {
-  font-size: 1.4em;
   margin: 1.1em 0;
-  font-weight: bold;
-  font-family: 'Roboto Mono', monospace;
   border-bottom: .15em solid var(--theme-hover-color);
-  width: fit-content;
 }
 
-.search, .forms, .algebra, aside { justify-self: center; }
-.search, .theme, .user           { align-self: end; }
-.user                            { justify-self: end; }
-i.fa                             { font-size: 2em; }
-.forms                           { gap: .5em; }
-i.fa, button, input              { display: none; }
-section, ul, ol, .forms          { display: flex; }
-section, ul, ol                  { flex-direction: column; }
-ol                               { margin-left: 1.5em; }
+.search, .forms, .algebra, aside      { justify-self: center; }
+.search, .theme, .user                { align-self: end; }
+.user                                 { justify-self: end; }
+i.fa                                  { font-size: 2em; }
+.forms                                { gap: .5em; }
+i.fa, button, input                   { display: none; }
+section, ul, ol, .forms               { display: flex; }
+section, ul, ol                       { flex-direction: column; }
+ol                                    { margin-left: 1.5em; }
+p, li, .theme-title, i                { width: fit-content; }
+p, li, button, .theme-title           { font-family: 'Roboto Mono', monospace; }
+p, .theme-title                       { font-size: 1.4em; }
+button, input                         { font-size: 1em; }
+p, #current, li:hover, .theme-title   { font-weight: bold; }
+li, .algebra, .geometry, .theme-title { text-transform: uppercase; }
+li, .theme-title                      { letter-spacing: .13em; }
+input, .algebra, .geometry            { letter-spacing: .04em; }
 
 ul, ol {
   padding-left: .7em;
@@ -55,15 +59,12 @@ button {
   box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px;
   background: var(--back-forward-button-background);
   color: var(--text-color);
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1em;
   transition: box-shadow .2s, transform .2s;
 }
 
 #current {
   background: #707070;
   color: #f5f5f5;
-  font-weight: bold;
   font-size: 1.1em;
   padding: .6em 1.2em;
 }
@@ -78,8 +79,6 @@ input {
   background: var(--input-background-color);
   color: var(--input-color);
   width: 12em;
-  letter-spacing: .04em;
-  font-size: 1em;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
   border-radius: .9em;
   padding: .5em 1em;
@@ -91,22 +90,7 @@ input:hover, input:focus {
   opacity: .85;
 }
 
-li {
-  font-family: 'Roboto Mono', monospace;
-  text-transform: uppercase;
-  width: fit-content;
-  letter-spacing: .12em;
-  padding: .3em;
-}
-
-li:hover {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
 .algebra, .geometry {
-  text-transform: uppercase;
-  letter-spacing: .06em;
   font-size: 2.2em;
   font-family: 'Rubik', sans-serif;
   margin-top: .8em;
@@ -114,22 +98,17 @@ li:hover {
 
 .theme-title {
   border-top: .2em solid var(--theme-border-color);
-  width: fit-content;
-  font-size: 1.4em;
-  font-family: 'Roboto Mono', monospace;
-  text-transform: uppercase;
-  font-weight: bold;
   margin: .8em 0 1.5em 0;
-  letter-spacing: .13em;
 }
 
 i {
   cursor: pointer;
   transition: color .1s;
-  width: fit-content;
 }
 
 aside .theme-title { margin-bottom: .7em; }
+li                 { padding: .3em; }
+li:hover           { text-decoration: underline; }
 li:hover, i:hover  { color: var(--theme-hover-color); }
 
 @media (max-width: 1200px) {
@@ -168,11 +147,7 @@ li:hover, i:hover  { color: var(--theme-hover-color); }
     row-gap: 1em;
   }
 
-  button {
-    font-size: .9em;
-    padding: .75em 1em;
-  }
-
+  button { padding: .65em 1em; }
   button:hover, input:hover, input:focus { box-shadow: none; }
   #current                               { font-size: 1em; }
   .search, .forms                        { justify-self: center; }
@@ -197,6 +172,3 @@ li:hover, i:hover  { color: var(--theme-hover-color); }
     padding-left: 2em;
   }
 }
-
-/* try to do with grid-area and css variables */
-/* place common styles into one-liners */
