@@ -458,8 +458,6 @@ const engToRus = {
   'u': 'г',
   'l': 'д',
   't': 'е',
-  '`': 'е',
-  ';': 'ж',
   'p': 'з',
   'b': 'и',
   'q': 'й',
@@ -474,21 +472,17 @@ const engToRus = {
   'n': 'т',
   'e': 'у',
   'a': 'ф',
-  '[': 'х',
   'w': 'ц',
   'x': 'ч',
   'i': 'ш',
   'o': 'щ',
-  ']': 'ъ',
   's': 'ы',
   'm': 'ь',
-  "'": 'э',
-  '.': 'ю',
   'z': 'я'
 }
 
-const MIN_FORM = 4
-const MAX_FORM = 12
+const MIN_FORM = 5
+const MAX_FORM = 11
 
 const baseMainLayout =
 `

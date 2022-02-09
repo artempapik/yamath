@@ -77,6 +77,14 @@ const listItemWithLink = theme => {
   return li
 }
 
+const shouldUseTwoColumnLayout = () => document.querySelector('.geometry2 .theme-title').textContent.length > 0
+
+const correctGeometryTitle = () => {
+  const geometryTitle = document.querySelector('.geometry')
+  const pageWidth = document.body.clientWidth
+  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout() && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start'
+}
+
 const formButtonClick = increment => {
   searchInput.blur()
   restorePage()
@@ -112,8 +120,8 @@ const formButtonClick = increment => {
   const toggleFormButtonVisibility = (button, condition) => button.style.display = condition ? 'block' : 'none'
 
   toggleFormButtonVisibility(currentButton, true)
-  toggleFormButtonVisibility(backButton, previousForm > MIN_FORM)
-  toggleFormButtonVisibility(forwardButton, nextForm < MAX_FORM)
+  toggleFormButtonVisibility(backButton, previousForm >= MIN_FORM)
+  toggleFormButtonVisibility(forwardButton, nextForm <= MAX_FORM)
 
   const currentFormTitle =  `${currentForm} класс`
   document.title = currentFormTitle
@@ -123,19 +131,15 @@ const formButtonClick = increment => {
   currentButton.textContent = currentFormTitle
   forwardButton.textContent = `${nextForm} класс →`
 
-  const geometry2Title = document.querySelector('.geometry2 .theme-title')
-  const shouldUseTwoColumnLayout = geometry2Title.textContent.length > 0
-  setCssVariables(layouts, shouldUseTwoColumnLayout)
-
-  const geometryTitle = document.querySelector('.geometry')
-  const pageWidth = document.body.clientWidth
-  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start' // add window onscroll event
+  setCssVariables(layouts, shouldUseTwoColumnLayout())
+  correctGeometryTitle()
 
   if (increment === 0) return
 
-  document.body.style.overflowY = 'hidden'
-  animateElements(mainSelectors.slice(2), 1.5)
-  setTimeout(() => document.body.style.overflowY = 'auto', 250)
+  const bodyStyle = document.body.style
+  bodyStyle.overflowY = 'hidden'
+  animateElements(mainSelectors.slice(2), 1.4)
+  setTimeout(() => bodyStyle.overflowY = 'auto', 250)
 }
 
 const htmlElementsFromSelectors = (...selectors) => selectors.map(selector => document.querySelector(selector))
@@ -248,3 +252,4 @@ toggleNightMode()
 window.toggleNightMode = () => toggleNightMode()
 window.logIn = () => document.querySelector('.user').innerHTML = 'ты милая Совушка'
 window.onunload = () => searchInput.value = ''
+window.onresize = () => correctGeometryTitle()
