@@ -156,16 +156,8 @@ li:hover, i:hover  { color: var(--theme-hover-color); }
   li:hover                               { font-weight: normal; }
   input                                  { border: .15em solid var(--theme-hover-color); }
   .search, .theme, .user                 { align-self: center; }
-
-  aside {
-    grid-area: 3 / 2 / 3 / 10;
-    width: 90%;
-  }
-
-  aside .theme-title {
-    font-size: 1.2em;
-    letter-spacing: .05em;
-  }
+  aside { grid-area: 3 / 2 / 3 / 10; }
+  aside .theme-title { letter-spacing: .05em; }
 
   ol {
     margin-left: .8em;
