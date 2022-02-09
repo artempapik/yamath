@@ -126,6 +126,7 @@ li:hover {
 i {
   cursor: pointer;
   transition: color .1s;
+  width: fit-content;
 }
 
 aside .theme-title { margin-bottom: .7em; }
