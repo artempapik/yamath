@@ -581,7 +581,6 @@ const colors = [
   ['#fff', '#606060', 'input-background-color'],
   ['32, 32, 32', '232, 232, 232', 'tap-color'],
   ['#f1f1f1', '', 'scrollbar-track'],
-  ['rgba(0, 0, 0, 0.07)', 'rgba(255, 255, 255, 0.08)', 'shadow-color'],
   ['rgba(0, 0, 0, 0.02)', 'rgba(228, 224, 220, 0.02)', 'button-first-box-shadow'],
   ['rgba(27, 31, 35, 0.15)', 'rgba(255, 255, 255, 0.15)', 'button-second-box-shadow'],
   ['rgba(0, 0, 0, 0.16)', 'rgba(255, 255, 255, 0.16)', 'button-hover-first-box-shadow'],

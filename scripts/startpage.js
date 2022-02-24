@@ -45,9 +45,9 @@ const restorePage = () => {
   previousSearchesAmount = 0
 }
 
-const searchInput = document.querySelector('input')
-searchInput.style.display = 'block'
-document.querySelector('#login').style.display = 'block'
+;['input', 'i', 'span'].forEach(selector => document
+  .querySelectorAll(selector)
+  .forEach(element => element.style.display = 'block'))
 
 const setCssVariables = (valuesAndVariables, condition) => {
   const documentStyle = document.documentElement.style
@@ -84,6 +84,8 @@ const correctGeometryTitle = () => {
   const pageWidth = document.body.clientWidth
   geometryTitle.style.justifySelf = shouldUseTwoColumnLayout() && pageWidth >= 792 && pageWidth <= 1200 ? 'center' : 'start'
 }
+
+const searchInput = document.querySelector('input')
 
 const formButtonClick = increment => {
   searchInput.blur()
@@ -127,9 +129,9 @@ const formButtonClick = increment => {
   document.title = currentFormTitle
   localStorage.setItem('current-form', currentForm)
 
-  backButton.textContent = `← ${previousForm} класс`
+  backButton.textContent = `${previousForm} класс`
   currentButton.textContent = currentFormTitle
-  forwardButton.textContent = `${nextForm} класс →`
+  forwardButton.textContent = `${nextForm} класс`
 
   setCssVariables(layouts, shouldUseTwoColumnLayout())
   correctGeometryTitle()
@@ -171,85 +173,130 @@ const transliterate = word => word
 
 const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
 
-const assignInput = input => {
-  input.addEventListener('focus', event => {
-    if (event.target.value) showSearchResults()
-  })
+const searchPlaceholder = '   Поиск по теме'
+searchInput.placeholder = searchPlaceholder
 
-  input.addEventListener('keydown', event => {
-    const char = event.key
-    if (!isLetter(char) && char !== ' ') event.preventDefault()
-  })
+searchInput.addEventListener('focus', event => {
+  if (event.target.value) showSearchResults()
+  searchInput.placeholder = searchPlaceholder.slice(4)
+})
 
-  input.addEventListener('keyup', event => {
-    if (event.key === 'Escape') {
-      input.value = ''
-      restorePage()
-      return
+searchInput.addEventListener('focusout', event => searchInput.placeholder = searchPlaceholder)
+
+searchInput.addEventListener('keydown', event => {
+  const char = event.key
+  if (!isLetter(char) && char !== ' ') event.preventDefault()
+})
+
+searchInput.addEventListener('keyup', event => {
+  if (event.key === 'Escape') {
+    searchInput.value = ''
+    restorePage()
+    return
+  }
+
+  const inputValue = event.target.value.trim()
+
+  if (!inputValue) {
+    restorePage()
+    return
+  }
+
+  const searchString = transliterate(inputValue.toLowerCase())
+
+  const [searchHeader, searchList] = htmlElementsFromSelectors(...searchSelectors)
+  searchList.innerHTML = ''
+  let foundSearchesAmount = 0
+
+  formsWithThemes.forEach(form => {
+    const p = document.createElement('p')
+    p.textContent = `${form.form} класс`
+
+    const ol = document.createElement('ol')
+
+    form.themes
+      .filter(theme => theme.name && theme.name.includes(searchString))
+      .map(theme => listItemWithLink(theme))
+      .forEach(li => ol.appendChild(li))
+
+    if (ol.children.length > 0) {
+      searchList.appendChild(p)
+      searchList.appendChild(ol)
+      foundSearchesAmount += ol.children.length
     }
-
-    const inputValue = event.target.value.trim()
-
-    if (!inputValue) {
-      restorePage()
-      return
-    }
-
-    const searchString = transliterate(inputValue.toLowerCase())
-
-    const [searchHeader, searchList] = htmlElementsFromSelectors(...searchSelectors)
-    searchList.innerHTML = ''
-    let foundSearchesAmount = 0
-
-    formsWithThemes.forEach(form => {
-      const p = document.createElement('p')
-      p.textContent = `${form.form} класс`
-
-      const ol = document.createElement('ol')
-
-      form.themes
-        .filter(theme => theme.name && theme.name.includes(searchString))
-        .map(theme => listItemWithLink(theme))
-        .forEach(li => ol.appendChild(li))
-
-      if (ol.children.length > 0) {
-        searchList.appendChild(p)
-        searchList.appendChild(ol)
-        foundSearchesAmount += ol.children.length
-      }
-    })
-  
-    searchHeader.textContent = `Результатов поиска: ${foundSearchesAmount}`
-    showSearchResults()
-
-    if (previousSearchesAmount === foundSearchesAmount) return
-
-    previousSearchesAmount = foundSearchesAmount
-    animateElements(['aside section'], .6)
   })
-}
 
-assignInput(searchInput)
+  searchHeader.textContent = `${foundSearchesAmount} результатов`
+  showSearchResults()
+
+  if (previousSearchesAmount === foundSearchesAmount) return
+
+  previousSearchesAmount = foundSearchesAmount
+  animateElements(['aside section'], .6)
+})
 
 document.onclick = () => searchInput.style.inputMode = 'none'
 searchInput.addEventListener('pointerup', () => searchInput.focus())
 
-const icons = htmlElementsFromSelectors('#moon', '#sun')
-let isNightMode = !!localStorage.getItem('is-night-mode')
+const themeIcons = htmlElementsFromSelectors(...['light', 'dark', 'system'].map(selector => `#${selector} i`))
+const themeLabels = htmlElementsFromSelectors(...['light', 'dark', 'system'].map(selector => `#${selector} span`))
 
-const toggleNightMode = () => {
+const getIconHoverColor = () => getComputedStyle(document.documentElement).getPropertyValue('--theme-hover-color')
+
+const toggleNightMode = isNightMode => {
+  themeIcons.forEach(icon => icon.style.color = '')
+  themeLabels.forEach(icon => icon.style.fontWeight = 'normal')
+
+  if (isNightMode === 'system') {
+    if (window.matchMedia) {
+      setCssVariables(colors, window.matchMedia('(prefers-color-scheme: dark)').matches)
+    }
+
+    themeIcons[2].style.color = getIconHoverColor()
+    themeLabels[2].style.fontWeight = 'bold'
+    localStorage.setItem('is-night-mode', isNightMode)
+    
+    return
+  }
+
   setCssVariables(colors, isNightMode)
-  isNightMode = !isNightMode
-
-  icons[+isNightMode].style.display = 'none'
-  icons[+!isNightMode].style.display = 'block'
-
-  localStorage.setItem('is-night-mode', isNightMode ? '' : ' ')
+  themeIcons[+isNightMode].style.color = getIconHoverColor()
+  themeLabels[+isNightMode].style.fontWeight = 'bold'
+  localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
 }
 
-toggleNightMode()
+const nightModeValue = localStorage.getItem('is-night-mode')
+let isNightMode = nightModeValue === 'system' ? 'system' : !!nightModeValue
+toggleNightMode(isNightMode)
 
-window.toggleNightMode = () => toggleNightMode()
-window.logIn = () => document.querySelector('.user').innerHTML = 'ты милая Совушка'
+window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
 window.onunload = () => searchInput.value = ''
 window.onresize = () => correctGeometryTitle()
+
+const dropdown = document.querySelector('.dropdown')
+const dropDownButton = document.querySelector('.dropdown-button')
+const dropDownArrow = document.querySelector('.dropdown-button i')
+
+window.openThemeDropdown = () => dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
+window.onscroll = () => dropdown.style.display = 'none'
+
+const classes = ['icon-bars', 'icon-angle-down']
+
+dropDownButton.onclick = () => {
+  dropDownArrow.classList.remove(classes[0])
+  dropDownArrow.classList.add(classes[1])
+  ;[classes[0], classes[1]] = [classes[1], classes[0]]
+  animateElements(['.dropdown'], .15)
+  animateElements(['.dropdown-button i'], .05)
+}
+
+window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
+  if (localStorage.getItem('is-night-mode') === 'system') {
+    setCssVariables(colors, event.matches)
+    themeIcons[2].style.color = getIconHoverColor()
+  }
+}
+
+window.signin = () => {
+  
+}

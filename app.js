@@ -6,6 +6,7 @@ import path from 'path'
 const port = process.env.PORT || 3000
 const app = express()
 const dirname = path.resolve()
+const viewsDir = `${dirname}/views`
 
 app.use(express.static('css'))
 app.use(express.static('scripts'))
@@ -22,7 +23,7 @@ const articleToTitle = {
 
 app.get('/articles/:article', (req, res) => {
   const article = `${req.params.article}.pug`
-  const path = `${dirname}/views/${article}`
+  const path = `${viewsDir}/${article}`
 
   if (!fs.existsSync(path)) {
     res.redirect('/error')
@@ -34,7 +35,7 @@ app.get('/articles/:article', (req, res) => {
 
 app.get('/', (_, res) => res.redirect('/forms'))
 
-app.get('/forms', (_, res) => res.render('startpage.pug'))
+app.get('/forms', (_, res) => res.sendFile(`${viewsDir}/startpage.html`))
 
 app.get('*', (_, res) => res.render('error.pug', { title: articleToTitle['error'] }))
 
