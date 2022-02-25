@@ -180,7 +180,7 @@ searchInput.placeholder = searchPlaceholder
 
 searchInput.addEventListener('focus', event => {
   if (event.target.value) showSearchResults()
-  // searchInput.placeholder = searchPlaceholder.slice(isMobile ? 2 : 4)
+  searchInput.placeholder = searchPlaceholder.slice(isMobile ? 2 : 4)
 })
 
 searchInput.addEventListener('focusout', () => searchInput.placeholder = searchPlaceholder)
