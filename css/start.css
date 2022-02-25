@@ -1,9 +1,3 @@
-.sign-in-dropdown {
-  position: fixed;
-}
-
-/* */
-
 @font-face {
   font-family: MathIcons;
   src: url('mathfont.woff');
