@@ -175,12 +175,12 @@ const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
 
 const isMobile = 'ontouchstart' in window
 
-const searchPlaceholder = isMobile ? '  Поиск по теме' : '   Поиск по теме'
+const searchPlaceholder = isMobile ? ' Поиск по теме' : '   Поиск по теме'
 searchInput.placeholder = searchPlaceholder
 
 searchInput.addEventListener('focus', event => {
   if (event.target.value) showSearchResults()
-  searchInput.placeholder = searchPlaceholder.slice(isMobile ? 3 : 4)
+  searchInput.placeholder = searchPlaceholder.slice(isMobile ? 2 : 4)
 })
 
 searchInput.addEventListener('focusout', () => searchInput.placeholder = searchPlaceholder)
