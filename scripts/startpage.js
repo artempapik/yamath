@@ -173,7 +173,7 @@ const transliterate = word => word
 
 const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
 
-const searchPlaceholder = '   Поиск по теме'
+const searchPlaceholder = ' Поиск по теме'
 searchInput.placeholder = searchPlaceholder
 
 searchInput.addEventListener('focus', event => {
