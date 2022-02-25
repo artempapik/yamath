@@ -173,6 +173,8 @@ aside a {
   }
 
   .theme-title { font-size: 1.3rem; }
+
+  .theme, .user { display: none; }
 }
 
 @media (max-width: 800px) {
@@ -197,7 +199,8 @@ aside a {
   }
 
   button                                         { padding: .65rem 1rem; }
-  button, button:hover, input:hover, input:focus { box-shadow: none; }
+  button:hover                                   { box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px; }
+  input:hover, input:focus                       { box-shadow: none; }
   #current                                       { font-size: 1rem; }
   .search, .forms                                { justify-self: center; }
   .user                                          { justify-self: end; }
