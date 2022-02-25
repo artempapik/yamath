@@ -1,3 +1,5 @@
+.theme, .user { display: none; }
+
 @font-face {
   font-family: MathIcons;
   src: url('mathfont.woff');
@@ -167,7 +169,6 @@ aside a {
   }
 
   .theme-title { font-size: 1.3rem; }
-
   .theme, .user { display: none; }
 }
 
@@ -194,17 +195,26 @@ aside a {
 
   button                                         { padding: .65rem 1rem; }
   button:hover                                   { box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px; }
-  input                                          { letter-spacing: .01rem; font-size: 1rem; }
   input:hover, input:focus                       { box-shadow: none; }
-  #current                                       { font-size: 1rem; }
   .search, .forms                                { justify-self: center; }
   .user                                          { justify-self: end; }
   ul, ol                                         { gap: .3rem; }
   ol                                             { margin-left: 2.5rem; }
   li:hover                                       { font-weight: normal; }
-  input                                          { border: .15rem solid var(--theme-hover-color); }
   .search, .theme, .user                         { align-self: center; }
   aside                                          { grid-area: 3 / 2 / 3 / 10; }
   aside a                                        { left: -.7rem; }
   aside .theme-title                             { letter-spacing: .05rem; }
+
+  input {
+    padding: .6rem 1rem;
+    font-size: 1.1rem;
+    letter-spacing: .01rem;
+    border: .15rem solid var(--theme-hover-color);
+  }
+
+  #current {
+    padding: .6rem 1.1rem;
+    font-size: 1.05rem;
+  }
 }
