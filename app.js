@@ -15,12 +15,6 @@ app.use(express.static('font'))
 app.use(express.static('img'))
 app.use(favicon(`${dirname}/ico/calculator.png`))
 
-const articleToTitle = {
-  'error': 'Ошибка',
-  // rewrite
-  'integers': 'Натуральные числа'
-}
-
 app.get('/articles/:article', (req, res) => {
   const article = `${req.params.article}.pug`
   const path = `${viewsDir}/${article}`
@@ -30,13 +24,13 @@ app.get('/articles/:article', (req, res) => {
     return
   }
 
-  res.render(article, { title: 'Ряд натуральных чисел' /* articleToTitle[article] think about */ })
+  res.render(article, { title: 'Ряд натуральных чисел' })
 })
 
-app.get('/', (_, res) => res.redirect('/forms'))
+const getPage = pageName => `${viewsDir}/${pageName}.html`
 
-app.get('/forms', (_, res) => res.sendFile(`${viewsDir}/startpage.html`))
-
-app.get('*', (_, res) => res.render('error.pug', { title: articleToTitle['error'] }))
+app.get('/', (_, res) => res.sendFile(getPage('start')))
+app.get('/forms', (_, res) => res.sendFile(getPage('forms')))
+app.get('*', (_, res) => res.render('error.pug', { title: 'Ошибка' }))
 
 app.listen(port)

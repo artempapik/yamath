@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная — YaMath</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="start.css">
+</head>
+<body>
+    <script type="module" src="start.js"></script>
+    <main>
+        <div class="theme">
+            <div class="dropdown-button" onpointerup="openThemeDropdown()">
+                <span>тема</span>
+                <i class="icon-palette"></i>
+            </div>
+    
+            <div class="dropdown">
+            <ul>
+                <li id="light" onpointerup="toggleNightMode(false)">
+                    <i class="icon-sun"></i>
+                    <span>светлая</span>
+                </li>
+    
+                <li id="dark" onpointerup="toggleNightMode(true)">
+                    <i class="icon-moon"></i>
+                    <span>темная</span>
+                </li>
+    
+                <li id="system" onpointerup="toggleNightMode('system')">
+                    <i class="icon-desktop"></i>
+                    <span>системная</span>
+                </li>
+            </ul>
+            </div>
+        </div>
+
+        <div class="logo">
+            <i class="icon-calculator"></i>
+            YaMath
+        </div>
+
+        <div class="user">
+            <div onpointerup="signin()">
+                <span>вход</span>
+                <i id="signin" class="icon-user"></i>
+            </div>
+        </div>
+
+        <div class="search">
+            <input placeholder="&#xe903; Поиск">
+        </div>
+
+        <div class="view">
+            Смотреть по:
+        </div>
+
+        <div class="forms">
+            <i id="signin" class="icon-forms"></i>
+            классам
+        </div>
+
+        <div class="themes">
+            <i id="signin" class="icon-themes"></i>
+            темам
+        </div>
+
+        <div class="levels">
+            <i id="signin" class="icon-levels"></i>
+            уровням
+        </div>
+
+        <div class="copyright">
+            <i class="icon-copyright"></i>
+            <span>YaMath, 2022</span>
+        </div>
+    </main>
+</body>
+</html>
