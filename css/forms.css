@@ -209,25 +209,12 @@ aside a {
   aside a                                        { left: -.7rem; }
   aside .theme-title                             { letter-spacing: .05rem; }
 
-  .search {
-    position: sticky;
-    top: 0;
-    background: var(--background-color);
-    width: 100%;
-    justify-items: center;
-  }
-
   input {
     background: var(--background-color);
-    margin: 0 auto;
-    border: none;
-    box-shadow: none;
     padding: .6rem 1rem;
     font-size: 1.05rem;
     letter-spacing: .01rem;
-    border-bottom: .2rem solid var(--theme-hover-color);
-    border-radius: 0;
-    justify-self: center;
+    border: .15rem solid var(--theme-hover-color);
   }
 
   #current {

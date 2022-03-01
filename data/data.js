@@ -534,7 +534,7 @@ const oneColumnLayouts = [
     ${baseMediumLayout}
   `,
   `
-    "s s s s s s s s s s"
+    ". s s s s s s s s g2"
     ${baseSmallLayout}
   `
 ]
