@@ -1,16 +1,16 @@
 import { colors } from '../data.js'
 
 ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
-  const i = element.children[0]
-  element.onmouseover = () => changeIconStyle(i , '#f4c744', 'scale(1.2)', '1')
-  element.onmouseout = () => changeIconStyle(i, getTextColor(), 'scale(1)', '.7')
+  const iconDiv = element.children[0]
+  element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+  element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
   element.onpointerup = () => window.location.pathname = element.classList[0]
 })
 
-const changeIconStyle = (icon, color, scale, opacity) => {
-  icon.style.color = color
-  icon.style.transform = scale
-  icon.style.opacity = opacity
+const changeIconStyle = (iconDiv, color, scale, opacity) => {
+  iconDiv.style.color = color
+  iconDiv.style.transform = `scale(${scale})`
+  iconDiv.children[0].style.opacity = opacity
 }
 
 const input = document.querySelector('input')

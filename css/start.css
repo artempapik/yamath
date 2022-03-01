@@ -4,27 +4,25 @@
 main {
   height: 100vh;
   display: grid;
-  grid-template: 7% 11% 7% 55% 10% / 1.5fr repeat(12, 1fr) 1.5fr;
+  grid-template: 13% 6% 60% 10% / 1.5fr repeat(12, 1fr) 1.5fr;
   grid-template-areas:
     ". theme . . . logo logo logo logo . . . user ."
     ". . . . . . search search . . . . . ."
-    ". . . . . view view view view . . . . ."
     ". forms forms forms forms themes themes themes themes levels levels levels levels ."
     ". . . . . . copyright copyright . . . . . .";
-  row-gap: 1.5rem;
+  row-gap: 1.8rem;
 }
 
 .theme     { grid-area: theme; }
 .logo      { grid-area: logo; }
 .user      { grid-area: user; }
 .search    { grid-area: search; }
-.view      { grid-area: view; }
 .forms     { grid-area: forms; }
 .themes    { grid-area: themes; }
 .levels    { grid-area: levels; }
 .copyright { grid-area: copyright; }
 
-.logo, .search, .view, .copyright {
+.logo, .search, .copyright {
   justify-self: center;
 }
 
@@ -62,10 +60,6 @@ input:hover, input:focus {
   opacity: .8;
 }
 
-.dropdown {
-  position: fixed;
-}
-
 .user div {
   align-items: center;
   gap: 1rem;
@@ -98,7 +92,7 @@ ul {
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: .05rem;
   text-transform: uppercase;
-  align-self: center;
+  margin-top: 1.5rem;
   word-spacing: .5rem;
   width: fit-content;
   padding-bottom: .2rem;
@@ -121,24 +115,22 @@ ul {
   color: var(--logo-color);
   opacity: .6;
   word-spacing: .5rem;
+  text-align: center;
 }
 
-.view {
-  font-size: 1.9rem;
-  color: var(--logo-color);
-  opacity: .7;
-  font-family: 'Raleway';
-  font-weight: bold;
-  align-self: center;
-  text-transform: uppercase;
-  letter-spacing: .25rem;
-  justify-self: center;
+.logo div {
+  font-size: .9rem;
+  word-spacing: .35rem;
+  letter-spacing: .15rem;
 }
 
 .forms i, .themes i, .levels i {
   font-size: 4rem;
-  width: 100%;
-  text-align: center;
+  opacity: .8;
+}
+
+.forms div div, .themes div div, .levels div div {
+  margin-top: 1.5rem;
 }
 
 .forms, .themes, .levels {
@@ -150,11 +142,12 @@ ul {
   flex-direction: column;
   text-align: center;
   padding-top: 30%;
-  gap: 3rem;
+  gap: 1rem;
   cursor: pointer;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   letter-spacing: .05rem;
+  opacity: .85;
 }
 
 .forms, .levels {
@@ -175,6 +168,11 @@ ul {
   font-weight: bold;
 }
 
+.forms div, .themes div, .levels div {
+  font-size: 1.2rem;
+  transition: transform .2s;
+}
+
 .copyright {
   font-family: 'Roboto Condensed';
   letter-spacing: .1rem;
@@ -183,27 +181,23 @@ ul {
   opacity: .6;
   display: flex;
   align-items: end;
-  gap: .5rem;
-  padding-bottom: 5%;
+  gap: .3rem;
 }
 
 .copyright i {
+  font-size: 1rem;
   opacity: .9;
   transition: opacity .2s;
 }
 
-.copyright i:hover {
+.copyright span:hover {
   opacity: .7;
 }
 
 .dropdown {
+  position: fixed;
   margin-top: .5rem;
   display: none;
-}
-
-.forms i, .themes i, .levels i {
-  opacity: .7;
-  transition: transform .2s;
 }
 
 .dropdown ul {
