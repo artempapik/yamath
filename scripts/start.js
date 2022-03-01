@@ -2,7 +2,7 @@ import { colors } from '../data.js'
 
 ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
   const i = element.children[0]
-  element.onmouseover = () => changeIconStyle(i ,'#f4c744', 'scale(1.2)', '1')
+  element.onmouseover = () => changeIconStyle(i , '#f4c744', 'scale(1.2)', '1')
   element.onmouseout = () => changeIconStyle(i, getTextColor(), 'scale(1)', '.7')
   element.onpointerup = () => window.location.pathname = element.classList[0]
 })
@@ -41,7 +41,7 @@ const htmlElementsFromSelectors = (...selectors) => selectors.map(selector => do
 const themeIcons = htmlElementsFromSelectors(...['light', 'dark', 'system'].map(selector => `#${selector} i`))
 const themeLabels = htmlElementsFromSelectors(...['light', 'dark', 'system'].map(selector => `#${selector} span`))
 
-const getIconHoverColor = () => getComputedStyle(document.documentElement).getPropertyValue('--theme-hover-color')
+const getIconHoverColor = () => getComputedStyle(document.documentElement).getPropertyValue('--logo-color')
 const getTextColor = () => getComputedStyle(document.documentElement).getPropertyValue('--text-color')
 
 const toggleNightMode = isNightMode => {

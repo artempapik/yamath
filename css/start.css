@@ -8,7 +8,7 @@ main {
   grid-template-areas:
     ". theme . . . logo logo logo logo . . . user ."
     ". . . . . . search search . . . . . ."
-    ". . . . . . view view . . . . . ."
+    ". . . . . view view view view . . . . ."
     ". forms forms forms forms themes themes themes themes levels levels levels levels ."
     ". . . . . . copyright copyright . . . . . .";
   row-gap: 1.5rem;
@@ -58,7 +58,7 @@ input {
 }
 
 input:hover, input:focus {
-  box-shadow: var(--theme-hover-color) 0 0 0 3px;
+  box-shadow: var(--logo-color) 0 0 0 2px;
   opacity: .8;
 }
 
@@ -108,7 +108,7 @@ ul {
 
 .theme .dropdown-button:hover, .user:hover {
   cursor: pointer;
-  color: var(--theme-hover-color);
+  color: var(--logo-color);
 }
 
 .user {
@@ -124,14 +124,15 @@ ul {
 }
 
 .view {
-  font-size: 1.8rem;
-  border-bottom: .12rem var(--logo-color) dashed;
+  font-size: 1.9rem;
   color: var(--logo-color);
   opacity: .7;
   font-family: 'Raleway';
+  font-weight: bold;
   align-self: center;
   text-transform: uppercase;
-  letter-spacing: .1rem;
+  letter-spacing: .25rem;
+  justify-self: center;
 }
 
 .forms i, .themes i, .levels i {
@@ -187,11 +188,12 @@ ul {
 }
 
 .copyright i {
-  transition: color .1s;
+  opacity: .9;
+  transition: opacity .2s;
 }
 
 .copyright i:hover {
-  color: var(--theme-hover-color);
+  opacity: .7;
 }
 
 .dropdown {
@@ -216,16 +218,18 @@ ul {
   font-size: 1rem;
   width: fit-content;
   letter-spacing: .15rem;
-  /* flex-direction: row; */
 }
 
 .dropdown li:hover {
-  color: var(--theme-hover-color);
+  color: var(--logo-color);
   cursor: pointer;
 }
 
 .dropdown i {
   width: 2rem;
-  align-self: center;
   justify-self: center;
+}
+
+.dropdown span {
+  align-self: center;
 }
