@@ -238,30 +238,18 @@ searchInput.addEventListener('keyup', event => {
 document.onclick = () => searchInput.style.inputMode = 'none'
 searchInput.addEventListener('pointerup', () => searchInput.focus())
 
-const themeIcons = htmlElementsFromSelectors(...['light', 'dark', 'system'].map(selector => `#${selector} i`))
-const themeLabels = htmlElementsFromSelectors(...['light', 'dark', 'system'].map(selector => `#${selector} span`))
-
 const getIconHoverColor = () => getComputedStyle(document.documentElement).getPropertyValue('--theme-hover-color')
 
 const toggleNightMode = isNightMode => {
-  themeIcons.forEach(icon => icon.style.color = '')
-  themeLabels.forEach(icon => icon.style.fontWeight = 'normal')
-
   if (isNightMode === 'system') {
     if (window.matchMedia) {
       setCssVariables(colors, window.matchMedia('(prefers-color-scheme: dark)').matches)
     }
-
-    themeIcons[2].style.color = getIconHoverColor()
-    themeLabels[2].style.fontWeight = 'bold'
-    localStorage.setItem('is-night-mode', isNightMode)
     
     return
   }
 
   setCssVariables(colors, isNightMode)
-  themeIcons[+isNightMode].style.color = getIconHoverColor()
-  themeLabels[+isNightMode].style.fontWeight = 'bold'
   localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
 }
 
@@ -273,30 +261,9 @@ window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
 window.onunload = () => searchInput.value = ''
 window.onresize = () => correctGeometryTitle()
 
-const dropdown = document.querySelector('.dropdown')
-const dropDownButton = document.querySelector('.dropdown-button')
-const dropDownArrow = document.querySelector('.dropdown-button i')
-
-window.openThemeDropdown = () => dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
-window.onscroll = () => dropdown.style.display = 'none'
-
-const classes = ['icon-bars', 'icon-angle-down']
-
-dropDownButton.onclick = () => {
-  dropDownArrow.classList.remove(classes[0])
-  dropDownArrow.classList.add(classes[1])
-  ;[classes[0], classes[1]] = [classes[1], classes[0]]
-  animateElements(['.dropdown'], .15)
-  animateElements(['.dropdown-button i'], .05)
-}
-
 window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
   if (localStorage.getItem('is-night-mode') === 'system') {
     setCssVariables(colors, event.matches)
     themeIcons[2].style.color = getIconHoverColor()
   }
-}
-
-window.signin = () => {
-  
 }

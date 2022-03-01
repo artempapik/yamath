@@ -1,23 +1,4 @@
-.theme, .user { display: none; }
-
-@font-face {
-  font-family: MathIcons;
-  src: url('mathfont.woff');
-}
-
-[class^="icon-"] {
-  font-family: MathIcons;
-  font-style: normal;
-}
-
-.icon-signin:before     { content: '\e900'; }
-.icon-mobile:before     { content: '\e901'; }
-.icon-desktop:before    { content: '\e902'; }
-.icon-search:before     { content: '\e903'; }
-.icon-sun:before        { content: '\e904'; }
-.icon-moon:before       { content: '\e905'; }
-.icon-angle-down:before { content: '\e906'; }
-.icon-bars::before      { content: '\e907'; }
+/* .theme, .user { display: none; } */
 
 .user div {
   align-items: center;
@@ -58,6 +39,11 @@ main {
 .algebra2  { grid-area: a2; }
 .geometry1 { grid-area: g1; }
 .geometry2 { grid-area: g2; }
+
+.theme {
+  justify-self: end;
+  margin-bottom: 10%;
+}
 
 aside {
   grid-area: 3 / 11 / 3 / 19;
@@ -172,7 +158,6 @@ aside a {
   }
 
   .theme-title { font-size: 1.3rem; }
-  .theme, .user { display: none; }
 }
 
 @media (max-width: 800px) {
@@ -220,5 +205,9 @@ aside a {
   #current {
     padding: .6rem 1rem;
     font-size: 1rem;
+  }
+
+  .theme {
+    justify-self: center;
   }
 }

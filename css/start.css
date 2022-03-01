@@ -1,31 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
-@font-face {
-  font-family: MathIcons;
-  src: url('mathfont.woff');
-}
-
-[class^="icon-"] {
-  font-family: MathIcons;
-  font-style: normal;
-}
-
-.icon-copyright:before  { content: '\e900'; }
-.icon-mobile:before     { content: '\e901'; }
-.icon-desktop:before    { content: '\e902'; }
-.icon-search:before     { content: '\e903'; }
-.icon-sun:before        { content: '\e904'; }
-.icon-moon:before       { content: '\e905'; }
-.icon-angle-down:before { content: '\e906'; }
-.icon-bars:before       { content: '\e907'; }
-.icon-levels:before     { content: '\e908'; }
-.icon-forms:before      { content: '\e909'; }
-.icon-themes:before     { content: '\e90a'; }
-.icon-user:before       { content: '\e90b'; }
-.icon-palette:before    { content: '\e90c'; }
-.icon-calculator:before { content: '\e90d'; }
-
 main {
   height: 100vh;
   display: grid;

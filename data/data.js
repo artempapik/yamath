@@ -486,7 +486,7 @@ const MAX_FORM = 11
 
 const baseMainLayout =
 `
-  ". t . . . . . . . . s s s s s s . . . . . . . . u ."
+  ". . . . . . . . . . t s s s s u . . . . . . . . . ."
   ". . . . . . . . . f f f f f f f f . . . . . . . . ."
 `
 
@@ -534,7 +534,7 @@ const oneColumnLayouts = [
     ${baseMediumLayout}
   `,
   `
-    ". s s s s s s s s g2"
+    ". t s s s s s s u g2"
     ${baseSmallLayout}
   `
 ]
