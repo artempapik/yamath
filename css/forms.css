@@ -64,7 +64,7 @@ span:not(.dropdown span)                                           { font-size: 
 .search, .forms, .algebra, aside                                   { justify-self: center; }
 .search, .theme, .user                                             { align-self: end; }
 .user                                                              { justify-self: end; }
-i:not(.dropdown i, .dropdown-button i)                             { font-size: 1.3rem; }
+i:not(.dropdown i, .dropdown-button i)                             { font-size: 1.4rem; }
 .forms, .dropdown-button, ul, ol                                   { gap: .5rem; }
 button, .dropdown, span, i:not(button i)                           { display: none; }
 section, ul, ol, .forms, .user div, .dropdown-button, .dropdown li { display: flex; }
@@ -81,11 +81,19 @@ li, .theme-title                                                   { letter-spac
 .theme, .user, button                                              { user-select: none; }
 i, .user div, .dropdown li, .dropdown-button                       { cursor: pointer; }
 ul, ol                                                             { padding-left: .7rem; }
-i, .dropdown-button span, .user span, .user i                      { transition: color .1s; }
 aside .theme-title                                                 { margin-bottom: .7rem; }
 li:not(.dropdown li):hover                                         { text-decoration: underline; }
-li:hover, i:hover, .dropdown-button:hover, .user div:hover         { color: var(--theme-hover-color); }
+li:hover                                                           { color: var(--theme-hover-color); }
 li                                                                 { padding: .3rem; }
+
+i {
+  transition: color .1s, opacity .1s;
+}
+
+i:hover {
+  color: var(--logo-color);
+  opacity: .7;
+}
 
 button {
   padding: .6rem .95rem;
@@ -126,7 +134,7 @@ input {
 }
 
 input:hover, input:focus {
-  box-shadow: var(--theme-hover-color) 0 0 0 3px;
+  box-shadow: var(--logo-color) 0 0 0 2px;
   opacity: .8;
 }
 

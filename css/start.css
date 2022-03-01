@@ -97,12 +97,13 @@ ul {
   width: fit-content;
   padding-bottom: .2rem;
   opacity: .85;
-  transition: color .1s;
+  transition: color .1s, opacity .1s;
 }
 
-.theme .dropdown-button:hover, .user:hover {
+.theme .dropdown-button:hover, .user .dropdown-button:hover {
   cursor: pointer;
   color: var(--logo-color);
+  opacity: .7;
 }
 
 .user {
@@ -187,7 +188,10 @@ ul {
 .copyright i {
   font-size: 1rem;
   opacity: .9;
-  transition: opacity .2s;
+}
+
+.copyright span {
+  transition: opacity .1s;
 }
 
 .copyright span:hover {
