@@ -12,19 +12,14 @@ let activeElement
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
-    console.log(element === activeElement ? 'same' : 'other')
-
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     window.location.pathname = element.classList[0]
   }
 
-  element.ontouchend = () => {
-    activeElement = element
-  }
-
-  element.onpointerdown = e => {
-    console.log(document.activeElement)
-    e.preventDefault()
+  element.ontouchstart = () => {
+    ;['.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(el => {
+      el.style.pointerEvents = 'none'
+    })
   }
 })
 
