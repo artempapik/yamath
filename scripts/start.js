@@ -26,6 +26,9 @@ let a = getComputedStyle(document.documentElement).getPropertyValue('--text-colo
 const q = document.querySelector('.forms')
 q.onpointerup = () => {
   q.style.background = '#202020'
+  q.style.color = '#f8f8f8'
+  document.documentElement.style.setProperty('--aa', 'red')
+  window.location.pathname = q.classList[0]
   
 }
 
