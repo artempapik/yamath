@@ -260,7 +260,7 @@ ul {
   }
 
   .theme, .user {
-    font-size: 1.1rem;
+    font-size: .9rem;
     word-spacing: .2rem;
     margin: 0;
     padding: 0;
@@ -302,6 +302,5 @@ ul {
 
   .copyright {
     padding-bottom: .7rem;
-    font-weight: bold;
   }
 }
