@@ -15,12 +15,6 @@ let activeElement
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     window.location.pathname = element.classList[0]
   }
-
-  element.ontouchstart = () => {
-    ;['.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(el => {
-      el.style.pointerEvents = 'none'
-    })
-  }
 })
 
 const changeIconStyle = (iconDiv, color, scale, opacity, background) => {
