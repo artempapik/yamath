@@ -278,13 +278,12 @@ ul {
     border-radius: 1rem;
     padding: 1.5rem 0;
     font-size: 2rem;
+    pointer-events: none;
   }
 
   .forms:hover, .themes:hover, .levels:hover {
     border-radius: 1rem;
     border-bottom: none;
-    /* background: red; */
-    pointer-events: none;
   }
 
   .forms i, .themes i, .levels i {
