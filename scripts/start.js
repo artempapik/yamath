@@ -2,7 +2,7 @@ import { colors } from '../data.js'
 
 ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
   const iconDiv = element.children[0]
-  iconDiv.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+  element.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
   element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
   element.onpointerup = () => window.location.pathname = element.classList[0]
