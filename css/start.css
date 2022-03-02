@@ -242,8 +242,8 @@ ul {
       ". . themes themes themes themes themes themes themes themes themes themes . ."
       ". . levels levels levels levels levels levels levels levels levels levels . ."
       ". . . . copyright copyright copyright copyright copyright copyright . . . .";
-    row-gap: 1.3rem;
-    margin-top: .8rem;
+    row-gap: 1rem;
+    margin-top: 0;
   }
 
   .logo {
@@ -276,8 +276,8 @@ ul {
 
   .forms, .themes, .levels {
     border-radius: 1rem;
-    padding: 1.5rem 0;
-    font-size: 2rem;
+    padding: .8rem 0 0 0;
+    font-size: 1.9rem;
     opacity: .9;
   }
 
@@ -292,11 +292,15 @@ ul {
   }
 
   .forms i, .themes i, .levels i {
-    font-size: 3rem;
+    font-size: 2.6rem;
   }
 
   .forms div, .themes div, .levels div {
     font-size: 1rem;
+  }
+
+  .forms div div, .themes div div, .levels div div {
+    margin-top: .7rem;
   }
 
   .themes {
@@ -304,9 +308,9 @@ ul {
   }
 
   input {
-    font-size: 1.1rem;
-    width: 10rem;
-    padding: .5rem .8rem;
+    font-size: 1rem;
+    width: 9rem;
+    padding: .3rem .8rem;
     border: .15rem solid var(--logo-color);
     word-spacing: .2rem;
   }
