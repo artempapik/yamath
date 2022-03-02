@@ -159,7 +159,7 @@ ul {
   box-shadow: rgba(78, 36, 36, 0.1) 0px 4px 12px;
 }
 
-.forms:hover, .themes:hover, .levels:hover {
+.forms:hover, .forms:focus, .themes:hover, .levels:hover {
   opacity: .9;
   color: #f8f8f8;
   border-bottom: .25rem #f8f8f8 dotted;
@@ -280,7 +280,7 @@ ul {
     font-size: 2rem;
   }
 
-  .forms:hover, .forms:focus, .themes:hover, .levels:hover {
+  .forms:hover, .themes:hover, .levels:hover {
     border-radius: 1rem;
     border-bottom: none;
   }
