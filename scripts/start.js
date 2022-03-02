@@ -23,6 +23,12 @@ let a = getComputedStyle(document.documentElement).getPropertyValue('--text-colo
   }
 })
 
+const q = document.querySelector('.forms')
+q.onpointerup = () => {
+  q.style.background = '#202020'
+  
+}
+
 const changeIconStyle = (iconDiv, color, scale, opacity, background) => {
   iconDiv.style.color = color
   if (!isMobile) iconDiv.style.transform = `scale(${scale})`
