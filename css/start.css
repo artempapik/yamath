@@ -281,6 +281,7 @@ ul {
   }
 
   .forms:hover, .themes:hover, .levels:hover {
+    background: unset;
     color: unset;
     font-weight: unset;
     opacity: unset;
