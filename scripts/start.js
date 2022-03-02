@@ -6,7 +6,7 @@ import { colors } from '../data.js'
   element.onpointerover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
 
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
-  element.onpointerout = () => changeIconStyle(iconDiv, 'green', 1, .8)
+  element.onpointerout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => window.location.pathname = element.classList[0]
 })
