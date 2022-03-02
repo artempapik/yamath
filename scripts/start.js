@@ -8,7 +8,7 @@ const isMobile = 'ontouchstart' in window
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
-    changeIconStyle(iconDiv, getTextColor(), 1.2, 1)
+    changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     window.location.pathname = element.classList[0]
   }
 })
