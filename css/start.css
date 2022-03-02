@@ -312,14 +312,4 @@ ul {
   .copyright {
     padding-bottom: .8rem;
   }
-
-  .forms:hover {
-    opacity: 1;
-    color: var(--text-color);
-    /* border-bottom: .25rem #f8f8f8 dotted; */
-    background: var(--background-color);
-    /* border-top-left-radius: 4rem;
-    border-top-right-radius: 4rem; */
-    font-weight: bold;
-  }
 }

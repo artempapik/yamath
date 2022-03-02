@@ -3,6 +3,7 @@ import { colors } from '../data.js'
 const isMobile = 'ontouchstart' in window
 
 let a = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+let activeElement
 
 ;['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
   const iconDiv = element.children[0]
@@ -11,8 +12,19 @@ let a = getComputedStyle(document.documentElement).getPropertyValue('--text-colo
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
+    console.log(element === activeElement ? 'same' : 'other')
+
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     window.location.pathname = element.classList[0]
+  }
+
+  element.ontouchend = () => {
+    activeElement = element
+  }
+
+  element.onpointerdown = e => {
+    console.log(document.activeElement)
+    e.preventDefault()
   }
 })
 
