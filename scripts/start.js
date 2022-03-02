@@ -11,8 +11,6 @@ let a = getComputedStyle(document.documentElement).getPropertyValue('--text-colo
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
-    element.style.background = 'red'
-    element.style.opacity = '1'
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     window.location.pathname = element.classList[0]
   }
