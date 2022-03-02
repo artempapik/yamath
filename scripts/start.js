@@ -1,13 +1,11 @@
 import { colors } from '../data.js'
 
-const isMobile = 'ontouchstart' in window
-
-let a = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+let textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+let backgroundColor = getComputedStyle(document.documentElement).getPropertyValue('--body-color')
 
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
-const indexes = [1, 2, 3]
 
-categories.forEach(category => {
+categories.forEach((category, index) => {
   const iconDiv = category.children[0]
   // if (!isMobile) element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
   // if (isMobile) element.onmouseup = () => changeIconStyle(iconDiv, a, 1.2, 1)
@@ -16,6 +14,15 @@ categories.forEach(category => {
   category.onpointerup = () => {
     category.style.background = '#202020'
     category.style.color = '#f8f8f8'
+    category.querySelector('.category i').style.display = 'block'
+
+    for (let i = 0; i < categories.length; i++) {
+      if (i === index) continue
+      changeIconStyle(categories[i].children[0], textColor, 1, .8)
+      categories[i].style.background = backgroundColor
+      categories[i].style.color = textColor
+      categories[i].querySelector('.category i').style.display = 'none'
+    }
 
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     // window.location.pathname = element.classList[0]

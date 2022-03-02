@@ -277,8 +277,11 @@ ul {
   .forms, .themes, .levels {
     border-radius: 1rem;
     padding: 1.5rem 0;
-    font-size: 2rem;
     opacity: .9;
+  }
+
+  .category span {
+    font-size: 2rem;
   }
 
   .forms:hover, .themes:hover, .levels:hover {
@@ -293,6 +296,18 @@ ul {
 
   .forms i, .themes i, .levels i {
     font-size: 3rem;
+  }
+
+  .category {
+    display: flex;
+    justify-content: center;
+    gap: .7rem;
+  }
+
+  .category i {
+    font-size: 1.6rem;
+    align-self: center;
+    display: none;
   }
 
   .forms div, .themes div, .levels div {
