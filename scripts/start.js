@@ -9,7 +9,11 @@ let activeElement
   const iconDiv = element.children[0]
   if (!isMobile) element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
   if (isMobile) element.onmouseup = () => changeIconStyle(iconDiv, a, 1.2, 1)
-  element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
+  element.onmouseout = () => {
+    changeIconStyle(iconDiv, getTextColor(), 1, .8)
+    element.style.background = '#202020'
+
+  }
 
   element.onpointerup = () => {
 
@@ -18,7 +22,6 @@ let activeElement
   }
 
   element.onpointerdown = () => {
-    element.style.background = '#202020'
   }
 })
 
