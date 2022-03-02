@@ -234,7 +234,7 @@ ul {
 
 @media (max-width: 600px) {
   main {
-    grid-template: repeat(6, auto) / .3fr repeat(12, 1fr) .3fr;
+    grid-template: repeat(6, auto) / .4fr repeat(12, 1fr) .4fr;
     grid-template-areas:
       ". theme theme theme logo logo logo logo logo logo user user user ."
       ". . . . . . search search . . . . . ."
@@ -256,19 +256,21 @@ ul {
   }
 
   .logo i {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
 
   .theme, .user {
-    font-size: .9rem;
-    word-spacing: .2rem;
     margin: 0;
     padding: 0;
-    align-self: center;
+    align-self: end;
+  }
+
+  .dropdown-button span {
+    display: none;
   }
 
   i {
-    font-size: 1rem;
+    font-size: 1.8rem;
   }
 
   .forms, .themes, .levels {
