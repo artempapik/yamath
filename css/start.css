@@ -149,7 +149,7 @@ ul {
 .forms, .themes, .levels {
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  transition: background .3s, color .2s, border-radius .2s, font-weight .2s;
+  transition: background .3s, color .2s, font-weight .2s, border-radius .2s;
   display: flex;
   flex-direction: column;
   text-align: center;
@@ -293,7 +293,7 @@ ul {
     border-radius: 1rem;
     padding: 1.5rem 0;
     opacity: .9;
-    /* remove transition border-radius */
+    transition: background .3s, color .2s, font-weight .2s;
   }
 
   .category span {
