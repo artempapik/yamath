@@ -7,9 +7,11 @@ import { colors } from '../data.js'
   element.onpointerup = () => window.location.pathname = element.classList[0]
 })
 
+const isMobile = 'ontouchstart' in window
+
 const changeIconStyle = (iconDiv, color, scale, opacity) => {
   iconDiv.style.color = color
-  iconDiv.style.transform = `scale(${scale})`
+  if (!isMobile) iconDiv.style.transform = `scale(${scale})`
   iconDiv.children[0].style.opacity = opacity
 }
 
