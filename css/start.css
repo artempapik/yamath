@@ -282,7 +282,7 @@ ul {
   }
 
   .forms:hover, .themes:hover, .levels:hover {
-    background: unset;
+    background: var(--aa);
     color: unset;
     font-weight: unset;
     opacity: unset;
