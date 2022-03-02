@@ -3,20 +3,21 @@ import { colors } from '../data.js'
 ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
   const iconDiv = element.children[0]
   element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
-  element.onpointerover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+  element.onpointerover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1, '#202020')
 
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
-  element.onpointerout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
+  element.onpointerout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8, getComputedStyle(document.documentElement).getPropertyValue('--background-color'))
 
   element.onpointerup = () => window.location.pathname = element.classList[0]
 })
 
 const isMobile = 'ontouchstart' in window
 
-const changeIconStyle = (iconDiv, color, scale, opacity) => {
+const changeIconStyle = (iconDiv, color, scale, opacity, background) => {
   iconDiv.style.color = color
   if (!isMobile) iconDiv.style.transform = `scale(${scale})`
   iconDiv.children[0].style.opacity = opacity
+  if (background) iconDiv.parentElement.style.background = background
 }
 
 const input = document.querySelector('input')
