@@ -277,6 +277,11 @@ ul {
     font-size: 2rem;
   }
 
+  .forms:hover, .themes:hover, .levels:hover {
+    border-radius: 1rem;
+    border-bottom: none;
+  }
+
   .forms i, .themes i, .levels i {
     font-size: 3rem;
   }
