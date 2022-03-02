@@ -16,7 +16,7 @@ let a = getComputedStyle(document.documentElement).getPropertyValue('--text-colo
     window.location.pathname = element.classList[0]
   }
 
-  element.ontouchend = () => element.style.background = '#202020'
+  // element.ontouchend = () => element.style.background = '#202020'
 })
 
 const changeIconStyle = (iconDiv, color, scale, opacity, background) => {
