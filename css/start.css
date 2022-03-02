@@ -231,3 +231,21 @@ ul {
 .dropdown span {
   align-self: center;
 }
+
+@media (max-width: 600px) {
+  main {
+    grid-template: repeat(6, auto) / 1.5fr repeat(12, 1fr) 1.5fr;
+    grid-template-areas:
+      ". theme . . . logo logo logo logo . . . user ."
+      ". . . . . . search search . . . . . ."
+      ". forms forms forms forms forms forms forms forms forms forms forms forms ."
+      ". themes themes themes themes themes themes themes themes themes themes themes themes ."
+      ". levels levels levels levels levels levels levels levels levels levels levels levels ."
+      ". . . . . . copyright copyright . . . . . .";
+  }
+
+  .forms, .themes, .levels {
+    border-radius: 0;
+    padding-top: 0;
+  }
+}
