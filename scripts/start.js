@@ -6,7 +6,7 @@ import { colors } from '../data.js'
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
-    element.style.color = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
+    changeIconStyle(iconDiv, 'red', 1.2, 1)
     window.location.pathname = element.classList[0]
   }
 })
