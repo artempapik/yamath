@@ -283,7 +283,6 @@ ul {
   .forms:hover, .themes:hover, .levels:hover {
     border-radius: 1rem;
     border-bottom: none;
-    color: red;
   }
 
   .forms i, .themes i, .levels i {
