@@ -301,6 +301,7 @@ ul {
     width: 10rem;
     padding: .5rem .8rem;
     border: .15rem solid var(--logo-color);
+    word-spacing: .2rem;
   }
 
   input:hover, input:focus {
