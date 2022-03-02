@@ -234,18 +234,55 @@ ul {
 
 @media (max-width: 600px) {
   main {
-    grid-template: repeat(6, auto) / 1.5fr repeat(12, 1fr) 1.5fr;
+    grid-template: repeat(6, auto) / .3fr repeat(12, 1fr) .3fr;
     grid-template-areas:
-      ". theme . . . logo logo logo logo . . . user ."
+      ". theme theme theme logo logo logo logo logo logo user user user ."
       ". . . . . . search search . . . . . ."
       ". forms forms forms forms forms forms forms forms forms forms forms forms ."
       ". themes themes themes themes themes themes themes themes themes themes themes themes ."
       ". levels levels levels levels levels levels levels levels levels levels levels levels ."
-      ". . . . . . copyright copyright . . . . . .";
+      ". . . . copyright copyright copyright copyright copyright copyright . . . .";
+    row-gap: 1.3rem;
+  }
+
+  .logo {
+    font-size: 2rem;
+    align-self: end;
+    font-weight: bold;
+  }
+
+  .logo div {
+    display: none;
+  }
+
+  .logo i {
+    font-size: 1.5rem;
+  }
+
+  .theme, .user {
+    font-size: 1rem;
+    word-spacing: .2rem;
+    margin: 0;
+    padding: 0;
+    align-self: center;
+  }
+
+  i {
+    font-size: 1rem;
   }
 
   .forms, .themes, .levels {
     border-radius: 0;
-    padding-top: 0;
+    padding: 1.5rem 0;
+  }
+
+  input {
+    font-size: 1.1rem;
+    width: 10rem;
+    padding: .5rem .8rem;
+  }
+
+  .copyright {
+    padding-bottom: .5rem;
   }
 }
