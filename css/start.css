@@ -285,6 +285,7 @@ ul {
     background: unset;
     color: unset;
     font-weight: unset;
+    opacity: unset;
 
     border-radius: 1rem;
     border-bottom: none;
