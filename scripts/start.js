@@ -4,37 +4,27 @@ const isMobile = 'ontouchstart' in window
 
 let a = getComputedStyle(document.documentElement).getPropertyValue('--text-color')
 
-;['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
-  const iconDiv = element.children[0]
-  if (!isMobile) element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
-  if (isMobile) element.onmouseup = () => changeIconStyle(iconDiv, a, 1.2, 1)
-  element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
+const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
+const indexes = [1, 2, 3]
 
-  element.onpointerup = () => {
-    element.style.background = '#202020'
+categories.forEach(category => {
+  const iconDiv = category.children[0]
+  // if (!isMobile) element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+  // if (isMobile) element.onmouseup = () => changeIconStyle(iconDiv, a, 1.2, 1)
+  // element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
-    document.documentElement.style.setProperty('--aa', 'red')
+  category.onpointerup = () => {
+    category.style.background = '#202020'
+    category.style.color = '#f8f8f8'
 
-    // changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
-    window.location.pathname = element.classList[0]
-  }
-
-  element.onpointerdown = () => {
+    changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+    // window.location.pathname = element.classList[0]
   }
 })
 
-const q = document.querySelector('.forms')
-q.onpointerup = () => {
-  q.style.background = '#202020'
-  q.style.color = '#f8f8f8'
-  document.documentElement.style.setProperty('--aa', 'red')
-  // window.location.pathname = q.classList[0]
-  
-}
-
 const changeIconStyle = (iconDiv, color, scale, opacity, background) => {
   iconDiv.style.color = color
-  if (!isMobile) iconDiv.style.transform = `scale(${scale})`
+  iconDiv.style.transform = `scale(${scale})`
   iconDiv.children[0].style.opacity = opacity
   if (background) iconDiv.parentElement.style.background = background
 }

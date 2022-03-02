@@ -278,13 +278,14 @@ ul {
     border-radius: 1rem;
     padding: 1.5rem 0;
     font-size: 2rem;
+    opacity: .9;
   }
 
   .forms:hover, .themes:hover, .levels:hover {
     background: unset;
     color: unset;
     font-weight: unset;
-    opacity: unset;
+    opacity: .9;
 
     border-radius: 1rem;
     border-bottom: none;
