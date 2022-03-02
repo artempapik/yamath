@@ -14,7 +14,10 @@ categories.forEach((category, index) => {
   category.onpointerup = () => {
     category.style.background = '#202020'
     category.style.color = '#f8f8f8'
-    category.querySelector('.category i').style.display = 'block'
+
+    const arrowIcon = category.querySelector('.category i')
+    arrowIcon.style.display = 'block'
+    arrowIcon.onpointerup = () => window.location.pathname = category.classList[0]
 
     for (let i = 0; i < categories.length; i++) {
       if (i === index) continue
@@ -25,7 +28,6 @@ categories.forEach((category, index) => {
     }
 
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
-    // window.location.pathname = element.classList[0]
   }
 })
 

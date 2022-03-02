@@ -130,6 +130,18 @@ ul {
   opacity: .8;
 }
 
+.category {
+  display: flex;
+  justify-content: center;
+  gap: .7rem;
+}
+
+.category i {
+  font-size: 1.6rem;
+  align-self: center;
+  /* display: none; */
+}
+
 .forms div div, .themes div div, .levels div div {
   margin-top: 1.5rem;
 }
