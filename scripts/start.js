@@ -5,29 +5,65 @@ let backgroundColor = getComputedStyle(document.documentElement).getPropertyValu
 
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
 
+const isMobile = 'ontouchstart' in window
+
 categories.forEach((category, index) => {
   const iconDiv = category.children[0]
-  // if (!isMobile) element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
-  // if (isMobile) element.onmouseup = () => changeIconStyle(iconDiv, a, 1.2, 1)
-  // element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
-  category.onpointerup = () => {
-    category.style.background = '#202020'
-    category.style.color = '#f8f8f8'
+  if (!isMobile) {
+    category.onmouseover = () => {
+      changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
 
-    const arrowIcon = category.querySelector('.category i')
-    arrowIcon.style.display = 'block'
-    arrowIcon.onpointerup = () => window.location.pathname = category.classList[0]
+      const arrowIcon = category.querySelector('.category i')
+      arrowIcon.style.display = 'block'
+      arrowIcon.onpointerup = () => window.location.pathname = category.classList[0]
 
-    for (let i = 0; i < categories.length; i++) {
-      if (i === index) continue
-      changeIconStyle(categories[i].children[0], textColor, 1, .8)
-      categories[i].style.background = backgroundColor
-      categories[i].style.color = textColor
-      categories[i].querySelector('.category i').style.display = 'none'
+      for (let i = 0; i < categories.length; i++) {
+        if (i === index) continue
+        changeIconStyle(categories[i].children[0], textColor, 1, .8)
+        categories[i].querySelector('.category i').style.display = 'none'
+      }
     }
 
-    changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+    category.onmouseout = () => {
+      changeIconStyle(iconDiv, getTextColor(), 1, .8)
+
+      for (let i = 0; i < categories.length; i++) {
+        categories[i].querySelector('.category i').style.display = 'none'
+      }
+    }
+  }
+
+  if (isMobile) {
+    category.onpointerup = () => {
+      category.style.background = '#202020'
+      category.style.color = '#f8f8f8'
+  
+      const arrowIcon = category.querySelector('.category i')
+      arrowIcon.style.display = 'block'
+      arrowIcon.onpointerup = () => window.location.pathname = category.classList[0]
+  
+      for (let i = 0; i < categories.length; i++) {
+        if (i === index) continue
+        changeIconStyle(categories[i].children[0], textColor, 1, .8)
+        categories[i].style.background = backgroundColor
+        categories[i].style.color = textColor
+        categories[i].querySelector('.category i').style.display = 'none'
+      }
+  
+      changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+    }
+
+    document.body.onpointerup = event => {
+      if (event.target === document.querySelector('main')) {
+        for (let i = 0; i < categories.length; i++) {
+          categories[i].style.background = backgroundColor
+          categories[i].style.color = textColor
+          changeIconStyle(categories[i].children[0], textColor, 1, .8)
+          categories[i].querySelector('.category i').style.display = 'none'
+        }
+      }
+    }
   }
 })
 

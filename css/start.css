@@ -139,7 +139,7 @@ ul {
 .category i {
   font-size: 1.6rem;
   align-self: center;
-  /* display: none; */
+  display: none;
 }
 
 .forms div div, .themes div div, .levels div div {
@@ -149,7 +149,6 @@ ul {
 .forms, .themes, .levels {
   font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
-  font-size: 2.5rem;
   transition: background .3s, color .2s, border-radius .2s, font-weight .2s;
   display: flex;
   flex-direction: column;
@@ -161,6 +160,10 @@ ul {
   border-top-right-radius: 2rem;
   letter-spacing: .05rem;
   opacity: .85;
+}
+
+.category span {
+  font-size: 2.5rem;
 }
 
 .forms, .levels {
@@ -290,6 +293,7 @@ ul {
     border-radius: 1rem;
     padding: 1.5rem 0;
     opacity: .9;
+    /* remove transition border-radius */
   }
 
   .category span {
