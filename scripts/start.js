@@ -7,6 +7,8 @@ import { colors } from '../data.js'
 
   element.onpointerup = () => {
     // changeIconStyle(iconDiv, 'red', 1.2, 1)
+    document.body.style.background = 'green'
+    document.body.style.color = 'red'
     alert('1')
     window.location.pathname = element.classList[0]
   }
