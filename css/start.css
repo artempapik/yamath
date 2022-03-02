@@ -243,6 +243,7 @@ ul {
       ". . levels levels levels levels levels levels levels levels levels levels . ."
       ". . . . copyright copyright copyright copyright copyright copyright . . . .";
     row-gap: 1.3rem;
+    margin-top: .8rem;
   }
 
   .logo {
@@ -309,6 +310,6 @@ ul {
   }
 
   .copyright {
-    padding-bottom: .7rem;
+    padding-bottom: .8rem;
   }
 }
