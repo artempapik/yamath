@@ -2,7 +2,10 @@ import { colors } from '../data.js'
 
 ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
   const iconDiv = element.children[0]
-  element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+  element.onmouseover = () => {
+    changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
+    alert('2')
+  }
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
