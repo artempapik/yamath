@@ -1,23 +1,18 @@
 import { colors } from '../data.js'
 
-['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
+const isMobile = 'ontouchstart' in window
+
+;['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector)).forEach(element => {
   const iconDiv = element.children[0]
-  element.onmouseover = () => {
-    changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
-    alert('2')
-  }
+  if (!isMobile) element.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
   element.onpointerup = () => {
     // changeIconStyle(iconDiv, 'red', 1.2, 1)
-    document.body.style.background = 'green'
-    document.body.style.color = 'red'
-    alert('1')
+    
     window.location.pathname = element.classList[0]
   }
 })
-
-const isMobile = 'ontouchstart' in window
 
 const changeIconStyle = (iconDiv, color, scale, opacity, background) => {
   iconDiv.style.color = color
