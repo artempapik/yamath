@@ -278,7 +278,6 @@ ul {
     border-radius: 1rem;
     padding: 1.5rem 0;
     font-size: 2rem;
-    pointer-events: none;
   }
 
   .forms:hover, .themes:hover, .levels:hover {

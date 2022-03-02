@@ -10,7 +10,8 @@ let a = getComputedStyle(document.documentElement).getPropertyValue('--text-colo
   if (isMobile) element.onmouseup = () => changeIconStyle(iconDiv, a, 1.2, 1)
   element.onmouseout = () => changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
-  element.onpointerup = () => {
+  element.onpointerup = e => {
+    e.preventDefault()
     changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
     window.location.pathname = element.classList[0]
   }
