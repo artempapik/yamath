@@ -298,6 +298,11 @@ ul {
     font-size: 1.1rem;
     width: 10rem;
     padding: .5rem .8rem;
+    border: .15rem solid var(--logo-color);
+  }
+
+  input:hover, input:focus {
+    box-shadow: none;
   }
 
   .copyright {

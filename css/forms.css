@@ -207,7 +207,7 @@ aside a {
     padding: .6rem 1rem;
     font-size: 1.05rem;
     letter-spacing: .01rem;
-    border: .15rem solid var(--theme-hover-color);
+    border: .15rem solid var(--logo-color);
   }
 
   #current {

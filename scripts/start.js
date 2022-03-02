@@ -95,3 +95,4 @@ const dropDown = document.querySelector('.dropdown')
 
 window.openThemeDropdown = () => dropDown.style.display = dropDown.style.display === 'block' ? 'none' : 'block'
 window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
+document.onclick = () => input.style.inputMode = 'none'
