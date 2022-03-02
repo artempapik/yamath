@@ -238,9 +238,9 @@ ul {
     grid-template-areas:
       ". theme theme theme logo logo logo logo logo logo user user user ."
       ". . . . . . search search . . . . . ."
-      ". forms forms forms forms forms forms forms forms forms forms forms forms ."
-      ". themes themes themes themes themes themes themes themes themes themes themes themes ."
-      ". levels levels levels levels levels levels levels levels levels levels levels levels ."
+      ". . forms forms forms forms forms forms forms forms forms forms . ."
+      ". . themes themes themes themes themes themes themes themes themes themes . ."
+      ". . levels levels levels levels levels levels levels levels levels levels . ."
       ". . . . copyright copyright copyright copyright copyright copyright . . . .";
     row-gap: 1.3rem;
   }
@@ -260,7 +260,7 @@ ul {
   }
 
   .theme, .user {
-    font-size: 1rem;
+    font-size: 1.1rem;
     word-spacing: .2rem;
     margin: 0;
     padding: 0;
@@ -272,8 +272,21 @@ ul {
   }
 
   .forms, .themes, .levels {
-    border-radius: 0;
+    border-radius: 1rem;
     padding: 1.5rem 0;
+    font-size: 2rem;
+  }
+
+  .forms i, .themes i, .levels i {
+    font-size: 3rem;
+  }
+
+  .forms div, .themes div, .levels div {
+    font-size: 1rem;
+  }
+
+  .themes {
+    box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px;
   }
 
   input {
@@ -283,6 +296,7 @@ ul {
   }
 
   .copyright {
-    padding-bottom: .5rem;
+    padding-bottom: .7rem;
+    font-weight: bold;
   }
 }
