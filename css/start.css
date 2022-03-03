@@ -356,6 +356,10 @@ ul {
     padding-bottom: 1rem;
   }
 
+  .copyright span:hover {
+    opacity: unset;
+  }
+
   .category-icon {
     width: fit-content;
     align-self: center;
