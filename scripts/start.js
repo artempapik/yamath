@@ -55,7 +55,8 @@ categories.forEach((category, index) => {
     }
 
     document.body.onpointerup = event => {
-      if (event.target === document.querySelector('main')) {
+      if (event.target === document.querySelector('main') ||
+          event.target === input) {
         for (let i = 0; i < categories.length; i++) {
           categories[i].style.background = backgroundColor
           categories[i].style.color = textColor
@@ -78,8 +79,8 @@ const input = document.querySelector('input')
 const searchPlaceholder = input.placeholder
 
 input.onfocus = () => {
-  document.documentElement.style.setProperty('--placeholder-align', 'left')
   input.placeholder = ''
+  document.documentElement.style.setProperty('--placeholder-align', 'left')
 }
 
 input.onblur = () => {
