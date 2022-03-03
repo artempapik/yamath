@@ -3,6 +3,18 @@ import { colors } from '../data.js'
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
 const isMobile = 'ontouchstart' in window
 
+/* */
+if (isMobile) {
+  const drop = document.querySelector('.dropdown')
+  // drop.style.left = '0'
+  // drop.style.top = '0'
+  // drop.style.background = 'black'
+  // drop.style.height = '100vh'
+  // drop.style.width = '100%'
+  // drop.style.opacity = '1'
+}
+/* */
+
 const changeIconStyle = (iconDiv, color, scale, opacity) => {
   iconDiv.style.color = color
   iconDiv.style.transform = `scale(${scale})`
@@ -83,6 +95,8 @@ const themeLabels = htmlElementsFromSelectors(...['light', 'dark', 'system'].map
 
 const getIconHoverColor = () => getComputedStyle(document.documentElement).getPropertyValue('--logo-color')
 
+const dropdown = document.querySelector('.dropdown')
+
 const toggleNightMode = isNightMode => {
   themeIcons.forEach(icon => icon.style.color = '')
   themeLabels.forEach(icon => icon.style.fontWeight = 'normal')
@@ -103,14 +117,23 @@ const toggleNightMode = isNightMode => {
   themeIcons[+isNightMode].style.color = getIconHoverColor()
   themeLabels[+isNightMode].style.fontWeight = 'bold'
   localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
+
+  if (isMobile) {
+    dropdown.style.display = 'none'
+
+    categories.forEach(category => category.style.display = 'flex')
+    document.querySelector('.copyright').style.display = 'flex'
+    input.style.display = 'block'
+    document.body.style.overflow = 'auto'
+  }
 }
 
 const nightModeValue = localStorage.getItem('is-night-mode')
 let isNightMode = nightModeValue === 'system' ? 'system' : !!nightModeValue
 toggleNightMode(isNightMode)
 
-const dropDownButton = document.querySelector('.dropdown-button')
-const dropDownArrow = document.querySelector('.dropdown-button i')
+const dropdownButton = document.querySelector('.dropdown-button')
+const dropdownArrow = document.querySelector('.dropdown-button i')
 
 const classes = ['icon-palette', 'icon-angle-down']
 
@@ -122,17 +145,26 @@ const animateElements = (selectors, translateY) => selectors.forEach(selector =>
   ], { duration: 250 })
 )
 
-dropDownButton.onclick = () => {
-  dropDownArrow.classList.remove(classes[0])
-  dropDownArrow.classList.add(classes[1])
+dropdownButton.onclick = () => {
+  if (isMobile) return
+  dropdownArrow.classList.remove(classes[0])
+  dropdownArrow.classList.add(classes[1])
   ;[classes[0], classes[1]] = [classes[1], classes[0]]
   animateElements(['.dropdown'], .15)
   animateElements(['.dropdown-button i'], .05)
 }
 
-const dropDown = document.querySelector('.dropdown')
+window.openThemeDropdown = () => {
+  dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
 
-window.openThemeDropdown = () => dropDown.style.display = dropDown.style.display === 'block' ? 'none' : 'block'
+  if (isMobile) {
+    categories.forEach(category => category.style.display = 'none')
+    document.querySelector('.copyright').style.display = 'none'
+    input.style.display = 'none'
+    document.body.style.overflow = 'hidden'
+  }
+}
+
 window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
 document.onclick = () => input.style.inputMode = 'none'
 

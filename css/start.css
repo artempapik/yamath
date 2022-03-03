@@ -399,4 +399,24 @@ a {
     width: fit-content;
     align-self: center;
   }
+
+  .dropdown {
+    left: 0;
+    top: 0;
+    margin: 0;
+    background: black;
+    opacity: .8;
+    height: 100%;
+    width: 100%;
+  }
+
+  .dropdown ul {
+    width: fit-content;
+    margin: auto;
+    margin-top: 55%;
+    background: wheat;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    gap: 2rem;
+  }
 }
