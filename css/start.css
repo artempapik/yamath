@@ -249,7 +249,7 @@ ul {
 
 @media (max-width: 600px) {
   main {
-    grid-template: repeat(6, auto) / .3fr repeat(12, 1fr) .3fr;
+    grid-template: repeat(6, auto) / .5fr repeat(12, 1fr) .5fr;
     grid-template-areas:
       "theme theme theme . logo logo logo logo logo logo . user user user"
       ". . . . . . search search . . . . . ."
@@ -284,10 +284,6 @@ ul {
 
   .dropdown-button span {
     display: none;
-  }
-
-  * {
-    box-sizing: border-box;
   }
 
   i {
