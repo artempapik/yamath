@@ -94,9 +94,7 @@ input.onkeyup = e => {
 
     if (window.confirm('ёбнуть вибрацию?')) {
       if (window.navigator.vibrate) {
-        for (let i = 0; i < 5; i++) {
-          window.navigator.vibrate(100)
-        }
+        window.navigator.vibrate([100, 200, 300, 400, 500])
       }
     }
 
