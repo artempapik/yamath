@@ -423,6 +423,7 @@ a {
   .dropdown span {
     color: #202020;
     font-size: 1.3rem;
+    width: 9rem;
   }
 
   .dropdown i {
