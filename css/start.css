@@ -251,6 +251,40 @@ a {
   align-self: center;
 }
 
+@media (max-width: 1400px) {
+  main {
+    grid-template-areas:
+      ". theme theme . logo logo logo logo logo logo . user user ."
+      ". . . . . . search search . . . . . ."
+      ". forms forms forms forms themes themes themes themes levels levels levels levels ."
+      ". . . . . copyright copyright copyright copyright . . . . .";
+    height: 80vh;
+  }
+
+  .category span {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  main {
+    height: 70vh;
+    margin-top: .8rem;
+    column-gap: .5rem;
+  }
+
+  .category span { font-size: 1.7rem; }
+  .forms, .themes, .levels { padding-top: 50%; }
+
+  .logo {
+    font-size: 2.5rem;
+    font-weight: bold;
+  }
+
+  .theme i, .user i { font-size: 1.9rem; }
+  .dropdown-button span { display: none; }
+}
+
 @media (max-width: 600px) {
   main {
     grid-template: repeat(6, auto) / .5fr repeat(12, 1fr) .5fr;
@@ -262,7 +296,7 @@ a {
       ". . levels levels levels levels levels levels levels levels levels levels . ."
       ". . . . copyright copyright copyright copyright copyright copyright . . . .";
     row-gap: 1.3rem;
-    margin-top: .8rem;
+    column-gap: 0;
   }
 
   .logo {
@@ -285,10 +319,6 @@ a {
     padding: 0;
     align-self: end;
     justify-self: center;
-  }
-
-  .dropdown-button span {
-    display: none;
   }
 
   i {
