@@ -86,21 +86,21 @@ input.onblur = () => {
   document.documentElement.style.setProperty('--placeholder-align', 'center')
 }
 
-input.onkeyup = e => {
-  if (e.target.value.toLowerCase() === 'хочу вибрацию') {
-    // const b = document.createElement('button')
-    // b.textContent = 'ёбнуть вибрацию'
-    // document.body.appendChild(b)
-
+/* Sofia */
+input.onkeyup = event => {
+  if (event.target.value.toLowerCase() === 'хочу вибрацию') {
     if (window.confirm('ёбнуть вибрацию?')) {
       if (window.navigator.vibrate) {
         window.navigator.vibrate([100, 200, 300, 400, 500])
       }
+    } else {
+      alert('ну как хочешь, ты же ещё придёшь ко мне')
     }
 
-    e.target.value = ''
+    event.target.value = ''
   }
 }
+/* */
 
 const setCssVariables = (valuesAndVariables, condition) => {
   const documentStyle = document.documentElement.style
