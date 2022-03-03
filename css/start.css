@@ -251,7 +251,7 @@ ul {
   main {
     grid-template: repeat(6, auto) / .4fr repeat(12, 1fr) .4fr;
     grid-template-areas:
-      ". theme theme theme logo logo logo logo logo logo user user user ."
+      "theme theme theme . logo logo logo logo logo logo . user user user"
       ". . . . . . search search . . . . . ."
       ". . forms forms forms forms forms forms forms forms forms forms . ."
       ". . themes themes themes themes themes themes themes themes themes themes . ."
@@ -262,7 +262,7 @@ ul {
   }
 
   .logo {
-    font-size: 2rem;
+    font-size: 2.4rem;
     align-self: end;
     font-weight: bold;
   }
@@ -279,6 +279,7 @@ ul {
     margin: 0;
     padding: 0;
     align-self: end;
+    justify-self: center;
   }
 
   .dropdown-button span {
@@ -286,7 +287,7 @@ ul {
   }
 
   i {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
 
   .forms, .themes, .levels {
