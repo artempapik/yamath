@@ -130,13 +130,17 @@ ul {
   opacity: .8;
 }
 
+a {
+  opacity: .8;
+}
+
 .category {
   display: flex;
   justify-content: center;
   gap: .7rem;
 }
 
-.category i {
+.category a {
   font-size: 1.7rem;
   align-self: center;
   display: none;
@@ -322,7 +326,7 @@ ul {
     gap: .7rem;
   }
 
-  .category i {
+  .category a {
     font-size: 1.6rem;
     align-self: center;
     display: none;

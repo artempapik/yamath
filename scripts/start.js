@@ -14,14 +14,13 @@ categories.forEach((category, index) => {
     category.onmouseover = () => {
       changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
 
-      const arrowIcon = category.querySelector('.category i')
+      const arrowIcon = category.querySelector('.category a')
       arrowIcon.style.display = 'block'
-      arrowIcon.onpointerup = () => window.location.pathname = category.classList[0]
 
       for (let i = 0; i < categories.length; i++) {
         if (i === index) continue
         changeIconStyle(categories[i].children[0], textColor, 1, .8)
-        categories[i].querySelector('.category i').style.display = 'none'
+        categories[i].querySelector('.category a').style.display = 'none'
       }
     }
 
@@ -29,7 +28,7 @@ categories.forEach((category, index) => {
       changeIconStyle(iconDiv, getTextColor(), 1, .8)
 
       for (let i = 0; i < categories.length; i++) {
-        categories[i].querySelector('.category i').style.display = 'none'
+        categories[i].querySelector('.category a').style.display = 'none'
       }
     }
   }
@@ -39,16 +38,15 @@ categories.forEach((category, index) => {
       category.style.background = '#202020'
       category.style.color = '#f8f8f8'
   
-      const arrowIcon = category.querySelector('.category i')
+      const arrowIcon = category.querySelector('.category a')
       arrowIcon.style.display = 'block'
-      arrowIcon.onpointerup = () => window.location.pathname = category.classList[0]
   
       for (let i = 0; i < categories.length; i++) {
         if (i === index) continue
         changeIconStyle(categories[i].children[0], textColor, 1, .8)
         categories[i].style.background = backgroundColor
         categories[i].style.color = textColor
-        categories[i].querySelector('.category i').style.display = 'none'
+        categories[i].querySelector('.category a').style.display = 'none'
       }
   
       changeIconStyle(iconDiv, '#f4c744', 1.2, 1)
@@ -61,7 +59,7 @@ categories.forEach((category, index) => {
           categories[i].style.background = backgroundColor
           categories[i].style.color = textColor
           changeIconStyle(categories[i].children[0], textColor, 1, .8)
-          categories[i].querySelector('.category i').style.display = 'none'
+          categories[i].querySelector('.category a').style.display = 'none'
         }
       }
     }
