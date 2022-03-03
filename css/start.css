@@ -297,6 +297,7 @@ a {
       ". . . . copyright copyright copyright copyright copyright copyright . . . .";
     row-gap: 1.3rem;
     column-gap: 0;
+    height: auto;
   }
 
   .logo {
@@ -378,7 +379,7 @@ a {
     font-size: 1.1rem;
     width: 10rem;
     padding: .5rem .8rem;
-    border: .15rem solid var(--logo-color);
+    border: .1rem solid var(--logo-color);
     word-spacing: .2rem;
   }
 
