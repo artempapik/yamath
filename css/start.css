@@ -353,4 +353,9 @@ ul {
   .copyright {
     padding-bottom: .8rem;
   }
+
+  .category-icon {
+    width: fit-content;
+    align-self: center;
+  }
 }
