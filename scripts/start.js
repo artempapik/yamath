@@ -35,7 +35,7 @@ categories.forEach((category, index) => {
 
   if (isMobile) {
     category.onpointerup = () => {
-      navigator.vibrate(100)
+      if (window.navigator.vibrate) window.navigator.vibrate(100)
 
       category.style.background = '#202020'
       category.style.color = '#f8f8f8'
