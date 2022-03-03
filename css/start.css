@@ -414,7 +414,7 @@ a {
   .dropdown ul {
     width: fit-content;
     margin: auto;
-    margin-top: 45%;
+    margin-top: 40%;
     background: wheat;
     padding: 1.5rem;
     border-radius: 1rem;
@@ -423,7 +423,7 @@ a {
 
   .dropdown span {
     color: #202020;
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
 
   .dropdown i {
