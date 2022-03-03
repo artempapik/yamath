@@ -263,6 +263,7 @@ ul {
 
   .logo {
     font-size: 2rem;
+    word-spacing: .3rem;
     align-self: end;
     font-weight: bold;
   }
