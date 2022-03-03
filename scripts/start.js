@@ -163,7 +163,7 @@ document.onclick = () => input.style.inputMode = 'none'
 window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
   if (localStorage.getItem('is-night-mode') === 'system') {
     setCssVariables(colors, event.matches)
-    themeIcons[2].style.color = getIconHoverColor()
+    themeIcons[2].style.color = isMobile ? '#b11b1b' : getIconHoverColor()
   }
 }
 
