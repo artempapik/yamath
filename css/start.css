@@ -249,7 +249,7 @@ ul {
 
 @media (max-width: 600px) {
   main {
-    grid-template: repeat(6, auto) / .5fr repeat(12, 1fr) .5fr;
+    grid-template: repeat(6, auto) / .4fr repeat(12, 1fr) .4fr;
     grid-template-areas:
       "theme theme theme . logo logo logo logo logo logo . user user user"
       ". . . . . . search search . . . . . ."
