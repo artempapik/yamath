@@ -35,8 +35,6 @@ categories.forEach((category, index) => {
 
   if (isMobile) {
     category.onpointerup = () => {
-      if (window.navigator.vibrate) window.navigator.vibrate(100)
-
       category.style.background = '#202020'
       category.style.color = '#f8f8f8'
   
@@ -86,6 +84,24 @@ input.onfocus = () => {
 input.onblur = () => {
   input.placeholder = searchPlaceholder
   document.documentElement.style.setProperty('--placeholder-align', 'center')
+}
+
+input.onkeyup = e => {
+  if (e.target.value.toLowerCase() === 'хочу вибрацию') {
+    // const b = document.createElement('button')
+    // b.textContent = 'ёбнуть вибрацию'
+    // document.body.appendChild(b)
+
+    if (window.confirm('ёбнуть вибрацию?')) {
+      if (window.navigator.vibrate) {
+        for (let i = 0; i < 5; i++) {
+          window.navigator.vibrate(100)
+        }
+      }
+    }
+
+    e.target.value = ''
+  }
 }
 
 const setCssVariables = (valuesAndVariables, condition) => {
