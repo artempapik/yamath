@@ -3,17 +3,9 @@ import { colors } from '../data.js'
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
 const isMobile = 'ontouchstart' in window
 
-/* */
 if (isMobile) {
-  const drop = document.querySelector('.dropdown')
-  // drop.style.left = '0'
-  // drop.style.top = '0'
-  // drop.style.background = 'black'
-  // drop.style.height = '100vh'
-  // drop.style.width = '100%'
-  // drop.style.opacity = '1'
+  document.querySelector('.icon-desktop').classList.replace('icon-desktop', 'icon-mobile')
 }
-/* */
 
 const changeIconStyle = (iconDiv, color, scale, opacity) => {
   iconDiv.style.color = color
@@ -97,7 +89,22 @@ const getIconHoverColor = () => getComputedStyle(document.documentElement).getPr
 
 const dropdown = document.querySelector('.dropdown')
 
+const handleDropdown = (display, zIndex, opacity, overflow) => {
+  if (!isMobile) return
+
+  dropdown.style.display = display
+
+  ;[...document.querySelector('main').children].slice(3).forEach(element => {
+    element.style.zIndex = zIndex
+    element.style.opacity = opacity
+  })
+
+  document.body.style.overflow = overflow
+}
+
 const toggleNightMode = isNightMode => {
+  handleDropdown('none', 'auto', .9, 'auto')
+
   themeIcons.forEach(icon => icon.style.color = '')
   themeLabels.forEach(icon => icon.style.fontWeight = 'normal')
 
@@ -106,7 +113,7 @@ const toggleNightMode = isNightMode => {
       setCssVariables(colors, window.matchMedia('(prefers-color-scheme: dark)').matches)
     }
 
-    themeIcons[2].style.color = getIconHoverColor()
+    themeIcons[2].style.color = isMobile ? '#b11b1b' : getIconHoverColor()
     themeLabels[2].style.fontWeight = 'bold'
     localStorage.setItem('is-night-mode', isNightMode)
     
@@ -114,18 +121,9 @@ const toggleNightMode = isNightMode => {
   }
 
   setCssVariables(colors, isNightMode)
-  themeIcons[+isNightMode].style.color = getIconHoverColor()
+  themeIcons[+isNightMode].style.color = isMobile ? '#b11b1b' : getIconHoverColor()
   themeLabels[+isNightMode].style.fontWeight = 'bold'
   localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
-
-  if (isMobile) {
-    dropdown.style.display = 'none'
-
-    categories.forEach(category => category.style.display = 'flex')
-    document.querySelector('.copyright').style.display = 'flex'
-    input.style.display = 'block'
-    document.body.style.overflow = 'auto'
-  }
 }
 
 const nightModeValue = localStorage.getItem('is-night-mode')
@@ -156,13 +154,7 @@ dropdownButton.onclick = () => {
 
 window.openThemeDropdown = () => {
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
-
-  if (isMobile) {
-    categories.forEach(category => category.style.display = 'none')
-    document.querySelector('.copyright').style.display = 'none'
-    input.style.display = 'none'
-    document.body.style.overflow = 'hidden'
-  }
+  handleDropdown('block' /* ??? */, -1, .1, 'hidden')
 }
 
 window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)

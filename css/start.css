@@ -401,11 +401,12 @@ a {
   }
 
   .dropdown {
+    color: rgb(0, 0, 128);
     left: 0;
     top: 0;
     margin: 0;
     background: black;
-    opacity: .8;
+    opacity: .85;
     height: 100%;
     width: 100%;
   }
@@ -418,5 +419,13 @@ a {
     padding: 1.5rem;
     border-radius: 1rem;
     gap: 2rem;
+  }
+
+  .dropdown span {
+    color: #202020;
+  }
+
+  .dropdown i {
+    width: 2.5rem;
   }
 }
