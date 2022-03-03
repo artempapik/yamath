@@ -405,16 +405,15 @@ a {
     left: 0;
     top: 0;
     margin: 0;
-    background: black;
     opacity: .85;
-    height: 100%;
     width: 100%;
+    margin: auto;
+    margin-top: 40%;
   }
 
   .dropdown ul {
     width: fit-content;
     margin: auto;
-    margin-top: 40%;
     background: wheat;
     padding: 1.5rem;
     border-radius: 1rem;

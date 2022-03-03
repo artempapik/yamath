@@ -103,8 +103,6 @@ const handleDropdown = (display, zIndex, opacity, overflow) => {
 }
 
 const toggleNightMode = isNightMode => {
-  handleDropdown('none', 'auto', .9, 'auto')
-
   themeIcons.forEach(icon => icon.style.color = '')
   themeLabels.forEach(icon => icon.style.fontWeight = 'normal')
 
@@ -159,6 +157,13 @@ window.openThemeDropdown = () => {
 
 window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
 document.onclick = () => input.style.inputMode = 'none'
+
+window.onclick = event => {
+  if (event.target === document.querySelector('main')) {
+    dropdown.style.display = 'none'
+    handleDropdown('none', 'auto', .9, 'auto')
+  }
+}
 
 window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
   if (localStorage.getItem('is-night-mode') === 'system') {
