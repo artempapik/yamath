@@ -176,19 +176,19 @@ const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
 const searchPlaceholder = ' Поиск по теме'
 searchInput.placeholder = searchPlaceholder
 
-searchInput.addEventListener('focus', event => {
+searchInput.onfocus = event => {
   if (event.target.value) showSearchResults()
   searchInput.placeholder = searchPlaceholder.slice(2)
-})
+}
 
 searchInput.onblur = () => searchInput.placeholder = searchPlaceholder
 
-searchInput.addEventListener('keydown', event => {
+searchInput.onkeydown = event => {
   const char = event.key
   if (!isLetter(char) && char !== ' ') event.preventDefault()
-})
+}
 
-searchInput.addEventListener('keyup', event => {
+searchInput.onkeyup = event => {
   if (event.key === 'Escape') {
     searchInput.value = ''
     restorePage()
@@ -233,12 +233,10 @@ searchInput.addEventListener('keyup', event => {
 
   previousSearchesAmount = foundSearchesAmount
   animateElements(['aside section'], .6)
-})
+}
 
 document.onclick = () => searchInput.style.inputMode = 'none'
-searchInput.addEventListener('pointerup', () => searchInput.focus())
-
-const getIconHoverColor = () => getComputedStyle(document.documentElement).getPropertyValue('--theme-hover-color')
+searchInput.onpointerup = () => searchInput.focus()
 
 const toggleNightMode = isNightMode => {
   if (isNightMode === 'system') {
@@ -262,8 +260,5 @@ window.onunload = () => searchInput.value = ''
 window.onresize = () => correctGeometryTitle()
 
 window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
-  if (localStorage.getItem('is-night-mode') === 'system') {
-    setCssVariables(colors, event.matches)
-    themeIcons[2].style.color = getIconHoverColor()
-  }
+  if (localStorage.getItem('is-night-mode') === 'system') setCssVariables(colors, event.matches)
 }
