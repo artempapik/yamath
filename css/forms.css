@@ -1,25 +1,6 @@
-/* .theme, .user { display: none; } */
-
 .user div {
   align-items: center;
   gap: 1rem;
-}
-
-.dropdown i {
-  font-size: 1.2rem;
-  width: 1.5rem;
-  text-align: center;
-}
-
-.dropdown li {
-  gap: .8rem;
-  padding-left: 0;
-  letter-spacing: .09rem;
-}
-
-.dropdown ul {
-  padding: .7rem 0;
-  gap: .3rem;
 }
 
 main {
@@ -53,7 +34,6 @@ p {
   border-bottom: .15rem solid var(--theme-hover-color);
 }
 
-body                                                               { transition: color .3s, background-color .3s; }
 .dropdown                                                          { position: fixed; }
 .dropdown-button                                                   { align-items: center; }
 .dropdown span                                                     { font-size: .95rem; }
@@ -84,9 +64,7 @@ li:not(.dropdown li):hover                                         { text-decora
 li:hover                                                           { color: var(--theme-hover-color); }
 li                                                                 { padding: .3rem; }
 
-i {
-  transition: color .1s, opacity .1s;
-}
+i { transition: color .1s, opacity .1s; }
 
 i:hover {
   color: var(--logo-color);
