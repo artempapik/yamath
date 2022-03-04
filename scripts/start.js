@@ -143,17 +143,12 @@ const animateElements = (selectors, translateY, duration = 250) => selectors.for
 
 dropdownButton.onclick = () => {
   if (isMobile) {
-    // animateElements(['.dropdown ul'], 0, 350)
-
-    document
-    .querySelector('.dropdown')
-    .animate([
+    dropdown.animate([
       { marginTop: '20%', opacity: '0' },
-      { marginTop: '40%', opacity: '1' }
+      { marginTop: '40%', opacity: '.85' }
     ], { duration: 400 })
 
     dropdown.style.opacity = .85
-
     return
   }
   dropdownArrow.classList.remove(classes[0])
@@ -173,8 +168,13 @@ document.onclick = () => input.style.inputMode = 'none'
 
 window.onclick = event => {
   if (event.target === document.querySelector('main')) {
-    dropdown.style.display = 'none'
-    handleDropdown('none', 'auto', .9, 'auto')
+    dropdown.animate([
+      { marginTop: '40%', opacity: '.85' },
+      { marginTop: '20%', opacity: '0' }
+    ], { duration: 400 })
+    
+    dropdown.style.opacity = 0
+    setTimeout(() => handleDropdown('none', 'auto', .9, 'auto'), 400)
   }
 }
 
