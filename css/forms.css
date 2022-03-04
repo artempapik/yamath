@@ -27,6 +27,7 @@ main {
   grid-template: 3.5rem repeat(3, auto) / .4fr 1.2fr repeat(22, 1fr) 1.2fr .4fr;
   grid-template-areas: var(--main-layout);
   row-gap: 1.2rem;
+  padding-bottom: 1rem;
 }
 
 .theme     { grid-area: t; }
