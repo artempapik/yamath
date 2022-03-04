@@ -1,5 +1,6 @@
 import { colors } from '../data.js'
 
+const main = document.querySelector('main')
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
 const isMobile = 'ontouchstart' in window
 
@@ -41,7 +42,7 @@ categories.forEach(category => {
     }
 
     document.body.onpointerup = event => {
-      if (event.target !== document.querySelector('main') && event.target !== input) return
+      if (event.target !== main && event.target !== input) return
       resetCategoriesStyles()
     }
 
@@ -95,8 +96,7 @@ const handleDropdown = (display, zIndex, opacity, overflow) => {
   dropdown.style.display = display
   const duration = 200
 
-  ;[...document.querySelector('main').children].slice(1).forEach(element => {
-
+  ;[...main.children].slice(3, -1).forEach(element => {
     element.animate([
       { opacity: element.style.opacity || .9 },
       { opacity }
@@ -178,7 +178,7 @@ window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
 document.onclick = () => input.style.inputMode = 'none'
 
 window.onclick = event => {
-  if (event.target === document.querySelector('main')) {
+  if (event.target === main) {
     const duration = 200
 
     dropdown.animate([
@@ -188,7 +188,7 @@ window.onclick = event => {
     
     dropdown.style.opacity = 0
     setTimeout(() => {
-      handleDropdown('none', 'auto', .9, 'auto')
+      handleDropdown('none', 'auto', .85, 'auto')
       dropdownButton.style.pointerEvents = ''
     }, duration)
   }
