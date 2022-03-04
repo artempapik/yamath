@@ -95,8 +95,16 @@ const handleDropdown = (display, zIndex, opacity, overflow) => {
   dropdown.style.display = display
 
   ;[...document.querySelector('main').children].slice(3).forEach(element => {
-    element.style.zIndex = zIndex
-    element.style.opacity = opacity
+
+    element.animate([
+      { opacity: element.style.opacity || .9 },
+      { opacity }
+    ], { duration: 250 })
+
+    setTimeout(() => {
+      element.style.opacity = opacity
+      element.style.zIndex = zIndex
+    }, 250)
   })
 
   document.body.style.overflow = overflow
@@ -158,7 +166,7 @@ window.openThemeDropdown = () => {
     dropdown.animate([
       { marginTop: '25%', opacity: '0' },
       { marginTop: '40%', opacity: '.85' }
-    ], { duration: 300 })
+    ], { duration: 250 })
   
     dropdown.style.opacity = .85
     dropdownButton.style.pointerEvents = 'none'
@@ -170,16 +178,18 @@ document.onclick = () => input.style.inputMode = 'none'
 
 window.onclick = event => {
   if (event.target === document.querySelector('main')) {
+    const duration = 250
+
     dropdown.animate([
       { marginTop: '40%', opacity: '.85' },
       { marginTop: '20%', opacity: '0' }
-    ], { duration: 400 })
+    ], { duration })
     
     dropdown.style.opacity = 0
     setTimeout(() => {
       handleDropdown('none', 'auto', .9, 'auto')
       dropdownButton.style.pointerEvents = ''
-    }, 400)
+    }, duration)
   }
 }
 
