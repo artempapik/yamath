@@ -2,7 +2,7 @@ import { colors } from '../data.js'
 
 const main = document.querySelector('main')
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
-const isMobile = 'ontouchstart' in window || window.innerWidth <= 800
+let isMobile = 'ontouchstart' in window || window.innerWidth <= 800
 
 if (isMobile) {
   document.querySelector('.icon-desktop').classList.replace('icon-desktop', 'icon-mobile')
@@ -140,7 +140,7 @@ toggleNightMode(isNightMode)
 const dropdownButton = document.querySelector('.dropdown-button')
 const dropdownArrow = document.querySelector('.dropdown-button i')
 
-const classes = ['icon-palette', 'icon-angle-down']
+let classes = ['icon-palette', 'icon-angle-down']
 
 const animateElements = (selectors, translateY, duration = 250) => selectors.forEach(selector => document
   .querySelector(selector)
@@ -202,4 +202,11 @@ window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
     setCssVariables(colors, event.matches)
     themeIcons[2].style.color = isMobile ? '#b11b1b' : getIconHoverColor()
   }
+}
+
+window.onresize = () => {
+  dropdownArrow.classList.remove('icon-angle-down')
+  dropdownArrow.classList.add('icon-palette')
+  classes = ['icon-palette', 'icon-angle-down']
+  isMobile = window.innerWidth <= 800
 }

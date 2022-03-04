@@ -71,10 +71,6 @@ i {
   text-align: center;
 }
 
-.logo i {
-  font-size: 3rem;
-}
-
 li {
   gap: .8rem;
   padding-left: 0;
@@ -106,10 +102,6 @@ ul {
   opacity: .7;
 }
 
-.user {
-  justify-self: end;
-}
-
 .logo {
   font-family: 'Raleway';
   font-size: 4rem;
@@ -119,6 +111,10 @@ ul {
   text-align: center;
 }
 
+.logo i { font-size: 3rem; }
+.user { justify-self: end; }
+a { opacity: .8; }
+
 .logo div {
   font-size: .9rem;
   word-spacing: .35rem;
@@ -127,10 +123,6 @@ ul {
 
 .forms i, .themes i, .levels i {
   font-size: 4rem;
-  opacity: .8;
-}
-
-a {
   opacity: .8;
 }
 
@@ -144,10 +136,6 @@ a {
   font-size: 1.7rem;
   align-self: center;
   display: none;
-}
-
-.forms div div, .themes div div, .levels div div {
-  margin-top: 1.5rem;
 }
 
 .forms, .themes, .levels {
@@ -166,17 +154,10 @@ a {
   opacity: .85;
 }
 
-.category span {
-  font-size: 2.5rem;
-}
-
-.forms, .levels {
-  box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px;
-}
-
-.themes {
-  box-shadow: rgba(78, 36, 36, 0.1) 0px 4px 12px;
-}
+.forms div div, .themes div div, .levels div div { margin-top: 1.5rem; }
+.category span { font-size: 2.5rem; }
+.forms, .levels { box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px; }
+.themes { box-shadow: rgba(78, 36, 36, 0.1) 0px 4px 12px; }
 
 .forms:hover, .themes:hover, .levels:hover {
   opacity: .9;
@@ -209,13 +190,8 @@ a {
   opacity: .9;
 }
 
-.copyright span {
-  transition: opacity .1s;
-}
-
-.copyright span:hover {
-  opacity: .7;
-}
+.copyright span { transition: opacity .1s; }
+.copyright span:hover { opacity: .7; }
 
 .dropdown {
   position: fixed;
@@ -247,9 +223,7 @@ a {
   justify-self: center;
 }
 
-.dropdown span {
-  align-self: center;
-}
+.dropdown span { align-self: center; }
 
 @media (max-width: 1400px) {
   main {
@@ -261,9 +235,7 @@ a {
     height: 80vh;
   }
 
-  .category span {
-    font-size: 2rem;
-  }
+  .category span { font-size: 2rem; }
 }
 
 @media (max-width: 800px) {
@@ -340,23 +312,16 @@ a {
     font-weight: bold;
   }
 
-  .logo div {
-    display: none;
-  }
-
-  .logo i {
-    font-size: 2rem;
-  }
+  .logo div { display: none; }
+  .logo i { font-size: 2rem; }
+  i { font-size: 1.9rem; }
+  .category span { font-size: 2rem; }
 
   .theme, .user {
     margin: 0;
     padding: 0;
     align-self: end;
     justify-self: center;
-  }
-
-  i {
-    font-size: 1.9rem;
   }
 
   .forms, .themes, .levels {
@@ -366,23 +331,16 @@ a {
     transition: background .3s, color .2s, font-weight .2s;
   }
 
-  .category span {
-    font-size: 2rem;
-  }
-
   .forms:hover, .themes:hover, .levels:hover {
     background: unset;
     color: unset;
     font-weight: unset;
     opacity: .9;
-
     border-radius: 1rem;
     border-bottom: none;
   }
 
-  .forms i, .themes i, .levels i {
-    font-size: 3rem;
-  }
+  .forms i, .themes i, .levels i { font-size: 3rem; }
 
   .category {
     display: flex;
@@ -396,17 +354,9 @@ a {
     display: none;
   }
 
-  .forms div, .themes div, .levels div {
-    font-size: 1rem;
-  }
-
-  .forms div div, .themes div div, .levels div div {
-    margin-top: 1rem;
-  }
-
-  .themes {
-    box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px;
-  }
+  .forms div, .themes div, .levels div { font-size: 1rem; }
+  .forms div div, .themes div div, .levels div div { margin-top: 1rem; }
+  .themes { box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px; }
 
   input {
     font-size: 1.1rem;
@@ -420,18 +370,11 @@ a {
     box-shadow: none;
   }
 
-  .copyright {
-    padding-bottom: 1rem;
-  }
-
-  .copyright span:hover {
-    opacity: unset;
-  }
+  .copyright { padding-bottom: 1rem; }
+  .copyright span:hover { opacity: unset; }
 
   .category-icon {
     width: fit-content;
     align-self: center;
-  }
-
-  
+  }  
 }
