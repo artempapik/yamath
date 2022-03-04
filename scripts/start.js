@@ -142,15 +142,7 @@ const animateElements = (selectors, translateY, duration = 250) => selectors.for
 )
 
 dropdownButton.onclick = () => {
-  if (isMobile) {
-    dropdown.animate([
-      { marginTop: '20%', opacity: '0' },
-      { marginTop: '40%', opacity: '.85' }
-    ], { duration: 400 })
-
-    dropdown.style.opacity = .85
-    return
-  }
+  if (isMobile) return
   dropdownArrow.classList.remove(classes[0])
   dropdownArrow.classList.add(classes[1])
   ;[classes[0], classes[1]] = [classes[1], classes[0]]
@@ -161,6 +153,16 @@ dropdownButton.onclick = () => {
 window.openThemeDropdown = () => {
   dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block'
   handleDropdown('block' /* ??? */, -1, .1, 'hidden')
+
+  if (isMobile) {
+    dropdown.animate([
+      { marginTop: '25%', opacity: '0' },
+      { marginTop: '40%', opacity: '.85' }
+    ], { duration: 300 })
+  
+    dropdown.style.opacity = .85
+    dropdownButton.style.pointerEvents = 'none'
+  }
 }
 
 window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
@@ -174,7 +176,10 @@ window.onclick = event => {
     ], { duration: 400 })
     
     dropdown.style.opacity = 0
-    setTimeout(() => handleDropdown('none', 'auto', .9, 'auto'), 400)
+    setTimeout(() => {
+      handleDropdown('none', 'auto', .9, 'auto')
+      dropdownButton.style.pointerEvents = ''
+    }, 400)
   }
 }
 
