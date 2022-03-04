@@ -556,7 +556,7 @@ const twoColumnLayouts = [
     ". . g2 g2 g2 g2 g2 g2 . ."
   `,
   `
-    ". t s s s s s s u ."
+    "t t s s s s s s u u"
     ${baseSmallLayout}
     ". g2 g2 g2 g2 g2 g2 g2 g2 ."
   `
