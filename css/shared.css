@@ -45,7 +45,7 @@ button        { cursor: pointer; }
 input:focus   { outline: none; }
 ::placeholder { color: var(--input-color); }
 
-button, input, p {
+button, input, p, i {
   -webkit-tap-highlight-color: transparent;
   border: 0;
 }
