@@ -221,5 +221,9 @@ aside a {
   }
 
   .theme { margin-bottom: 0; }
-  .theme a i{ font-size: 1.6rem; }
+
+  .theme a i {
+    font-size: 1.6rem;
+    opacity: .8;
+  }
 }
