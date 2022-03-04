@@ -81,8 +81,8 @@ const shouldUseTwoColumnLayout = () => document.querySelector('.geometry2 .theme
 
 const correctGeometryTitle = () => {
   const geometryTitle = document.querySelector('.geometry')
-  const pageWidth = document.body.clientWidth
-  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout() && pageWidth >= 792 && pageWidth <= 1200 ? 'center' : 'start'
+  const pageWidth = window.innerWidth
+  geometryTitle.style.justifySelf = shouldUseTwoColumnLayout() && pageWidth >= 800 && pageWidth <= 1200 ? 'center' : 'start'
 }
 
 const searchInput = document.querySelector('input')

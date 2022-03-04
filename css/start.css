@@ -281,8 +281,41 @@ a {
     font-weight: bold;
   }
 
+  .logo i { font-size: 2rem; }
   .theme i, .user i { font-size: 1.9rem; }
   .dropdown-button span { display: none; }
+
+  .dropdown {
+    color: rgb(0, 0, 128);
+    left: 0;
+    top: 0;
+    margin: 0;
+    opacity: 0;
+    width: 100%;
+    margin: auto;
+    margin-top: 40%;
+  }
+
+  .dropdown ul {
+    width: fit-content;
+    margin: auto;
+    background: wheat;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    gap: 2.5rem;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  }
+
+  .dropdown span {
+    color: #202020;
+    font-size: 1.3rem;
+    width: 9rem;
+  }
+
+  .dropdown i {
+    font-size: 2rem;
+    width: 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {
@@ -400,35 +433,5 @@ a {
     align-self: center;
   }
 
-  .dropdown {
-    color: rgb(0, 0, 128);
-    left: 0;
-    top: 0;
-    margin: 0;
-    opacity: 0;
-    width: 100%;
-    margin: auto;
-    margin-top: 40%;
-  }
-
-  .dropdown ul {
-    width: fit-content;
-    margin: auto;
-    background: wheat;
-    padding: 1.5rem;
-    border-radius: 1rem;
-    gap: 2.5rem;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  }
-
-  .dropdown span {
-    color: #202020;
-    font-size: 1.3rem;
-    width: 9rem;
-  }
-
-  .dropdown i {
-    font-size: 2rem;
-    width: 2.5rem;
-  }
+  
 }

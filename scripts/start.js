@@ -2,7 +2,7 @@ import { colors } from '../data.js'
 
 const main = document.querySelector('main')
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
-const isMobile = 'ontouchstart' in window
+const isMobile = 'ontouchstart' in window || window.innerWidth <= 800
 
 if (isMobile) {
   document.querySelector('.icon-desktop').classList.replace('icon-desktop', 'icon-mobile')
