@@ -363,7 +363,7 @@ a { opacity: .8; }
     width: 10rem;
     padding: .5rem .8rem;
     border: .1rem solid var(--logo-color);
-    word-spacing: .2rem;
+    word-spacing: .1rem;
   }
 
   input:hover, input:focus {

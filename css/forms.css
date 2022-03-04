@@ -208,6 +208,7 @@ aside a {
     font-size: 1.05rem;
     letter-spacing: .01rem;
     border: .1rem solid var(--logo-color);
+    word-spacing: .1rem;
   }
 
   #current {
