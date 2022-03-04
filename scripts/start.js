@@ -205,11 +205,11 @@ window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
 }
 
 window.onresize = () => {
-  dropdown.style.display = 'none'
-  handleDropdown('none', 'auto', dropdownOpacity, 'auto')
-  dropdownButton.style.pointerEvents = ''
-  dropdownArrow.classList.remove('icon-angle-down')
-  dropdownArrow.classList.add('icon-palette')
-  classes = ['icon-palette', 'icon-angle-down']
-  isMobile = window.innerWidth <= 800
+  // dropdown.style.display = 'none'
+  // handleDropdown('none', 'auto', dropdownOpacity, 'auto')
+  // dropdownButton.style.pointerEvents = ''
+  // dropdownArrow.classList.remove('icon-angle-down')
+  // dropdownArrow.classList.add('icon-palette')
+  // classes = ['icon-palette', 'icon-angle-down']
+  // isMobile = window.innerWidth <= 800
 }
