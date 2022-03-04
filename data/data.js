@@ -579,7 +579,7 @@ const colors = [
   ['#202020', '#404040', 'main-theme-hover-background'],
   ['#f0f0f0', '#505050', 'back-forward-button-background'],
   ['#00008b', '#4169e1', 'theme-border-color'],
-  ['#d2691e', '#708090', 'theme-hover-color'],
+  ['#d2691e', '#a0b4f0', 'theme-hover-color'],
   ['#f8f8f8', '#202020', 'background-color'],
   ['#585858', '#e8e8e8', 'input-color'],
   ['#202020', '#dcdcdc', 'text-color'],

@@ -34,35 +34,35 @@ p {
   border-bottom: .15rem solid var(--theme-hover-color);
 }
 
-.dropdown                                                          { position: fixed; }
-.dropdown-button                                                   { align-items: center; }
-.dropdown span                                                     { font-size: .95rem; }
-span:not(.dropdown span)                                           { font-size: 1.2rem; }
-.dropdown-button i                                                 { transition: transform .2s, color .1s; }
+span { font-size: 1.2rem; }
 .search, .forms, .algebra, aside                                   { justify-self: center; }
 .search, .theme, .user                                             { align-self: end; }
 .user                                                              { justify-self: end; }
-i:not(.dropdown i, .dropdown-button i)                             { font-size: 1.4rem; }
-.forms, .dropdown-button, ul, ol                                   { gap: .5rem; }
-button, .dropdown, span, i:not(button i)                           { display: none; }
-section, ul, ol, .forms, .user div, .dropdown-button, .dropdown li { display: flex; }
+i { font-size: 1.4rem; }
+.forms, ul, ol { gap: .5rem; }
+button, span, i:not(button i) { display: none; }
+section, ul, ol, .forms, .user div { display: flex; }
 section, ul, ol                                                    { flex-direction: column; }
 ol                                                                 { margin-left: 1.5rem; }
 p, li, .theme-title, i                                             { width: fit-content; }
 p, li, button, .theme-title, span                                  { font-family: 'Roboto Mono', monospace; }
 p, .theme-title                                                    { font-size: 1.4rem; }
 button                                                             { font-size: 1rem; }
-p, #current, li:not(.dropdown li):hover, .theme-title, span        { font-weight: bold; }
+p, #current, li:hover, .theme-title, span { font-weight: bold; }
 li, .algebra, .geometry, .theme-title, span                        { text-transform: uppercase; }
 li, .theme-title                                                   { letter-spacing: .15rem; }
 .algebra, .geometry                                                { letter-spacing: .05rem; }
 .theme, .user, button                                              { user-select: none; }
-i, .user div, .dropdown li, .dropdown-button                       { cursor: pointer; }
+i, .user div { cursor: pointer; }
 ul, ol                                                             { padding-left: .7rem; }
 aside .theme-title                                                 { margin-bottom: .7rem; }
-li:not(.dropdown li):hover                                         { text-decoration: underline; }
-li:hover                                                           { color: var(--theme-hover-color); }
-li                                                                 { padding: .3rem; }
+
+li { padding: .3rem; }
+
+li:hover {
+  text-decoration: underline;
+  color: var(--theme-hover-color);
+}
 
 i { transition: color .1s, opacity .1s; }
 
@@ -186,7 +186,7 @@ aside a {
 
   input {
     background: var(--background-color);
-    padding: .6rem 1rem;
+    padding: .5rem .8rem;
     font-size: 1.05rem;
     letter-spacing: .01rem;
     border: .1rem solid var(--logo-color);
