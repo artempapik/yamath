@@ -167,7 +167,7 @@ window.openThemeDropdown = () => {
     dropdown.animate([
       { marginTop: '25%', opacity: '0' },
       { marginTop: '40%', opacity: '.85' }
-    ], { duration: 150 })
+    ], { duration: 200 })
   
     dropdown.style.opacity = .85
     dropdownButton.style.pointerEvents = 'none'
@@ -179,7 +179,7 @@ document.onclick = () => input.style.inputMode = 'none'
 
 window.onclick = event => {
   if (event.target === document.querySelector('main')) {
-    const duration = 150
+    const duration = 200
 
     dropdown.animate([
       { marginTop: '40%', opacity: '.85' },
