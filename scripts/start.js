@@ -133,16 +133,19 @@ const dropdownArrow = document.querySelector('.dropdown-button i')
 
 const classes = ['icon-palette', 'icon-angle-down']
 
-const animateElements = (selectors, translateY) => selectors.forEach(selector => document
+const animateElements = (selectors, translateY, duration = 250) => selectors.forEach(selector => document
   .querySelector(selector)
   .animate([
     { transform: `translateY(${translateY}em)`, opacity: '.3' },
     { transform: 'translateY(0)', opacity: '1' }
-  ], { duration: 250 })
+  ], { duration })
 )
 
 dropdownButton.onclick = () => {
-  if (isMobile) return
+  if (isMobile) {
+    animateElements(['.dropdown'], -1.2, 400)
+    return
+  }
   dropdownArrow.classList.remove(classes[0])
   dropdownArrow.classList.add(classes[1])
   ;[classes[0], classes[1]] = [classes[1], classes[0]]
