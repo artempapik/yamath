@@ -136,14 +136,14 @@ const classes = ['icon-palette', 'icon-angle-down']
 const animateElements = (selectors, translateY, duration = 250) => selectors.forEach(selector => document
   .querySelector(selector)
   .animate([
-    { transform: `translateY(${translateY}em)`, opacity: '.3' },
-    { transform: 'translateY(0)', opacity: '1' }
+    { transform: `translateY(${translateY}em)`, marginTop: '-2rem', opacity: '.3' },
+    { transform: 'translateY(0)', marginTop: '0', opacity: '1' }
   ], { duration })
 )
 
 dropdownButton.onclick = () => {
   if (isMobile) {
-    animateElements(['.dropdown ul'], -1.2, 400)
+    animateElements(['.dropdown ul'], 0, 350)
     return
   }
   dropdownArrow.classList.remove(classes[0])
