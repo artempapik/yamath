@@ -4,9 +4,7 @@ const main = document.querySelector('main')
 const categories = ['.forms', '.themes', '.levels'].map(selector => document.querySelector(selector))
 let isMobile = 'ontouchstart' in window || window.innerWidth <= 800
 
-if (isMobile) {
-  document.querySelector('.icon-desktop').classList.replace('icon-desktop', 'icon-mobile')
-}
+if (isMobile) document.querySelector('.icon-desktop').classList.replace('icon-desktop', 'icon-mobile')
 
 const changeIconStyle = (iconDiv, color, scale, opacity) => {
   iconDiv.style.color = color
@@ -32,12 +30,14 @@ const iconHover = category => {
   category.querySelector('.category a').style.display = 'block'
 }
 
+const getCssVariable = name => getComputedStyle(document.documentElement).getPropertyValue(`--${name}`)
+
 categories.forEach(category => {
   if (isMobile) {
     category.onpointerup = () => {
       resetCategoriesStyles()
-      category.style.background = '#202020'
-      category.style.color = '#f8f8f8'  
+      category.style.color = getCssVariable('main-theme-hover-color')
+      category.style.background = getCssVariable('main-theme-hover-background')
       iconHover(category)
     }
 
@@ -205,6 +205,9 @@ window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
 }
 
 window.onresize = () => {
+  dropdown.style.display = 'none'
+  handleDropdown('none', 'auto', dropdownOpacity, 'auto')
+  dropdownButton.style.pointerEvents = ''
   dropdownArrow.classList.remove('icon-angle-down')
   dropdownArrow.classList.add('icon-palette')
   classes = ['icon-palette', 'icon-angle-down']

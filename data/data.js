@@ -573,6 +573,10 @@ const layouts = layoutVariables.map((layoutVariable, i) => [oneColumnLayouts[i],
 
 const colors = [
   ['#000080', '#a0b4f0', 'logo-color'],
+  ['rgba(128, 0, 128, .1)', 'rgba(235, 235, 235, .1)', 'left-right-theme-box-shadow'],
+  ['rgba(78, 36, 36, .1)', 'rgba(245, 245, 245, .1)', 'middle-theme-box-shadow'],
+  ['#f8f8f8', '#f8f8f8', 'main-theme-hover-color'],
+  ['#202020', '#404040', 'main-theme-hover-background'],
   ['#f0f0f0', '#505050', 'back-forward-button-background'],
   ['#00008b', '#4169e1', 'theme-border-color'],
   ['#d2691e', '#708090', 'theme-hover-color'],

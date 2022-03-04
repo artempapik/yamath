@@ -156,14 +156,14 @@ a { opacity: .8; }
 
 .forms div div, .themes div div, .levels div div { margin-top: 1.5rem; }
 .category span { font-size: 2.5rem; }
-.forms, .levels { box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px; }
-.themes { box-shadow: rgba(78, 36, 36, 0.1) 0px 4px 12px; }
+.forms, .levels { box-shadow: var(--left-right-theme-box-shadow) 0px 1px 3px 0px, var(--left-right-theme-box-shadow) 0px 0px 0px 1px; }
+.themes { box-shadow: var(--middle-theme-box-shadow) 0px 4px 12px; }
 
 .forms:hover, .themes:hover, .levels:hover {
   opacity: .9;
-  color: #f8f8f8;
-  border-bottom: .25rem #f8f8f8 dotted;
-  background: #202020;
+  color: var(--main-theme-hover-color);
+  border-bottom: .25rem var(--main-theme-hover-color) dotted;
+  background: var(--main-theme-hover-background);
   border-top-left-radius: 4rem;
   border-top-right-radius: 4rem;
   font-weight: bold;
@@ -356,7 +356,7 @@ a { opacity: .8; }
 
   .forms div, .themes div, .levels div { font-size: 1rem; }
   .forms div div, .themes div div, .levels div div { margin-top: 1rem; }
-  .themes { box-shadow: rgba(128, 0, 128, .1) 0px 1px 3px 0px, rgba(128, 0, 128, .1) 0px 0px 0px 1px; }
+  .themes { box-shadow: var(--left-right-theme-box-shadow) 0px 1px 3px 0px, var(--left-right-theme-box-shadow) 0px 0px 0px 1px; }
 
   input {
     font-size: 1.1rem;
