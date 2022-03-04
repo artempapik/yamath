@@ -40,10 +40,7 @@ main {
 .geometry1 { grid-area: g1; }
 .geometry2 { grid-area: g2; }
 
-.theme {
-  justify-self: end;
-  margin-bottom: 10%;
-}
+.theme { display: none; }
 
 aside {
   grid-area: 3 / 11 / 3 / 19;
@@ -180,6 +177,12 @@ aside a {
   button:hover              { transform: none; }
   #current                  { font-size: 1rem; }
   .forms                    { gap: .4rem; }
+
+  .theme {
+    display: block;
+    justify-self: center;
+    margin-bottom: 10%;
+  }
 }
 
 @media (max-width: 600px) {
@@ -216,7 +219,5 @@ aside a {
     font-size: 1rem;
   }
 
-  .theme {
-    justify-self: center;
-  }
+  .theme { margin-bottom: 0; }
 }

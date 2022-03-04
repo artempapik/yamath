@@ -534,7 +534,7 @@ const oneColumnLayouts = [
     ${baseMediumLayout}
   `,
   `
-    ". t s s s s s s u g2"
+    "t t s s s s s s u g2"
     ${baseSmallLayout}
   `
 ]
@@ -573,7 +573,6 @@ const layouts = layoutVariables.map((layoutVariable, i) => [oneColumnLayouts[i],
 
 const colors = [
   ['#000080', '#a0b4f0', 'logo-color'],
-
   ['#f0f0f0', '#505050', 'back-forward-button-background'],
   ['#00008b', '#4169e1', 'theme-border-color'],
   ['#d2691e', '#708090', 'theme-hover-color'],
