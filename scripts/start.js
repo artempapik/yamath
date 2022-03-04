@@ -143,7 +143,7 @@ const animateElements = (selectors, translateY, duration = 250) => selectors.for
 
 dropdownButton.onclick = () => {
   if (isMobile) {
-    animateElements(['.dropdown'], -1.2, 400)
+    animateElements(['.dropdown ul'], -1.2, 400)
     return
   }
   dropdownArrow.classList.remove(classes[0])
