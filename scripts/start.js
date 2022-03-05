@@ -6,7 +6,9 @@ const changeIconStyle = (iconDiv, color, scale) => {
 }
 
 document.querySelectorAll('li').forEach(category => {
+  changeIconStyle(iconDiv, '', 1)
   const iconDiv = category.children[0]
+  
   category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
   category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
 })
