@@ -162,7 +162,7 @@ a:hover { text-decoration: underline; }
   main {
     grid-template: repeat(3, auto) / repeat(14, 1fr);
     grid-template-areas:
-      "theme theme . . logo logo logo logo logo logo . . user user"
+      "theme theme . logo logo logo logo logo logo logo logo . user user"
       ". . . . . . search search . . . . . .";
   }
 
