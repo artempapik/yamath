@@ -5,10 +5,14 @@ const changeIconStyle = (iconDiv, color, scale) => {
   iconDiv.style.transform = `scale(${scale})`
 }
 
-const categories = document.querySelectorAll('a')
-
-categories.forEach(category => {
+document.querySelectorAll('a').forEach(category => {
   const iconDiv = category.children[0]
+
+  if ('ontouchstart' in window) {
+    changeIconStyle(iconDiv, '#f4c744', 1.2)
+    return
+  }
+
   category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
   category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
 })
