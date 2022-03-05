@@ -205,6 +205,8 @@ a:hover { text-decoration: underline; }
   }
 
   li {
+    flex: none;
+    height: 9rem;
     border-radius: 1rem;
     padding: 2rem 0;
     box-shadow: var(--middle-theme-box-shadow) 0px 1px 3px 0px, var(--middle-theme-box-shadow) 0px 0px 0px 1px;
