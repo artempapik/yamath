@@ -5,14 +5,10 @@ const changeIconStyle = (iconDiv, color, scale) => {
   iconDiv.style.transform = `scale(${scale})`
 }
 
-document.querySelectorAll('a').forEach(category => {
+const categories = document.querySelectorAll('a')
+
+categories.forEach(category => {
   const iconDiv = category.children[0]
-
-  if ('ontouchstart' in window) {
-    changeIconStyle(iconDiv, '#f4c744', 1.2)
-    return
-  }
-
   category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
   category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
 })
@@ -31,6 +27,8 @@ input.onblur = () => setPlaceholderValueAndAlign(searchPlaceholder, 'center')
 const toggleMoonIcon = () => nightModeIcon.classList.toggle('icon-moon')
 
 const toggleNightMode = isNightMode => {
+  if ('ontouchstart' in window) categories.forEach(category => changeIconStyle(category.children[0], isNightMode ? '#f4c744' : '#000080', 1.2))
+
   toggleMoonIcon()
   nightModeIcon.onpointerup = () => toggleNightMode(!isNightMode)
   setCssVariables(colors, isNightMode)
