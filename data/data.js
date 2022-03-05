@@ -451,36 +451,6 @@ forms.forEach(form => {
   appendArticle(form.geometry.geometry2.themes)
 })
 
-const engToRus = {
-  'f': 'а',
-  ',': 'б',
-  'd': 'в',
-  'u': 'г',
-  'l': 'д',
-  't': 'е',
-  'p': 'з',
-  'b': 'и',
-  'q': 'й',
-  'r': 'к',
-  'k': 'л',
-  'v': 'м',
-  'y': 'н',
-  'j': 'о',
-  'g': 'п',
-  'h': 'р',
-  'c': 'с',
-  'n': 'т',
-  'e': 'у',
-  'a': 'ф',
-  'w': 'ц',
-  'x': 'ч',
-  'i': 'ш',
-  'o': 'щ',
-  's': 'ы',
-  'm': 'ь',
-  'z': 'я'
-}
-
 const MIN_FORM = 5
 const MAX_FORM = 11
 
@@ -573,8 +543,8 @@ const layouts = layoutVariables.map((layoutVariable, i) => [oneColumnLayouts[i],
 
 const colors = [
   ['#000080', '#a0b4f0', 'logo-color'],
-  ['rgba(128, 0, 128, .1)', 'rgba(235, 235, 235, .1)', 'left-right-theme-box-shadow'],
-  ['rgba(78, 36, 36, .1)', 'rgba(245, 245, 245, .1)', 'middle-theme-box-shadow'],
+  ['rgba(128, 0, 128, .15)', 'rgba(235, 235, 235, .1)', 'left-right-theme-box-shadow'],
+  ['rgba(78, 36, 36, .15)', 'rgba(245, 245, 245, .1)', 'middle-theme-box-shadow'],
   ['#f8f8f8', '#f8f8f8', 'main-theme-hover-color'],
   ['#202020', '#404040', 'main-theme-hover-background'],
   ['#f0f0f0', '#505050', 'back-forward-button-background'],
@@ -592,11 +562,21 @@ const colors = [
   ['rgba(0, 0, 0, 0.23)', 'rgba(255, 255, 255, 0.23)', 'button-hover-second-box-shadow']
 ]
 
+const setCssVariables = (valuesAndVariables, condition) => {
+  const documentStyle = document.documentElement.style
+
+  valuesAndVariables.forEach(valueAndVariable => {
+    const variable = `--${valueAndVariable[2]}`
+    const value = valueAndVariable[+condition]
+    documentStyle.setProperty(variable, value)
+  })
+}
+
 export {
   MIN_FORM,
   MAX_FORM,
   forms,
-  engToRus,
   layouts,
-  colors
+  colors,
+  setCssVariables
 }

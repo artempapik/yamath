@@ -2,9 +2,9 @@ import {
   MIN_FORM,
   MAX_FORM,
   forms,
-  engToRus,
   layouts,
-  colors
+  colors,
+  setCssVariables
 } from '../data.js'
 
 let currentForm = +localStorage.getItem('current-form') || 5
@@ -49,16 +49,6 @@ const restorePage = () => {
   .querySelectorAll(selector)
   .forEach(element => element.style.display = 'block'))
 
-const setCssVariables = (valuesAndVariables, condition) => {
-  const documentStyle = document.documentElement.style
-
-  valuesAndVariables.forEach(valueAndVariable => {
-    const variable = `--${valueAndVariable[2]}`
-    const value = valueAndVariable[+condition]
-    documentStyle.setProperty(variable, value)
-  })
-}
-
 const animateElements = (selectors, translateY) => selectors.forEach(selector => document
   .querySelector(selector)
   .animate([
@@ -89,7 +79,6 @@ const searchInput = document.querySelector('input')
 
 const formButtonClick = increment => {
   searchInput.blur()
-  restorePage()
 
   const fillThemes = (selector, themes) => {
     const ul = document.querySelector(selector)
@@ -126,7 +115,7 @@ const formButtonClick = increment => {
   toggleFormButtonVisibility(forwardButton, nextForm <= MAX_FORM)
 
   const currentFormTitle =  `${currentForm} класс`
-  document.title = `${currentFormTitle} — YaMath`
+  document.title = `${currentFormTitle} – YaMath`
   localStorage.setItem('current-form', currentForm)
 
   backButton.textContent = `${previousForm} класс`
@@ -166,27 +155,11 @@ const formsWithThemes = forms.map(form => {
   }
 })
 
-const transliterate = word => word
-  .split('')
-  .map(symbol => engToRus[symbol] || symbol)
-  .join('')
-
-const isLetter = char => (/[а-яА-Яa-zA-Z]/).test(char)
-
 const searchPlaceholder = ' Поиск по теме'
 searchInput.placeholder = searchPlaceholder
 
-searchInput.onfocus = event => {
-  if (event.target.value) showSearchResults()
-  searchInput.placeholder = searchPlaceholder.slice(2)
-}
-
+searchInput.onfocus = () => searchInput.placeholder = searchPlaceholder.slice(2)
 searchInput.onblur = () => searchInput.placeholder = searchPlaceholder
-
-searchInput.onkeydown = event => {
-  const char = event.key
-  if (!isLetter(char) && char !== ' ') event.preventDefault()
-}
 
 searchInput.onkeyup = event => {
   if (event.key === 'Escape') {
@@ -202,7 +175,7 @@ searchInput.onkeyup = event => {
     return
   }
 
-  const searchString = transliterate(inputValue.toLowerCase())
+  const searchString = inputValue.toLowerCase()
 
   const [searchHeader, searchList] = htmlElementsFromSelectors(...searchSelectors)
   searchList.innerHTML = ''
@@ -239,14 +212,6 @@ document.onclick = () => searchInput.style.inputMode = 'none'
 searchInput.onpointerup = () => searchInput.focus()
 
 const toggleNightMode = isNightMode => {
-  if (isNightMode === 'system') {
-    if (window.matchMedia) {
-      setCssVariables(colors, window.matchMedia('(prefers-color-scheme: dark)').matches)
-    }
-    
-    return
-  }
-
   setCssVariables(colors, isNightMode)
   localStorage.setItem('is-night-mode', isNightMode ? ' ' : '')
 }
@@ -258,7 +223,3 @@ toggleNightMode(isNightMode)
 window.toggleNightMode = isNightMode => toggleNightMode(isNightMode)
 window.onunload = () => searchInput.value = ''
 window.onresize = () => correctGeometryTitle()
-
-window.matchMedia('(prefers-color-scheme: dark)').onchange = event => {
-  if (localStorage.getItem('is-night-mode') === 'system') setCssVariables(colors, event.matches)
-}

@@ -4,36 +4,14 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Главная — YaMath</title>
+    <title>Главная – YaMath</title>
     <link rel="stylesheet" href="shared.css">
     <link rel="stylesheet" href="start.css">
 </head>
 <body>
     <main>
         <div class="theme">
-            <div class="dropdown-button" onpointerup="openThemeDropdown()">
-                <span>тема</span>
-                <i class="icon-palette"></i>
-            </div>
-    
-            <div class="dropdown">
-            <ul>
-                <li id="light" onpointerup="toggleNightMode(false)">
-                    <i class="icon-sun"></i>
-                    <span>светлая</span>
-                </li>
-    
-                <li id="dark" onpointerup="toggleNightMode(true)">
-                    <i class="icon-moon"></i>
-                    <span>темная</span>
-                </li>
-    
-                <li id="system" onpointerup="toggleNightMode('system')">
-                    <i class="icon-desktop"></i>
-                    <span>системная</span>
-                </li>
-            </ul>
-            </div>
+            <i class="icon-sun"></i>
         </div>
 
         <div class="logo">
@@ -43,55 +21,45 @@
         </div>
 
         <div class="user">
-            <div class="dropdown-button">
-                <span>вход</span>
-                <i id="signin" class="icon-user"></i>
-            </div>
+            <i id="signin" class="icon-user"></i>
         </div>
 
         <div class="search">
             <input placeholder="&#xe903; Поиск">
         </div>
 
-        <div class="forms">
-            <div class="category-icon">
-                <i class="icon-forms"></i>
-                <div>смотреть по</div>
-            </div>
-            <div class="category">
-                <span>классам</span>
-                <a class="icon-circle-arrow-right" href="forms"></a>
-            </div>
-        </div>
+        <ul>
+            <li>
+                <div class="category-icon">
+                    <i class="icon-forms"></i>
+                    <div>смотреть по</div>
+                </div>
+                <div class="category">
+                    <a href="forms">классам</a>
+                </div>
+            </li>
 
-        <div class="themes">
-            <div class="category-icon">
-                <i class="icon-themes"></i>
-                <div>смотреть по</div>
-            </div>
-            <div class="category">
-                <span>темам</span>
-                <a class="icon-circle-arrow-right" href="themes"></a>
-            </div>
-        </div>
+            <li>
+                <div class="category-icon">
+                    <i class="icon-themes"></i>
+                    <div>смотреть по</div>
+                </div>
+                <div class="category">
+                    <a href="themes">темам</a>
+                </div>
+            </li>
 
-        <div class="levels">
-            <div class="category-icon">
-                <i class="icon-levels"></i>
-                <div>смотреть по</div>
-            </div>
-            <div class="category">
-                <span>уровням</span>
-                <a class="icon-circle-arrow-right" href="levels"></a>
-            </div>
-        </div>
-
-        <div class="copyright">
-            <i class="icon-copyright"></i>
-            <span>YaMath, 2022</span>
-        </div>
+            <li>
+                <div class="category-icon">
+                    <i class="icon-levels"></i>
+                    <div>смотреть по</div>
+                </div>
+                <div class="category">
+                    <a href="levels">уровням</a>
+                </div>
+            </li>
+        </ul>
     </main>
     <script type="module" src="start.js"></script>
-
 </body>
 </html>
