@@ -5,7 +5,7 @@ const changeIconStyle = (iconDiv, color, scale) => {
   iconDiv.style.transform = `scale(${scale})`
 }
 
-const categories = document.querySelectorAll('li')
+const categories = document.querySelectorAll('a')
 
 categories.forEach(category => {
   const iconDiv = category.children[0]
