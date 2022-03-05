@@ -9,7 +9,7 @@ const categories = document.querySelectorAll('li')
 
 categories.forEach(category => {
   const iconDiv = category.children[0]
-  category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
+  category.onpointerup = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
   category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
 })
 
