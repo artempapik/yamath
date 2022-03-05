@@ -5,10 +5,12 @@ const changeIconStyle = (iconDiv, color, scale) => {
   iconDiv.style.transform = `scale(${scale})`
 }
 
-document.querySelectorAll('li').forEach(category => {
+const categories = document.querySelectorAll('li')
+
+categories.forEach(category => {
   const iconDiv = category.children[0]
   category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
-  category.onpointerout = () => changeIconStyle(iconDiv, '', 1)
+  category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
 })
 
 const input = document.querySelector('input')
@@ -36,4 +38,8 @@ const nightModeIcon = document.querySelector('.theme i')
 if (isNightMode) toggleMoonIcon()
 toggleNightMode(isNightMode)
 
-document.onclick = () => input.style.inputMode = 'none'
+const main = document.querySelector('main')
+document.onclick = event => {
+  input.style.inputMode = 'none'
+  if (event.target === main) categories.forEach(category => changeIconStyle(category.children[0], '', 1))
+}
