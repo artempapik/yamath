@@ -41,5 +41,5 @@ toggleNightMode(isNightMode)
 const main = document.querySelector('main')
 document.onclick = event => {
   input.style.inputMode = 'none'
-  if (event.target === main) categories.forEach(category => changeIconStyle(category.children[0], '', 1))
+  // if (event.target === main) categories.forEach(category => changeIconStyle(category.children[0], '', 1))
 }
