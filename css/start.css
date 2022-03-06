@@ -49,9 +49,6 @@ main {
   justify-self: center;
 }
 
-.theme i, .user i { cursor: pointer; }
-.theme i:hover, .user i:hover { color: var(--logo-color); }
-
 .search {
   grid-area: search;
   justify-self: center;
@@ -131,7 +128,6 @@ a i {
 
 @media (hover: hover) {
   a:hover {
-    opacity: .9;
     color: var(--main-theme-hover-color);
     border-bottom: .25rem var(--main-theme-hover-color) dotted;
     background: var(--main-theme-hover-background);
@@ -144,6 +140,9 @@ a i {
     box-shadow: var(--logo-color) 0 0 0 2px;
     opacity: .8;
   }
+
+  .theme i, .user i { cursor: pointer; }
+  .theme i:hover, .user i:hover { color: var(--logo-color); }
 }
 
 @media (max-width: 1200px) {
@@ -153,7 +152,7 @@ a i {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   main {
     grid-template-areas:
       "theme theme . logo logo logo logo logo logo logo logo . user user"
@@ -202,6 +201,11 @@ a i {
     padding: 2rem 0;
     font-size: 2.1rem;
     box-shadow: var(--middle-theme-box-shadow) 0px 1px 3px 0px, var(--middle-theme-box-shadow) 0px 0px 0px 1px;
+  }
+
+  a:hover {
+    border-radius: 1rem;
+    border-bottom: none;
   }
 
   a:nth-child(2) { box-shadow: var(--middle-theme-box-shadow) 0px 1px 3px 0px, var(--middle-theme-box-shadow) 0px 0px 0px 1px; }
