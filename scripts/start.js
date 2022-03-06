@@ -7,11 +7,13 @@ const changeIconStyle = (iconDiv, color, scale) => {
 
 const categories = document.querySelectorAll('a')
 
-categories.forEach(category => {
-  const iconDiv = category.children[0]
-  category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
-  category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
-})
+if ('ontouchstart' in window) {
+  categories.forEach(category => {
+    const iconDiv = category.children[0]
+    category.onmouseover = () => changeIconStyle(iconDiv, '#f4c744', 1.2)
+    category.onmouseout = () => changeIconStyle(iconDiv, '', 1)
+  })
+}
 
 const input = document.querySelector('input')
 const searchPlaceholder = input.placeholder
