@@ -188,8 +188,8 @@ aside a {
   input {
     width: 11rem;
     background: var(--background-color);
-    padding: .6rem .9rem;
-    font-size: 1.1rem;
+    padding: .7rem .9rem;
+    font-size: 1.15rem;
     letter-spacing: .01rem;
     word-spacing: .1rem;
     border: .1rem solid var(--logo-color);
