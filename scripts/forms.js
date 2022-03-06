@@ -200,7 +200,7 @@ searchInput.onkeyup = event => {
     }
   })
 
-  searchHeader.textContent = `${foundSearchesAmount} результатов`
+  searchHeader.textContent = foundSearchesAmount === 0 ? 'Ничего не найдено' : `${foundSearchesAmount} результатов`
   showSearchResults()
 
   if (previousSearchesAmount === foundSearchesAmount) return

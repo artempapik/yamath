@@ -125,9 +125,9 @@ input:hover, input:focus {
 
 .search-title {
   font-family: 'Roboto Mono', monospace;
-  width: fit-content;
   font-size: 1.4rem;
   font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 aside a {
@@ -178,9 +178,9 @@ aside a {
   ol                                             { margin-left: 2.5rem; }
   li:hover                                       { font-weight: normal; }
   .search, .user                                 { align-self: center; }
-  aside                                          { grid-area: 3 / 2 / 3 / 10; }
+  aside                                          { grid-area: 2 / 2 / 2 / span 8; }
   aside a                                        { left: -.7rem; }
-  aside .theme-title                             { letter-spacing: .05rem; }
+  .search-title                             { letter-spacing: .05rem; }
 
   input {
     background: var(--background-color);
@@ -189,6 +189,10 @@ aside a {
     letter-spacing: .01rem;
     border: .1rem solid var(--logo-color);
     word-spacing: .1rem;
+  }
+
+  .search-title {
+    justify-content: center;
   }
 
   button:nth-of-type(2) { padding: .6rem 1rem; }
