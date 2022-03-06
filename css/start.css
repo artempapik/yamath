@@ -184,7 +184,7 @@ a i {
   .theme { grid-column: 1 / span 2; }
   .logo { grid-column: 4 / span 8; }
   .user { grid-column: 13 / span 2; }
-  .question, .language { margin-bottom: 1.5rem; }
+  .question, .language { margin-bottom: 2rem; }
 
   .logo {
     font-size: 2rem;
