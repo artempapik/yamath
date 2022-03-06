@@ -168,17 +168,22 @@ aside a {
     row-gap: 1rem;
   }
 
-  button                                         { padding: .65rem 1rem; }
-  button:hover                                   { box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px; }
-  .search, nav                                { justify-self: center; }
+  button { padding: .65rem 1rem; }
+  button:hover { box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px; }
+  button:nth-of-type(2) { padding: .7rem 1rem; }
+  nav                                { justify-self: center; }
   .user                                          { justify-self: end; }
   ul, ol                                         { gap: .3rem; }
   ol                                             { margin-left: 2.5rem; }
   li:hover                                       { font-weight: normal; }
-  .search, .user                                 { align-self: center; }
+  .user                                 { align-self: center; }
   aside                                          { grid-area: 3 / 2 / 3 / span 8; }
   aside a                                        { left: -.7rem; }
-  .search-title                             { letter-spacing: 0; font-size: 1.6rem; font-weight: bold; }
+
+  .search {
+    justify-self: center;
+    align-self: center;
+  }
 
   input {
     width: 11rem;
@@ -192,7 +197,8 @@ aside a {
 
   .search-title {
     justify-content: center;
+    letter-spacing: .03rem;
+    font-size: 1.6rem;
+    font-weight: bold;
   }
-
-  button:nth-of-type(2) { padding: .6rem 1rem; }
 }
