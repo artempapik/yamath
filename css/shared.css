@@ -27,6 +27,8 @@
 .icon-calculator:before         { content: '\e90d'; }
 .icon-circle-arrow-left:before  { content: '\e90e'; }
 .icon-circle-arrow-right:before { content: '\e90f'; }
+.icon-globe:before              { content: '\e911'; }
+.icon-question:before           { content: '\e912'; }
 
 * {
   margin: 0;

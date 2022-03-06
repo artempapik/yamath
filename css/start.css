@@ -8,20 +8,47 @@ main {
   display: grid;
   grid-template: repeat(3, auto) / 2fr repeat(12, 1fr) 2fr;
   grid-template-areas:
-    ". . . . theme logo logo logo logo user . . . ."
+    "question question . . theme logo logo logo logo user . . language language"
     ". . . . . . search search . . . . . .";
   margin-top: .7rem;
   row-gap: 2rem;
 }
 
 .theme { grid-area: theme; }
+
+.question {
+  grid-area: question;
+  margin-left: 1.5rem;
+}
+
+.language {
+  grid-area: language;
+  margin-right: 1.5rem;
+  justify-self: end;
+}
+
+.question, .language {
+  align-items: center;
+  display: flex;
+  gap: .7rem;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  width: fit-content;
+}
+
+.service-title {
+  font-family: 'Roboto Condensed', sans-serif;
+  letter-spacing: .1rem;
+}
+
+.service-icon { font-size: 1.2rem; }
 .user { grid-area: user; }
 
 .logo {
   grid-area: logo;
   justify-self: center;
   font-family: 'Raleway';
-  font-size: 3.5rem;
+  font-size: 4rem;
   color: var(--logo-color);
   opacity: .6;
   word-spacing: .5rem;
@@ -38,15 +65,12 @@ main {
 }
 
 .theme, .user {
+  justify-self: center;
   font-size: 1.4rem;
-  font-family: 'Roboto Condensed', sans-serif;
-  letter-spacing: .05rem;
-  text-transform: uppercase;
   margin-top: 1.5rem;
   width: fit-content;
   opacity: .85;
   transition: color .1s, opacity .1s;
-  justify-self: center;
 }
 
 .search {
@@ -143,18 +167,24 @@ a i {
 }
 
 @media (max-width: 1200px) {
+  main { grid-template-rows: repeat(4, auto); }
+
   nav {
     grid-column: span 14;
     margin: 0 1rem;
   }
+
+  a:hover { border-bottom: none; }
+  .question, .language { grid-area: 4; }
+  .question { grid-column: 1 / span 5; }
+  .language { grid-column: 10 / span 5; }
 }
 
 @media (max-width: 800px) {
-  main {
-    grid-template-areas:
-      "theme theme . logo logo logo logo logo logo logo logo . user user"
-      ". . . . . . search search . . . . . .";
-  }
+  .theme { grid-column: 1 / span 2; }
+  .logo { grid-column: 4 / span 8; }
+  .user { grid-column: 13 / span 2; }
+  .question, .language { margin-bottom: 1rem; }
 
   .logo {
     font-size: 2rem;
@@ -187,8 +217,7 @@ a i {
   nav {
     flex-direction: column;
     gap: 1rem;
-    margin: 1.5rem;
-    margin-top: 0;
+    margin: 0 1.5rem;
   }
 
   a {
