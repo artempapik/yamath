@@ -108,11 +108,11 @@ a {
   opacity: .85;
   justify-content: center;
   box-shadow: var(--left-right-theme-box-shadow) 0px 1px 3px 0px, var(--left-right-theme-box-shadow) 0px 0px 0px 1px;
+  font-size: 2.5rem;
 }
 
-a:nth-child(2) {
-  box-shadow: var(--middle-theme-box-shadow) 0px 1px 3px 0px, var(--middle-theme-box-shadow) 0px 4px 12px;
-}
+a:nth-child(2) { box-shadow: var(--middle-theme-box-shadow) 0px 1px 3px 0px, var(--middle-theme-box-shadow) 0px 4px 12px; }
+a div div { margin-top: 1.5rem; }
 
 a div {
   font-size: 1.2rem;
@@ -124,26 +124,21 @@ a i {
   opacity: .8;
 }
 
-a div div { margin-top: 1.5rem; }
-a { font-size: 2.5rem; }
-
 .category-icon {
   width: fit-content;
   align-self: center;
 }
 
-a:hover {
-  opacity: .9;
-  color: var(--main-theme-hover-color);
-  border-bottom: .25rem var(--main-theme-hover-color) dotted;
-  background: var(--main-theme-hover-background);
-  border-top-left-radius: 3rem;
-  border-top-right-radius: 3rem;
-  font-weight: bold;
-}
-
 @media (hover: hover) {
-  
+  a:hover {
+    opacity: .9;
+    color: var(--main-theme-hover-color);
+    border-bottom: .25rem var(--main-theme-hover-color) dotted;
+    background: var(--main-theme-hover-background);
+    border-top-left-radius: 3rem;
+    border-top-right-radius: 3rem;
+    font-weight: bold;
+  }
 
   input:hover, input:focus {
     box-shadow: var(--logo-color) 0 0 0 2px;
