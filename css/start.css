@@ -71,6 +71,8 @@ input {
   text-align: center;
 }
 
+input:hover, input:focus { opacity: .8; }
+
 ::placeholder {
   text-align: var(--placeholder-align);
   color: var(--placeholder-color);
@@ -136,11 +138,6 @@ a i {
     font-weight: bold;
   }
 
-  input:hover, input:focus {
-    box-shadow: var(--logo-color) 0 0 0 2px;
-    opacity: .8;
-  }
-
   .theme i, .user i { cursor: pointer; }
   .theme i:hover, .user i:hover { color: var(--logo-color); }
 }
@@ -175,7 +172,6 @@ a i {
     font-size: 1.1rem;
     width: 10rem;
     padding: .5rem .8rem;
-    border: .1rem solid var(--logo-color);
     word-spacing: .1rem;
   }
 
