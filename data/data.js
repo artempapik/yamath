@@ -456,13 +456,13 @@ const MAX_FORM = 11
 
 const baseMainLayout =
 `
-  ". . . . . . . . . . t s s s s u . . . . . . . . . ."
+  ". . . . . . . . . . . s s s s u . . . . . . . . . ."
   ". . . . . . . . . f f f f f f f f . . . . . . . . ."
 `
 
 const baseLargeLayout =
 `
-  ". t s s s s s . u ."
+  ". . s s s s s . u ."
   ". . f f f f f . . ."
   ". . a a a a a . . ."
   ". a1 a1 a1 . . a2 a2 a2 ."
@@ -500,11 +500,11 @@ const oneColumnLayouts = [
     ". g1 g1 g1 g2 . . . . ."
   `,
   `
-    ". t s s s s s s u g2"
+    ". . s s s s s s u g2"
     ${baseMediumLayout}
   `,
   `
-    "t t s s s s s s u g2"
+    ". . s s s s s s u g2"
     ${baseSmallLayout}
   `
 ]
@@ -521,12 +521,12 @@ const twoColumnLayouts = [
     ". g1 g1 g1 . . g2 g2 g2 ."
   `,
   `
-    ". t s s s s s s u ."
+    ". . s s s s s s u ."
     ${baseMediumLayout}
     ". . g2 g2 g2 g2 g2 g2 . ."
   `,
   `
-    "t t s s s s s s u u"
+    ". . s s s s s s u u"
     ${baseSmallLayout}
     ". g2 g2 g2 g2 g2 g2 g2 g2 ."
   `

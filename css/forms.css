@@ -14,7 +14,7 @@ main {
 .theme     { grid-area: t; }
 .search    { grid-area: s; }
 .user      { grid-area: u; }
-.forms     { grid-area: f; }
+nav { grid-area: f; }
 .algebra   { grid-area: a; }
 .geometry  { grid-area: g; }
 .algebra1  { grid-area: a1; }
@@ -22,11 +22,9 @@ main {
 .geometry1 { grid-area: g1; }
 .geometry2 { grid-area: g2; }
 
-.theme { display: none; }
-
 aside {
-  grid-area: 3 / 11 / 3 / 19;
-  width: 80%;
+  grid-area: 3 / 12 / 3 / span 7;
+  margin: 0 1rem;
 }
 
 p {
@@ -35,24 +33,24 @@ p {
 }
 
 span { font-size: 1.2rem; }
-.search, .forms, .algebra, aside                                   { justify-self: center; }
-.search, .theme, .user                                             { align-self: end; }
+.search, nav, .algebra                                   { justify-self: center; }
+.search, .user                                             { align-self: end; }
 .user                                                              { justify-self: end; }
 i { font-size: 1.4rem; }
-.forms, ul, ol { gap: .5rem; }
+nav, ul, ol { gap: .5rem; }
 button, span, i:not(button i) { display: none; }
-section, ul, ol, .forms, .user div { display: flex; }
+section, ul, ol, nav, .user div { display: flex; }
 section, ul, ol                                                    { flex-direction: column; }
 ol                                                                 { margin-left: 1.5rem; }
 p, li, .theme-title, i                                             { width: fit-content; }
 p, li, button, .theme-title, span                                  { font-family: 'Roboto Mono', monospace; }
 p, .theme-title                                                    { font-size: 1.4rem; }
 button                                                             { font-size: 1rem; }
-p, #current, li:hover, .theme-title, span { font-weight: bold; }
+p, button:nth-of-type(2), li:hover, .theme-title, span { font-weight: bold; }
 li, .algebra, .geometry, .theme-title, span                        { text-transform: uppercase; }
 li, .theme-title                                                   { letter-spacing: .15rem; }
 .algebra, .geometry                                                { letter-spacing: .05rem; }
-.theme, .user, button                                              { user-select: none; }
+.user, button { user-select: none; }
 i, .user div { cursor: pointer; }
 ul, ol                                                             { padding-left: .7rem; }
 aside .theme-title                                                 { margin-bottom: .7rem; }
@@ -81,7 +79,7 @@ button {
   transition: box-shadow .2s, transform .2s;
 }
 
-#current {
+button:nth-of-type(2) {
   background: #707070;
   color: #f5f5f5;
   font-size: 1.1rem;
@@ -96,7 +94,7 @@ button:hover {
 input {
   font-family: 'Segoe UI', MathIcons;
   background: var(--input-background-color);
-  font-size: .95rem;
+  font-size: 1rem;
   color: var(--input-color);
   width: 10rem;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
@@ -106,7 +104,7 @@ input {
   opacity: .9;
   letter-spacing: .05rem;
   user-select: none;
-  word-spacing: .2rem;
+  word-spacing: .3rem;
 }
 
 input:hover, input:focus {
@@ -125,6 +123,13 @@ input:hover, input:focus {
   margin: 1rem 0 2rem 0;
 }
 
+.search-title {
+  font-family: 'Roboto Mono', monospace;
+  width: fit-content;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
 aside a {
   position: relative;
   left: -.6rem;
@@ -137,8 +142,7 @@ aside a {
   }
 
   aside {
-    grid-area: 3 / 4 / 3 / 9;
-    width: 100%;
+    grid-column: 4 / span 4;
   }
 
   .theme-title { font-size: 1.3rem; }
@@ -150,18 +154,12 @@ aside a {
     grid-template-areas: var(--medium-layout);
   }
 
-  .algebra, .forms, .search { justify-self: start; }
-  aside                     { grid-area: 3 / 3 / 3 / 8; }
+  .algebra, nav, .search { justify-self: start; }
+  aside                     { grid-column: 3 / span 6; }
   button                    { font-size: .9rem; }
   button:hover              { transform: none; }
-  #current                  { font-size: 1rem; }
-  .forms                    { gap: .4rem; }
-
-  .theme {
-    display: block;
-    justify-self: center;
-    margin-bottom: 10%;
-  }
+  button:nth-of-type(2)                  { font-size: 1rem; }
+  nav                    { gap: .4rem; }
 }
 
 @media (max-width: 600px) {
@@ -174,12 +172,12 @@ aside a {
   button                                         { padding: .65rem 1rem; }
   button:hover                                   { box-shadow: var(--button-first-box-shadow) 0px 1px 3px 0px, var(--button-second-box-shadow) 0px 0px 0px 1px; }
   input:hover, input:focus                       { box-shadow: none; }
-  .search, .forms                                { justify-self: center; }
+  .search, nav                                { justify-self: center; }
   .user                                          { justify-self: end; }
   ul, ol                                         { gap: .3rem; }
   ol                                             { margin-left: 2.5rem; }
   li:hover                                       { font-weight: normal; }
-  .search, .theme, .user                         { align-self: center; }
+  .search, .user                                 { align-self: center; }
   aside                                          { grid-area: 3 / 2 / 3 / 10; }
   aside a                                        { left: -.7rem; }
   aside .theme-title                             { letter-spacing: .05rem; }
@@ -193,15 +191,5 @@ aside a {
     word-spacing: .1rem;
   }
 
-  #current {
-    padding: .6rem 1rem;
-    font-size: 1rem;
-  }
-
-  .theme { margin-bottom: 0; }
-
-  .theme a i {
-    font-size: 1.6rem;
-    opacity: .8;
-  }
+  button:nth-of-type(2) { padding: .6rem 1rem; }
 }

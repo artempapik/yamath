@@ -21,10 +21,11 @@ const mainSelectors = [
   '.algebra1 ul',
   '.algebra2 ul',
   '.geometry1 ul',
-  '.geometry2 ul'
+  '.geometry2 ul',
+  'nav'
 ]
 
-const searchSelectors = ['aside .theme-title', 'aside section']
+const searchSelectors = ['aside .search-title', 'aside section']
 
 const toggleElementsVisibilityBySelectors = (selectors, condition) => selectors.forEach(selector => {
   const element = document.querySelector(selector)
@@ -129,13 +130,13 @@ const formButtonClick = increment => {
 
   const bodyStyle = document.body.style
   bodyStyle.overflowY = 'hidden'
-  animateElements(mainSelectors.slice(2), 1.4)
+  animateElements(mainSelectors.slice(2, -1), 1.4)
   setTimeout(() => bodyStyle.overflowY = 'auto', 250)
 }
 
 const htmlElementsFromSelectors = (...selectors) => selectors.map(selector => document.querySelector(selector))
 
-const [backButton, currentButton, forwardButton] = htmlElementsFromSelectors('#back', '#current', '#forward')
+const [backButton, currentButton, forwardButton] = document.querySelectorAll('button')
 
 formButtonClick(0, true)
 
@@ -209,7 +210,6 @@ searchInput.onkeyup = event => {
 }
 
 document.onclick = () => searchInput.style.inputMode = 'none'
-searchInput.onpointerup = () => searchInput.focus()
 
 const toggleNightMode = isNightMode => {
   setCssVariables(colors, isNightMode)
