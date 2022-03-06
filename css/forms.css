@@ -178,10 +178,10 @@ aside a {
   .search, .user                                 { align-self: center; }
   aside                                          { grid-area: 2 / 2 / 2 / span 8; }
   aside a                                        { left: -.7rem; }
-  .search-title                             { letter-spacing: .05rem; }
+  .search-title                             { letter-spacing: .01rem; font-weight: bold; }
 
   input {
-    width: 12rem;
+    width: 11rem;
     background: var(--background-color);
     padding: .5rem .8rem;
     font-size: 1.1rem;
