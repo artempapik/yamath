@@ -178,7 +178,7 @@ aside a {
   .search, .user                                 { align-self: center; }
   aside                                          { grid-area: 2 / 2 / 2 / span 8; }
   aside a                                        { left: -.7rem; }
-  .search-title                             { letter-spacing: .01rem; font-weight: bold; }
+  .search-title                             { letter-spacing: 0; font-size: 1.6rem; font-weight: bold; }
 
   input {
     width: 11rem;
