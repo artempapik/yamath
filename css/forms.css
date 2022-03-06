@@ -181,11 +181,13 @@ aside a {
   .search-title                             { letter-spacing: .05rem; }
 
   input {
+    width: 12rem;
     background: var(--background-color);
     padding: .5rem .8rem;
     font-size: 1.1rem;
     letter-spacing: .01rem;
     word-spacing: .1rem;
+    border: .1rem solid var(--logo-color);
   }
 
   .search-title {
