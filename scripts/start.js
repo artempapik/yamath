@@ -30,7 +30,7 @@ input.onblur = () => setPlaceholderValueAndAlign(searchPlaceholder, 'center')
 const toggleMoonIcon = () => nightModeIcon.classList.toggle('icon-moon')
 
 const toggleNightMode = isNightMode => {
-  if (isMobile) categories.forEach(category => changeIconStyle(category.children[0], isNightMode ? '#f4c744' : '#000080', 1.2))
+  if (isMobile) categories.forEach(category => changeIconStyle(category.children[0], isNightMode ? '#f4c744' : '#202020', 1.2))
 
   toggleMoonIcon()
   nightModeIcon.onpointerup = () => toggleNightMode(!isNightMode)
