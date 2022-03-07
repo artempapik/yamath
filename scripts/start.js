@@ -47,7 +47,7 @@ document.onclick = () => input.style.inputMode = 'none'
 
 const modal = document.querySelector('footer')
 
-document.onclick = event => {
+window.onclick = event => {
   if (event.target === modal) {
     if (isMobile) {
       document.body.style.overflow = ''
@@ -85,7 +85,7 @@ languageBlock.onpointerup = () => {
 }
 
 document.querySelector('.question').onclick = () => {
-  if (isMobile) main.style.pointerEvents = 'none'
+  if (isMobile) document.body.style.pointerEvents = 'none'
   document.body.style.overflow = 'hidden'
   modal.style.display = 'block'
 }

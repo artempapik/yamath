@@ -162,7 +162,6 @@ aside, footer {
   display: none;
   position: fixed;
   padding-top: 11rem;
-  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
