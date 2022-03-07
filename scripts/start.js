@@ -119,6 +119,6 @@ const startEn = [
 const translations = [startRu, startUa, startEn]
 
 document.querySelector('.question').onpointerup = () => {
-  setTimeout(() => {}, 100)
+  if (isMobile) setTimeout(() => {}, 1)
   document.querySelector('footer').style.display = 'block'
 }
