@@ -46,11 +46,11 @@ document.onpointerup = event => {
   input.style.inputMode = 'none'
   const modal = document.querySelector('footer')
   if (event.target === modal) {
-    modal.animate([
-      { opacity: 1 },
-      { transform: `translateY(${5 * isMobile ? 2 : -1}rem)`, opacity: 0 }
-    ], { duration: 200 })
-    setTimeout(() => modal.style.display = 'none', 200)
+    // modal.animate([
+    //   { opacity: 1 },
+    //   { transform: `translateY(${5 * isMobile ? 2 : -1}rem)`, opacity: 0 }
+    // ], { duration: 200 })
+    // setTimeout(() => modal.style.display = 'none', 200)
   }
 }
 
