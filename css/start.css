@@ -182,8 +182,7 @@ aside, footer {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  animation-name: animatetop;
-  animation-duration: .6s;
+  animation: animatetop .6s;
 }
 
 @media (hover: hover) {
@@ -298,7 +297,7 @@ aside, footer {
   } */
 
   .modal-content {
-    animation: animatescale .2s linear;
+    animation-name: animatescale;
   }
 
   @keyframes animatescale {
