@@ -50,7 +50,7 @@ document.onpointerup = event => {
     //   { opacity: 1 },
     //   { transform: `translateY(${5 * isMobile ? 2 : -1}rem)`, opacity: 0 }
     // ], { duration: 200 })
-    // setTimeout(() => modal.style.display = 'none', 200)
+    setTimeout(() => modal.style.display = 'none', 200)
   }
 }
 
