@@ -37,8 +37,6 @@ main {
   opacity: .85;
 }
 
-.question:hover, .language:hover { color: var(--logo-color); }
-
 .service-title {
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: .1rem;
@@ -169,6 +167,7 @@ a i {
 
   .theme i, .user i { cursor: pointer; }
   .theme i:hover, .user i:hover { color: var(--logo-color); }
+  .question:hover, .language:hover { color: var(--logo-color); }
 }
 
 @media (max-width: 1200px) {
