@@ -48,8 +48,7 @@ document.onclick = () => input.style.inputMode = 'none'
 const modal = document.querySelector('footer')
 
 modal.onpointerup = event => {
-  // if (event.target === modal) {
-  {
+  if (event.target === modal) {
     if (isMobile) {
       
       document.body.style.overflow = ''
