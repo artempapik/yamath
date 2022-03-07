@@ -161,6 +161,7 @@ a i {
 aside, footer {
   display: none;
   position: fixed;
+  /* -webkit-overflow-scrolling: touch; */
   padding-top: 11rem;
   left: 0;
   top: 0;

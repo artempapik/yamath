@@ -124,7 +124,8 @@ const translations = [startRu, startUa, startEn]
 
 document.querySelector('.question').onpointerup = () => {
   if (isMobile) {
-    document.body.style.overflowY = 'hidden'
+    document.body.style.touchAction = 'none'
+    // document.body.style.overflowY = 'hidden'
     main.style.pointerEvents = 'none'
   }
   modal.style.display = 'block'
