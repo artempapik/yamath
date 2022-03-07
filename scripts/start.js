@@ -50,6 +50,7 @@ const modal = document.querySelector('footer')
 document.onpointerup = event => {
   if (event.target === modal) {
     if (isMobile) {
+      document.body.style.overflow = ''
       modal.style.display = 'none'
       setTimeout(() => main.style.pointerEvents = '', 50)
       return
