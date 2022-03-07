@@ -293,7 +293,7 @@ aside, footer {
   }
 
   @keyframes animatetop {
-    from { transform: translateY(5rem); opacity: 0; }
+    from { transform: translateY(10rem); opacity: 0; }
     to { opacity: 1; }
   }
 }
