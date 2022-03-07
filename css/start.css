@@ -298,7 +298,7 @@ aside, footer {
 
   .modal-content {
     animation-name: animatescale;
-    animation-delay: 500ms;
+    animation-delay: 100ms;
   }
 
   @keyframes animatescale {
