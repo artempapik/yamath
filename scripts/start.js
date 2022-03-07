@@ -17,7 +17,6 @@ if (!isMobile) {
 }
 
 const input = document.querySelector('input')
-const searchPlaceholder = input.placeholder
 
 const setPlaceholderValueAndAlign = (value, align) => {
   input.placeholder = value
@@ -25,7 +24,7 @@ const setPlaceholderValueAndAlign = (value, align) => {
 }
 
 input.onfocus = () => setPlaceholderValueAndAlign('', 'left')
-input.onblur = () => setPlaceholderValueAndAlign(searchPlaceholder, 'center')
+input.onblur = () => setPlaceholderValueAndAlign(` ${translations[languageIndex][2]}`, 'center')
 
 const toggleMoonIcon = () => nightModeIcon.classList.toggle('icon-moon')
 
