@@ -51,7 +51,7 @@ document.onpointerup = event => {
   if (event.target === modal) {
     if (isMobile) {
       modal.style.display = 'none'
-      setTimeout(() => main.style.pointerEvents = '', 10)
+      setTimeout(() => main.style.pointerEvents = '', 50)
       return
     }
 
