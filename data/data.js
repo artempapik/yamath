@@ -572,11 +572,50 @@ const setCssVariables = (valuesAndVariables, condition) => {
   })
 }
 
+const startPageRu = [
+  'о проекте',
+  'сайт для изучающих математику',
+  'поиск',
+  'смотреть по',
+  'классам',
+  'смотреть по',
+  'темам',
+  'смотреть по',
+  'уровням'
+]
+
+const startPageUa = [
+  'про проєкт',
+  'сайт для тих, хто вивчає математику',
+  'пошук',
+  'дивитися по',
+  'класам',
+  'дивитися по',
+  'темам',
+  'дивитися по',
+  'рівням'
+]
+
+const startPageEn = [
+  'about project',
+  'site for those who learn math',
+  'search',
+  'watch by',
+  'forms',
+  'watch by',
+  'themes',
+  'watch by',
+  'levels'
+]
+
+const startPageTranslations = [startPageRu, startPageUa, startPageEn]
+
 export {
   MIN_FORM,
   MAX_FORM,
   forms,
   layouts,
   colors,
-  setCssVariables
+  setCssVariables,
+  startPageTranslations
 }

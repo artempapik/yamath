@@ -1,4 +1,4 @@
-import { colors, setCssVariables } from '../data.js'
+import { colors, setCssVariables, startPageTranslations } from '../data.js'
 
 const changeIconStyle = (iconDiv, color, scale) => {
   iconDiv.style.color = color
@@ -25,7 +25,7 @@ const setPlaceholderValueAndAlign = (value, align) => {
 }
 
 input.onfocus = () => setPlaceholderValueAndAlign('', 'left')
-input.onblur = () => setPlaceholderValueAndAlign(` ${translations[languageIndex][2]}`, 'center')
+input.onblur = () => setPlaceholderValueAndAlign(` ${startPageTranslations[languageIndex][2]}`, 'center')
 
 const toggleMoonIcon = () => nightModeIcon.classList.toggle('icon-moon')
 
@@ -50,24 +50,24 @@ const modal = document.querySelector('footer')
 document.onpointerup = event => {
   if (event.target === modal) {
     if (isMobile) {
-      document.body.style.overflowY = ''
+      document.body.style.touchAction = ''
       modal.style.display = 'none'
       setTimeout(() => main.style.pointerEvents = '', 50)
       return
     }
 
+    const duration = 200
     modal.animate([
       { opacity: 1 },
       { transform: 'translateY(-5rem)', opacity: 0 }
-    ], { duration: 200 })
-    setTimeout(() => modal.style.display = 'none', 200)
+    ], { duration })
+    setTimeout(() => modal.style.display = 'none', duration)
   }
 }
 
 let languageIndex = 0
 const languages = ['ru', 'ua', 'en']
 const languageBlock = document.querySelector('.language')
-
 const translateSections = document.querySelectorAll('.translate')
 
 languageBlock.onpointerup = () => {
@@ -75,7 +75,7 @@ languageBlock.onpointerup = () => {
   languageBlock.querySelector('span').textContent = languages[++languageIndex]
   
   translateSections.forEach((section, index) => {
-    const translateValue = translations[languageIndex][index]
+    const translateValue = startPageTranslations[languageIndex][index]
     if (section.nodeName === 'INPUT') {
       section.placeholder = ` ${translateValue}`
       return
@@ -84,48 +84,9 @@ languageBlock.onpointerup = () => {
   })
 }
 
-const startRu = [
-  'о проекте',
-  'сайт для изучающих математику',
-  'поиск',
-  'смотреть по',
-  'классам',
-  'смотреть по',
-  'темам',
-  'смотреть по',
-  'уровням'
-]
-
-const startUa = [
-  'про проєкт',
-  'сайт для тих, хто вивчає математику',
-  'пошук',
-  'дивитися по',
-  'класам',
-  'дивитися по',
-  'темам',
-  'дивитися по',
-  'рівням'
-]
-
-const startEn = [
-  'about project',
-  'site for those who learn math',
-  'search',
-  'watch by',
-  'forms',
-  'watch by',
-  'themes',
-  'watch by',
-  'levels'
-]
-
-const translations = [startRu, startUa, startEn]
-
 document.querySelector('.question').onpointerup = () => {
   if (isMobile) {
     document.body.style.touchAction = 'none'
-    // document.body.style.overflowY = 'hidden'
     main.style.pointerEvents = 'none'
   }
   modal.style.display = 'block'
