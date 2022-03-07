@@ -292,8 +292,13 @@ aside, footer {
     width: 70%;
   }
 
-  @keyframes animatetop {
+  /* @keyframes animatetop {
     from { transform: translateY(10rem); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
+  } */
+
+  @keyframes animatetop {
+    from { transform: scale(0); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
   }
 }
