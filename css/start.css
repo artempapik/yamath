@@ -289,18 +289,8 @@ aside, footer {
 
   .modal-content {
     width: 70%;
-  }
-
-  /* @keyframes animatetop {
-    from { transform: translateY(10rem); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
-  } */
-
-  .modal-content {
     animation-name: animatescale;
-    /* animation-iteration-count: 1; */
     animation-fill-mode: forwards;
-    /* animation-delay: 1ms; */
   }
 
   @keyframes animatescale {

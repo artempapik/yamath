@@ -16,6 +16,7 @@ if (!isMobile) {
   })
 }
 
+const main = document.querySelector('main')
 const input = document.querySelector('input')
 
 const setPlaceholderValueAndAlign = (value, align) => {
@@ -44,17 +45,19 @@ toggleNightMode(isNightMode)
 
 document.onclick = () => input.style.inputMode = 'none'
 
+const modal = document.querySelector('footer')
+
 document.onpointerup = event => {
-  const modal = document.querySelector('footer')
   if (event.target === modal) {
     if (isMobile) {
       modal.style.display = 'none'
+      setTimeout(() => main.style.pointerEvents = '', 10)
       return
     }
 
     modal.animate([
       { opacity: 1 },
-      { transform: `translateY(${5 * isMobile ? 2 : -1}rem)`, opacity: 0 }
+      { transform: 'translateY(-5rem)', opacity: 0 }
     ], { duration: 200 })
     setTimeout(() => modal.style.display = 'none', 200)
   }
@@ -119,6 +122,6 @@ const startEn = [
 const translations = [startRu, startUa, startEn]
 
 document.querySelector('.question').onpointerup = () => {
-  // if (isMobile) setTimeout(() => {}, 10)
-  document.querySelector('footer').style.display = 'block'
+  main.style.pointerEvents = 'none'
+  modal.style.display = 'block'
 }
