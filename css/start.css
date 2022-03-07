@@ -298,12 +298,12 @@ aside, footer {
   } */
 
   .modal-content {
-    -webkit-animation-name: animatescale;
-    -webkit-animation-duration: .6s;
+    animation-name: animatescale;
+    animation-duration: .6s;
   }
 
-  @-webkit-keyframes animatescale {
-    from { transform: scale(0); opacity: 0; }
-    to { transform: scale(1); opacity: 1; }
+  @keyframes animatescale {
+    0% { transform: scale(0); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
   }
 }
