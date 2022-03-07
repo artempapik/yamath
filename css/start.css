@@ -186,11 +186,6 @@ aside, footer {
   animation-duration: .6s;
 }
 
-@keyframes animatetop {
-  from { transform: translateY(-5rem); opacity: 0; }
-  to { opacity: 1; }
-}
-
 @media (hover: hover) {
   a:hover {
     color: var(--main-theme-hover-color);
@@ -208,6 +203,11 @@ aside, footer {
 
   .theme i, .user i { cursor: pointer; }
   .theme i:hover, .user i:hover { color: var(--logo-color); }
+
+  @keyframes animatetop {
+    from { transform: translateY(-5rem); opacity: 0; }
+    to { opacity: 1; }
+  }
 }
 
 @media (max-width: 1200px) {
@@ -285,10 +285,15 @@ aside, footer {
   a div div { margin-top: 1rem; }
 
   aside, footer {
-    padding-top: 2rem;
+    padding-top: 7em;
   }
 
   .modal-content {
     width: 70%;
+  }
+
+  @keyframes animatetop {
+    from { transform: translateY(5rem); opacity: 0; }
+    to { opacity: 1; }
   }
 }

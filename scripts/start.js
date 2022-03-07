@@ -48,7 +48,7 @@ document.onpointerup = event => {
   if (event.target === modal) {
     modal.animate([
       { opacity: 1 },
-      { transform: 'translateY(-5rem)', opacity: 0 }
+      { transform: `translateY(${5 * isMobile ? 4 : -1}rem)`, opacity: 0 }
     ], { duration: 200 })
     setTimeout(() => modal.style.display = 'none', 200)
   }
