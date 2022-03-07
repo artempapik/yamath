@@ -298,7 +298,7 @@ aside, footer {
   } */
 
   .modal-content {
-    animation: animatescale .6s;
+    animation: animatescale .2s linear;
   }
 
   @keyframes animatescale {
