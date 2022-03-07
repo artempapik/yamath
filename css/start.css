@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
 
 * { user-select: none; }
-body { transition: color .3s, background-color .3s; }
+body { transition: color .3s, background-color .3s; -webkit-overflow-scrolling: touch; }
 
 main {
   display: grid;
@@ -162,7 +162,6 @@ aside, footer {
   display: none;
   position: fixed;
   z-index: 1;
-  -webkit-overflow-scrolling: touch;
   padding-top: 11rem;
   left: 0;
   top: 0;
