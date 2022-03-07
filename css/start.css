@@ -158,6 +158,44 @@ a i {
   align-self: center;
 }
 
+aside, footer {
+  display: none;
+  position: fixed;
+  padding-top: 11rem;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: 'Roboto Condensed', sans-serif;
+  margin: 0 auto;
+  padding: 2rem;
+  width: 20%;
+  font-family: 'Raleway';
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  border-radius: .3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  animation-name: animatetop;
+  animation-duration: .6s;
+}
+
+@keyframes animatetop {
+  from { transform: translateY(-4rem); opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* @keyframes animatetop {
+  from { transform: scale(0); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+} */
+
 @media (hover: hover) {
   a:hover {
     color: var(--main-theme-hover-color);
@@ -189,6 +227,8 @@ a i {
   .question, .language { grid-area: 4; }
   .question { grid-column: 1 / span 7; }
   .language { grid-column: 10 / span 5; }
+
+  .modal-content { width: 30%; }
 }
 
 @media (max-width: 800px) {
@@ -248,4 +288,12 @@ a i {
   a:nth-child(2) { box-shadow: var(--middle-theme-box-shadow) 0px 1px 3px 0px, var(--middle-theme-box-shadow) 0px 0px 0px 1px; }
   a i { font-size: 3rem; }
   a div div { margin-top: 1rem; }
+
+  aside, footer {
+    padding-top: 2rem;
+  }
+
+  .modal-content {
+    width: 70%;
+  }
 }

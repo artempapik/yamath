@@ -42,7 +42,17 @@ const nightModeIcon = document.querySelector('.theme i')
 if (isNightMode) toggleMoonIcon()
 toggleNightMode(isNightMode)
 
-document.onclick = () => input.style.inputMode = 'none'
+document.onclick = event => {
+  input.style.inputMode = 'none'
+  const modal = document.querySelector('footer')
+  if (event.target === modal) {
+    modal.animate([
+      { opacity: 1 },
+      { transform: 'translateY(-4rem)', opacity: 0 }
+    ], { duration: 200 })
+    setTimeout(() => modal.style.display = 'none', 200)
+  }
+}
 
 let languageIndex = 0
 const languages = ['ru', 'ua', 'en']
@@ -101,3 +111,7 @@ const startEn = [
 ]
 
 const translations = [startRu, startUa, startEn]
+
+document.querySelector('.question').onpointerup = () => {
+  document.querySelector('footer').style.display = 'block'
+}
