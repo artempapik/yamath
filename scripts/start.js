@@ -87,5 +87,6 @@ languageBlock.onpointerup = () => {
 document.querySelector('.question').onpointerup = () => {
   if (isMobile) main.style.pointerEvents = 'none'
   document.body.style.overflow = 'hidden'
+  document.body.style.position = 'fixed'
   modal.style.display = 'block'
 }
