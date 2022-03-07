@@ -42,13 +42,13 @@ const nightModeIcon = document.querySelector('.theme i')
 if (isNightMode) toggleMoonIcon()
 toggleNightMode(isNightMode)
 
-document.onclick = event => {
+document.onpointerup = event => {
   input.style.inputMode = 'none'
   const modal = document.querySelector('footer')
   if (event.target === modal) {
     modal.animate([
       { opacity: 1 },
-      { transform: 'translateY(-4rem)', opacity: 0 }
+      { transform: 'translateY(-5rem)', opacity: 0 }
     ], { duration: 200 })
     setTimeout(() => modal.style.display = 'none', 200)
   }
