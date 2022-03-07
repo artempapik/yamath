@@ -47,12 +47,12 @@ document.onclick = () => input.style.inputMode = 'none'
 
 const modal = document.querySelector('footer')
 
-window.onclick = event => {
+document.onpointerup = event => {
   if (event.target === modal) {
     if (isMobile) {
       document.body.style.overflow = ''
       modal.style.display = 'none'
-      setTimeout(() => main.style.pointerEvents = '', 50)
+      // setTimeout(() => main.style.pointerEvents = '', 50)
       return
     }
 
@@ -84,8 +84,8 @@ languageBlock.onpointerup = () => {
   })
 }
 
-document.querySelector('.question').onclick = () => {
-  if (isMobile) document.body.style.pointerEvents = 'none'
+document.querySelector('.question').onpointerup = () => {
+  // if (isMobile) main.style.pointerEvents = 'none'
   document.body.style.overflow = 'hidden'
   modal.style.display = 'block'
 }
