@@ -289,7 +289,7 @@ aside, footer {
   }
 
   .modal-content {
-    width: 70%;
+    width: 75%;
     animation-name: animatescale;
     animation-fill-mode: forwards;
   }

@@ -50,7 +50,6 @@ const modal = document.querySelector('footer')
 document.onpointerup = event => {
   if (event.target === modal) {
     if (isMobile) {
-      document.body.style.touchAction = ''
       modal.style.display = 'none'
       setTimeout(() => main.style.pointerEvents = '', 50)
       return
@@ -85,9 +84,7 @@ languageBlock.onpointerup = () => {
 }
 
 document.querySelector('.question').onpointerup = () => {
-  if (isMobile) {
-    document.body.style.touchAction = 'none'
-    main.style.pointerEvents = 'none'
-  }
+  if (isMobile) main.style.pointerEvents = 'none'
+  document.body.style.overflow = 'hidden'
   modal.style.display = 'block'
 }
