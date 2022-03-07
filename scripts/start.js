@@ -44,3 +44,61 @@ if (isNightMode) toggleMoonIcon()
 toggleNightMode(isNightMode)
 
 document.onclick = () => input.style.inputMode = 'none'
+
+let languageIndex = 0
+const languages = ['ru', 'ua', 'en']
+const languageBlock = document.querySelector('.language')
+
+const translateSections = document.querySelectorAll('.translate')
+
+languageBlock.onpointerup = () => {
+  if (languageIndex == 2) languageIndex = -1
+  languageBlock.querySelector('span').textContent = languages[++languageIndex]
+  
+  translateSections.forEach((section, index) => {
+    const translateValue = translations[languageIndex][index]
+    if (section.nodeName === 'INPUT') {
+      section.placeholder = ` ${translateValue}`
+      return
+    }
+    section.textContent = translateValue
+  })
+}
+
+const startRu = [
+  'о проекте',
+  'сайт для изучающих математику',
+  'поиск',
+  'смотреть по',
+  'классам',
+  'смотреть по',
+  'темам',
+  'смотреть по',
+  'уровням'
+]
+
+const startUa = [
+  'про проєкт',
+  'сайт для тих, хто вивчає математику',
+  'пошук',
+  'дивитися по',
+  'класам',
+  'дивитися по',
+  'темам',
+  'дивитися по',
+  'рівням'
+]
+
+const startEn = [
+  'about project',
+  'site for those who learn math',
+  'search',
+  'watch by',
+  'forms',
+  'watch by',
+  'themes',
+  'watch by',
+  'levels'
+]
+
+const translations = [startRu, startUa, startEn]

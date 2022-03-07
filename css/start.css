@@ -34,11 +34,15 @@ main {
   margin-bottom: 3rem;
   cursor: pointer;
   width: fit-content;
+  opacity: .85;
 }
+
+.question:hover, .language:hover { color: var(--logo-color); }
 
 .service-title {
   font-family: 'Roboto Condensed', sans-serif;
   letter-spacing: .1rem;
+  border-bottom: .1rem dashed var(--text-color);
 }
 
 .service-icon { font-size: 1.2rem; }
@@ -93,6 +97,7 @@ input {
   letter-spacing: .05rem;
   word-spacing: .7rem;
   text-align: center;
+  text-transform: capitalize;
 }
 
 input:hover, input:focus { opacity: .8; }
@@ -176,7 +181,7 @@ a i {
 
   a:hover { border-bottom: none; }
   .question, .language { grid-area: 4; }
-  .question { grid-column: 1 / span 5; }
+  .question { grid-column: 1 / span 6; }
   .language { grid-column: 10 / span 5; }
 }
 
