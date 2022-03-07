@@ -161,7 +161,6 @@ a i {
 aside, footer {
   display: none;
   position: fixed;
-  z-index: 1;
   padding-top: 11rem;
   left: 0;
   top: 0;
@@ -171,7 +170,7 @@ aside, footer {
 }
 
 .modal-content {
-  background-color: var(--background-color);
+  background: var(--background-color);
   color: var(--text-color);
   font-family: 'Roboto Condensed', sans-serif;
   margin: 0 auto;
@@ -303,6 +302,7 @@ aside, footer {
 
   @keyframes animatescale {
     0% { transform: scale(0); opacity: 0; }
-    100% { transform: scale(1); opacity: 1; }
+    99% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0); opacity: 1; }
   }
 }
