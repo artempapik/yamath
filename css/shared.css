@@ -2,6 +2,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
 
 @font-face {
+  font-family: 'Segoe Variable';
+  src: url('SegoeVariable.ttf');
+}
+
+@font-face {
   font-family: MathIcons;
   src: url('mathfont.woff');
 }
@@ -21,6 +26,7 @@
 .icon-bars:before               { content: '\e907'; }
 .icon-levels:before             { content: '\e908'; }
 .icon-forms:before              { content: '\e909'; }
+.icon-cross:before              { content: '\e910'; }
 .icon-themes:before             { content: '\e90a'; }
 .icon-user:before               { content: '\e90b'; }
 .icon-palette:before            { content: '\e90c'; }
@@ -29,6 +35,9 @@
 .icon-circle-arrow-right:before { content: '\e90f'; }
 .icon-globe:before              { content: '\e911'; }
 .icon-question:before           { content: '\e912'; }
+.icon-gear:before               { content: '\e913'; }
+.icon-circle-cross:before       { content: '\e914'; }
+.icon-brush:before              { content: '\e915'; }
 
 * {
   margin: 0;

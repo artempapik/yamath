@@ -6,7 +6,7 @@ import path from 'path'
 const port = process.env.PORT || 3000
 const app = express()
 const dirname = path.resolve()
-const viewsDir = `${dirname}/views`
+const viewsDirectory = `${dirname}/views`
 
 app.use(express.static('css'))
 app.use(express.static('scripts'))
@@ -17,7 +17,7 @@ app.use(favicon(`${dirname}/ico/calculator.png`))
 
 app.get('/articles/:article', (req, res) => {
   const article = `${req.params.article}.pug`
-  const path = `${viewsDir}/${article}`
+  const path = `${viewsDirectory}/${article}`
 
   if (!fs.existsSync(path)) {
     res.redirect('/error')
@@ -27,10 +27,9 @@ app.get('/articles/:article', (req, res) => {
   res.render(article, { title: 'Ряд натуральных чисел' })
 })
 
-const getPage = pageName => `${viewsDir}/${pageName}.html`
+const getPage = pageName => `${viewsDirectory}/${pageName}.html`
 
-app.get('/', (_, res) => res.sendFile(getPage('start')))
-app.get('/forms', (_, res) => res.sendFile(getPage('forms')))
-app.get('*', (_, res) => res.render('error.pug', { title: 'Ошибка' }))
+app.get('/', (_, res) => res.sendFile(getPage('start-page')))
+app.get('*', (_, res) => res.sendFile(getPage('error')))
 
 app.listen(port)

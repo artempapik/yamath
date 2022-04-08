@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Главная – YaMath</title>
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="start-page.css">
+  </head>
+  <body>
+    <script type="module" src="start-page.js"></script>
+
+    <main>
+      <header>
+        <div id="logo">
+          <img src="calculator.png">
+          <span>YaMath</span>
+        </div>
+
+        <div id="search">
+          <span id="input-section">
+            <input placeholder="Поиск">
+            <i class="icon-circle-cross"></i>
+          </span>
+        </div>
+
+        <div id="user-panel">
+          <i class="icon-gear"></i>
+          <i class="icon-user"></i>
+        </div>
+      </header>
+
+      <menu>
+        <div>
+          <button>
+            <i class="icon-forms"></i>
+            <span>классы</span>
+          </button>
+  
+          <ul class="category-content">
+            <li>5 класс</li>
+            <li>6 класс</li>
+            <li>7 класс</li>
+            <li>8 класс</li>
+            <li>9 класс</li>
+            <li>10 класс</li>
+            <li>11 класс</li>
+          </ul>
+        </div>
+
+        <div>
+          <button>
+            <i class="icon-themes"></i>
+            <span>темы</span>
+          </button>
+
+          <ul class="category-content">
+            <li>алгебра</li>
+            <li>геометрия</li>
+            <li>мат. анализ</li>
+          </ul>
+        </div>
+
+        <div>
+          <button>
+            <i class="icon-levels"></i>
+            <span>уровни</span>
+          </button>
+
+          <ul class="category-content">
+            <li>начальный</li>
+            <li>средний</li>
+            <li>высокий</li>
+          </ul>
+        </div>
+      </menu>
+
+      <div id="main-describe">
+        <h1>
+          <div id="ya">Ya</div>
+          <div id="math">Math</div>
+        </h1>
+        
+        <h2>обучение математике с 5 класса</h2>
+        
+        <div id="main-labels">
+          <div class="main-label">
+            <div class="count">42</div>
+            <div class="count-describe">урока по алгебре</div>
+          </div>
+  
+          <div class="main-label">
+            <div class="count">33</div>
+            <div class="count-describe">урока по геометрии</div>
+          </div>
+  
+          <div class="main-label">
+            <div class="count">18</div>
+            <div class="count-describe">уроков по началам анализа</div>
+          </div>
+  
+          <div class="main-label">
+            <div class="count">7</div>
+            <div class="count-describe">уроков по комбинаторике и теории вероятностей</div>
+          </div>
+        </div>
+
+        <h3>Авторские конспекты, тесты и более <span>1000</span> задач.</h3>
+
+        <div id="about">
+          <i class="icon-question"></i>
+          <span>о проекте</span>
+        </div>
+      </div>
+
+      <aside></aside>
+      <section id="topics"></section>
+    </main>
+
+    <div class="modal">
+      <div class="modal-content">
+        <div class="modal-header">настройки</div>
+
+        <div class="modal-settings">
+          <div class="color-theme">
+            <div>
+              <i class="icon-brush"></i>
+              <span>цветовая тема</span>
+            </div>
+            <select>
+              <option value="light">светлая</option>
+              <option value="dark">темная</option>
+              <option value="system">как в системе</option>
+            </select>
+          </div>
+
+          <div class="language">
+            <div>
+              <i class="icon-globe"></i>
+              <span>язык</span>
+            </div>
+            <select>
+              <option value="ru">русский</option>
+              <option value="ua">украинский</option>
+              <option value="en">английский</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
