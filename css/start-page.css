@@ -612,4 +612,12 @@ select:focus {
     width: 94%;
     padding: .6rem 0;
   }
+
+  aside div {
+    font-size: 1.2rem;
+  }
+
+  #topics section span {
+    font-size: 1.4rem !important;
+  }
 }
