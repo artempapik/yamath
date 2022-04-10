@@ -602,8 +602,8 @@ select:focus {
   input { width: 4rem; }
 
   menu {
-    gap: .6rem;
-    padding: 0 .6rem;
+    gap: .3rem;
+    padding: 0 .3rem;
   }
 
   button { font-size: .9rem; }
@@ -614,7 +614,7 @@ select:focus {
   }
 
   aside div {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   #topics section span {
