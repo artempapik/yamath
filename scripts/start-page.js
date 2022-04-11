@@ -29,29 +29,6 @@ window.onpointerup = event => {
 const settings = document.querySelector('.icon-gear')
 settings.onpointerup = () => modal.style.display = 'flex'
 
-// const input = document.querySelector('input')
-// const iconCircleCross = document.querySelector('#input-section .icon-circle-cross')
-
-// const clearInput = () => {
-//   iconCircleCross.style.display = 'none'
-//   input.value = ''
-// }
-
-// iconCircleCross.onpointerup = () => {
-//   clearInput()
-//   input.focus()
-// }
-
-// input.onkeyup = event => {
-//   if (event.key === 'Escape') {
-//     clearInput()
-//     return
-//   }
-
-//   const inputValue = event.target.value.trim()
-//   iconCircleCross.style.display = inputValue ? 'block' : 'none'
-// }
-
 const labels = ['классы', 'темы', 'уровни']
 
 const buttons = [...document.querySelectorAll('button')]

@@ -186,23 +186,6 @@ input:focus {
   border: .1rem solid rgb(var(--main-color));
 }
 
-#input-section {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-}
-
-#input-section .icon-circle-cross {
-  position: absolute;
-  right: 9px;
-  opacity: .4;
-  cursor: pointer;
-  display: none;
-  animation: inputCloseChangeScale .1s;
-}
-
-@keyframes inputCloseChangeScale { from { transform: scale(.5); } }
-
 #user-panel {
   display: flex;
   align-items: center;
@@ -598,7 +581,6 @@ select:focus {
 }
 
 @media (max-width: 600px) {
-  #logo, #user-panel { width: fit-content; }
   input { width: 6rem; }
 
   menu {
