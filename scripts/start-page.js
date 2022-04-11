@@ -2,6 +2,8 @@ import { formsData } from '../data.js'
 
 const body = document.querySelector('body')
 
+const isMobile = 'ontouchstart' in window
+
 document.querySelector('#logo').onpointerup = () => {
   const elementTop = body.getBoundingClientRect().top
   if (elementTop === 0) window.location.pathname = ''
@@ -147,12 +149,12 @@ categories.forEach((category, categoryIndex) => {
           chosenItemIndex = index
 
           ;[...document.querySelectorAll('aside div')].forEach(d => {
-            d.style.fontSize = '1.2rem'
+            d.style.fontSize = isMobile ? '1rem' : '1.2rem'
             d.style.background = 'none'
             d.style.color = '#404040'
           })
 
-          div.style.fontSize = '1.5rem'
+          div.style.fontSize = isMobile ? '1.3rem' : '1.5rem'
           div.style.background = 'rgba(153, 50, 204, .7)'
           div.style.color = '#f0f0f0'
 
