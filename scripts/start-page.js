@@ -29,28 +29,28 @@ window.onpointerup = event => {
 const settings = document.querySelector('.icon-gear')
 settings.onpointerup = () => modal.style.display = 'flex'
 
-const input = document.querySelector('input')
-const iconCircleCross = document.querySelector('#input-section .icon-circle-cross')
+// const input = document.querySelector('input')
+// const iconCircleCross = document.querySelector('#input-section .icon-circle-cross')
 
-const clearInput = () => {
-  if (!isMobile) iconCircleCross.style.display = 'none'
-  input.value = ''
-}
+// const clearInput = () => {
+//   iconCircleCross.style.display = 'none'
+//   input.value = ''
+// }
 
-iconCircleCross.onpointerup = () => {
-  clearInput()
-  input.focus()
-}
+// iconCircleCross.onpointerup = () => {
+//   clearInput()
+//   input.focus()
+// }
 
-input.onkeyup = event => {
-  if (event.key === 'Escape') {
-    clearInput()
-    return
-  }
+// input.onkeyup = event => {
+//   if (event.key === 'Escape') {
+//     clearInput()
+//     return
+//   }
 
-  const inputValue = event.target.value.trim()
-  if (!isMobile) iconCircleCross.style.display = inputValue ? 'block' : 'none'
-}
+//   const inputValue = event.target.value.trim()
+//   iconCircleCross.style.display = inputValue ? 'block' : 'none'
+// }
 
 const labels = ['классы', 'темы', 'уровни']
 

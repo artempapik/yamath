@@ -625,10 +625,6 @@ select:focus {
     padding: .3rem .5rem;
   }
 
-  #input-section .icon-circle-cross {
-    display: block;
-  }
-
   #topics section span {
     font-size: 1.4rem !important;
   }
