@@ -33,7 +33,7 @@ const input = document.querySelector('input')
 const iconCircleCross = document.querySelector('#input-section .icon-circle-cross')
 
 const clearInput = () => {
-  iconCircleCross.style.display = 'none'
+  if (!isMobile) iconCircleCross.style.display = 'none'
   input.value = ''
 }
 
@@ -49,7 +49,7 @@ input.onkeyup = event => {
   }
 
   const inputValue = event.target.value.trim()
-  iconCircleCross.style.display = inputValue ? 'block' : 'none'
+  if (!isMobile) iconCircleCross.style.display = inputValue ? 'block' : 'none'
 }
 
 const labels = ['классы', 'темы', 'уровни']

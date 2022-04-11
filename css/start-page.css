@@ -622,7 +622,11 @@ select:focus {
   }
 
   header {
-    padding: .6rem .5rem;
+    padding: .3rem .5rem;
+  }
+
+  #input-section .icon-circle-cross {
+    display: block;
   }
 
   #topics section span {
