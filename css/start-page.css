@@ -599,7 +599,7 @@ select:focus {
 
 @media (max-width: 600px) {
   #logo, #user-panel { width: fit-content; }
-  input { width: 4rem; }
+  input { width: 6rem; }
 
   menu {
     gap: .3rem;
@@ -621,7 +621,23 @@ select:focus {
     font-size: 1.3rem;
   }
 
+  header {
+    padding: .3rem .5rem;
+  }
+
   #topics section span {
     font-size: 1.4rem !important;
+  }
+
+  #logo {
+    width: 5.5rem;
+    gap: .3rem;
+    font-size: 1.1rem;
+  }
+
+  #user-panel {
+    width: 4rem;
+    font-size: 1.3rem;
+    gap: .4rem;
   }
 }
