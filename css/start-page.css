@@ -1,20 +1,30 @@
 :root {
+  --white-color: 255, 255, 255;
+  --black-color: 0, 0, 0;
+
   --background-opacity: .1;
   --main-color: 153, 50, 204;
-  --background-gradient: 255, 255, 255;
   --header-dropdown-shadow: rgba(60, 64, 67, .3) 0px 1px 2px 0px, rgba(60, 64, 67, .15) 0px 1px 3px 1px;
+  --intro-animation-space: .7rem;
+  --intro-main-color: 242, 221, 70;
+
+  --yamath-title-letter-spacing: .15rem;
+  --yamath-description-letter-spacing: .19rem;
+  --yamath-footer-letter-spacing: .07rem;
+  --logo-letter-spacing: .05rem;
+  --input-background-y: 5px;
 }
 
 body {
   background: linear-gradient(
-    rgba(var(--background-gradient), var(--background-opacity)),
-    rgba(var(--background-gradient), var(--background-opacity))
+    rgba(var(--white-color), var(--background-opacity)),
+    rgba(var(--white-color), var(--background-opacity))
   ), url('main-background.jpg');
 }
 
 #main-describe {
   user-select: none;
-  color: rgba(255, 255, 255, .9);
+  color: rgba(var(--white-color), .9);
   font-family: 'Segoe Variable';
   width: fit-content;
   margin: 6.5rem auto;
@@ -24,42 +34,42 @@ h1 {
   display: flex;
   gap: .5rem;
   font-size: 6.5rem;
-  letter-spacing: .15rem;
+  letter-spacing: var(--yamath-title-letter-spacing);
   margin-bottom: 1rem;
 }
 
 #ya {
-  color: rgb(242, 221, 70);
-  text-shadow: rgba(255, 255, 255, .35) 0px 5px 15px;
-  animation: aaa 3s;
+  color: rgb(var(--intro-main-color));
+  text-shadow: rgba(var(--white-color), .35) 0px 5px 15px;
+  animation: changeOpacity 2.5s;
 }
 
-@keyframes aaa {
+@keyframes changeOpacity {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
 #math {
   text-shadow:
-    rgba(255, 255, 255, .25) 0px 54px 55px,
-    rgba(255, 255, 255, .12) 0px -12px 30px,
-    rgba(255, 255, 255, .12) 0px 4px 6px,
-    rgba(255, 255, 255, .17) 0px 12px 13px,
-    rgba(255, 255, 255, .09) 0px -3px 5px;
+    rgba(var(--white-color), .25) 0px 54px 55px,
+    rgba(var(--white-color), .12) 0px -12px 30px,
+    rgba(var(--white-color), .12) 0px 4px 6px,
+    rgba(var(--white-color), .17) 0px 12px 13px,
+    rgba(var(--white-color), .09) 0px -3px 5px;
 }
 
 h2 {
   font-size: 2rem;
-  letter-spacing: .19rem;
+  letter-spacing: var(--yamath-description-letter-spacing);
   word-spacing: .3rem;
-  text-shadow: rgba(255, 255, 255, 0.3) 0px 0px 3px;
+  text-shadow: rgba(var(--white-color), .3) 0px 0px 3px;
   margin-bottom: 1.5rem;
-  animation: ddd 1s;
+  animation: yamathDescriptionTranslateY 1s;
 }
 
-@keyframes ddd { from { transform: translateY(1rem); } }
-@keyframes eee { from { transform: translateX(-.7rem); } }
-@keyframes ggg { from { transform: translateX(.7rem); } }
+@keyframes yamathDescriptionTranslateY {
+  from { transform: translateY(var(--intro-animation-space)); }
+}
 
 #main-labels {
   margin-left: 1.5rem;
@@ -73,12 +83,16 @@ h2 {
 }
 
 .count {
-  color: rgb(242, 221, 70);
+  color: rgb(var(--intro-main-color));
   font-weight: bold;
   width: 2rem;
   text-align: center;
   font-size: 1.5rem;
-  animation: eee 1s;
+  animation: yamathCountTranslateX 1s;
+}
+
+@keyframes yamathCountTranslateX {
+  from { transform: translateX(calc(var(--intro-animation-space) * -1)); }
 }
 
 .count-describe {
@@ -86,26 +100,30 @@ h2 {
   width: fit-content;
   font-size: 1.3rem;
   text-shadow: rgba(240, 250, 255, .08) 0px 2px 4px, rgba(240, 250, 255, .2) 0px 2px 16px;
-  animation: ggg 1s;
+  animation: yamathCountDescribeTranslateX 1s;
+}
+
+@keyframes yamathCountDescribeTranslateX {
+  from { transform: translateX(var(--intro-animation-space)); }
 }
 
 h3 {
   font-size: 1.4rem;
-  letter-spacing: .07rem;
-}
-
-@keyframes n {
-  30% { transform: rotate(15deg); }
-  60% { transform: rotate(-15deg); }
-  100% { transform: rotate(0); }
+  letter-spacing: var(--yamath-footer-letter-spacing);
 }
 
 h3 span {
   display: inline-block;
-  color: rgb(242, 221, 70);
+  color: rgb(var(--intro-main-color));
   font-size: 1.6rem;
-  animation: n 1s;
+  animation: rotateTasksTotal 1.2s;
   animation-delay: 1.5s;
+}
+
+@keyframes rotateTasksTotal {
+  30% { transform: rotate(15deg); }
+  60% { transform: rotate(-15deg); }
+  100% { transform: rotate(0); }
 }
 
 #about {
@@ -119,8 +137,8 @@ h3 span {
   border-radius: .8rem;
   cursor: pointer;
   transition: background .1s;
-  background: rgba(242, 221, 70, .9);
-  color: rgba(0, 0, 0, .9);
+  background: rgba(var(--intro-main-color), .9);
+  color: rgba(var(--black-color), .9);
   font-size: 1.2rem;
   font-weight: bold;
 }
@@ -149,12 +167,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1;
-  animation: q 1s;
-}
-
-@keyframes q {
-  from { opacity: 0; }
-  to { opacity: 1; }
+  animation: changeOpacity 1s;
 }
 
 #logo {
@@ -164,14 +177,14 @@ header {
   align-items: center;
   font-family: 'Segoe Variable';
   font-weight: bold;
-  letter-spacing: .05rem;
+  letter-spacing: var(--logo-letter-spacing);
   font-size: 1.2rem;
   cursor: pointer;
   transition: color .1s;
 }
 
 input {
-  background: url('search.svg') no-repeat 6px 5px, #fff;
+  background: url('search.svg') no-repeat 6px var(--input-background-y), rgb(var(--white-color));
   background-size: 20px;
   padding: .25rem 1.9rem;
   border: .1rem solid #b8b8b8;
@@ -239,9 +252,9 @@ button {
   align-items: center;
   border-radius: 6px;
   color: #3d3d3d;
-  background: rgba(255, 255, 255, .9);
+  background: rgba(var(--white-color), .9);
   border: none;
-  box-shadow: rgba(0, 0, 0, .12) 0px 1px 3px, rgba(0, 0, 0, .24) 0px 1px 2px;
+  box-shadow: rgba(var(--black-color), .12) 0px 1px 3px, rgba(var(--black-color), .24) 0px 1px 2px;
 }
 
 .category-content {
@@ -408,7 +421,7 @@ aside div {
 }
 
 #topics section ul div {
-  background: #fff;
+  background: rgv(var(--white-color));
   margin-top: 0;
   display: flex;
   flex-direction: column;
@@ -440,7 +453,7 @@ aside div {
   height: 100%;
   justify-content: center;
   align-items: center;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(var(--black-color), .6);
   backdrop-filter: blur(6px);
   z-index: 2;
 }
@@ -453,7 +466,7 @@ aside div {
   padding: .6rem .8rem;
   padding-bottom: 0;
   width: 20%;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  box-shadow: rgba(var(--black-color), .16) 0px 3px 6px, rgba(var(--black-color), .23) 0px 3px 6px;
   border-radius: 1rem;
   display: flex;
   flex-direction: column;
@@ -513,7 +526,7 @@ select {
   padding: .5rem .7rem;
   border: 1px solid #e8eaed;
   border-radius: .2rem;
-  background: #fff;
+  background: rgb(var(--white-color));
   box-shadow: 0 1px 3px -2px #9098a9;
   cursor: pointer;
   font-size: 1.1rem;
@@ -528,11 +541,11 @@ select:focus {
 
 @media (hover: hover) {
   #about:hover {
-    background: rgba(242, 221, 70, .8);
+    background: rgba(var(--intro-main-color), .8);
   }
 
   #logo:hover {
-    color: rgba(0, 0, 0, .8);
+    color: rgba(var(--black-color), .8);
   }
 
   button:hover, button:focus {
@@ -553,7 +566,7 @@ select:focus {
   #topics section ul li:hover {
     background: rgba(var(--main-color), .3);
     color: #000;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    box-shadow: rgba(50, 50, 93, .25) 0px 2px 5px -1px, rgba(var(--black-color), .3) 0px 1px 3px -1px;
     transform: scale(1.02);
   }
 }
@@ -581,6 +594,14 @@ select:focus {
 }
 
 @media (max-width: 600px) {
+  :root {
+    --yamath-title-letter-spacing: .09rem;
+    --yamath-description-letter-spacing: .12rem;
+    --yamath-footer-letter-spacing: .03rem;
+    --logo-letter-spacing: .02rem;
+    --input-background-y: 7px;
+  }
+
   input { width: 6rem; }
 
   menu {
@@ -588,7 +609,10 @@ select:focus {
     padding: 0 .3rem;
   }
 
-  button { font-size: .9rem; }
+  button {
+    min-width: fit-content;
+    font-size: .9rem;
+  }
 
   .modal-content {
     width: 94%;
