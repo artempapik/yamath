@@ -13,6 +13,7 @@
   --yamath-title-letter-spacing: .15rem;
   --yamath-description-letter-spacing: .19rem;
   --yamath-footer-letter-spacing: .07rem;
+  --section-span-letter-spacing: .2rem;
   --logo-letter-spacing: .05rem;
   --input-background-y: 5px;
 
@@ -306,15 +307,12 @@ button {
 #topics section span {
   font-family: 'Segoe Variable';
   text-transform: uppercase;
-  font-size: 2.8rem;
   font-weight: bold;
-  letter-spacing: .2rem;
   animation: titleSlideX .5s;
   display: inline-block;
 }
 
 #topics section span.a {
-  font-size: 2rem;
   display: block;
   width: fit-content;
   margin: auto;
@@ -356,7 +354,7 @@ aside {
 
 aside div {
   font-family: 'Segoe Variable';
-  letter-spacing: .2rem;
+  letter-spacing: var(--section-span-letter-spacing);
   animation: none;
   font-size: 1.5rem;
   display: block;
@@ -409,7 +407,7 @@ aside div {
 
 #topics section article span {
   font-family: 'Segoe Variable';
-  letter-spacing: .2rem;
+  letter-spacing: var(--section-span-letter-spacing);
   word-spacing: .6rem;
   font-size: 1.6rem;
   color: rgba(var(--main-color), .9);
@@ -604,6 +602,7 @@ button:hover, button:focus {
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
     --logo-letter-spacing: .02rem;
+    --section-span-letter-spacing: .1rem;
     --input-background-y: 6px;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
@@ -612,8 +611,8 @@ button:hover, button:focus {
   input { width: 6rem; }
 
   menu {
-    gap: .45rem;
-    padding: 0 .3rem;
+    gap: .55rem;
+    padding: 0 .2rem;
   }
 
   button {
