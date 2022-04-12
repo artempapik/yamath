@@ -611,7 +611,7 @@ button:hover, button:focus {
   input { width: 6rem; }
 
   menu {
-    gap: .5rem;
+    gap: .45rem;
     padding: 0 .3rem;
   }
 
