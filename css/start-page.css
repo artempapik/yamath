@@ -599,7 +599,7 @@ select:focus {
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
     --logo-letter-spacing: .02rem;
-    --input-background-y: 7px;
+    --input-background-y: 6px;
   }
 
   input { width: 6rem; }
