@@ -606,7 +606,7 @@ button:hover, button:focus {
     --logo-letter-spacing: .02rem;
     --input-background-y: 6px;
     --button-padding-vertical: .4rem;
-    --button-padding-horizontal: .55rem;
+    --button-padding-horizontal: .5rem;
   }
 
   input { width: 6rem; }
