@@ -157,7 +157,7 @@ categories.forEach((category, categoryIndex) => {
       document.querySelector('#main-describe')?.remove()
 
       button.style.background = 'rgba(153, 50, 204, .3)'
-      button.querySelector('span').style.fontWeight = 'bold'
+      if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
       button.querySelector('span').textContent = categoryItem.textContent
 
       button.parentNode.querySelector('ul').style.display = 'none'
@@ -188,6 +188,6 @@ buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
   } else {
     categoryContent.style.display = 'flex'
     // button.style.background = 'rgba(153, 50, 204, .3)'
-    button.querySelector('span').style.fontWeight = 'bold'
+    if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
   }
 })

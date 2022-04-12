@@ -604,14 +604,14 @@ select:focus {
     --yamath-footer-letter-spacing: .03rem;
     --logo-letter-spacing: .02rem;
     --input-background-y: 6px;
-    --button-padding-vertical: .35rem;
-    --button-padding-horizontal: .7rem;
+    --button-padding-vertical: .4rem;
+    --button-padding-horizontal: .6rem;
   }
 
   input { width: 6rem; }
 
   menu {
-    gap: .3rem;
+    gap: .4rem;
     padding: 0 .3rem;
   }
 
