@@ -185,6 +185,15 @@ const ninethForm = [...fifthForm]
 const tenthForm = [...fifthForm]
 const eleventhForm = [...fifthForm]
 
+const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
+
+const capitalizeSentences = sentence => {
+  const wordsArray = sentence.split(' ')
+  return wordsArray
+    .map((word, i) => i !== 0 && !wordsArray[i - 1].endsWith('.') ? word : capitalize(word))
+    .join(' ')
+}
+
 const forms = [
   fifthForm,
   sixthForm,
@@ -194,6 +203,17 @@ const forms = [
   tenthForm,
   eleventhForm
 ]
+
+for (const form of forms) {
+  for (const subject of form) {
+    for (const theme of subject.themes) {
+      for (const topic of theme.content) {
+        if (!topic.name) continue
+        topic.name = capitalizeSentences(topic.name)
+      }
+    }
+  }
+}
 
 const formsData = [
   forms,
