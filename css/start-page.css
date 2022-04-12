@@ -330,11 +330,11 @@ button {
 #topics section div {
   margin-top: 3rem;
   display: flex;
-  gap: 2.5rem;
+  gap: 3rem;
 }
 
 #topics section article {
-  width: 29rem;
+  width: 28rem;
   flex: 1;
   animation: articleSlideY .5s;
 }
@@ -437,7 +437,6 @@ aside div {
 
 #topics section ul li {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1.1rem;
   color: rgba(80, 80, 80, .9);
   letter-spacing: .1rem;
   transition: background .1s, box-shadow .1s, transform .1s;
