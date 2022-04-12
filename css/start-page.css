@@ -616,8 +616,7 @@ button:hover, button:focus {
   }
 
   button {
-    min-width: fit-content;
-    font-size: .9rem;
+    font-size: 1rem;
   }
 
   .modal-content {
