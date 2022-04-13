@@ -555,6 +555,7 @@ select {
   transition: border .1s, box-shadow .1s;
   font-size: 1rem;
   cursor: pointer;
+  -webkit-appearance: none;
 }
 
 select:hover, select:focus {
