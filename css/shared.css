@@ -49,6 +49,7 @@
 .icon-circle-cross:before       { content: '\e914'; }
 .icon-brush:before              { content: '\e915'; }
 .new-icon-light:before          { content: '\f900'; }
+.new-icon-dark:before           { content: '\f901'; }
 
 * {
   margin: 0;

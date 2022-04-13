@@ -20,6 +20,8 @@
   --header-padding-vertical: .4rem;
   --header-padding-horizontal: 1rem;
 
+  --user-panel-gap: .5rem;
+
   --input-background-y: 5px;
   --input-width: 21rem;
 
@@ -31,12 +33,16 @@
   --modal-content-width: 20%;
 }
 
-i.new-icon-light {
+i.new-icon-light, i.new-icon-dark {
   font-size: 1.3rem;
 }
 
+i.new-icon-dark {
+  color: rgb(var(--main-color));
+}
+
 i.icon-globe {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
 }
 
 ul div {
@@ -241,7 +247,7 @@ input:focus {
   align-items: center;
   width: var(--header-panels-width);
   font-size: 1.5rem;
-  gap: .5rem;
+  gap: var(--user-panel-gap);
 }
 
 #user-panel i {
@@ -628,6 +634,7 @@ button:hover, button:focus {
     --logo-letter-spacing: .02rem;
     --section-span-letter-spacing: .1rem;
     --header-padding-horizontal: .4rem;
+    --user-panel-gap: .3rem;
     --input-background-y: 6px;
     --input-width: 6.5rem;
     --menu-gap: .55rem;
@@ -664,6 +671,5 @@ button:hover, button:focus {
 
   #user-panel {
     font-size: 1.3rem;
-    gap: .4rem;
   }
 }
