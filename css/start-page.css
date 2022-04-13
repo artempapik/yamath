@@ -16,6 +16,9 @@
   --section-span-letter-spacing: .2rem;
   --logo-letter-spacing: .05rem;
 
+  --header-padding-vertical: .4rem;
+  --header-padding-horizontal: 1rem;
+
   --input-background-y: 5px;
   --input-width: 21rem;
 
@@ -179,7 +182,7 @@ header {
   display: none;
   justify-content: space-between;
   background: #f3f3f3;
-  padding: .4rem 1rem;
+  padding: var(--header-padding-vertical) var(--header-padding-horizontal);
   opacity: .95;
   box-shadow: var(--header-dropdown-shadow);
   position: sticky;
@@ -616,6 +619,7 @@ button:hover, button:focus {
     --yamath-footer-letter-spacing: .03rem;
     --logo-letter-spacing: .02rem;
     --section-span-letter-spacing: .1rem;
+    --header-padding-horizontal: .4rem;
     --input-background-y: 6px;
     --input-width: 6.5rem;
     --button-padding-vertical: .4rem;
@@ -642,10 +646,6 @@ button:hover, button:focus {
 
   aside div:first-child {
     font-size: 1.3rem;
-  }
-
-  header {
-    padding: .5rem;
   }
 
   #topics section span {
