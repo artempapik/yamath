@@ -22,6 +22,8 @@
   --input-background-y: 5px;
   --input-width: 21rem;
 
+  --menu-gap: 1.1rem;
+
   --button-padding-vertical: .5rem;
   --button-padding-horizontal: 1rem;
 
@@ -256,7 +258,7 @@ menu {
   user-select: none;
   margin-top: 1.2rem;
   display: flex;
-  gap: 1.1rem;
+  gap: var(--menu-gap);
   justify-content: center;
 }
 
@@ -622,14 +624,14 @@ button:hover, button:focus {
     --header-padding-horizontal: .4rem;
     --input-background-y: 6px;
     --input-width: 6.5rem;
+    --menu-gap: .55rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
     --modal-content-width: 94%;
   }
 
   menu {
-    gap: .55rem;
-    padding: 0 .2rem;
+    /* padding: 0 .2rem; */
   }
 
   button {
