@@ -152,7 +152,12 @@ categories.forEach((category, categoryIndex) => {
 
       const button = categoryItem.parentElement.parentElement.childNodes[1]
 
-      body.style.background = 'rgba(248, 248, 248, .2)'
+      // body.style.background = 'rgba(248, 248, 248, .2)'
+      body.style.background = `linear-gradient(
+        rgba(var(--white-color), .83),
+        rgba(var(--white-color), .83)
+      ), url('1.jpg')`
+
       document.querySelector('header').style.display = 'flex'
       document.querySelector('#main-describe')?.remove()
 

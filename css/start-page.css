@@ -25,6 +25,10 @@
   --modal-content-width: 20%;
 }
 
+ul div {
+  background: rgb(253, 253, 253) !important;
+}
+
 body {
   background: linear-gradient(
     rgba(var(--white-color), var(--background-opacity)),
