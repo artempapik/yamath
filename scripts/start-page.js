@@ -148,14 +148,19 @@ categories.forEach((category, categoryIndex) => {
 
       const button = categoryItem.parentElement.parentElement.childNodes[1]
 
-      // body.style.background = 'rgba(248, 248, 248, .2)'
-      body.style.background = `linear-gradient(
-        rgba(var(--white-color), .83),
-        rgba(var(--white-color), .83)
-      ), url('1.jpg')`
-
       document.querySelector('header').style.display = 'flex'
-      document.querySelector('#main-describe')?.remove()
+
+      const mainDescribe = document.querySelector('#main-describe')
+
+      if (mainDescribe) {
+        mainDescribe.remove()
+
+        const backgroundGradientLine = 'rgba(var(--white-color), .83)'
+        body.style.background = `linear-gradient(
+          ${backgroundGradientLine},
+          ${backgroundGradientLine}
+        ), url('main-background.jpg')`
+      }
 
       button.style.background = 'rgba(153, 50, 204, .3)'
       if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
@@ -188,7 +193,6 @@ buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
     }
   } else {
     categoryContent.style.display = 'flex'
-    // button.style.background = 'rgba(153, 50, 204, .3)'
     if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
   }
 })

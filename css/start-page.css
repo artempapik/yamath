@@ -38,7 +38,7 @@ body {
   background: linear-gradient(
     rgba(var(--white-color), var(--background-opacity)),
     rgba(var(--white-color), var(--background-opacity))
-  ), url('main-background.jpg');
+  ), url('yamath-background.jpg');
 }
 
 #main-describe {
@@ -628,10 +628,6 @@ button:hover, button:focus {
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
     --modal-content-width: 94%;
-  }
-
-  menu {
-    /* padding: 0 .2rem; */
   }
 
   button {
