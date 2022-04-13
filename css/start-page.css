@@ -147,14 +147,18 @@ h3 span {
   width: fit-content;
   align-items: end;
   gap: .8rem;
-  padding: .75rem 1rem;
-  border-radius: .8rem;
+  padding: .7rem 1rem;
+  border-radius: .6rem;
   cursor: pointer;
   transition: background .1s;
-  background: rgba(var(--intro-main-color), .9);
+  background: rgba(var(--intro-main-color), .8);
   color: rgba(var(--black-color), .9);
   font-size: 1.2rem;
   font-weight: bold;
+}
+
+#about:hover {
+  background: rgba(var(--intro-main-color), .9);
 }
 
 #about i {
@@ -195,6 +199,10 @@ header {
   font-size: 1.2rem;
   cursor: pointer;
   transition: color .1s;
+}
+
+#logo:hover {
+  color: rgba(var(--black-color), .8);
 }
 
 input {
@@ -554,14 +562,6 @@ button:hover, button:focus {
 }
 
 @media (hover: hover) {
-  #about:hover {
-    background: rgba(var(--intro-main-color), .8);
-  }
-
-  #logo:hover {
-    color: rgba(var(--black-color), .8);
-  }
-
   .category-content li:hover {
     color: #3d3d3d;
     font-weight: bold;
