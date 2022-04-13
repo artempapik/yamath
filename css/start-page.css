@@ -15,7 +15,9 @@
   --yamath-footer-letter-spacing: .07rem;
   --section-span-letter-spacing: .2rem;
   --logo-letter-spacing: .05rem;
+
   --input-background-y: 5px;
+  --input-width: 21rem;
 
   --button-padding-vertical: .5rem;
   --button-padding-horizontal: 1rem;
@@ -199,7 +201,7 @@ input {
   border: .1rem solid #b8b8b8;
   font-size: 1.05rem;
   border-radius: .6rem;
-  width: 21rem;
+  width: var(--input-width);
   letter-spacing: .03rem;
   font-family: 'Segoe Variable';
 }
@@ -589,6 +591,7 @@ button:hover, button:focus {
 
 @media (max-width: 800px) {
   :root {
+    --input-width: 8rem;
     --modal-content-width: 50%;
   }
 
@@ -600,7 +603,6 @@ button:hover, button:focus {
   h1 { font-size: 5rem; }
   h2 { font-size: 1.5rem; }
   #topics section div { flex-direction: column; }
-  input { width: 8rem; }
 }
 
 @media (max-width: 600px) {
@@ -611,12 +613,11 @@ button:hover, button:focus {
     --logo-letter-spacing: .02rem;
     --section-span-letter-spacing: .1rem;
     --input-background-y: 6px;
+    --input-width: 6.5rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
     --modal-content-width: 94%;
   }
-
-  input { width: 6rem; }
 
   menu {
     gap: .55rem;
