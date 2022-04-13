@@ -19,6 +19,8 @@
 
   --button-padding-vertical: .5rem;
   --button-padding-horizontal: 1rem;
+
+  --modal-content-width: 20%;
 }
 
 body {
@@ -467,7 +469,7 @@ aside div {
   font-family: 'Segoe Variable';
   padding: .6rem .8rem;
   padding-bottom: 0;
-  width: 20%;
+  width: var(--modal-content-width);
   box-shadow: rgba(var(--black-color), .16) 0px 3px 6px, rgba(var(--black-color), .23) 0px 3px 6px;
   border-radius: 1rem;
   display: flex;
@@ -573,16 +575,23 @@ button:hover, button:focus {
   }
 }
 
-@media (max-width: 1600px) { .modal-content { width: 25%; } }
-@media (max-width: 1400px) { .modal-content { width: 30%; } }
-@media (max-width: 1200px) { .modal-content { width: 35%; } }
+@media (max-width: 1600px) { :root { --modal-content-width: 25%; } }
+@media (max-width: 1400px) { :root { --modal-content-width: 30%; } }
+@media (max-width: 1200px) { :root { --modal-content-width: 35%; } }
 
 @media (max-width: 1000px) {
+  :root {
+    --modal-content-width: 40%;
+  }
+
   #topics section article { width: 22rem; }
-  .modal-content { width: 40%; }
 }
 
 @media (max-width: 800px) {
+  :root {
+    --modal-content-width: 50%;
+  }
+
   #main-describe {
     margin: 2rem auto;
     padding: 0 1rem;
@@ -592,7 +601,6 @@ button:hover, button:focus {
   h2 { font-size: 1.5rem; }
   #topics section div { flex-direction: column; }
   input { width: 8rem; }
-  .modal-content { width: 50%; }
 }
 
 @media (max-width: 600px) {
@@ -605,6 +613,7 @@ button:hover, button:focus {
     --input-background-y: 6px;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
+    --modal-content-width: 94%;
   }
 
   input { width: 6rem; }
@@ -619,7 +628,6 @@ button:hover, button:focus {
   }
 
   .modal-content {
-    width: 94%;
     padding: .6rem 0;
   }
 
