@@ -5,17 +5,13 @@ const body = document.querySelector('body')
 const isMobile = 'ontouchstart' in window
 
 document.querySelector('#logo').onpointerup = () => {
-  const elementTop = body.getBoundingClientRect().top
-  if (elementTop === 0) window.location.pathname = ''
-  const elementAmount = elementTop / 100
+  if (body.getBoundingClientRect().top === 0) window.location.pathname = ''
 
-  const time = 250
-  let currentTime = 0
-
-  while (currentTime <= time) {
-    setTimeout(() => scrollBy(0, elementAmount), currentTime)
-    currentTime += time / 100
-  }
+  scrollTo({
+    top: 0,
+    left: 0,
+    behavior: 'smooth'
+  })
 }
 
 const modal = document.querySelector('.modal')
