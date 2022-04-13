@@ -22,9 +22,6 @@ window.onpointerup = event => {
   }
 }
 
-const settings = document.querySelector('.icon-gear')
-settings.onpointerup = () => modal.style.display = 'flex'
-
 const labels = ['классы', 'темы', 'уровни']
 
 const buttons = [...document.querySelectorAll('button')]
