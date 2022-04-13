@@ -11,8 +11,18 @@
   src: url('mathfont.woff');
 }
 
+@font-face {
+  font-family: MathIcons2;
+  src: url('mathfont2.woff');
+}
+
 [class^="icon-"] {
   font-family: MathIcons;
+  font-style: normal;
+}
+
+[class^="new-icon-"] {
+  font-family: MathIcons2;
   font-style: normal;
 }
 
@@ -38,6 +48,7 @@
 .icon-gear:before               { content: '\e913'; }
 .icon-circle-cross:before       { content: '\e914'; }
 .icon-brush:before              { content: '\e915'; }
+.new-icon-light:before          { content: '\f900'; }
 
 * {
   margin: 0;

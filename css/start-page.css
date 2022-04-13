@@ -16,7 +16,7 @@
   --section-span-letter-spacing: .2rem;
   --logo-letter-spacing: .05rem;
 
-  --header-panels-width: 6.7rem;
+  --header-panels-width: 6rem;
   --header-padding-vertical: .4rem;
   --header-padding-horizontal: 1rem;
 
@@ -31,8 +31,12 @@
   --modal-content-width: 20%;
 }
 
-i.icon-sun {
+i.new-icon-light {
   font-size: 1.3rem;
+}
+
+i.icon-globe {
+  font-size: 1.1rem;
 }
 
 ul div {
