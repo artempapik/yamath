@@ -636,10 +636,10 @@ button:hover, button:focus {
     --section-span-letter-spacing: .06rem;
     --header-padding-horizontal: .5rem;
     --header-panels-width: 5.5rem;
-    --user-panel-gap: .3rem;
+    --user-panel-gap: .35rem;
     --input-background-y: 6px;
     --input-width: 6.7rem;
-    --logo-gap: .1rem;
+    --logo-gap: .05rem;
     --menu-gap: .55rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
