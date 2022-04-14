@@ -632,7 +632,7 @@ button:hover, button:focus {
     --yamath-title-letter-spacing: .09rem;
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
-    --logo-letter-spacing: 0;
+    --logo-letter-spacing: .001rem;
     --section-span-letter-spacing: .06rem;
     --header-padding-horizontal: .35rem;
     --header-panels-width: 5.5rem;
