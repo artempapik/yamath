@@ -632,14 +632,14 @@ button:hover, button:focus {
     --yamath-title-letter-spacing: .09rem;
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
-    --logo-letter-spacing: .005rem;
+    --logo-letter-spacing: 0;
     --section-span-letter-spacing: .06rem;
     --header-padding-horizontal: .35rem;
     --header-panels-width: 5.5rem;
     --user-panel-gap: .18rem;
     --input-background-y: 6px;
     --input-width: 6.7rem;
-    --logo-gap: .15rem;
+    --logo-gap: .1rem;
     --menu-gap: .55rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
