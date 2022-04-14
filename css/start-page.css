@@ -25,6 +25,7 @@
   --input-background-y: 5px;
   --input-width: 21rem;
 
+  --logo-gap: .6rem;
   --menu-gap: 1.1rem;
 
   --button-padding-vertical: .5rem;
@@ -211,7 +212,7 @@ header {
 #logo {
   display: flex;
   width: var(--header-panels-width);
-  gap: .6rem;
+  gap: var(--logo-gap);
   align-items: center;
   font-family: 'Segoe Variable';
   font-weight: bold;
@@ -631,13 +632,14 @@ button:hover, button:focus {
     --yamath-title-letter-spacing: .09rem;
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
-    --logo-letter-spacing: .02rem;
+    --logo-letter-spacing: .005rem;
     --section-span-letter-spacing: .06rem;
     --header-padding-horizontal: .35rem;
     --header-panels-width: 5.5rem;
     --user-panel-gap: .18rem;
     --input-background-y: 6px;
     --input-width: 6.7rem;
+    --logo-gap: .15rem;
     --menu-gap: .55rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
@@ -666,7 +668,6 @@ button:hover, button:focus {
 
   #logo {
     width: 5.5rem;
-    gap: .3rem;
     font-size: 1.1rem;
   }
 
