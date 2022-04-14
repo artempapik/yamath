@@ -634,7 +634,7 @@ button:hover, button:focus {
     --yamath-footer-letter-spacing: .03rem;
     --logo-letter-spacing: .001rem;
     --section-span-letter-spacing: .06rem;
-    --header-padding-horizontal: .35rem;
+    --header-padding-horizontal: .5rem;
     --header-panels-width: 5.5rem;
     --user-panel-gap: .3rem;
     --input-background-y: 6px;
