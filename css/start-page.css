@@ -20,7 +20,7 @@
   --header-padding-vertical: .4rem;
   --header-padding-horizontal: 1rem;
 
-  --user-panel-gap: .5rem;
+  --user-panel-gap: .4rem;
 
   --input-background-y: 5px;
   --input-width: 21rem;
@@ -34,15 +34,15 @@
 }
 
 i.new-icon-light, i.new-icon-dark {
-  font-size: 1.3rem;
+  font-size: 1.4rem;
 }
 
 i.new-icon-dark {
   color: rgb(var(--main-color));
 }
 
-i.icon-globe {
-  font-size: 1.2rem;
+i.new-icon-globe {
+  font-size: 1.3rem;
 }
 
 ul div {
@@ -252,7 +252,7 @@ input:focus {
 
 #user-panel i {
   cursor: pointer;
-  padding: .3rem;
+  padding: .2rem;
   transition: background .1s, border-radius .1s;
 }
 
