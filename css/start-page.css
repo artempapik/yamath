@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
-
 :root {
   --white-color: 255, 255, 255;
   --black-color: 0, 0, 0;
@@ -38,10 +36,6 @@
   --button-padding-horizontal: 1rem;
 
   --modal-content-width: 20%;
-}
-
-ul div {
-  background: rgb(253, 253, 253) !important;
 }
 
 body {
@@ -454,7 +448,7 @@ aside div {
 }
 
 #topics section ul div {
-  background: rgv(var(--white-color));
+  background: rgb(var(--white-color));
   margin-top: 0;
   display: flex;
   flex-direction: column;
