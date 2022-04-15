@@ -10,7 +10,9 @@
   --intro-animation-space: .7rem;
   --intro-main-color: 242, 221, 70;
 
+  --yamath-title-font-size: 6.5rem;
   --yamath-title-letter-spacing: .15rem;
+  --yamath-description-font-size: 2rem;
   --yamath-description-letter-spacing: .19rem;
   --yamath-footer-letter-spacing: .07rem;
   --section-span-letter-spacing: .2rem;
@@ -23,27 +25,16 @@
   --user-panel-gap: .4rem;
 
   --input-background-y: 5px;
-  --input-width: 21rem;
+  --input-width: 20rem;
 
   --logo-gap: .6rem;
   --menu-gap: 1.1rem;
 
+  --button-font-size: 1.1rem;
   --button-padding-vertical: .5rem;
   --button-padding-horizontal: 1rem;
 
   --modal-content-width: 20%;
-}
-
-i.new-icon-light, i.new-icon-dark {
-  font-size: 1.4rem;
-}
-
-i.new-icon-dark {
-  color: rgb(var(--main-color));
-}
-
-i.new-icon-globe {
-  font-size: 1.3rem;
 }
 
 ul div {
@@ -68,7 +59,7 @@ body {
 h1 {
   display: flex;
   gap: .5rem;
-  font-size: 6.5rem;
+  font-size: var(--yamath-title-font-size);
   letter-spacing: var(--yamath-title-letter-spacing);
   margin-bottom: 1rem;
 }
@@ -94,7 +85,7 @@ h1 {
 }
 
 h2 {
-  font-size: 2rem;
+  font-size: var(--yamath-description-font-size);
   letter-spacing: var(--yamath-description-letter-spacing);
   word-spacing: .3rem;
   text-shadow: rgba(var(--white-color), .3) 0px 0px 3px;
@@ -247,8 +238,16 @@ input:focus {
   display: flex;
   align-items: center;
   width: var(--header-panels-width);
-  font-size: 1.5rem;
+  /* font-size: 1.5rem; */
   gap: var(--user-panel-gap);
+}
+
+i.icon-user {
+  font-size: 1.5rem;
+}
+
+i.new-icon-light, i.new-icon-dark, i.new-icon-globe {
+  font-size: 1.4rem;
 }
 
 #user-panel i {
@@ -259,7 +258,7 @@ input:focus {
 
 #user-panel i:hover {
   background: rgba(110, 109, 112, .3);
-  border-radius: 3rem;
+  border-radius: 50%;
 }
 
 .icon-gear {
@@ -290,7 +289,7 @@ button {
   padding: var(--button-padding-vertical) var(--button-padding-horizontal);
   border: .15rem solid #000;
   font-family: 'Segoe Variable';
-  font-size: 1.1rem;
+  font-size: var(--button-font-size);
   letter-spacing: .05rem;
   transition: box-shadow .2s;
   align-items: center;
@@ -299,6 +298,10 @@ button {
   background: rgba(var(--white-color), .9);
   border: none;
   box-shadow: rgba(var(--black-color), .12) 0px 1px 3px, rgba(var(--black-color), .24) 0px 1px 2px;
+}
+
+button:hover, button:focus {
+  box-shadow: 0px 0px 0px 3px rgba(var(--main-color), .5);
 }
 
 .category-content {
@@ -559,26 +562,6 @@ aside div {
   color: rgba(var(--main-color), .8);
 }
 
-select {
-  border-radius: .3rem;
-  background: #f3f3f3;
-  border: none;
-  transition: border .1s, box-shadow .1s;
-  font-size: 1rem;
-  cursor: pointer;
-  -webkit-appearance: none;
-}
-
-select:hover, select:focus {
-  outline: none;
-  border-color: rgba(var(--main-color), .6);
-  box-shadow: 0 0 0 2px rgba(var(--main-color), .2);
-}
-
-button:hover, button:focus {
-  box-shadow: 0px 0px 0px 3px rgba(var(--main-color), .5);
-}
-
 @media (hover: hover) {
   .category-content li:hover {
     color: #3d3d3d;
@@ -613,6 +596,8 @@ button:hover, button:focus {
 
 @media (max-width: 800px) {
   :root {
+    --yamath-font-size: 5rem;
+    --yamath-description-font-size: 1.5rem;
     --input-width: 8rem;
     --modal-content-width: 50%;
   }
@@ -622,8 +607,6 @@ button:hover, button:focus {
     padding: 0 1rem;
   }
 
-  h1 { font-size: 5rem; }
-  h2 { font-size: 1.5rem; }
   #topics section div { flex-direction: column; }
 }
 
@@ -641,13 +624,10 @@ button:hover, button:focus {
     --input-width: 6.7rem;
     --logo-gap: .05rem;
     --menu-gap: .55rem;
+    --button-font-size: 1rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
     --modal-content-width: 94%;
-  }
-
-  button {
-    font-size: 1rem;
   }
 
   .modal-content {
