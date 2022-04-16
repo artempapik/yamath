@@ -1,4 +1,4 @@
-import { formsData } from '../data.js'
+import { formsData, setCssVariables } from '../data.js'
 
 const body = document.querySelector('body')
 
@@ -21,6 +21,30 @@ window.onpointerup = event => {
     modal.style.display = 'none'
   }
 }
+
+const nightModeIcon = document.querySelector('#nightModeIcon')
+
+let isNightMode = true
+
+const nightModeIcons = ['new-icon-dark', 'new-icon-light']
+
+const toggleNightMode = () => {
+  nightModeIcon.classList.remove(nightModeIcons[0])
+  nightModeIcon.classList.add(nightModeIcons[1])
+  ;[nightModeIcons[0], nightModeIcons[1]] = [nightModeIcons[1], nightModeIcons[0]]
+  isNightMode = !isNightMode
+
+  setCssVariables([
+    ['255, 255, 255', '0, 0, 0', 'background-color'],
+    ['80, 80, 80', '240, 240, 240', 'theme-item-color'],
+  ], isNightMode)
+}
+
+nightModeIcon.onpointerup = () => {
+  toggleNightMode()
+}
+
+toggleNightMode()
 
 const labels = ['классы', 'темы', 'уровни']
 

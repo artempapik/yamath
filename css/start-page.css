@@ -1,7 +1,6 @@
 :root {
   --white-color: 255, 255, 255;
   --black-color: 0, 0, 0;
-  --background-color: 255, 255, 255;
 
   --background-opacity: .1;
   --main-color: 153, 50, 204;
@@ -251,7 +250,7 @@ input:focus {
   background: rgba(110, 109, 112, .3);
 }
 
-.new-icon-dark { color: rgb(var(--main-color)); }
+.new-icon-light, .new-icon-dark { color: rgb(var(--main-color)); }
 .icon-user { color: #404040; }
 
 menu {
@@ -458,17 +457,19 @@ aside div {
   border-radius: 1.2rem;
   padding: 1.2rem 2.5rem;
   padding-right: 1.5rem;
+  transition: background .2s;
 }
 
 #topics section ul li {
   font-family: 'Open Sans', sans-serif;
-  color: rgba(80, 80, 80, .9);
+  color: rgba(var(--theme-item-color), .9);
   letter-spacing: .1rem;
   transition: background .1s, box-shadow .1s, transform .1s;
   padding: .5rem .8rem;
   border-radius: 1rem;
   cursor: pointer;
   line-height: 1.7rem;
+  transition: color .1s;
 }
 
 .modal {
