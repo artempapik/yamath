@@ -1,6 +1,7 @@
 :root {
   --white-color: 255, 255, 255;
   --black-color: 0, 0, 0;
+  --background-color: 255, 255, 255;
 
   --background-opacity: .1;
   --main-color: 153, 50, 204;
@@ -14,14 +15,14 @@
   --yamath-description-letter-spacing: .19rem;
   --yamath-footer-letter-spacing: .07rem;
   --section-span-letter-spacing: .2rem;
-  --logo-letter-spacing: .05rem;
 
   --header-panels-width: 5.7rem;
   --header-padding-vertical: .4rem;
   --header-padding-horizontal: 1rem;
 
   --logo-font-size: 1.2rem;
-  --logo-gap: .6rem;
+  --logo-letter-spacing: .03rem;
+  --logo-gap: .5rem;
 
   --user-panel-icon-size: 1.45rem;
   --user-panel-gap: .4rem;
@@ -448,7 +449,7 @@ aside div {
 }
 
 #topics section ul div {
-  background: rgb(var(--white-color));
+  background: rgb(var(--background-color));
   margin-top: 0;
   display: flex;
   flex-direction: column;
