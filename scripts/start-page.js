@@ -195,6 +195,19 @@ categories.forEach((category, categoryIndex) => {
   })
 })
 
+const hideDropdownContent = event => buttons.forEach((button, categoryIndex) => {
+  const categoryContent = button.parentNode.querySelector('ul')
+  const categoryItems = [...categoryContent.querySelectorAll('li')]
+
+  if (!categoryItems.some(categoryItem => categoryItem === event.target)) {
+    if (categoryIndex !== chosenCategoryIndex) button.querySelector('span').style.fontWeight = ''
+    categoryContent.style.display = 'none'
+  }
+})
+
+document.onpointerdown = event => hideDropdownContent(event)
+document.onscroll = event => hideDropdownContent(event)
+
 buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
   buttons.forEach((currentButton, currentButtonIndex) => {
     if (currentButton === button) return
