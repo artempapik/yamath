@@ -24,31 +24,32 @@ window.onpointerup = event => {
 
 const nightModeIcon = document.querySelector('#nightModeIcon')
 
-let isNightMode = true
-
-const nightModeIcons = ['new-icon-dark', 'new-icon-light']
-
 const toggleNightMode = () => {
-  nightModeIcon.classList.remove(nightModeIcons[0])
-  nightModeIcon.classList.add(nightModeIcons[1])
-  ;[nightModeIcons[0], nightModeIcons[1]] = [nightModeIcons[1], nightModeIcons[0]]
-  isNightMode = !isNightMode
+  setCssVariables([
+    ['255, 255, 255', '0, 0, 0', 'background-color'],
+    ['80, 80, 80', '240, 240, 240', 'theme-item-color'],
+  ], false)
+}
+
+const colorThemeSelect = document.querySelector('#color-theme-select')
+
+colorThemeSelect.onchange = () => {
+  const themeIndex = colorThemeSelect.selectedIndex
 
   setCssVariables([
     ['255, 255, 255', '0, 0, 0', 'background-color'],
     ['80, 80, 80', '240, 240, 240', 'theme-item-color'],
-  ], isNightMode)
-}
-
-nightModeIcon.onpointerup = () => {
-  toggleNightMode()
+  ], !!themeIndex)
+  
+  const nightModeIcons = ['new-icon-light', 'new-icon-dark', 'icon-desktop']
+  nightModeIcon.className = nightModeIcons[themeIndex]
 }
 
 toggleNightMode()
 
 const labels = ['классы', 'темы', 'уровни']
 
-const buttons = [...document.querySelectorAll('button')]
+const buttons = [...document.querySelectorAll('button:not(#signin)')]
 
 const topicsSection = document.querySelector('#topics')
 
@@ -181,6 +182,8 @@ categories.forEach((category, categoryIndex) => {
           ${backgroundGradientLine},
           ${backgroundGradientLine}
         ), url('main-background.jpg')`
+
+        document.querySelector('footer').style.display = 'flex'
       }
 
       button.style.background = 'rgba(153, 50, 204, .3)'
