@@ -3,7 +3,6 @@
   --black-color: 0, 0, 0;
 
   --background-opacity: .1;
-  --main-color: 153, 50, 204;
   --header-dropdown-shadow: rgba(60, 64, 67, .3) 0px 1px 2px 0px, rgba(60, 64, 67, .15) 0px 1px 3px 1px;
   --intro-animation-space: .7rem;
   --intro-main-color: 242, 221, 70;
@@ -25,6 +24,9 @@
 
   --user-panel-icon-size: 1.7rem;
   --user-panel-gap: .4rem;
+
+  --signin-button-padding-vertical: .2rem;
+  --signin-button-padding-horizontal: 1rem;
 
   --input-background-y: 5px;
   --input-width: 20rem;
@@ -54,7 +56,7 @@ footer div {
 }
 
 select {
-  font-family: 'Segoe UI';
+  font-family: 'Segoe Variable';
   padding: .15rem .3rem;
   border: 1px solid #e8eaed;
   font-size: .9rem;
@@ -223,7 +225,7 @@ header {
   user-select: none;
   display: none;
   justify-content: space-between;
-  background: #f3f3f3;
+  background: var(--header-background-color);
   padding: var(--header-padding-vertical) var(--header-padding-horizontal);
   opacity: .95;
   box-shadow: var(--header-dropdown-shadow);
@@ -276,14 +278,14 @@ input:focus {
 }
 
 #user-panel button {
-  padding: .2rem 1rem;
+  padding: var(--signin-button-padding-vertical) var(--signin-button-padding-horizontal);
   font-size: 1rem;
   border: 2px solid rgba(var(--main-color), .5);
   box-shadow: inset 0 0 2px transparent;
-  font-family: 'Segoe UI';
+  font-family: 'Segoe Variable';
   font-weight: bold;
   transition: background .1s, color .1s;
-  letter-spacing: .02rem;
+  letter-spacing: .05rem;
 }
 
 #user-panel button:hover {
@@ -300,6 +302,7 @@ menu {
 }
 
 menu i {
+  color: rgba(var(--topic-hover-color), .75);
   font-size: 1.2rem;
   opacity: .9;
 }
@@ -310,14 +313,14 @@ button {
   gap: .6rem;
   padding: var(--button-padding-vertical) var(--button-padding-horizontal);
   border: .15rem solid #000;
-  font-family: 'Segoe Variable'; /* ??? */
+  font-family: 'Segoe Variable';
   font-size: var(--button-font-size);
   letter-spacing: .05rem;
   transition: box-shadow .2s;
   align-items: center;
   border-radius: 6px;
-  color: #3d3d3d;
-  background: rgba(var(--white-color), .9);
+  color: var(--button-color);
+  background: rgba(var(--background-color), .9);
   border: none;
   box-shadow: rgba(var(--black-color), .12) 0px 1px 3px, rgba(var(--black-color), .24) 0px 1px 2px;
 }
@@ -456,7 +459,7 @@ aside div:last-child {
 }
 
 aside div:not(:first-child) {
-  color: #404040;
+  color: var(--algebra-geometry-color);
   background: none;
   font-weight: bold;
   font-size: 1.2rem;
@@ -500,7 +503,7 @@ aside div {
 
 #topics section ul li {
   font-family: 'Open Sans', sans-serif;
-  color: rgba(var(--theme-item-color), .9);
+  color: rgba(var(--topic-color), .9);
   letter-spacing: .1rem;
   transition: background .1s, box-shadow .1s, transform .1s, color .1s;
   padding: .5rem .8rem;
@@ -599,7 +602,7 @@ aside div {
 
   #topics section ul li:hover {
     background: rgba(var(--main-color), .3);
-    color: #000;
+    color: rgb(var(--topic-hover-color));
     box-shadow: rgba(50, 50, 93, .25) 0px 2px 5px -1px, rgba(var(--black-color), .3) 0px 1px 3px -1px;
     transform: scale(1.02);
   }
@@ -643,6 +646,8 @@ aside div {
     --header-panels-width: 5.5rem;
     --user-panel-icon-size: 1.3rem;
     --user-panel-gap: .35rem;
+    --signin-button-padding-vertical: .15rem;
+    --signin-button-padding-horizontal: .8rem;
     --input-background-y: 6px;
     --input-width: 6.7rem;
     --logo-font-size: 1.1rem;

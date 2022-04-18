@@ -24,11 +24,20 @@ window.onpointerup = event => {
 
 const nightModeIcon = document.querySelector('#nightModeIcon')
 
+const pageColors = [
+  ['255, 255, 255', '0, 0, 0', 'background-color'],
+  ['80, 80, 80', '240, 240, 240', 'topic-color'],
+  ['255, 255, 255', '0, 0, 0', 'background-gradient-color'],
+  ['.83', '.91', 'background-gradient-opacity'],
+  ['153, 50, 204', '112, 155, 138', 'main-color'],
+  ['0, 0, 0', '255, 255, 255', 'topic-hover-color'],
+  ['#404040', '#f0f0f0', 'algebra-geometry-color'],
+  ['#3d3d3d', '#f3f3f3', 'button-color'],
+  ['#f3f3f3', '#404040', 'header-background-color']
+]
+
 const toggleNightMode = () => {
-  setCssVariables([
-    ['255, 255, 255', '0, 0, 0', 'background-color'],
-    ['80, 80, 80', '240, 240, 240', 'theme-item-color'],
-  ], false)
+  setCssVariables(pageColors, false)
 }
 
 const colorThemeSelect = document.querySelector('#color-theme-select')
@@ -36,10 +45,7 @@ const colorThemeSelect = document.querySelector('#color-theme-select')
 colorThemeSelect.onchange = () => {
   const themeIndex = colorThemeSelect.selectedIndex
 
-  setCssVariables([
-    ['255, 255, 255', '0, 0, 0', 'background-color'],
-    ['80, 80, 80', '240, 240, 240', 'theme-item-color'],
-  ], !!themeIndex)
+  setCssVariables(pageColors, !!themeIndex)
   
   const nightModeIcons = ['new-icon-light', 'new-icon-dark', 'icon-desktop']
   nightModeIcon.className = nightModeIcons[themeIndex]
@@ -146,11 +152,11 @@ categories.forEach((category, categoryIndex) => {
           ;[...document.querySelectorAll('aside div')].forEach(d => {
             d.style.fontSize = isMobile ? '1rem' : '1.2rem'
             d.style.background = 'none'
-            d.style.color = '#404040'
+            d.style.color = 'var(--algebra-geometry-color)'
           })
 
           div.style.fontSize = isMobile ? '1.3rem' : '1.5rem'
-          div.style.background = 'rgba(153, 50, 204, .7)'
+          div.style.background = 'rgba(var(--main-color), .7)'
           div.style.color = '#f0f0f0'
 
           topics.textContent = ''
@@ -162,7 +168,7 @@ categories.forEach((category, categoryIndex) => {
 
       buttons.forEach((button, index) => {
         button.querySelector('span').textContent = labels[index]
-        button.style.background = 'rgba(255, 255, 255, .9)'
+        button.style.background = 'rgba(var(--background-color), .9)'
         button.querySelector('span').style.fontWeight = ''
       })
 
@@ -177,7 +183,7 @@ categories.forEach((category, categoryIndex) => {
       if (mainDescribe) {
         mainDescribe.remove()
 
-        const backgroundGradientLine = 'rgba(var(--white-color), .83)'
+        const backgroundGradientLine = 'rgba(var(--background-gradient-color), var(--background-gradient-opacity))'
         body.style.background = `linear-gradient(
           ${backgroundGradientLine},
           ${backgroundGradientLine}
@@ -186,7 +192,7 @@ categories.forEach((category, categoryIndex) => {
         document.querySelector('footer').style.display = 'flex'
       }
 
-      button.style.background = 'rgba(153, 50, 204, .3)'
+      button.style.background = 'rgba(var(--main-color), .3)'
       if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
       button.querySelector('span').textContent = categoryItem.textContent
 
@@ -215,7 +221,7 @@ buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
 
     if (currentButtonIndex === chosenCategoryIndex) return
 
-    currentButton.style.background = 'rgba(255, 255, 255, .9)'
+    currentButton.style.background = 'rgba(var(--background-color), .9)'
     currentButton.querySelector('span').style.fontWeight = ''
   })
 
@@ -225,7 +231,7 @@ buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
     categoryContent.style.display = 'none'
 
     if (chosenCategoryIndex !== buttonIndex) {
-      button.style.background = 'rgba(255, 255, 255, .9)'
+      button.style.background = 'rgba(var(--background-color), .9)'
       button.querySelector('span').style.fontWeight = ''
     }
   } else {
