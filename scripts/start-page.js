@@ -31,11 +31,17 @@ const pageColors = [
   ['.83', '1', 'background-gradient-opacity'],
   ['153, 50, 204', '112, 155, 138', 'main-color'],
   ['0, 0, 0', '240, 240, 240', 'topic-hover-color'],
-  ['#404040', '#f0f0f0', 'algebra-geometry-color'],
+  ['64, 64, 64', '240, 240, 240', 'algebra-geometry-color'],
   ['61, 61, 61', '220, 230, 235', 'button-color'],
   ['243, 243, 243', '22, 27, 29', 'header-background-color'],
   ['5, 5, 5', '230, 240, 245', 'logo-color'],
-  ['184, 184, 184', '55, 100, 80', 'input-border-color']
+  ['184, 184, 184', '55, 100, 80', 'input-border-color'],
+  ['232, 234, 237', '65, 60, 60', 'select-border-color'],
+  ["url('search-light-mode.svg')", "url('search-dark-mode.svg')", 'search-icon-url'],
+  ['112, 112, 112', '210, 210, 210', 'category-content-color'],
+  ['61, 61, 61', '200, 200, 200', 'category-content-item-hover-color'],
+  ['204, 204, 204', '65, 65, 65', 'category-content-border-color'],
+  ['253, 253, 253', '24, 24, 24', 'category-content-background-color']
 ]
 
 const toggleNightMode = () => {
@@ -154,7 +160,7 @@ categories.forEach((category, categoryIndex) => {
           ;[...document.querySelectorAll('aside div')].forEach(d => {
             d.style.fontSize = isMobile ? '1rem' : '1.2rem'
             d.style.background = 'none'
-            d.style.color = 'var(--algebra-geometry-color)'
+            d.style.color = 'rgb(var(--algebra-geometry-color))'
           })
 
           div.style.fontSize = isMobile ? '1.3rem' : '1.5rem'
