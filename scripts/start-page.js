@@ -25,15 +25,17 @@ window.onpointerup = event => {
 const nightModeIcon = document.querySelector('#nightModeIcon')
 
 const pageColors = [
-  ['255, 255, 255', '0, 0, 0', 'background-color'],
-  ['80, 80, 80', '240, 240, 240', 'topic-color'],
-  ['255, 255, 255', '0, 0, 0', 'background-gradient-color'],
-  ['.83', '.91', 'background-gradient-opacity'],
+  ['255, 255, 255', '34, 34, 34', 'background-color'],
+  ['80, 80, 80', '220, 230, 235', 'topic-color'],
+  ['255, 255, 255', '22, 27, 29', 'background-gradient-color'],
+  ['.83', '1', 'background-gradient-opacity'],
   ['153, 50, 204', '112, 155, 138', 'main-color'],
-  ['0, 0, 0', '255, 255, 255', 'topic-hover-color'],
+  ['0, 0, 0', '240, 240, 240', 'topic-hover-color'],
   ['#404040', '#f0f0f0', 'algebra-geometry-color'],
-  ['#3d3d3d', '#f3f3f3', 'button-color'],
-  ['#f3f3f3', '#404040', 'header-background-color']
+  ['61, 61, 61', '220, 230, 235', 'button-color'],
+  ['243, 243, 243', '22, 27, 29', 'header-background-color'],
+  ['5, 5, 5', '230, 240, 245', 'logo-color'],
+  ['184, 184, 184', '55, 100, 80', 'input-border-color']
 ]
 
 const toggleNightMode = () => {
