@@ -44,19 +44,30 @@ const pageColors = [
   ['253, 253, 253', '24, 24, 24', 'category-content-background-color']
 ]
 
-const toggleNightMode = () => {
-  setCssVariables(pageColors, false)
-}
-
 const colorThemeSelect = document.querySelector('#color-theme-select')
 
-colorThemeSelect.onchange = () => {
-  const themeIndex = colorThemeSelect.selectedIndex
+window.matchMedia('(prefers-color-scheme: dark)').onchange = () => toggleNightMode()
 
-  setCssVariables(pageColors, !!themeIndex)
+const toggleNightMode = () => {
+  const [selectedIndex, isNightMode] = {
+    'light': [0, false],
+    'dark': [1, true],
+    'system': [2, window.matchMedia('(prefers-color-scheme: dark)').matches]
+  }[localStorage.getItem('color-mode') || 'system']
+
+  nightModeIcon.className = ['new-icon-light', 'new-icon-dark', 'new-icon-devices'][selectedIndex]
+  colorThemeSelect.selectedIndex = selectedIndex
+  setCssVariables(pageColors, isNightMode)
+}
+
+colorThemeSelect.onchange = () => {
+  localStorage.setItem('color-mode', {
+    0: 'light',
+    1: 'dark',
+    2: 'system'
+  }[colorThemeSelect.selectedIndex])
   
-  const nightModeIcons = ['new-icon-light', 'new-icon-dark', 'icon-desktop']
-  nightModeIcon.className = nightModeIcons[themeIndex]
+  toggleNightMode()
 }
 
 toggleNightMode()

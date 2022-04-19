@@ -50,6 +50,7 @@
 .new-icon-light:before          { content: '\f900'; }
 .new-icon-dark:before           { content: '\f901'; }
 .new-icon-globe:before          { content: '\f903'; }
+.new-icon-devices:before            { content: '\f904'; }
 
 * {
   margin: 0;
@@ -84,7 +85,11 @@ li::marker    { color: var(--theme-hover-color); }
 ul li::marker { font-size: .7em; }
 ol li::marker { font-weight: bold; }
 
-::-webkit-scrollbar             { width: 9px; }
-::-webkit-scrollbar-track       { background: var(--scrollbar-track); }
-::-webkit-scrollbar-thumb       { background: #888; }
+::-webkit-scrollbar { width: 8px; background: rgb(var(--background-gradient-color)); }
+
+::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 7px;
+}
+
 ::-webkit-scrollbar-thumb:hover { background: #555; }
