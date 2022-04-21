@@ -344,7 +344,7 @@ button:hover, button:focus {
   font-size: 1.1rem;
   display: flex;
   flex-direction: column;
-  width: 8rem;
+  width: 9.3rem;
   box-shadow: var(--header-dropdown-shadow);
   display: none;
   animation: categoryContentSlideX .15s;
@@ -353,10 +353,18 @@ button:hover, button:focus {
 }
 
 .category-content li {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
   padding: .7rem 1rem;
   border-bottom: .1rem dotted rgb(var(--category-content-border-color));
   cursor: pointer;
   transition: background .1s, color .1s;
+}
+
+.new-icon-check {
+  font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .category-content li:last-child {
@@ -662,6 +670,11 @@ aside div {
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
     --modal-content-width: 94%;
+  }
+
+  .category-content li {
+    gap: .3rem;
+    padding: .6rem .8rem;
   }
 
   .modal-content {

@@ -50,7 +50,8 @@
 .new-icon-light:before          { content: '\f900'; }
 .new-icon-dark:before           { content: '\f901'; }
 .new-icon-globe:before          { content: '\f903'; }
-.new-icon-devices:before            { content: '\f904'; }
+.new-icon-devices:before        { content: '\f904'; }
+.new-icon-check:before          { content: '\f905'; }
 
 * {
   margin: 0;

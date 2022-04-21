@@ -152,8 +152,22 @@ const capitalize = string => string.charAt(0).toUpperCase() + string.slice(1)
 categories.forEach((category, categoryIndex) => {
   category.forEach((categoryItem, categoryItemIndex) => {
     categoryItem.onpointerup = () => {
+      categories.forEach(categoryItems => {
+        categoryItems.forEach(categoryItem => {
+          if (categoryItem.children.length === 0) return
+          categoryItem.removeChild(categoryItem.firstChild)
+        })
+      })
+
       chosenCategoryIndex = categoryIndex
       topics.textContent = ''
+
+      // highlight chosen category item
+      const chosenLi = categories[chosenCategoryIndex][categoryItemIndex]
+      const i = document.createElement('i')
+      i.className = 'new-icon-check'
+      chosenLi.prepend(i)
+      //
       
       const aside = document.querySelector('aside')
       aside.textContent = ''
