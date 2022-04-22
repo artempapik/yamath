@@ -637,6 +637,7 @@ aside div {
     --yamath-font-size: 5rem;
     --yamath-description-font-size: 1.5rem;
     --input-width: 8rem;
+    --article-width: 28rem;
     --modal-content-width: 50%;
   }
 
@@ -669,6 +670,7 @@ aside div {
     --button-font-size: 1rem;
     --button-padding-vertical: .4rem;
     --button-padding-horizontal: .5rem;
+    --article-width: 21rem;
     --modal-content-width: 94%;
   }
 
