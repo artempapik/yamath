@@ -651,7 +651,7 @@ aside div {
 
 @media (max-width: 600px) {
   :root {
-    --yamath-title-letter-spacing: .08rem;
+    --yamath-title-letter-spacing: .09rem;
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
     --logo-letter-spacing: .001rem;
