@@ -651,6 +651,7 @@ aside div {
 
 @media (max-width: 600px) {
   :root {
+    --yamath-title-font-size: 5rem;
     --yamath-title-letter-spacing: .09rem;
     --yamath-description-letter-spacing: .12rem;
     --yamath-footer-letter-spacing: .03rem;
@@ -660,8 +661,8 @@ aside div {
     --header-panels-width: 5.5rem;
     --user-panel-icon-size: 1.3rem;
     --user-panel-gap: .35rem;
-    --signin-button-padding-vertical: .15rem;
-    --signin-button-padding-horizontal: .8rem;
+    --signin-button-padding-vertical: .12rem;
+    --signin-button-padding-horizontal: .7rem;
     --input-background-y: 6px;
     --input-width: 6.7rem;
     --logo-font-size: 1.1rem;
