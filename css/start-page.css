@@ -662,7 +662,7 @@ aside div {
     --user-panel-icon-size: 1.3rem;
     --user-panel-gap: .35rem;
     --signin-button-padding-vertical: .12rem;
-    --signin-button-padding-horizontal: .65rem;
+    --signin-button-padding-horizontal: .67rem;
     --input-background-y: 6px;
     --input-width: 6.7rem;
     --logo-font-size: 1.1rem;
@@ -676,11 +676,7 @@ aside div {
   }
 
   header span {
-    font-size: 1rem;
-  }
-
-  img {
-    width: 1.4rem;
+    font-size: 1.05rem;
   }
 
   .category-content li {
