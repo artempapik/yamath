@@ -270,7 +270,7 @@ input {
 }
 
 input:focus {
-  border: .1rem solid rgb(var(--main-color));
+  border: .1rem solid rgba(var(--main-color), .6);
 }
 
 #user-panel {
