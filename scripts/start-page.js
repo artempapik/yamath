@@ -4,16 +4,6 @@ const body = document.querySelector('body')
 
 const isMobile = 'ontouchstart' in window
 
-document.querySelector('#logo').onpointerup = () => {
-  if (body.getBoundingClientRect().top === 0) window.location.pathname = ''
-
-  scrollTo({
-    top: 0,
-    left: 0,
-    behavior: 'smooth'
-  })
-}
-
 const modal = document.querySelector('.modal')
 
 window.onpointerup = event => {
