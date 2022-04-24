@@ -3,9 +3,13 @@
   --black-color: 0, 0, 0;
 
   --background-opacity: .1;
-  --header-dropdown-shadow: rgba(60, 64, 67, .3) 0px 1px 2px 0px, rgba(60, 64, 67, .15) 0px 1px 3px 1px;
   --intro-animation-space: .7rem;
   --intro-main-color: 242, 221, 70;
+
+  --header-dropdown-shadow: rgba(60, 64, 67, .2) 0px 1px 2px 0px, rgba(60, 64, 67, .1) 0px 1px 3px 1px;
+  --header-panels-width: 5.7rem;
+  --header-padding-vertical: .3rem;
+  --header-padding-horizontal: .6rem;
 
   --yamath-title-font-size: 6.5rem;
   --yamath-title-letter-spacing: .15rem;
@@ -13,10 +17,6 @@
   --yamath-description-letter-spacing: .19rem;
   --yamath-footer-letter-spacing: .07rem;
   --section-span-letter-spacing: .2rem;
-
-  --header-panels-width: 5.7rem;
-  --header-padding-vertical: .4rem;
-  --header-padding-horizontal: .6rem;
 
   --logo-font-size: 1.2rem;
   --logo-letter-spacing: .03rem;
@@ -29,7 +29,7 @@
   --signin-button-padding-horizontal: 1rem;
 
   --input-background-y: 5px;
-  --input-width: 20rem;
+  --input-width: 22rem;
 
   --menu-gap: 1.1rem;
 
@@ -230,7 +230,6 @@ header {
   justify-content: space-between;
   background: rgb(var(--header-background-color));
   padding: var(--header-padding-vertical) var(--header-padding-horizontal);
-  opacity: .95;
   box-shadow: var(--header-dropdown-shadow);
   position: sticky;
   top: 0;
@@ -264,7 +263,7 @@ input {
   padding-right: .6rem;
   border: .1rem solid rgb(var(--input-border-color));
   font-size: 1.05rem;
-  border-radius: .5rem;
+  border-radius: .4rem;
   width: var(--input-width);
   letter-spacing: .03rem;
   font-family: 'Segoe Variable';
