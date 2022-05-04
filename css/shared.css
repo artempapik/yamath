@@ -62,7 +62,7 @@ html       { -webkit-text-size-adjust: none; }
 html:hover { cursor: default; }
 
 body {
-  background-color: var(--background-color);
+  background: var(--background-color);
   color: var(--text-color);
 }
 
@@ -86,7 +86,10 @@ li::marker    { color: var(--theme-hover-color); }
 ul li::marker { font-size: .7em; }
 ol li::marker { font-weight: bold; }
 
-::-webkit-scrollbar { width: 8px; background: rgb(var(--background-gradient-color)); }
+::-webkit-scrollbar {
+  background: rgb(var(--background-gradient-color));
+  width: 9px;
+}
 
 ::-webkit-scrollbar-thumb {
   background: #666;

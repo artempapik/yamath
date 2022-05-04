@@ -17,7 +17,7 @@ const nightModeIcon = document.querySelector('#nightModeIcon')
 const pageColors = [
   ['255, 255, 255', '34, 34, 34', 'background-color'],
   ['80, 80, 80', '220, 230, 235', 'topic-color'],
-  ['255, 255, 255', '22, 27, 29', 'background-gradient-color'],
+  ['255, 255, 255', '22, 27, 29', 'main-background-color'],
   ['.83', '1', 'background-gradient-opacity'],
   ['153, 50, 204', '112, 155, 138', 'main-color'],
   ['0, 0, 0', '240, 240, 240', 'topic-hover-color'],
@@ -144,7 +144,9 @@ categories.forEach((category, categoryIndex) => {
     categoryItem.onpointerup = () => {
       categories.forEach(categoryItems => {
         categoryItems.forEach(categoryItem => {
-          if (categoryItem.children.length === 0) return
+          if (categoryItem.children.length === 0) {
+            return
+          }
           categoryItem.removeChild(categoryItem.firstChild)
         })
       })
@@ -168,7 +170,9 @@ categories.forEach((category, categoryIndex) => {
         aside.appendChild(div)
 
         div.onpointerup = () => {
-          if (index === chosenItemIndex) return
+          if (index === chosenItemIndex) {
+            return
+          }
 
           chosenItemIndex = index
 
@@ -186,7 +190,9 @@ categories.forEach((category, categoryIndex) => {
           fillArticle(formsData[chosenCategoryIndex][categoryItemIndex][index])
         }
 
-        if (index === 0) fillArticle(formsData[chosenCategoryIndex][categoryItemIndex][index])
+        if (index === 0) {
+          fillArticle(formsData[chosenCategoryIndex][categoryItemIndex][index])
+        }
       })
 
       buttons.forEach((button, index) => {
@@ -205,19 +211,16 @@ categories.forEach((category, categoryIndex) => {
 
       if (mainDescribe) {
         mainDescribe.remove()
-
-        const backgroundGradientLine = 'rgba(var(--background-gradient-color), var(--background-gradient-opacity))'
-        body.style.background = `linear-gradient(
-          ${backgroundGradientLine},
-          ${backgroundGradientLine}
-        ), url('main-background.jpg')`
-
+        body.style.background = 'rgb(var(--main-background-color)'
         document.querySelector('footer').style.display = 'flex'
       }
 
       button.style.background = 'rgba(var(--main-color), .3)'
-      if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
       button.querySelector('span').textContent = categoryItem.textContent
+
+      if (!isMobile) {
+        button.querySelector('span').style.fontWeight = 'bold'
+      }
 
       button.parentNode.querySelector('ul').style.display = 'none'
     }
@@ -229,7 +232,10 @@ const hideDropdownContent = event => buttons.forEach((button, categoryIndex) => 
   const categoryItems = [...categoryContent.querySelectorAll('li')]
 
   if (!categoryItems.some(categoryItem => categoryItem === event.target)) {
-    if (categoryIndex !== chosenCategoryIndex) button.querySelector('span').style.fontWeight = ''
+    if (categoryIndex !== chosenCategoryIndex) {
+      button.querySelector('span').style.fontWeight = ''
+    }
+
     categoryContent.style.display = 'none'
   }
 })
@@ -239,10 +245,15 @@ document.onscroll = event => hideDropdownContent(event)
 
 buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
   buttons.forEach((currentButton, currentButtonIndex) => {
-    if (currentButton === button) return
+    if (currentButton === button) {
+      return
+    }
+
     currentButton.parentNode.querySelector('ul').style.display = 'none'
 
-    if (currentButtonIndex === chosenCategoryIndex) return
+    if (currentButtonIndex === chosenCategoryIndex) {
+      return
+    }
 
     currentButton.style.background = 'rgba(var(--background-color), .9)'
     currentButton.querySelector('span').style.fontWeight = ''
@@ -259,6 +270,5 @@ buttons.forEach((button, buttonIndex) => button.onpointerup = () => {
     }
   } else {
     categoryContent.style.display = 'flex'
-    if (!isMobile) button.querySelector('span').style.fontWeight = 'bold'
   }
 })

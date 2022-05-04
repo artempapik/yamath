@@ -645,7 +645,9 @@ aside div {
     padding: 0 1rem;
   }
 
-  #topics section div { flex-direction: column; }
+  #topics section div {
+    flex-direction: column;
+  }
 }
 
 @media (max-width: 600px) {
